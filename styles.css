@@ -23,6 +23,18 @@ nav{
   background:rgba(0,0,0,0.35);
   border-bottom: 1px solid rgba(255,255,255,0.03);
   gap: 30px;
+  position: fixed;        /* Makes it stay while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;          /* Keeps it above other elements */
+    
+    backdrop-filter: blur(10px);   /* Glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+    background: rgba(15, 15, 25, 0.7); /* Translucent dark */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 .logo{ font-size:18px; font-weight:700; letter-spacing:2px; }
 .nav-links{ display:flex; gap:24px; }
