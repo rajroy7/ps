@@ -30,6 +30,11 @@
 .ability-card:hover { transform:translateY(-8px); box-shadow:0 8px 30px rgba(124,92,255,0.2); }
 .ability-card h3 { margin-top:0; color:#7c5cff; }
 .ability-card p { color:#ddd; line-height:1.4; }
+.ability-attrs { margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.1); }
+.ability-attrs h4 { font-size:12px; color:#aaa; text-transform:uppercase; letter-spacing:1px; margin:0 0 12px 0; }
+.ability-attrs table { width:100%; font-size:13px; }
+.ability-attrs td { padding:4px 0; color:#ddd; }
+.ability-attrs td:last-child { text-align:right; color:#7c5cff; }
 @keyframes fadeIn { from{opacity:0} to{opacity:1}} 
 </style>
 </head>
@@ -130,6 +135,58 @@
     <div id="tab-skills" style="display:none;">
         <div class="abilities">
             <div class="ability-card">
+                <h3>Moondew Cascade</h3>
+                <p><strong>Normal Attack:</strong> Summons <strong>Moonlit Tides</strong>, performing up to 3 attacks that deal <strong>Hydro DMG</strong>.<br><br>
+                <strong>Charged Attack:</strong> Consumes a certain amount of Stamina to deal <strong>AoE Hydro DMG</strong> after a short casting time. If you have at least 1 Verdant Dew, Columbina's Charged Attacks will be replaced with the special <strong>Charged Attack Moondew Cleanse</strong>, which will not consume Stamina: Consume 1 Verdant Dew to deal 3 instances of <strong>AoE Dendro DMG</strong> to opponents in front. This DMG is considered Lunar-Bloom DMG.<br><br>
+                <strong>Plunging Attack:</strong> Plunges towards the ground from mid-air, damaging all opponents in her path. Deals <strong>AoE Hydro DMG</strong> upon impact with the ground.</p>
+                <div class="ability-attrs">
+                    <h4>Attributes</h4>
+                    <table>
+                        <tr><td>1-Hit DMG</td><td>84.23%</td></tr>
+                        <tr><td>2-Hit DMG</td><td>65.93%</td></tr>
+                        <tr><td>3-Hit DMG</td><td>106.57%</td></tr>
+                        <tr><td>Charged Attack DMG</td><td>208.94%</td></tr>
+                        <tr><td>Charged Attack Stamina Cost</td><td>50</td></tr>
+                        <tr><td>Moondew Cleanse DMG</td><td>2.72% Max HP +3</td></tr>
+                        <tr><td>Plunge DMG</td><td>112.34%</td></tr>
+                        <tr><td>Low/High Plunge DMG</td><td>224.62%/280.57%</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="ability-card">
+                <h3>Eternal Tides</h3>
+                <p>Awaken <strong>Moonbound Tides</strong>, dealing <strong>AoE Hydro DMG</strong> and summoning <strong>Gravity Ripple</strong>.<br><br>
+                <strong>Gravity Ripple:</strong> Follows the active character on the field, while continuously dealing <strong>AoE Hydro DMG</strong> to surrounding opponents. While <strong>Gravity Ripple</strong> is on the field, and nearby party members trigger <strong>Lunar Reactions</strong> or inflict <strong>Lunar Reaction DMG</strong>, Columbina will accrue a special <strong>Gravity</strong>. Once <strong>Gravity</strong> is accumulated to its limit, directly trigger a <strong>Lunar Reaction</strong> based on the type of <strong>Lunar Reaction</strong> that has accumulated the most Gravity for Columbina.<br><br>
+                <strong>Moonsign: Ascendant Gleam:</strong> <strong>Gravity Ripple</strong> inflicts <strong>AoE Hydro DMG</strong> over a wider area.</p>
+                <div class="ability-attrs">
+                    <h4>Attributes</h4>
+                    <table>
+                        <tr><td>Skill DMG</td><td>30.1% Max HP</td></tr>
+                        <tr><td>Gravity Ripple: Continuous DMG</td><td>16.85% Max HP</td></tr>
+                        <tr><td>Gravity Interference: Lunar-Charged DMG</td><td>8.47% Max HP</td></tr>
+                        <tr><td>Gravity Interference: Lunar-Bloom DMG</td><td>2.53% Max HP +5</td></tr>
+                        <tr><td>Gravity Interference: Lunar-Crystallize DMG</td><td>15.88% Max HP</td></tr>
+                        <tr><td>Gravity Limit</td><td>60</td></tr>
+                        <tr><td>Gravity Ripple Duration</td><td>25s</td></tr>
+                        <tr><td>CD</td><td>17s</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="ability-card">
+                <h3>Moonlit Melancholy</h3>
+                <p>Hills and tides vile under the silver light of a pristine new moon. Temporarily transforms any surrounding terrain into <strong>Lunar Domain</strong>, dealing <strong>AoE Hydro DMG</strong>.</p>
+                <div class="ability-attrs">
+                    <h4>Attributes</h4>
+                    <table>
+                        <tr><td>Skill DMG</td><td>58.03% Max HP</td></tr>
+                        <tr><td>Lunar Reaction DMG Bonus</td><td>40%</td></tr>
+                        <tr><td>Lunar Domain Duration</td><td>20s</td></tr>
+                        <tr><td>CD</td><td>15s</td></tr>
+                        <tr><td>Energy Cost</td><td>60</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="ability-card">
                 <h3>Lunacy's Lure</h3>
                 <p>When triggering <strong>Gravity Interference</strong>, Columbina gains the Lunacy effect, increasing her CRIT Rate by 5% for 10s. This effect can be stacked up to 3 times.</p>
             </div>
@@ -153,7 +210,50 @@
         </div>
     </div>
 
-    <div class="footer"><h2>PROJECT SKIRK</h2></div>
+    <div id="tab-constellations" style="display:none;">
+        <div class="abilities">
+            <div class="ability-card">
+                <h3>1. Radiance Over Blossoms and Peaks</h3>
+                <p>Unleashing her <strong>Elemental Skill Eternal Tides</strong> will immediately trigger an effect equivalent to <strong>Gravity Interference</strong>. This effect once every 15s.<br><br>
+                <strong>Moonsign: Ascendant Gleam:</strong> When <strong>Gravity Interference</strong> is triggered, if the Lunar reaction type that has accumulated the most Gravity for Columbina is:<br>
+                - <strong>Lunar-Charged:</strong> Your current active character will recover 6 Energy.<br>
+                - <strong>Lunar-Bloom:</strong> Your active character's interruption resistance will be increased for 8s.<br>
+                - <strong>Lunar-Crystallize:</strong> Summons a <strong>Rainseal Shield</strong>. The Rainseal Shield's DMG absorption is based on 12% of Columbina's Max HP, and it will absorb <strong>Hydro DMG</strong> with 250% effectiveness for 8s.<br><br>
+                All nearby party members' <strong>Lunar Reaction DMG</strong> is elevated by 1.5%.</p>
+            </div>
+            <div class="ability-card">
+                <h3>2. Not in Lone Splendor</h3>
+                <p>Rate of accumulating <strong>Gravity</strong> increases by 34%.<br><br>
+                When <strong>Gravity Interference</strong> is triggered, Columbina will receive the <strong>Lunar Brilliance</strong> effect, which increases her Max HP by 40% for 8s.<br><br>
+                <strong>Moonsign: Ascendant Gleam:</strong> When <strong>Lunar Brilliance</strong> is active, if, during the current trigger of <strong>Gravity Interference</strong>, the Lunar reaction type that has accumulated the most Gravity for Columbina is:<br>
+                - <strong>Lunar-Charged:</strong> ATK of your current active character increases, increase ATK equal to 1% of Columbina's Max HP.<br>
+                - <strong>Lunar-Bloom:</strong> Elemental Mastery increases, increase Elemental Mastery equal to 0.35% of Columbina's Max HP.<br>
+                - <strong>Lunar-Crystallize:</strong> DEF of your current active character increases, increase in DEF is equal to 1% of Columbina's Max HP.<br><br>
+                All nearby party members' <strong>Lunar Reaction DMG</strong> is elevated by 7%.</p>
+            </div>
+            <div class="ability-card">
+                <h3>3. Dreamlike Glow Across Tranquil Waters</h3>
+                <p>Increases the Level of <strong>Elemental Skill Eternal Tides</strong> by 3. Maximum upgrade level is 15.<br><br>
+                All nearby party members' <strong>Lunar Reaction DMG</strong> is elevated by 1.5%.</p>
+            </div>
+            <div class="ability-card">
+                <h3>4. Cloudvelled Ridges in Floral Mists</h3>
+                <p>When <strong>Gravity Interference</strong> is triggered, 4 Elemental Energy will be restored to Columbina.<br><br>
+                Additionally, if the Lunar reaction type that accumulates the most Gravity for Columbina is <strong>Lunar-Charged</strong>, <strong>Lunar-Bloom</strong>, or <strong>Lunar-Crystallize</strong>, the Lunar Reaction DMG dealt by this instance of Gravity Interference is increased by 12.5%/2.5%/12.5% of Columbina's Max HP respectively. This effect can be triggered at most once every 15s.<br><br>
+                All nearby party members' <strong>Lunar Reaction DMG</strong> is elevated by 1.5%.</p>
+            </div>
+            <div class="ability-card">
+                <h3>5. Silence Tending One Lone Song</h3>
+                <p>Increases the Level of <strong>Elemental Burst Moonlit Melancholy</strong> by 3. Maximum upgrade level is 15.<br><br>
+                All nearby party members' <strong>Lunar Reaction DMG</strong> is elevated by 1.5%.</p>
+            </div>
+            <div class="ability-card">
+                <h3>6. Through Darkness Led by Moonlight</h3>
+                <p>For 8s after characters in the <strong>Lunar Domain</strong> trigger a Lunar reaction, based on the elements involved in the reaction, the Corresponding Elemental Type DMG of the corresponding Elemental Type done by all party members is increased by 80%. The CRIT DMG-increasing effects for the same Elemental Type do not stack.<br><br>
+                All nearby party members' <strong>Lunar Reaction DMG</strong> is elevated by 7%.</p>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="script.js"></script>
 <script>
