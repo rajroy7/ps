@@ -16,10 +16,6 @@ body {
 
 /* Top nav */
 nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   display:flex;
   justify-content:flex-start;
   align-items:center;
@@ -27,16 +23,11 @@ nav{
   background:rgba(0,0,0,0.35);
   border-bottom: 1px solid rgba(255,255,255,0.03);
   gap: 30px;
-  z-index: 100;
-  backdrop-filter: blur(10px);
 }
 .logo{ font-size:18px; font-weight:700; letter-spacing:2px; }
 .nav-links{ display:flex; gap:24px; }
-.nav-links a{ color:#ffffff; text-decoration:none; transition:0.3s ease; }
-.nav-links a:hover{ 
-  color:#7c5cff; 
-  text-shadow: 0 0 10px #7c5cff, 0 0 20px rgba(124, 92, 255, 0.6);
-}
+.nav-links a{ color:#ffffff; text-decoration:none; transition:0.2s; }
+.nav-links a:hover{ color:#7c5cff; }
 
 /* Hamburger Menu Button */
 .hamburger {
@@ -47,7 +38,6 @@ nav{
   border: none;
   cursor: pointer;
   padding: 8px 12px;
-  transition: 0.3s ease;
 }
 
 .hamburger span {
@@ -58,14 +48,8 @@ nav{
   transition: 0.3s ease;
 }
 
-.hamburger:hover:not(.open) span {
-  background: #7c5cff;
-  box-shadow: 0 0 10px #7c5cff;
-}
-
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(12px);
-  background: #7c5cff;
 }
 
 .hamburger.open span:nth-child(2) {
@@ -74,11 +58,10 @@ nav{
 
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-12px);
-  background: #7c5cff;
 }
 
 /* HERO */
-.hero{ text-align:center; padding:64px 20px 32px; margin-top: 70px; }
+.hero{ text-align:center; padding:64px 20px 32px; }
 .hero img{ width:96px; margin-bottom:14px; }
 .hero h1{ font-size:42px; letter-spacing:3px; margin:6px 0; }
 .hero p{ opacity:0.78; }
@@ -245,7 +228,6 @@ nav{
 .main-content {
     padding: 20px;
     transition: margin-left 0.28s ease;
-    padding-top: 90px;
 }
 
 /* Overlay when sidebar is open */
