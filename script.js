@@ -329,3 +329,53 @@ function applyUnreleasedContent() {
         document.documentElement.removeAttribute('data-unreleased');
     }
 }
+
+// -------------------- generic search support --------------------
+function initializePageSearch() {
+    const input = document.getElementById('pageSearchInput');
+    const results = document.getElementById('pageSearchResults');
+    if (!input || !results) return;
+    const url = results.dataset.source;
+    let items = [];
+
+    const render = (list) => {
+        results.innerHTML = '';
+        if (!list || list.length === 0) {
+            results.innerHTML = '<p style="grid-column:1/-1;text-align:center;opacity:0.6">No items found.</p>';
+            return;
+        }
+        list.forEach(i => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.padding = '14px';
+            card.style.minHeight = '80px';
+            card.style.display = 'flex';
+            card.style.alignItems = 'center';
+            card.style.justifyContent = 'center';
+            card.innerText = i.name || '(unnamed)';
+            results.appendChild(card);
+        });
+    };
+
+    fetch(url)
+        .then(r => r.json())
+        .then(data => {
+            items = data || [];
+            render(items);
+        })
+        .catch(err => {
+            console.error('Search data load failed', err);
+            results.innerHTML = '<p style="grid-column:1/-1;text-align:center;opacity:0.6">Failed to load data.</p>';
+        });
+
+    input.addEventListener('input', () => {
+        const term = input.value.trim().toLowerCase();
+        if (!term) {
+            render(items);
+        } else {
+            render(items.filter(i => (i.name || '').toLowerCase().includes(term)));
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializePageSearch);

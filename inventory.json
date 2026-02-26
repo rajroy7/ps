@@ -1,0 +1,5 @@
+[
+  {"id":1,"name":"Healing Potion","category":"Consumable"},
+  {"id":2,"name":"Mystic Ore","category":"Material"},
+  {"id":3,"name":"Old Map","category":"Quest Item"}
+]

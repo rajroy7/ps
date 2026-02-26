@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Columbina - Project Skirk</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-title { margin: 18px 0; color: #7c5cff; letter-spacing: 2px; }
+/* detail page specific */
+.detail-header { display:flex; align-items:center; gap:12px; padding:20px; }
+.detail-header .back { color:#ffffff; text-decoration:none; font-size:24px; transition:0.2s; }
+.detail-header .back:hover { color:#7c5cff; }
+.detail-header .name { font-size:24px; font-weight:700; color:#fff; }
+.detail-tabs { display:flex; gap:24px; padding:0 20px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:16px; }
+.detail-tabs a { color:#aaa; text-decoration:none; padding:12px 0; transition:color 0.2s; cursor:pointer; }
+.detail-tabs a.active { color:#fff; border-bottom:2px solid #7c5cff; }
+.character-overview { text-align:center; padding:20px; animation:fadeIn 1s ease; }
+.character-overview img { width:120px; border-radius:50%; }
+.character-overview p { opacity:0.8; margin-top:8px; }
+.info-panels { display:flex; flex-wrap:wrap; gap:20px; padding:0 20px; }
+.basic-info, .ascension { background:rgba(255,255,255,0.05); border-radius:12px; padding:20px; flex:1 1 300px; animation:fadeIn 0.8s ease; }
+.basic-info table { width:100%; color:#fff; }
+.level-config { padding:20px; }
+.level-config input[type=range] { width:100%; }
+
+/* ability cards */
+.abilities { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); padding:20px; }
+.ability-card { background:rgba(255,255,255,0.03); border-radius:12px; padding:20px; position:relative; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s; }
+.ability-card:hover { transform:translateY(-8px); box-shadow:0 8px 30px rgba(124,92,255,0.2); }
+.ability-card h3 { margin-top:0; color:#7c5cff; }
+.ability-card p { color:#ddd; line-height:1.4; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1}} 
+</style>
+</head>
+<body>
+<div class="sidebar" id="sidebar">
+    <!-- sidebar markup copied from other pages -->
+    <div class="logo-section">
+        <img src="icons/logo.png" class="logo">
+        <span class="logo-text">Project Skirk</span>
+    </div>
+    <ul>
+        <li><a href="index.html"><img src="icons/home.png" class="icon"><span class="text">Home</span></a></li>
+        <li><a href="characters.html"><img src="icons/characters.png" class="icon"><span class="text">Characters</span></a></li>
+        <li><a href="weapons.html"><img src="icons/weapons.png" class="icon"><span class="text">Weapons</span></a></li>
+        <li><a href="artifacts.html"><img src="icons/artifacts.png" class="icon"><span class="text">Artifacts</span></a></li>
+        <li><a href="achievements.html"><img src="icons/achievements.png" class="icon"><span class="text">Achievements</span></a></li>
+        <li><a href="inventory.html"><img src="icons/inventory.png" class="icon"><span class="text">Inventory</span></a></li>
+        <li><a href="enemy.html"><img src="icons/enemy.png" class="icon"><span class="text">Enemy Creatures</span></a></li>
+        <li><a href="tcg.html"><img src="icons/tcg.png" class="icon"><span class="text">Genius Invokation TCG</span></a></li>
+        <li><a href="abyss.html"><img src="icons/abyss.png" class="icon"><span class="text">Spiral Abyss</span></a></li>
+        <li><a href="theater.html"><img src="icons/theater.png" class="icon"><span class="text">Imaginarium Theater</span></a></li>
+        <li><a href="stygian.html"><img src="icons/stygian.png" class="icon"><span class="text">Stygian Onslaught</span></a></li>
+        <li><a href="furnishings.html"><img src="icons/furnishings.png" class="icon"><span class="text">Furnishings</span></a></li>
+        <li><a href="furnishing-set.html"><img src="icons/furnishing-set.png" class="icon"><span class="text">Furnishing Set</span></a></li>
+        <li><a href="miliastra.html"><img src="icons/miliastra.png" class="icon"><span class="text">Miliastra</span></a></li>
+        <li><a href="wonderland.html"><img src="icons/wonderland.png" class="icon"><span class="text">Wonderland</span></a></li>
+        <li><a href="mw-set.html"><img src="icons/mw-set.png" class="icon"><span class="text">Miliastra Wonderland Set</span></a></li>
+        <li><a href="mw-inventory.html"><img src="icons/mw-inventory.png" class="icon"><span class="text">Miliastra Wonderland Inventory</span></a></li>
+        <li><a href="search.html"><img src="icons/search.png" class="icon"><span class="text">Search</span></a></li>
+        <li><a href="diff.html"><img src="icons/diff.png" class="icon"><span class="text">Diff</span></a></li>
+        <li><a href="wishes.html"><img src="icons/wishes.png" class="icon"><span class="text">Character Wishes</span></a></li>
+        <li class="settings-menu-item"><button id="settingsBtn" class="settings-menu-btn"><img src="icons/settings.png" class="icon"><span class="text">Settings</span></button></li>
+    </ul>
+</div>
+
+<!-- SETTINGS MODAL copied -->
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Settings</h2>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <!-- same settings markup as others -->
+      <div class="settings-section"><h3>Main</h3><div class="settings-row"><label>Language</label><select id="language"><option>English</option><option>French</option><option>German</option><option>Spanish</option><option>Chinese</option><option>Japanese</option></select></div><div class="settings-row"><label>Region</label><select id="region"><option>Europe</option><option>North America</option><option>Asia</option><option>South America</option></select></div><div class="settings-row"><label>Twin</label><select id="twin"><option>Male</option><option>Female</option></select></div></div>
+      <div class="settings-section"><h3>Talent</h3><div class="settings-row"><label>Display Style</label><select id="displayStyle"><option>Slider</option><option>Input</option><option>Dropdown</option></select></div><div class="settings-row"><label>Default LVL</label><select id="defaultLvl"><option>1</option><option>5</option><option>10</option><option>15</option><option>20</option></select></div><div class="settings-row"><label>Default LVL (constellation)</label><select id="defaultLvlConstellation"><option>None</option><option>+1</option><option>+2</option><option>+3</option></select></div><div class="settings-row"><label>Default Decimal</label><select id="defaultDecimal"><option>Default</option><option>0</option><option>1</option><option>2</option><option>3</option></select></div><div class="settings-row"><label>Add constellations info</label><input type="checkbox" id="addConstellations"></div></div>
+      <div class="settings-section"><h3>Other</h3><div class="settings-row"><label>Unreleased Content</label><select id="unreleased"><option>Disable</option><option>Enable</option></select></div><div class="settings-info"><strong>Note:</strong> Unreleased content includes characters and weapons not yet available.</div></div>
+    </div>
+    <div class="modal-footer">
+        <button id="saveSettingsBtn" class="save-btn">Save</button>
+      </div>
+  </div>
+</div>
+
+<div class="main-content">
+    <nav><div class="logo">PROJECT SKIRK</div></nav>
+
+    <div class="detail-header">
+        <a href="characters.html" class="back">&larr;</a>
+        <span class="name">Columbina</span>
+    </div>
+
+    <div class="detail-tabs">
+        <a data-tab="info" class="active">Character Information</a>
+        <a data-tab="skills">Skills</a>
+        <a data-tab="constellations">Constellations</a>
+        <a data-tab="assets">Assets</a>
+        <a data-tab="diffs">Diffs</a>
+    </div>
+
+    <div id="tab-info">
+        <div class="character-overview">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Columbina.png?vh=2024123000" alt="Columbina">
+            <p>The Moon Maiden born in Nod-Krai, and also the welkin moon returning home.</p>
+        </div>
+        <div class="info-panels">
+            <div class="basic-info">
+                <h3>Basic Information</h3>
+                <table>
+                    <tr><td>Base HP</td><td>14,695</td></tr>
+                    <tr><td>Base ATK</td><td>96</td></tr>
+                    <tr><td>Base DEF</td><td>515</td></tr>
+                    <tr><td>CRIT Rate</td><td>19.2%</td></tr>
+                </table>
+            </div>
+            <div class="ascension">
+                <h3>Ascension Materials</h3>
+                <p>Icon grid goes here</p>
+            </div>
+        </div>
+        <div class="level-config">
+            <h3>Level Configuration</h3>
+            <label>Lv. <span id="levelValue">90</span></label>
+            <input type="range" id="levelSlider" min="1" max="90" value="90">
+        </div>
+    </div>
+
+    <div id="tab-skills" style="display:none;">
+        <div class="abilities">
+            <div class="ability-card">
+                <h3>Lunacy's Lure</h3>
+                <p>When triggering <strong>Gravity Interference</strong>, Columbina gains the Lunacy effect, increasing her CRIT Rate by 5% for 10s. This effect can be stacked up to 3 times.</p>
+            </div>
+            <div class="ability-card">
+                <h3>Law of the New Moon</h3>
+                <p>When characters within the Lunar Domain trigger Lunar reactions, they will gain the following effects respectively:<br>
+                - <strong>Lunar-Charged</strong>: When the Thundercloud performs lightning strike(s) against a valid target, it has a 33% chance to perform an additional lightning strike.<br>
+                - <strong>Lunar-Bloom</strong>: When triggering Lunar-Bloom reactions, the party gains a special <em>Moonridge Dew</em>. Up to 3 Moonridge Dews can be gained every 18s.<br>
+                - <strong>Lunar-Crystallize</strong>: When Moondrift Harmony is triggered, every Moondrift has a 33% chance to inflict an extra attack.</p>
+            </div>
+            <div class="ability-card">
+                <h3>Moonsign Benediction: Moonlight, Lent Unto You</h3>
+                <p>When a party member triggers an Electro-Charged, Bloom, or Hydro-Crystallize reaction, it will be converted into a Lunar-Charged, Lunar-Bloom, or Lunar-Crystallize reaction respectively. Lunar Reaction DMG inflicted by party members gain a Base DMG increase based on Columbina’s Max HP. For every 1,000 points of Max HP, the Base DMG of Lunar reactions is increased by 0.2%, up to a maximum of 7%.<br>
+                Additionally, when Columbina is in the party, the party’s Moonsign will increase by 1 level.</p>
+            </div>
+            <div class="ability-card">
+                <h3>Lunar Vigil</h3>
+                <p>If one of your party members is incapacitated while in the Nod-Krai region, Columbina will revive this character. The amount of HP the character will have upon revival is based on Columbina's Friendship Level. This effect can occur once every 100s. This effect does not trigger in Domains, Trounce Domains, or the Spiral Abyss.<br>
+                Additionally, Columbina appears to have a special affinity for certain animals who are influenced by kuuvahki…</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"><h2>PROJECT SKIRK</h2></div>
+</div>
+<script src="script.js"></script>
+<script>
+// slider behavior and tab switching
+function initDetailPage() {
+    const slider = document.getElementById('levelSlider');
+    const display = document.getElementById('levelValue');
+    if (slider && display) {
+        slider.addEventListener('input', () => {
+            display.textContent = slider.value;
+        });
+    }
+
+    // tabs
+    document.querySelectorAll('.detail-tabs a').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+            document.querySelectorAll('.detail-tabs a').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelectorAll('[id^="tab-"]').forEach(sec => sec.style.display = 'none');
+            const section = document.getElementById('tab-' + target);
+            if (section) section.style.display = 'block';
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initDetailPage);
+</script>
+</body>
+</html>

@@ -4,10 +4,20 @@ let activeFilters = {
   element: [],
   weapon: []
 };
+let searchTerm = ''; // for name search
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('characters');
   if (!container) return;
+
+  // when coming back via browser history the DOM may be restored with
+  // previous filter/search state.  Clear it to show all characters.
+  const searchInput = document.getElementById('characterSearch');
+  if (searchInput) searchInput.value = '';
+  document.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
+  searchTerm = '';
+  activeFilters = { rarity: [], element: [], weapon: [] };
 
   fetch('characters.json')
     .then(r => r.json())
@@ -53,7 +63,19 @@ function setupFilters() {
     clearBtn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       activeFilters = { rarity: [], element: [], weapon: [] };
+      searchTerm = '';
+      const searchInput = document.getElementById('characterSearch');
+      if (searchInput) searchInput.value = '';
       renderCharacters(allCharacters, document.getElementById('characters'));
+    });
+  }
+
+  // search input
+  const searchInput = document.getElementById('characterSearch');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value.trim().toLowerCase();
+      updateFilters();
     });
   }
 }
@@ -67,7 +89,8 @@ function updateFilters() {
     const matchRarity = activeFilters.rarity.length === 0 || activeFilters.rarity.includes(char.rarity);
     const matchElement = activeFilters.element.length === 0 || activeFilters.element.includes(char.vision);
     const matchWeapon = activeFilters.weapon.length === 0 || activeFilters.weapon.includes(char.weapon);
-    return matchRarity && matchElement && matchWeapon;
+    const matchSearch = !searchTerm || char.name.toLowerCase().includes(searchTerm);
+    return matchRarity && matchElement && matchWeapon && matchSearch;
   });
 
   renderCharacters(filtered, document.getElementById('characters'));
@@ -83,6 +106,16 @@ function renderCharacters(chars, container) {
   chars.forEach(c => {
     const card = document.createElement('div');
     card.className = 'char-card';
+
+    // determine detail link
+    let linkUrl = '';
+    if (c.name) {
+      const safe = c.name.toLowerCase().replace(/\s+/g, '-');
+      linkUrl = `${safe}.html`;
+    }
+
+    const inner = document.createElement('div');
+    inner.style.width = '100%';
 
     // Version badge
     const versionBadge = document.createElement('div');
@@ -143,12 +176,21 @@ function renderCharacters(chars, container) {
     meta.appendChild(elementIcon);
     meta.appendChild(weaponIcon);
 
-    card.appendChild(versionBadge);
-    card.appendChild(rarityBadge);
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(constellation);
-    card.appendChild(meta);
+    inner.appendChild(versionBadge);
+    inner.appendChild(rarityBadge);
+    inner.appendChild(img);
+    inner.appendChild(title);
+    inner.appendChild(constellation);
+    inner.appendChild(meta);
+
+    if (linkUrl) {
+      const a = document.createElement('a');
+      a.href = linkUrl;
+      a.appendChild(inner);
+      card.appendChild(a);
+    } else {
+      card.appendChild(inner);
+    }
     container.appendChild(card);
   });
 }
