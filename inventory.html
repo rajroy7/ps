@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inventory - Project Skirk</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>.page-title{margin:18px 0;color:#7c5cff;letter-spacing:2px}</style>
+</head>
+<body>
+<div class="sidebar" id="sidebar">
+  <div class="logo-section"><img src="logo.png" class="logo"><span class="logo-text">Project Skirk</span></div>
+  <ul>
+    <li><a href="index.html"><img src="icons/home.png" class="icon"><span class="text">Home</span></a></li>
+    <li><a href="characters.html"><img src="icons/characters.png" class="icon"><span class="text">Characters</span></a></li>
+    <li><a href="weapons.html"><img src="icons/weapons.png" class="icon"><span class="text">Weapons</span></a></li>
+    <li><a href="artifacts.html"><img src="icons/artifacts.png" class="icon"><span class="text">Artifacts</span></a></li>
+    <li><a href="achievements.html"><img src="icons/achievements.png" class="icon"><span class="text">Achievements</span></a></li>
+    <li><a href="inventory.html"><img src="icons/inventory.png" class="icon"><span class="text">Inventory</span></a></li>
+    <li><a href="enemy.html"><img src="icons/enemy.png" class="icon"><span class="text">Enemy Creatures</span></a></li>
+    <li><a href="tcg.html"><img src="icons/tcg.png" class="icon"><span class="text">Genius Invokation TCG</span></a></li>
+    <li><a href="abyss.html"><img src="icons/abyss.png" class="icon"><span class="text">Spiral Abyss</span></a></li>
+    <li><a href="theater.html"><img src="icons/theater.png" class="icon"><span class="text">Imaginarium Theater</span></a></li>
+    <li><a href="stygian.html"><img src="icons/stygian.png" class="icon"><span class="text">Stygian Onslaught</span></a></li>
+    <li><a href="furnishings.html"><img src="icons/furnishings.png" class="icon"><span class="text">Furnishings</span></a></li>
+    <li><a href="furnishing-set.html"><img src="icons/furnishing-set.png" class="icon"><span class="text">Furnishing Set</span></a></li>
+    <li><a href="miliastra.html"><img src="icons/miliastra.png" class="icon"><span class="text">Miliastra</span></a></li>
+    <li><a href="wonderland.html"><img src="icons/wonderland.png" class="icon"><span class="text">Wonderland</span></a></li>
+    <li><a href="mw-set.html"><img src="icons/mw-set.png" class="icon"><span class="text">Miliastra Wonderland Set</span></a></li>
+    <li><a href="mw-inventory.html"><img src="icons/mw-inventory.png" class="icon"><span class="text">Miliastra Wonderland Inventory</span></a></li>
+    <li><a href="search.html"><img src="icons/search.png" class="icon"><span class="text">Search</span></a></li>
+    <li><a href="diff.html"><img src="icons/diff.png" class="icon"><span class="text">Diff</span></a></li>
+    <li><a href="wishes.html"><img src="icons/wishes.png" class="icon"><span class="text">Character Wishes</span></a></li>
+    <li class="settings-menu-item"><button id="settingsBtn" class="settings-menu-btn"><img src="icons/settings.png" class="icon"><span class="text">Settings</span></button></li>
+  </ul>
+</div>
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header"><h2>Settings</h2><button class="modal-close">&times;</button></div>
+    <div class="modal-body">
+      <div class="settings-section"><h3>Main</h3><div class="settings-row"><label>Language</label><select id="language"><option>English</option><option>French</option><option>German</option><option>Spanish</option><option>Chinese</option><option>Japanese</option></select></div><div class="settings-row"><label>Region</label><select id="region"><option>Europe</option><option>North America</option><option>Asia</option><option>South America</option></select></div><div class="settings-row"><label>Twin</label><select id="twin"><option>Male</option><option>Female</option></select></div></div>
+      <div class="settings-section"><h3>Talent</h3><div class="settings-row"><label>Display Style</label><select id="displayStyle"><option>Slider</option><option>Input</option><option>Dropdown</option></select></div><div class="settings-row"><label>Default LVL</label><select id="defaultLvl"><option>1</option><option>5</option><option>10</option><option>15</option><option>20</option></select></div><div class="settings-row"><label>Default LVL (constellation)</label><select id="defaultLvlConstellation"><option>None</option><option>+1</option><option>+2</option><option>+3</option></select></div><div class="settings-row"><label>Default Decimal</label><select id="defaultDecimal"><option>Default</option><option>0</option><option>1</option><option>2</option><option>3</option></select></div><div class="settings-row"><label>Add constellations info</label><input type="checkbox" id="addConstellations"></div></div>
+      <div class="settings-section"><h3>Other</h3><div class="settings-row"><label>Unreleased Content</label><select id="unreleased"><option>Disable</option><option>Enable</option></select></div><div class="settings-info"><strong>Note:</strong> Unreleased content includes characters and weapons not yet available.</div></div>
+    </div>
+    <div class="modal-footer">
+        <button id="saveSettingsBtn" class="save-btn">Save</button>
+      </div>
+  </div>
+</div>
+<div class="main-content">
+  <nav><div class="logo">PROJECT SKIRK</div></nav>
+  <section style="padding:24px">
+    <h1 class="page-title">Inventory</h1>
+    <p style="opacity:0.85">Placeholder page for Inventory.</p>
+  </section>
+  <div class="footer"><h2>PROJECT SKIRK</h2></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

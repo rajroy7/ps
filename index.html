@@ -5,169 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project Skirk</title>
 
-<style>
-
-@font-face {
-  font-family: 'SkirkFont';
-  src: url('https://cdn.jsdelivr.net/gh/rajroy7/si@main/zh-cn.ttf') format('truetype');
-}
-
-body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#0c0c18,#070b22,#000000);
-  color:#ffffff;
-}
-
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-  background:rgba(0,0,0,0.4);
-}
-
-.logo{
-  font-size:20px;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-nav a{
-  color:#ffffff;
-  margin-left:25px;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#7c5cff;
-}
-
-.hero{
-  text-align:center;
-  padding:80px 20px 40px;
-}
-
-.hero img{
-  width:100px;
-  margin-bottom:20px;
-}
-
-.hero h1{
-  font-size:50px;
-  letter-spacing:4px;
-  margin:0;
-}
-
-.hero p{
-  opacity:0.7;
-}
-
-.cards{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-  margin:60px 20px;
-}
-
-.card{
-  width:280px;
-  background:rgba(255,255,255,0.05);
-  border-radius:20px;
-  padding:20px;
-  backdrop-filter:blur(12px);
-  transition:0.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 30px rgba(124,92,255,0.3);
-}
-
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:12px;
-  margin-bottom:15px;
-}
-
-/* COUNTDOWN */
-
-.countdown-wrapper{
-  text-align:center;
-  margin:60px 20px;
-}
-
-.countdown-title{
-  font-size:22px;
-  margin-bottom:25px;
-  color:#7c5cff;
-  letter-spacing:2px;
-}
-
-.countdown{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.time-box{
-  background:rgba(255,255,255,0.05);
-  padding:20px 25px;
-  border-radius:12px;
-  backdrop-filter:blur(10px);
-  min-width:80px;
-  transition:0.3s;
-}
-
-.time-box span{
-  font-size:28px;
-  color:#00f0ff;
-  display:block;
-}
-
-/* FOOTER */
-
-.footer {
-  background: linear-gradient(180deg,#0a0a18,#050510);
-  padding: 60px 20px 30px;
-  margin-top: 80px;
-  text-align: center;
-}
-
-.footer h2 {
-  font-size: 22px;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-  color: #7c5cff;
-}
-
-.footer-links a {
-  color: #aaa;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: #7c5cff;
-}
-
-@media(max-width:768px){
-  nav{
-    flex-direction:column;
-  }
-}
-
-</style>
+<!-- styles moved to styles.css for consistent theme across pages -->
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+<div class="sidebar" id="sidebar">
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+        <img src="icons/logo.png" class="logo">
+        <span class="logo-text">Project Skirk</span>
+    </div>
+
+    <ul>
+
+        <li><a href="index.html"><img src="icons/home.png" class="icon"><span class="text">Home</span></a></li>
+        <li><a href="characters.html"><img src="icons/characters.png" class="icon"><span class="text">Characters</span></a></li>
+        <li><a href="weapons.html"><img src="icons/weapons.png" class="icon"><span class="text">Weapons</span></a></li>
+        <li><a href="artifacts.html"><img src="icons/artifacts.png" class="icon"><span class="text">Artifacts</span></a></li>
+        <li><a href="achievements.html"><img src="icons/achievements.png" class="icon"><span class="text">Achievements</span></a></li>
+        <li><a href="inventory.html"><img src="icons/inventory.png" class="icon"><span class="text">Inventory</span></a></li>
+        <li><a href="enemy.html"><img src="icons/enemy.png" class="icon"><span class="text">Enemy Creatures</span></a></li>
+        <li><a href="tcg.html"><img src="icons/tcg.png" class="icon"><span class="text">Genius Invokation TCG</span></a></li>
+        <li><a href="abyss.html"><img src="icons/abyss.png" class="icon"><span class="text">Spiral Abyss</span></a></li>
+        <li><a href="theater.html"><img src="icons/theater.png" class="icon"><span class="text">Imaginarium Theater</span></a></li>
+        <li><a href="stygian.html"><img src="icons/stygian.png" class="icon"><span class="text">Stygian Onslaught</span></a></li>
+        <li><a href="furnishings.html"><img src="icons/furnishings.png" class="icon"><span class="text">Furnishings</span></a></li>
+        <li><a href="furnishing-set.html"><img src="icons/furnishing-set.png" class="icon"><span class="text">Furnishing Set</span></a></li>
+        <li><a href="miliastra.html"><img src="icons/miliastra.png" class="icon"><span class="text">Miliastra</span></a></li>
+        <li><a href="wonderland.html"><img src="icons/wonderland.png" class="icon"><span class="text">Wonderland</span></a></li>
+        <li><a href="mw-set.html"><img src="icons/mw-set.png" class="icon"><span class="text">Miliastra Wonderland Set</span></a></li>
+        <li><a href="mw-inventory.html"><img src="icons/mw-inventory.png" class="icon"><span class="text">Miliastra Wonderland Inventory</span></a></li>
+        <li><a href="search.html"><img src="icons/search.png" class="icon"><span class="text">Search</span></a></li>
+        <li><a href="diff.html"><img src="icons/diff.png" class="icon"><span class="text">Diff</span></a></li>
+        <li><a href="wishes.html"><img src="icons/wishes.png" class="icon"><span class="text">Character Wishes</span></a></li>
+        <li class="settings-menu-item"><button id="settingsBtn" class="settings-menu-btn"><img src="icons/settings.png" class="icon"><span class="text">Settings</span></button></li>
+
+    </ul>
+</div>
+
+<!-- SETTINGS MODAL -->
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Settings</h2>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <!-- Main Section -->
+      <div class="settings-section">
+        <h3>Main</h3>
+        <div class="settings-row">
+          <label>Language</label>
+          <select id="language">
+            <option>English</option>
+            <option>French</option>
+            <option>German</option>
+            <option>Spanish</option>
+            <option>Chinese</option>
+            <option>Japanese</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Region</label>
+          <select id="region">
+            <option>Europe</option>
+            <option>North America</option>
+            <option>Asia</option>
+            <option>South America</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Twin</label>
+          <select id="twin">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Talent Section -->
+      <div class="settings-section">
+        <h3>Talent</h3>
+        <div class="settings-row">
+          <label>Display Style</label>
+          <select id="displayStyle">
+            <option>Slider</option>
+            <option>Input</option>
+            <option>Dropdown</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Default LVL</label>
+          <select id="defaultLvl">
+            <option>1</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Default LVL (constellation increase)</label>
+          <select id="defaultLvlConstellation">
+            <option>None</option>
+            <option>+1</option>
+            <option>+2</option>
+            <option>+3</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Default Decimal Number</label>
+          <select id="defaultDecimal">
+            <option>Default</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Add constellations info into talent description</label>
+          <input type="checkbox" id="addConstellations">
+        </div>
+      </div>
+
+      <!-- Other Section -->
+      <div class="settings-section">
+        <h3>Other</h3>
+        <div class="settings-row">
+          <label>Unreleased Content</label>
+          <select id="unreleased">
+            <option>Disable</option>
+            <option>Enable</option>
+          </select>
+        </div>
+        <div class="settings-info">
+          <strong>Note:</strong> Unreleased content includes characters and weapons not yet available in the game. Enable this to preview upcoming content.
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+        <button id="saveSettingsBtn" class="save-btn">Save</button>
+      </div>
+  </div>
+</div>
 
 <!-- NAVBAR -->
+
+<div class="main-content">
 <nav>
   <div class="logo">PROJECT SKIRK</div>
   <div>
@@ -197,23 +184,29 @@ nav a:hover{
 <!-- CARDS -->
 <section class="cards">
 
-  <div class="card">
-    <img src="https://ik.imagekit.io/gukc1okbd/images.jpeg">
-    <h3>Characters</h3>
-    <p>Explore builds, abilities and meta insights.</p>
-  </div>
+  <a href="characters.html" class="card-link">
+    <div class="card">
+      <img src="https://ik.imagekit.io/gukc1okbd/images.jpeg">
+      <h3>Characters</h3>
+      <p>Explore builds, abilities and meta insights.</p>
+    </div>
+  </a>
 
-  <div class="card">
-    <img src="https://ik.imagekit.io/gukc1okbd/Weapon_Azurelight_2nd.webp">
-    <h3>Weapons</h3>
-    <p>Complete weapon guides and rankings.</p>
-  </div>
+  <a href="weapons.html" class="card-link">
+    <div class="card">
+      <img src="https://ik.imagekit.io/gukc1okbd/Weapon_Azurelight_2nd.webp">
+      <h3>Weapons</h3>
+      <p>Complete weapon guides and rankings.</p>
+    </div>
+  </a>
 
-  <div class="card">
-    <img src="https://ik.imagekit.io/gukc1okbd/UI_RelicIcon_15040_4.png">
-    <h3>Artifacts</h3>
-    <p>Best sets and optimization strategies.</p>
-  </div>
+  <a href="artifacts.html" class="card-link">
+    <div class="card">
+      <img src="https://ik.imagekit.io/gukc1okbd/UI_RelicIcon_15040_4.png">
+      <h3>Artifacts</h3>
+      <p>Best sets and optimization strategies.</p>
+    </div>
+  </a>
 
 </section>
 
@@ -238,6 +231,8 @@ nav a:hover{
   <div class="footer-bottom">
     © 2026 Project Skirk | All Rights Reserved
   </div>
+
+</div>
 
 </div>
 
@@ -266,6 +261,6 @@ var x = setInterval(function() {
 
 }, 1000);
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>

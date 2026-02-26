@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Amber",
+    "vision": "Pyro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "image": "https://ik.imagekit.io/gukc1okbd/amber.webp"
+  },
+  {
+    "id": 2,
+    "name": "Diluc",
+    "vision": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "image": "https://ik.imagekit.io/gukc1okbd/diluc.webp"
+  },
+  {
+    "id": 3,
+    "name": "Venti",
+    "vision": "Anemo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "image": "https://ik.imagekit.io/gukc1okbd/venti.webp"
+  }
+]
