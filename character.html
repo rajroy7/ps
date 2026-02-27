@@ -577,15 +577,7 @@ function getStatValue(propArray, propType) {
 function cleanDescription(text) {
     if (!text) return '';
     // Remove color tags like <color=#FFD780FF>text</color>
-    text = text.replace(/<color=#[0-9A-Fa-f]{8}FF?>|<\/color>/g, '');
-    // Remove LINK tags like {LINK#N11230001}
-    text = text.replace(/\{LINK#[^}]+\}/g, '');
-    // Remove other markup tags
-    text = text.replace(/\{[^}]+\}/g, '');
-    // Convert escape sequences
-    text = text.replace(/\\n/g, '<br>');
-    return text;
-}
+    return text.replace(/<color=#[0-9A-Fa-f]{8}FF?>|<\/color>/g, '').replace(/\\n/g, '<br>');
 }
 
 function formatTalentDescription(description, params) {
