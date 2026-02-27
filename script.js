@@ -662,8 +662,7 @@ function initializePageSearch() {
             
             // Add click handler to navigate to weapon detail page
             card.addEventListener('click', () => {
-                const weaponName = item.name.replace(/\//g, '_').replace(/\\/g, '_').replace(/:/g, '_').replace(/\*/g, '_').replace(/\?/g, '_').replace(/"/g, '_').replace(/</g, '_').replace(/>/g, '_').replace(/\|/g, '_');
-                window.location.href = `weapons/${weaponName}.html`;
+                window.location.href = `weapons.html?id=${item.id}`;
             });
         } else if (url === 'artifacts.json') {
             // Artifact card
@@ -689,8 +688,56 @@ function initializePageSearch() {
             
             // Add click handler to navigate to artifact detail page
             card.addEventListener('click', () => {
-                const artifactName = item.name.replace(/\//g, '_').replace(/\\/g, '_').replace(/:/g, '_').replace(/\*/g, '_').replace(/\?/g, '_').replace(/"/g, '_').replace(/</g, '_').replace(/>/g, '_').replace(/\|/g, '_');
-                window.location.href = `artifacts/${artifactName}.html`;
+                window.location.href = `artifacts.html?id=${item.id}`;
+            });
+        } else if (url === 'inventory.json') {
+            // Inventory/Material card
+            const rankColor = [
+                '#888',   // rank 1
+                '#4a9eff', // rank 2 (blue)
+                '#00d4ff', // rank 3 (cyan)
+                '#b291dc', // rank 4 (purple)
+                '#ffc107'  // rank 5 (gold)
+            ][item.rank - 1] || '#888';
+            
+            card.className = 'inventory-card';
+            card.style.cursor = 'pointer';
+            card.style.padding = '12px';
+            card.style.background = `linear-gradient(135deg, rgba(100,100,255,0.08) 0%, rgba(200,150,255,0.08) 100%)`;
+            card.style.border = `2px solid ${rankColor}`;
+            card.style.borderRadius = '8px';
+            card.style.display = 'flex';
+            card.style.flexDirection = 'column';
+            card.style.alignItems = 'center';
+            card.style.gap = '8px';
+            card.style.transition = 'all 0.3s ease';
+            card.style.minHeight = '140px';
+            card.style.justifyContent = 'center';
+            
+            const iconUrl = `https://gi.yatta.moe/assets/UI/${item.icon}.png`;
+            
+            card.innerHTML = `
+                <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                    <img src="${iconUrl}" alt="${item.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23333%22 width=%2260%22 height=%2260%22/%3E%3Ctext fill=%22%23666%22 text-anchor=%22middle%22 x=%2230%22 y=%2235%22%3E?%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div style="text-align: center; width: 100%;">
+                    <div style="font-size: 12px; color: #999; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">${item.category}</div>
+                    <div style="font-size: 13px; font-weight: 600; color: #fff; line-height: 1.2;">${item.name || 'Unknown Item'}</div>
+                </div>
+                <div style="display: flex; gap: 3px; font-size: 11px;">
+                    ${Array(item.rank || 1).fill('★').map((s, i) => `<span style="color: ${rankColor};">${s}</span>`).join('')}
+                </div>
+            `;
+            
+            // Hover effect
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.boxShadow = `0 8px 20px ${rankColor}40`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
             });
         } else {
             // Fallback for other item types
@@ -759,7 +806,7 @@ function initializePageSearch() {
     input.addEventListener('input', updateDisplay);
 
     // Handle filter button clicks
-    if (url === 'weapons.json' || url === 'artifacts.json') {
+    if (url === 'weapons.json' || url === 'artifacts.json' || url === 'inventory.json') {
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const filterType = this.dataset.filter;

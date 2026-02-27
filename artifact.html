@@ -281,13 +281,19 @@
 <script src="../script.js"></script>
 <script>
     async function loadArtifactDetail() {
-        const artifactName = window.location.pathname.split('/').pop().replace('.html', '');
+        const params = new URLSearchParams(window.location.search);
+        const artifactId = params.get('id');
         const container = document.getElementById('artifactDetails');
+        
+        if (!artifactId) {
+            container.innerHTML = '<p style="text-align:center; color:#999; margin-top:40px;">Artifact ID not found</p>';
+            return;
+        }
         
         try {
             const response = await fetch('../artifacts.json');
             const artifacts = await response.json();
-            const artifact = artifacts.find(a => a.name.replace(/\//g, '_').replace(/\\/g, '_').replace(/:/g, '_').replace(/\*/g, '_').replace(/\?/g, '_').replace(/"/g, '_').replace(/</g, '_').replace(/>/g, '_').replace(/\|/g, '_') === artifactName);
+            const artifact = artifacts.find(a => a.id == artifactId);
             
             if (!artifact) {
                 container.innerHTML = '<p style="text-align:center; color:#999; margin-top:40px;">Artifact not found</p>';

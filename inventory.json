@@ -1,5 +1,7532 @@
 [
-  {"id":1,"name":"Healing Potion","category":"Consumable"},
-  {"id":2,"name":"Mystic Ore","category":"Material"},
-  {"id":3,"name":"Old Map","category":"Quest Item"}
+  {
+    "id": 224,
+    "name": "Acquaint Fate",
+    "category": "Wishing Item",
+    "icon": "UI_ItemIcon_224",
+    "rank": 5,
+    "type": "wishingItem",
+    "mapMark": false,
+    "route": "Acquaint Fate"
+  },
+  {
+    "id": 104114,
+    "name": "Agnidus Agate Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104114",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Agnidus Agate Gemstone"
+  },
+  {
+    "id": 114076,
+    "name": "Artful Device Wish",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114076",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Artful Device Wish"
+  },
+  {
+    "id": 113073,
+    "name": "Ascended Sample: Knight",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113073",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Ascended Sample: Knight"
+  },
+  {
+    "id": 113075,
+    "name": "Ascended Sample: Queen",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113075",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Ascended Sample: Queen"
+  },
+  {
+    "id": 113074,
+    "name": "Ascended Sample: Rook",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113074",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Ascended Sample: Rook"
+  },
+  {
+    "id": 113027,
+    "name": "Ashen Heart",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113027",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Ashen Heart"
+  },
+  {
+    "id": 114084,
+    "name": "Aureate Radiance of the Far-North Scions",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114084",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Aureate Radiance of the Far-North Scions"
+  },
+  {
+    "id": 114080,
+    "name": "Blaze of Long Night Flint",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114080",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Blaze of Long Night Flint"
+  },
+  {
+    "id": 114064,
+    "name": "Blazing Sacrificial Heart's Splendor",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114064",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Blazing Sacrificial Heart's Splendor"
+  },
+  {
+    "id": 113018,
+    "name": "Bloodjade Branch",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113018",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Bloodjade Branch"
+  },
+  {
+    "id": 114008,
+    "name": "Boreal Wolf's Nostalgia",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114008",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Boreal Wolf's Nostalgia"
+  },
+  {
+    "id": 104104,
+    "name": "Brilliant Diamond Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104104",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Brilliant Diamond Gemstone"
+  },
+  {
+    "id": 114024,
+    "name": "Chunk of Aerosiderite",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114024",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Chunk of Aerosiderite"
+  },
+  {
+    "id": 104319,
+    "name": "Crown of Insight",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104319",
+    "rank": 5,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Crown of Insight"
+  },
+  {
+    "id": 113043,
+    "name": "Daka's Bell",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113043",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Daka's Bell"
+  },
+  {
+    "id": 114068,
+    "name": "Delirious Divinity of the Sacred Lord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114068",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Delirious Divinity of the Sacred Lord"
+  },
+  {
+    "id": 113062,
+    "name": "Denial and Judgment",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113062",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Denial and Judgment"
+  },
+  {
+    "id": 114016,
+    "name": "Divine Body from Guyun",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114016",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Divine Body from Guyun"
+  },
+  {
+    "id": 113017,
+    "name": "Dragon Lord's Crown",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113017",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Dragon Lord's Crown"
+  },
+  {
+    "id": 114012,
+    "name": "Dream of the Dandelion Gladiator",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114012",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Dream of the Dandelion Gladiator"
+  },
+  {
+    "id": 113004,
+    "name": "Dvalin's Claw",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113004",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Dvalin's Claw"
+  },
+  {
+    "id": 113003,
+    "name": "Dvalin's Plume",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113003",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Dvalin's Plume"
+  },
+  {
+    "id": 113005,
+    "name": "Dvalin's Sigh",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113005",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Dvalin's Sigh"
+  },
+  {
+    "id": 114052,
+    "name": "Echo of an Ancient Chord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114052",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Echo of an Ancient Chord"
+  },
+  {
+    "id": 113083,
+    "name": "Elixir of the Heretic",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113083",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Elixir of the Heretic"
+  },
+  {
+    "id": 113068,
+    "name": "Eroded Horn",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113068",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Eroded Horn"
+  },
+  {
+    "id": 113070,
+    "name": "Eroded Scale-Feather",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113070",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Eroded Scale-Feather"
+  },
+  {
+    "id": 113069,
+    "name": "Eroded Sunfire",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113069",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Eroded Sunfire"
+  },
+  {
+    "id": 114056,
+    "name": "Essence of Pure Sacred Dewdrop",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114056",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Essence of Pure Sacred Dewdrop"
+  },
+  {
+    "id": 113048,
+    "name": "Everamber",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113048",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Everamber"
+  },
+  {
+    "id": 113060,
+    "name": "Fading Candle",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113060",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Fading Candle"
+  },
+  {
+    "id": 100957,
+    "name": "Funerary Mask",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_100957",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Funerary Mask"
+  },
+  {
+    "id": 203,
+    "name": "Genesis Crystal",
+    "category": "Special Currency",
+    "icon": "UI_ItemIcon_203",
+    "rank": 5,
+    "type": "specialCurrency",
+    "mapMark": false,
+    "route": "Genesis Crystal"
+  },
+  {
+    "id": 113019,
+    "name": "Gilded Scale",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113019",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Gilded Scale"
+  },
+  {
+    "id": 114028,
+    "name": "Golden Branch of a Distant Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114028",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Golden Branch of a Distant Sea"
+  },
+  {
+    "id": 114060,
+    "name": "Golden Goblet of the Pristine Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114060",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Golden Goblet of the Pristine Sea"
+  },
+  {
+    "id": 114040,
+    "name": "Golden Talisman of the Forest Dew",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114040",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Golden Talisman of the Forest Dew"
+  },
+  {
+    "id": 113026,
+    "name": "Hellfire Butterfly",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113026",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Hellfire Butterfly"
+  },
+  {
+    "id": 223,
+    "name": "Intertwined Fate",
+    "category": "Limited Wishing Item",
+    "icon": "UI_ItemIcon_223",
+    "rank": 5,
+    "type": "limitedWishingItem",
+    "mapMark": false,
+    "route": "Intertwined Fate"
+  },
+  {
+    "id": 113055,
+    "name": "Lightless Eye of the Maelstrom",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113055",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Lightless Eye of the Maelstrom"
+  },
+  {
+    "id": 113056,
+    "name": "Lightless Mass",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113056",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Lightless Mass"
+  },
+  {
+    "id": 113054,
+    "name": "Lightless Silk String",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113054",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Lightless Silk String"
+  },
+  {
+    "id": 113082,
+    "name": "Madman's Restraint",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113082",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Madman's Restraint"
+  },
+  {
+    "id": 114036,
+    "name": "Mask of the Kijin",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114036",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mask of the Kijin"
+  },
+  {
+    "id": 113081,
+    "name": "Mask of the Virtuous Doctor",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113081",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Mask of the Virtuous Doctor"
+  },
+  {
+    "id": 221,
+    "name": "Masterless Starglitter",
+    "category": "Superior Voucher",
+    "icon": "UI_ItemIcon_221",
+    "rank": 5,
+    "type": "superiorVoucher",
+    "mapMark": false,
+    "route": "Masterless Starglitter"
+  },
+  {
+    "id": 113042,
+    "name": "Mirror of Mushin",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113042",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Mirror of Mushin"
+  },
+  {
+    "id": 114020,
+    "name": "Mist Veiled Primo Elixir",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114020",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mist Veiled Primo Elixir"
+  },
+  {
+    "id": 113025,
+    "name": "Molten Moment",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113025",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Molten Moment"
+  },
+  {
+    "id": 100585,
+    "name": "Monolith Fragment",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_100585",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Monolith Fragment"
+  },
+  {
+    "id": 129003,
+    "name": "Moon-Prayer Blossom From Columbina",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_129003",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Moon-Prayer Blossom From Columbina"
+  },
+  {
+    "id": 113032,
+    "name": "Mudra of the Malefic General",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113032",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Mudra of the Malefic General"
+  },
+  {
+    "id": 104134,
+    "name": "Nagadus Emerald Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104134",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Nagadus Emerald Gemstone"
+  },
+  {
+    "id": 114032,
+    "name": "Narukami's Valor",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114032",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Narukami's Valor"
+  },
+  {
+    "id": 114072,
+    "name": "Night-Wind's Mystic Revelation",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114072",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Night-Wind's Mystic Revelation"
+  },
+  {
+    "id": 114044,
+    "name": "Oasis Garden's Truth",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114044",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Oasis Garden's Truth"
+  },
+  {
+    "id": 129002,
+    "name": "Obsidian Ancient Name",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_129002",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Obsidian Ancient Name"
+  },
+  {
+    "id": 114048,
+    "name": "Olden Days of Scorching Might",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114048",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Olden Days of Scorching Might"
+  },
+  {
+    "id": 201,
+    "name": "Primogem",
+    "category": "Special Currency",
+    "icon": "UI_ItemIcon_201",
+    "rank": 5,
+    "type": "specialCurrency",
+    "mapMark": false,
+    "route": "Primogem"
+  },
+  {
+    "id": 113047,
+    "name": "Primordial Greenbloom",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113047",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Primordial Greenbloom"
+  },
+  {
+    "id": 104174,
+    "name": "Prithiva Topaz Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104174",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Prithiva Topaz Gemstone"
+  },
+  {
+    "id": 113041,
+    "name": "Puppet Strings",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113041",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Puppet Strings"
+  },
+  {
+    "id": 220110,
+    "name": "Repertoire of Myriad Melodies",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220110",
+    "rank": 5,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Repertoire of Myriad Melodies"
+  },
+  {
+    "id": 113007,
+    "name": "Ring of Boreas",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113007",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Ring of Boreas"
+  },
+  {
+    "id": 114004,
+    "name": "Scattered Piece of Decarabian's Dream",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114004",
+    "rank": 5,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Scattered Piece of Decarabian's Dream"
+  },
+  {
+    "id": 220026,
+    "name": "Serenitea Pot",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220026",
+    "rank": 5,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Serenitea Pot"
+  },
+  {
+    "id": 113015,
+    "name": "Shadow of the Warrior",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113015",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Shadow of the Warrior"
+  },
+  {
+    "id": 113014,
+    "name": "Shard of a Foul Legacy",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113014",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Shard of a Foul Legacy"
+  },
+  {
+    "id": 104164,
+    "name": "Shivada Jade Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104164",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Shivada Jade Gemstone"
+  },
+  {
+    "id": 113061,
+    "name": "Silken Feather",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113061",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Silken Feather"
+  },
+  {
+    "id": 120127,
+    "name": "Silver Twig",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_120127",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Silver Twig"
+  },
+  {
+    "id": 113008,
+    "name": "Spirit Locket of Boreas",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113008",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Spirit Locket of Boreas"
+  },
+  {
+    "id": 113006,
+    "name": "Tail of Boreas",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113006",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Tail of Boreas"
+  },
+  {
+    "id": 100584,
+    "name": "Tainted Blood",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_100584",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Tainted Blood"
+  },
+  {
+    "id": 129001,
+    "name": "Tears Among the Stars",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_129001",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Tears Among the Stars"
+  },
+  {
+    "id": 113033,
+    "name": "Tears of the Calamitous God",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113033",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Tears of the Calamitous God"
+  },
+  {
+    "id": 113063,
+    "name": "The Cornerstone of Stars and Flames",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113063",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "The Cornerstone of Stars and Flames"
+  },
+  {
+    "id": 220126,
+    "name": "The Little Witch's Dictionary",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220126",
+    "rank": 5,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "The Little Witch's Dictionary"
+  },
+  {
+    "id": 113034,
+    "name": "The Meaning of Aeons",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113034",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "The Meaning of Aeons"
+  },
+  {
+    "id": 220124,
+    "name": "Travel Accounts",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220124",
+    "rank": 5,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Travel Accounts"
+  },
+  {
+    "id": 113013,
+    "name": "Tusk of Monoceros Caeli",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113013",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Tusk of Monoceros Caeli"
+  },
+  {
+    "id": 104144,
+    "name": "Vajrada Amethyst Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104144",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vajrada Amethyst Gemstone"
+  },
+  {
+    "id": 104124,
+    "name": "Varunada Lazurite Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104124",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Varunada Lazurite Gemstone"
+  },
+  {
+    "id": 104154,
+    "name": "Vayuda Turquoise Gemstone",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104154",
+    "rank": 5,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vayuda Turquoise Gemstone"
+  },
+  {
+    "id": 121234,
+    "name": "Wonderland Cosmosphere",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_121234",
+    "rank": 5,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Wonderland Cosmosphere"
+  },
+  {
+    "id": 113046,
+    "name": "Worldspan Fern",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113046",
+    "rank": 5,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Worldspan Fern"
+  },
+  {
+    "id": 220098,
+    "name": "\"Fateometer\"",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220098",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "\"Fateometer\""
+  },
+  {
+    "id": 220116,
+    "name": "\"Lingering Euphonia\"",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220116",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "\"Lingering Euphonia\""
+  },
+  {
+    "id": 220093,
+    "name": "\"Special Analysis Zoom Lens\"",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220093",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "\"Special Analysis Zoom Lens\""
+  },
+  {
+    "id": 220059,
+    "name": "\"The Boon of the Elder Tree\"",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220059",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "\"The Boon of the Elder Tree\""
+  },
+  {
+    "id": 113052,
+    "name": "\"Tourbillon Device\"",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113052",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "\"Tourbillon Device\""
+  },
+  {
+    "id": 104113,
+    "name": "Agnidus Agate Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104113",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Agnidus Agate Chunk"
+  },
+  {
+    "id": 112091,
+    "name": "Alien Life Core",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112091",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Alien Life Core"
+  },
+  {
+    "id": 120791,
+    "name": "Ancient Autoharmonic Music Box",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_120791",
+    "rank": 4,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Ancient Autoharmonic Music Box"
+  },
+  {
+    "id": 220009,
+    "name": "Anemo Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220009",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Anemo Treasure Compass"
+  },
+  {
+    "id": 220055,
+    "name": "Aranyaka",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220055",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Aranyaka"
+  },
+  {
+    "id": 220051,
+    "name": "Arataki's Great and Glorious Drum",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220051",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Arataki's Great and Glorious Drum"
+  },
+  {
+    "id": 114075,
+    "name": "Artful Device Inheritance",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114075",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Artful Device Inheritance"
+  },
+  {
+    "id": 220109,
+    "name": "Artifact Transmuter",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220109",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Artifact Transmuter"
+  },
+  {
+    "id": 113049,
+    "name": "Artificed Spare Clockwork Component — Coppelia",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113049",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Artificed Spare Clockwork Component — Coppelia"
+  },
+  {
+    "id": 113050,
+    "name": "Artificed Spare Clockwork Component — Coppelius",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113050",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Artificed Spare Clockwork Component — Coppelius"
+  },
+  {
+    "id": 113009,
+    "name": "Basalt Pillar",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113009",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Basalt Pillar"
+  },
+  {
+    "id": 114023,
+    "name": "Bit of Aerosiderite",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114023",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Bit of Aerosiderite"
+  },
+  {
+    "id": 112016,
+    "name": "Black Crystal Horn",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112016",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Black Crystal Horn"
+  },
+  {
+    "id": 112121,
+    "name": "Blazing Prismshell",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112121",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Blazing Prismshell"
+  },
+  {
+    "id": 114063,
+    "name": "Blazing Sacrificial Heart's Resolve",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114063",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Blazing Sacrificial Heart's Resolve"
+  },
+  {
+    "id": 101117,
+    "name": "Borderland Bow Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101117",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Borderland Bow Billet"
+  },
+  {
+    "id": 101119,
+    "name": "Borderland Catalyst Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101119",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Borderland Catalyst Billet"
+  },
+  {
+    "id": 101118,
+    "name": "Borderland Claymore Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101118",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Borderland Claymore Billet"
+  },
+  {
+    "id": 101120,
+    "name": "Borderland Polearm Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101120",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Borderland Polearm Billet"
+  },
+  {
+    "id": 101116,
+    "name": "Borderland Sword Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101116",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Borderland Sword Billet"
+  },
+  {
+    "id": 114007,
+    "name": "Boreal Wolf's Broken Fang",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114007",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Boreal Wolf's Broken Fang"
+  },
+  {
+    "id": 104103,
+    "name": "Brilliant Diamond Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104103",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Brilliant Diamond Chunk"
+  },
+  {
+    "id": 220056,
+    "name": "Casket of Tomes",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220056",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Casket of Tomes"
+  },
+  {
+    "id": 112070,
+    "name": "Chaos Bolt",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112070",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Bolt"
+  },
+  {
+    "id": 112025,
+    "name": "Chaos Core",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112025",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Core"
+  },
+  {
+    "id": 112049,
+    "name": "Chaos Oculus",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112049",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Oculus"
+  },
+  {
+    "id": 112097,
+    "name": "Chasmlight Fin",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112097",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chasmlight Fin"
+  },
+  {
+    "id": 113012,
+    "name": "Cleansing Heart",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113012",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Cleansing Heart"
+  },
+  {
+    "id": 220074,
+    "name": "Cloud Retainer's Damasked Device",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220074",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Cloud Retainer's Damasked Device"
+  },
+  {
+    "id": 113058,
+    "name": "Cloudseam Scale",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113058",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Cloudseam Scale"
+  },
+  {
+    "id": 112058,
+    "name": "Concealed Talon",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112058",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Concealed Talon"
+  },
+  {
+    "id": 220007,
+    "name": "Condensed Resin",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_211",
+    "rank": 4,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Condensed Resin"
+  },
+  {
+    "id": 220088,
+    "name": "Crystalfly Trap",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220088",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Crystalfly Trap"
+  },
+  {
+    "id": 113020,
+    "name": "Crystalline Bloom",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113020",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Crystalline Bloom"
+  },
+  {
+    "id": 113080,
+    "name": "Cyclic Military Kuuvahki Core",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113080",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Cyclic Military Kuuvahki Core"
+  },
+  {
+    "id": 112019,
+    "name": "Deathly Statuette",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112019",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Deathly Statuette"
+  },
+  {
+    "id": 114067,
+    "name": "Delirious Demeanor of the Sacred Lord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114067",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Delirious Demeanor of the Sacred Lord"
+  },
+  {
+    "id": 220058,
+    "name": "Dendro Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220058",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Dendro Treasure Compass"
+  },
+  {
+    "id": 113028,
+    "name": "Dew of Repudiation",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113028",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Dew of Repudiation"
+  },
+  {
+    "id": 220111,
+    "name": "Djem Djem Drum",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220111",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Djem Djem Drum"
+  },
+  {
+    "id": 113031,
+    "name": "Dragonheir's False Fin",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113031",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Dragonheir's False Fin"
+  },
+  {
+    "id": 113021,
+    "name": "Dream Solvent",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_113021",
+    "rank": 4,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Dream Solvent"
+  },
+  {
+    "id": 114047,
+    "name": "Dream of Scorching Might",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114047",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Dream of Scorching Might"
+  },
+  {
+    "id": 220034,
+    "name": "Electro Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220034",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Electro Treasure Compass"
+  },
+  {
+    "id": 113051,
+    "name": "Emperor's Resolution",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113051",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Emperor's Resolution"
+  },
+  {
+    "id": 220023,
+    "name": "Endora",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220023",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Endora"
+  },
+  {
+    "id": 113067,
+    "name": "Ensnaring Gaze",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113067",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Ensnaring Gaze"
+  },
+  {
+    "id": 113011,
+    "name": "Everflame Seed",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113011",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Everflame Seed"
+  },
+  {
+    "id": 113045,
+    "name": "Evergloom Ring",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113045",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Evergloom Ring"
+  },
+  {
+    "id": 220078,
+    "name": "Festive Drum",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220051",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Festive Drum"
+  },
+  {
+    "id": 220105,
+    "name": "Firstborn Firesprite",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220105",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Firstborn Firesprite"
+  },
+  {
+    "id": 220065,
+    "name": "Fishing Line Stabilizer",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220065",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Fishing Line Stabilizer"
+  },
+  {
+    "id": 114079,
+    "name": "Flare of Long Night Flint",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114079",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Flare of Long Night Flint"
+  },
+  {
+    "id": 220044,
+    "name": "Floral Zither",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220044",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Floral Zither"
+  },
+  {
+    "id": 113053,
+    "name": "Fontemer Unihorn",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113053",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Fontemer Unihorn"
+  },
+  {
+    "id": 112043,
+    "name": "Fossilized Bone Shard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112043",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Fossilized Bone Shard"
+  },
+  {
+    "id": 107009,
+    "name": "Fragile Resin",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_210",
+    "rank": 4,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Fragile Resin"
+  },
+  {
+    "id": 114003,
+    "name": "Fragment of Decarabian's Epic",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114003",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Fragment of Decarabian's Epic"
+  },
+  {
+    "id": 113059,
+    "name": "Fragment of a Golden Melody",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113059",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Fragment of a Golden Melody"
+  },
+  {
+    "id": 112130,
+    "name": "Frostnight's Glory",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112130",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Frostnight's Glory"
+  },
+  {
+    "id": 220003,
+    "name": "Geo Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220003",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Geo Treasure Compass"
+  },
+  {
+    "id": 113066,
+    "name": "Gold-Inscribed Secret Source Core",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113066",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Gold-Inscribed Secret Source Core"
+  },
+  {
+    "id": 220129,
+    "name": "Harmonic Keys",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220129",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Harmonic Keys"
+  },
+  {
+    "id": 112115,
+    "name": "Heart of the Secret Source",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112115",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Heart of the Secret Source"
+  },
+  {
+    "id": 104003,
+    "name": "Hero's Wit",
+    "category": "Character EXP Material",
+    "icon": "UI_ItemIcon_104003",
+    "rank": 4,
+    "type": "characterEXPMaterial",
+    "mapMark": false,
+    "route": "Hero's Wit"
+  },
+  {
+    "id": 113010,
+    "name": "Hoarfrost Core",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113010",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Hoarfrost Core"
+  },
+  {
+    "id": 112139,
+    "name": "Hooked Beak of the Deep Shadow",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112139",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Hooked Beak of the Deep Shadow"
+  },
+  {
+    "id": 113001,
+    "name": "Hurricane Seed",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113001",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Hurricane Seed"
+  },
+  {
+    "id": 220087,
+    "name": "Hydro Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220087",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Hydro Treasure Compass"
+  },
+  {
+    "id": 112112,
+    "name": "Ignited Seeing Eye",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112112",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Ignited Seeing Eye"
+  },
+  {
+    "id": 112118,
+    "name": "Illusory Leafcoil",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112118",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Illusory Leafcoil"
+  },
+  {
+    "id": 112031,
+    "name": "Inspector's Sacrificial Knife",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112031",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Inspector's Sacrificial Knife"
+  },
+  {
+    "id": 220084,
+    "name": "Itty Bitty Octobaby",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220084",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Itty Bitty Octobaby"
+  },
+  {
+    "id": 114027,
+    "name": "Jade Branch of a Distant Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114027",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Jade Branch of a Distant Sea"
+  },
+  {
+    "id": 220127,
+    "name": "Jadelight Canopy",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220127",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Jadelight Canopy"
+  },
+  {
+    "id": 220072,
+    "name": "Jinni in the Magic Bottle — Liloupar",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220072_01",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Jinni in the Magic Bottle — Liloupar"
+  },
+  {
+    "id": 220067,
+    "name": "Jumpy Dumpty Party Popper",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220067",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Jumpy Dumpty Party Popper"
+  },
+  {
+    "id": 113016,
+    "name": "Juvenile Jade",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113016",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Juvenile Jade"
+  },
+  {
+    "id": 220106,
+    "name": "Kaboom Box",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220106",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Kaboom Box"
+  },
+  {
+    "id": 220018,
+    "name": "Kamera",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220018",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Kamera"
+  },
+  {
+    "id": 220047,
+    "name": "Launch Tube",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220047",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Launch Tube"
+  },
+  {
+    "id": 220117,
+    "name": "Leaping Spirit Piano",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220117",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Leaping Spirit Piano"
+  },
+  {
+    "id": 112022,
+    "name": "Ley Line Sprout",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112022",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Ley Line Sprout"
+  },
+  {
+    "id": 113039,
+    "name": "Light Guiding Tetrahedron",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113039",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Light Guiding Tetrahedron"
+  },
+  {
+    "id": 113078,
+    "name": "Lightbearing Scale-Feather",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113078",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Lightbearing Scale-Feather"
+  },
+  {
+    "id": 113002,
+    "name": "Lightning Prism",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113002",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Lightning Prism"
+  },
+  {
+    "id": 220048,
+    "name": "Lumenstone Adjuvant",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220048_01",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Lumenstone Adjuvant"
+  },
+  {
+    "id": 220123,
+    "name": "Luna Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220123",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Luna Treasure Compass"
+  },
+  {
+    "id": 220125,
+    "name": "Lunar Arcana Case",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220125",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Lunar Arcana Case"
+  },
+  {
+    "id": 113036,
+    "name": "Majestic Hooked Beak",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113036",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Majestic Hooked Beak"
+  },
+  {
+    "id": 113022,
+    "name": "Marionette Core",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113022",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Marionette Core"
+  },
+  {
+    "id": 113064,
+    "name": "Mark of the Binding Blessing",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113064",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Mark of the Binding Blessing"
+  },
+  {
+    "id": 112076,
+    "name": "Marked Shell",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112076",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Marked Shell"
+  },
+  {
+    "id": 114035,
+    "name": "Mask of the One-Horned",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114035",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mask of the One-Horned"
+  },
+  {
+    "id": 222,
+    "name": "Masterless Stardust",
+    "category": "Common Voucher",
+    "icon": "UI_ItemIcon_222",
+    "rank": 4,
+    "type": "commonVoucher",
+    "mapMark": false,
+    "route": "Masterless Stardust"
+  },
+  {
+    "id": 220036,
+    "name": "Memento Lens",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220036",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Memento Lens"
+  },
+  {
+    "id": 101112,
+    "name": "Midlander Bow Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101112",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Midlander Bow Billet"
+  },
+  {
+    "id": 101114,
+    "name": "Midlander Catalyst Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101114",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Midlander Catalyst Billet"
+  },
+  {
+    "id": 101113,
+    "name": "Midlander Claymore Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101113",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Midlander Claymore Billet"
+  },
+  {
+    "id": 101115,
+    "name": "Midlander Polearm Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101115",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Midlander Polearm Billet"
+  },
+  {
+    "id": 101111,
+    "name": "Midlander Sword Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101111",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Midlander Sword Billet"
+  },
+  {
+    "id": 220096,
+    "name": "Mini Seelie: Brilliance",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220096",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Mini Seelie: Brilliance"
+  },
+  {
+    "id": 220016,
+    "name": "Mini Seelie: Curcuma",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220016",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Mini Seelie: Curcuma"
+  },
+  {
+    "id": 220014,
+    "name": "Mini Seelie: Dayflower",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220014",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Mini Seelie: Dayflower"
+  },
+  {
+    "id": 220062,
+    "name": "Mini Seelie: Moss",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220062",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Mini Seelie: Moss"
+  },
+  {
+    "id": 220015,
+    "name": "Mini Seelie: Rosé",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220015",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Mini Seelie: Rosé"
+  },
+  {
+    "id": 220038,
+    "name": "Mini Seelie: Viola",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220038",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Mini Seelie: Viola"
+  },
+  {
+    "id": 112028,
+    "name": "Mist Grass Wick",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112028",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mist Grass Wick"
+  },
+  {
+    "id": 114019,
+    "name": "Mist Veiled Gold Elixir",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114019",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mist Veiled Gold Elixir"
+  },
+  {
+    "id": 112136,
+    "name": "Mistshroud Helmet",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112136",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mistshroud Helmet"
+  },
+  {
+    "id": 114051,
+    "name": "Movement of an Ancient Chord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114051",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Movement of an Ancient Chord"
+  },
+  {
+    "id": 220008,
+    "name": "NRE (Menu 30)",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220008",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "NRE (Menu 30)"
+  },
+  {
+    "id": 104133,
+    "name": "Nagadus Emerald Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104133",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Nagadus Emerald Chunk"
+  },
+  {
+    "id": 114031,
+    "name": "Narukami's Affection",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114031",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Narukami's Affection"
+  },
+  {
+    "id": 220115,
+    "name": "Neo Terminal: Floating Leaf Model",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220115",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Neo Terminal: Floating Leaf Model"
+  },
+  {
+    "id": 112088,
+    "name": "Newborn Tainted Hydro Phantasm",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112088",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Newborn Tainted Hydro Phantasm"
+  },
+  {
+    "id": 114071,
+    "name": "Night-Wind's Mystic Augury",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114071",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Night-Wind's Mystic Augury"
+  },
+  {
+    "id": 220097,
+    "name": "Nightwind Horn",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220097",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Nightwind Horn"
+  },
+  {
+    "id": 101102,
+    "name": "Northlander Bow Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101102",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Northlander Bow Billet"
+  },
+  {
+    "id": 101104,
+    "name": "Northlander Catalyst Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101104",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Northlander Catalyst Billet"
+  },
+  {
+    "id": 101103,
+    "name": "Northlander Claymore Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101103",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Northlander Claymore Billet"
+  },
+  {
+    "id": 101105,
+    "name": "Northlander Polearm Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101105",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Northlander Polearm Billet"
+  },
+  {
+    "id": 101101,
+    "name": "Northlander Sword Billet",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101101",
+    "rank": 4,
+    "type": "material",
+    "mapMark": false,
+    "route": "Northlander Sword Billet"
+  },
+  {
+    "id": 114043,
+    "name": "Oasis Garden's Mourning",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114043",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Oasis Garden's Mourning"
+  },
+  {
+    "id": 114083,
+    "name": "Oblation of the Far-North Scions",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114083",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Oblation of the Far-North Scions"
+  },
+  {
+    "id": 112094,
+    "name": "Operative's Constancy",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112094",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Operative's Constancy"
+  },
+  {
+    "id": 113065,
+    "name": "Overripe Flamegranate",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113065",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Overripe Flamegranate"
+  },
+  {
+    "id": 220021,
+    "name": "Parametric Transformer",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220021",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Parametric Transformer"
+  },
+  {
+    "id": 220039,
+    "name": "Peculiar Pinion",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_100950",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Peculiar Pinion"
+  },
+  {
+    "id": 113038,
+    "name": "Perpetual Caliber",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113038",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Perpetual Caliber"
+  },
+  {
+    "id": 113023,
+    "name": "Perpetual Heart",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113023",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Perpetual Heart"
+  },
+  {
+    "id": 104331,
+    "name": "Philosophies of Admonition",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104331",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Admonition"
+  },
+  {
+    "id": 104309,
+    "name": "Philosophies of Ballad",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104309",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Ballad"
+  },
+  {
+    "id": 104355,
+    "name": "Philosophies of Conflict",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104355",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Conflict"
+  },
+  {
+    "id": 104349,
+    "name": "Philosophies of Contention",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104349",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Contention"
+  },
+  {
+    "id": 104315,
+    "name": "Philosophies of Diligence",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104315",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Diligence"
+  },
+  {
+    "id": 104325,
+    "name": "Philosophies of Elegance",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104325",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Elegance"
+  },
+  {
+    "id": 104361,
+    "name": "Philosophies of Elysium",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104361",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Elysium"
+  },
+  {
+    "id": 104340,
+    "name": "Philosophies of Equity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104340",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Equity"
+  },
+  {
+    "id": 104303,
+    "name": "Philosophies of Freedom",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104303",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Freedom"
+  },
+  {
+    "id": 104318,
+    "name": "Philosophies of Gold",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104318",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Gold"
+  },
+  {
+    "id": 104334,
+    "name": "Philosophies of Ingenuity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104334",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Ingenuity"
+  },
+  {
+    "id": 104343,
+    "name": "Philosophies of Justice",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104343",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Justice"
+  },
+  {
+    "id": 104352,
+    "name": "Philosophies of Kindling",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104352",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Kindling"
+  },
+  {
+    "id": 104328,
+    "name": "Philosophies of Light",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104328",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Light"
+  },
+  {
+    "id": 104358,
+    "name": "Philosophies of Moonlight",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104358",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Moonlight"
+  },
+  {
+    "id": 104346,
+    "name": "Philosophies of Order",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104346",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Order"
+  },
+  {
+    "id": 104337,
+    "name": "Philosophies of Praxis",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104337",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Praxis"
+  },
+  {
+    "id": 104312,
+    "name": "Philosophies of Prosperity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104312",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Prosperity"
+  },
+  {
+    "id": 104306,
+    "name": "Philosophies of Resistance",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104306",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Resistance"
+  },
+  {
+    "id": 104322,
+    "name": "Philosophies of Transience",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104322",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Transience"
+  },
+  {
+    "id": 104364,
+    "name": "Philosophies of Vagrancy",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104364",
+    "rank": 4,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Philosophies of Vagrancy"
+  },
+  {
+    "id": 121068,
+    "name": "Pilgrim's Chronicle",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_121068",
+    "rank": 4,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Pilgrim's Chronicle"
+  },
+  {
+    "id": 112052,
+    "name": "Polarizing Prism",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112052",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Polarizing Prism"
+  },
+  {
+    "id": 220091,
+    "name": "Portable Aerodynamic Gelatinous Bubble Generator",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220091",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Portable Aerodynamic Gelatinous Bubble Generator"
+  },
+  {
+    "id": 220005,
+    "name": "Portable Waypoint",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220005",
+    "rank": 4,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Portable Waypoint"
+  },
+  {
+    "id": 113077,
+    "name": "Precision Kuuvahki Stamping Die",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113077",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Precision Kuuvahki Stamping Die"
+  },
+  {
+    "id": 113085,
+    "name": "Prismatic Severed Tail",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113085",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Prismatic Severed Tail"
+  },
+  {
+    "id": 104173,
+    "name": "Prithiva Topaz Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104173",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Prithiva Topaz Chunk"
+  },
+  {
+    "id": 113044,
+    "name": "Pseudo-Stamens",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113044",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Pseudo-Stamens"
+  },
+  {
+    "id": 220104,
+    "name": "Pyro Treasure Compass",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220104",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Pyro Treasure Compass"
+  },
+  {
+    "id": 113040,
+    "name": "Quelled Creeper",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113040",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Quelled Creeper"
+  },
+  {
+    "id": 113079,
+    "name": "Radiant Antler",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113079",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Radiant Antler"
+  },
+  {
+    "id": 112133,
+    "name": "Radiant Exoskeleton",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112133",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Radiant Exoskeleton"
+  },
+  {
+    "id": 112073,
+    "name": "Radiant Prism",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112073",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Radiant Prism"
+  },
+  {
+    "id": 220035,
+    "name": "Red Feather Fan",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220035",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Red Feather Fan"
+  },
+  {
+    "id": 114015,
+    "name": "Relic from Guyun",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114015",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Relic from Guyun"
+  },
+  {
+    "id": 113084,
+    "name": "Remnant of the Dreadwing",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113084",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Remnant of the Dreadwing"
+  },
+  {
+    "id": 113030,
+    "name": "Riftborn Regalia",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113030",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Riftborn Regalia"
+  },
+  {
+    "id": 112064,
+    "name": "Robust Fungal Nucleus",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112064",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Robust Fungal Nucleus"
+  },
+  {
+    "id": 220121,
+    "name": "Rotor Hovering Daybed",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220121",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Rotor Hovering Daybed"
+  },
+  {
+    "id": 113035,
+    "name": "Runic Fang",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113035",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Runic Fang"
+  },
+  {
+    "id": 220069,
+    "name": "Scarlet Sand Slate",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220069a",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Scarlet Sand Slate"
+  },
+  {
+    "id": 113076,
+    "name": "Secret Source Airflow Accumulator",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113076",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Secret Source Airflow Accumulator"
+  },
+  {
+    "id": 220033,
+    "name": "Seed Dispensary",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220033",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Seed Dispensary"
+  },
+  {
+    "id": 114011,
+    "name": "Shackles of the Dandelion Gladiator",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114011",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Shackles of the Dandelion Gladiator"
+  },
+  {
+    "id": 220045,
+    "name": "Shiki Koshou",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220045",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Shiki Koshou"
+  },
+  {
+    "id": 104163,
+    "name": "Shivada Jade Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104163",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Shivada Jade Chunk"
+  },
+  {
+    "id": 112109,
+    "name": "Sigil of a Striding Will",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112109",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sigil of a Striding Will"
+  },
+  {
+    "id": 114059,
+    "name": "Silver Goblet of the Pristine Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114059",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Silver Goblet of the Pristine Sea"
+  },
+  {
+    "id": 114039,
+    "name": "Silver Talisman of the Forest Dew",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114039",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Silver Talisman of the Forest Dew"
+  },
+  {
+    "id": 113024,
+    "name": "Smoldering Pearl",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113024",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Smoldering Pearl"
+  },
+  {
+    "id": 113072,
+    "name": "Sparkless Statue Core",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113072",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Sparkless Statue Core"
+  },
+  {
+    "id": 220020,
+    "name": "Special Kamera",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220020",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Special Kamera"
+  },
+  {
+    "id": 114055,
+    "name": "Spring of Pure Sacred Dewdrop",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114055",
+    "rank": 4,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Spring of Pure Sacred Dewdrop"
+  },
+  {
+    "id": 112100,
+    "name": "Still-Smoldering Hilt",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112100",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Still-Smoldering Hilt"
+  },
+  {
+    "id": 113029,
+    "name": "Storm Beads",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113029",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Storm Beads"
+  },
+  {
+    "id": 113071,
+    "name": "Talisman of the Enigmatic Land",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113071",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Talisman of the Enigmatic Land"
+  },
+  {
+    "id": 113037,
+    "name": "Thunderclap Fruitcore",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113037",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Thunderclap Fruitcore"
+  },
+  {
+    "id": 107012,
+    "name": "Transient Resin",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_107012",
+    "rank": 4,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Transient Resin"
+  },
+  {
+    "id": 220120,
+    "name": "Ujola Cat",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220120",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Ujola Cat"
+  },
+  {
+    "id": 220112,
+    "name": "Ukulele",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220112",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Ukulele"
+  },
+  {
+    "id": 220060,
+    "name": "Ultra-Hot Burner Lamp Test Model",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220060",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Ultra-Hot Burner Lamp Test Model"
+  },
+  {
+    "id": 104143,
+    "name": "Vajrada Amethyst Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104143",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vajrada Amethyst Chunk"
+  },
+  {
+    "id": 104123,
+    "name": "Varunada Lazurite Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104123",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Varunada Lazurite Chunk"
+  },
+  {
+    "id": 104153,
+    "name": "Vayuda Turquoise Chunk",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104153",
+    "rank": 4,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vayuda Turquoise Chunk"
+  },
+  {
+    "id": 220066,
+    "name": "Vintage Lyre",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220066",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Vintage Lyre"
+  },
+  {
+    "id": 112079,
+    "name": "Wanderer's Blooming Flower",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112079",
+    "rank": 4,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Wanderer's Blooming Flower"
+  },
+  {
+    "id": 113057,
+    "name": "Water That Failed To Transcend",
+    "category": "Character Level-Up Material",
+    "icon": "UI_ItemIcon_113057",
+    "rank": 4,
+    "type": "characterLevelUpMaterial",
+    "mapMark": false,
+    "route": "Water That Failed To Transcend"
+  },
+  {
+    "id": 220028,
+    "name": "Waverider Repair Toolbox",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220028",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Waverider Repair Toolbox"
+  },
+  {
+    "id": 220004,
+    "name": "Wind Catcher",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220004",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Wind Catcher"
+  },
+  {
+    "id": 220027,
+    "name": "Wind-Blessed Harpastum",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220027",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Wind-Blessed Harpastum"
+  },
+  {
+    "id": 220089,
+    "name": "Wind-Powered Wind Generator",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220089",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Wind-Powered Wind Generator"
+  },
+  {
+    "id": 220024,
+    "name": "Windblume Festival Commemorative Balloon",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220024",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Windblume Festival Commemorative Balloon"
+  },
+  {
+    "id": 220025,
+    "name": "Windsong Lyre",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_220025",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Windsong Lyre"
+  },
+  {
+    "id": 140004,
+    "name": "Wings of Azure Wind",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Gale",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Azure Wind"
+  },
+  {
+    "id": 140002,
+    "name": "Wings of Companionship",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Starlit",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Companionship"
+  },
+  {
+    "id": 140006,
+    "name": "Wings of Concealing Snow",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Nixavis",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Concealing Snow"
+  },
+  {
+    "id": 140014,
+    "name": "Wings of Delicacies",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_GrandEntrance",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Delicacies"
+  },
+  {
+    "id": 140003,
+    "name": "Wings of Descension",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Psalmus",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Descension"
+  },
+  {
+    "id": 140016,
+    "name": "Wings of Fate's Course Intertwined",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_EmeraldFlash",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Fate's Course Intertwined"
+  },
+  {
+    "id": 140007,
+    "name": "Wings of Feasting",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Redcomet",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Feasting"
+  },
+  {
+    "id": 140001,
+    "name": "Wings of First Flight",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Glider",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of First Flight"
+  },
+  {
+    "id": 140005,
+    "name": "Wings of Golden Flight",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Megalith",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Golden Flight"
+  },
+  {
+    "id": 140018,
+    "name": "Wings of Leisurely Moments",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Bakery",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Leisurely Moments"
+  },
+  {
+    "id": 140012,
+    "name": "Wings of Merciful, Wrathful Waters",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Iustitia",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Merciful, Wrathful Waters"
+  },
+  {
+    "id": 140009,
+    "name": "Wings of Shimmering Galaxy",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Skald",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Shimmering Galaxy"
+  },
+  {
+    "id": 140015,
+    "name": "Wings of Soaring Flame",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Firebrand",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Soaring Flame"
+  },
+  {
+    "id": 140013,
+    "name": "Wings of Transient Dreams",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Sternlied",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of Transient Dreams"
+  },
+  {
+    "id": 140010,
+    "name": "Wings of the Forest",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Ayus",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of the Forest"
+  },
+  {
+    "id": 140017,
+    "name": "Wings of the Silent Moon",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Nodkrai",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of the Silent Moon"
+  },
+  {
+    "id": 140011,
+    "name": "Wings of the Starlit Feast",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Asterceno",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of the Starlit Feast"
+  },
+  {
+    "id": 140008,
+    "name": "Wings of the Stormstrider",
+    "category": "Wind Glider",
+    "icon": "UI_FlycloakIcon_Thunderclap",
+    "rank": 4,
+    "type": "windGlider",
+    "mapMark": false,
+    "route": "Wings of the Stormstrider"
+  },
+  {
+    "id": 200007,
+    "name": "Xiao Lantern Flight Manual",
+    "category": "Gadget",
+    "icon": "UI_ItemIcon_200007",
+    "rank": 4,
+    "type": "gadget",
+    "mapMark": false,
+    "route": "Xiao Lantern Flight Manual"
+  },
+  {
+    "id": 112138,
+    "name": "Aberrant Core of the Deep Shadow",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112138",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Aberrant Core of the Deep Shadow"
+  },
+  {
+    "id": 220006,
+    "name": "Adepti Seeker's Stove",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220006",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Adepti Seeker's Stove"
+  },
+  {
+    "id": 102,
+    "name": "Adventure EXP",
+    "category": "System Access",
+    "icon": "UI_ItemIcon_102",
+    "rank": 3,
+    "type": "systemAccess",
+    "mapMark": false,
+    "route": "Adventure EXP"
+  },
+  {
+    "id": 104002,
+    "name": "Adventurer's Experience",
+    "category": "Character EXP Material",
+    "icon": "UI_ItemIcon_104002",
+    "rank": 3,
+    "type": "characterEXPMaterial",
+    "mapMark": false,
+    "route": "Adventurer's Experience"
+  },
+  {
+    "id": 114078,
+    "name": "Afterglow of Long Night Flint",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114078",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Afterglow of Long Night Flint"
+  },
+  {
+    "id": 112030,
+    "name": "Agent's Sacrificial Knife",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112030",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Agent's Sacrificial Knife"
+  },
+  {
+    "id": 104112,
+    "name": "Agnidus Agate Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104112",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Agnidus Agate Fragment"
+  },
+  {
+    "id": 305,
+    "name": "Anemo Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_305",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": false,
+    "route": "Anemo Sigil"
+  },
+  {
+    "id": 220001,
+    "name": "Anemoculus Resonance Stone",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220001",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Anemoculus Resonance Stone"
+  },
+  {
+    "id": 114074,
+    "name": "Artful Device Replica",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114074",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Artful Device Replica"
+  },
+  {
+    "id": 112085,
+    "name": "Artificed Dynamic Gear",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112085",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Artificed Dynamic Gear"
+  },
+  {
+    "id": 112117,
+    "name": "Bewildering Broadleaf",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112117",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Bewildering Broadleaf"
+  },
+  {
+    "id": 112015,
+    "name": "Black Bronze Horn",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112015",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Black Bronze Horn"
+  },
+  {
+    "id": 114062,
+    "name": "Blazing Sacrificial Heart's Hesitance",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114062",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Blazing Sacrificial Heart's Hesitance"
+  },
+  {
+    "id": 114006,
+    "name": "Boreal Wolf's Cracked Tooth",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114006",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Boreal Wolf's Cracked Tooth"
+  },
+  {
+    "id": 104102,
+    "name": "Brilliant Diamond Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104102",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Brilliant Diamond Fragment"
+  },
+  {
+    "id": 114010,
+    "name": "Chains of the Dandelion Gladiator",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114010",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Chains of the Dandelion Gladiator"
+  },
+  {
+    "id": 112048,
+    "name": "Chaos Axis",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112048",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Axis"
+  },
+  {
+    "id": 112024,
+    "name": "Chaos Circuit",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112024",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Circuit"
+  },
+  {
+    "id": 112069,
+    "name": "Chaos Module",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112069",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Module"
+  },
+  {
+    "id": 114050,
+    "name": "Chapter of an Ancient Chord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114050",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Chapter of an Ancient Chord"
+  },
+  {
+    "id": 105,
+    "name": "Companionship EXP",
+    "category": "Increases Friendship",
+    "icon": "UI_ItemIcon_105",
+    "rank": 3,
+    "type": "increasesFriendship",
+    "mapMark": false,
+    "route": "Companionship EXP"
+  },
+  {
+    "id": 112057,
+    "name": "Concealed Unguis",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112057",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Concealed Unguis"
+  },
+  {
+    "id": 306,
+    "name": "Cryo Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_306",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": false,
+    "route": "Cryo Sigil"
+  },
+  {
+    "id": 112051,
+    "name": "Crystal Prism",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112051",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Crystal Prism"
+  },
+  {
+    "id": 112061,
+    "name": "Crystalline Cyst Dust",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112061",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Crystalline Cyst Dust"
+  },
+  {
+    "id": 112018,
+    "name": "Dark Statuette",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112018",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Dark Statuette"
+  },
+  {
+    "id": 112021,
+    "name": "Dead Ley Line Leaves",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112021",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Dead Ley Line Leaves"
+  },
+  {
+    "id": 114002,
+    "name": "Debris of Decarabian's City",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114002",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Debris of Decarabian's City"
+  },
+  {
+    "id": 114066,
+    "name": "Delirious Desolation of the Sacred Lord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114066",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Delirious Desolation of the Sacred Lord"
+  },
+  {
+    "id": 303,
+    "name": "Dendro Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_303",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": false,
+    "route": "Dendro Sigil"
+  },
+  {
+    "id": 111012,
+    "name": "Dendrocide Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111012",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Dendrocide Potion"
+  },
+  {
+    "id": 220057,
+    "name": "Dendroculus Resonance Stone",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220057",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Dendroculus Resonance Stone"
+  },
+  {
+    "id": 111007,
+    "name": "Desiccant Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111007",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Desiccant Potion"
+  },
+  {
+    "id": 112063,
+    "name": "Dormant Fungal Nucleus",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112063",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Dormant Fungal Nucleus"
+  },
+  {
+    "id": 111011,
+    "name": "Dustproof Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111011",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Dustproof Potion"
+  },
+  {
+    "id": 304,
+    "name": "Electro Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_304",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": false,
+    "route": "Electro Sigil"
+  },
+  {
+    "id": 220032,
+    "name": "Electroculus Resonance Stone",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220032",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Electroculus Resonance Stone"
+  },
+  {
+    "id": 112040,
+    "name": "Energy Nectar",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112040",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Energy Nectar"
+  },
+  {
+    "id": 112046,
+    "name": "Famed Handguard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112046",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Famed Handguard"
+  },
+  {
+    "id": 111013,
+    "name": "Flaming Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111013",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Flaming Essential Oil"
+  },
+  {
+    "id": 112010,
+    "name": "Forbidden Curse Scroll",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112010",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Forbidden Curse Scroll"
+  },
+  {
+    "id": 112090,
+    "name": "Foreign Synapse",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112090",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Foreign Synapse"
+  },
+  {
+    "id": 111019,
+    "name": "Forest Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111019",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Forest Essential Oil"
+  },
+  {
+    "id": 112127,
+    "name": "Frost-Etched Warrant",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112127",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Frost-Etched Warrant"
+  },
+  {
+    "id": 111015,
+    "name": "Frosting Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111015",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Frosting Essential Oil"
+  },
+  {
+    "id": 112129,
+    "name": "Frostnight's Glow",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112129",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Frostnight's Glow"
+  },
+  {
+    "id": 111008,
+    "name": "Frostshield Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111008",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Frostshield Potion"
+  },
+  {
+    "id": 307,
+    "name": "Geo Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_307",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": true,
+    "route": "Geo Sigil"
+  },
+  {
+    "id": 220002,
+    "name": "Geoculus Resonance Stone",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220002",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Geoculus Resonance Stone"
+  },
+  {
+    "id": 112132,
+    "name": "Glowing Remains",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112132",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Glowing Remains"
+  },
+  {
+    "id": 112037,
+    "name": "Golden Raven Insignia",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112037",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Golden Raven Insignia"
+  },
+  {
+    "id": 104330,
+    "name": "Guide to Admonition",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104330",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Admonition"
+  },
+  {
+    "id": 104308,
+    "name": "Guide to Ballad",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104308",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Ballad"
+  },
+  {
+    "id": 104354,
+    "name": "Guide to Conflict",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104354",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Conflict"
+  },
+  {
+    "id": 104348,
+    "name": "Guide to Contention",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104348",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Contention"
+  },
+  {
+    "id": 104314,
+    "name": "Guide to Diligence",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104314",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Diligence"
+  },
+  {
+    "id": 104324,
+    "name": "Guide to Elegance",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104324",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Elegance"
+  },
+  {
+    "id": 104360,
+    "name": "Guide to Elysium",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104360",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Elysium"
+  },
+  {
+    "id": 104339,
+    "name": "Guide to Equity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104339",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Equity"
+  },
+  {
+    "id": 104302,
+    "name": "Guide to Freedom",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104302",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Freedom"
+  },
+  {
+    "id": 104317,
+    "name": "Guide to Gold",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104317",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Gold"
+  },
+  {
+    "id": 104333,
+    "name": "Guide to Ingenuity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104333",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Ingenuity"
+  },
+  {
+    "id": 104342,
+    "name": "Guide to Justice",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104342",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Justice"
+  },
+  {
+    "id": 104351,
+    "name": "Guide to Kindling",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104351",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Kindling"
+  },
+  {
+    "id": 104327,
+    "name": "Guide to Light",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104327",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Light"
+  },
+  {
+    "id": 104357,
+    "name": "Guide to Moonlight",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104357",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Moonlight"
+  },
+  {
+    "id": 104345,
+    "name": "Guide to Order",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104345",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Order"
+  },
+  {
+    "id": 104336,
+    "name": "Guide to Praxis",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104336",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Praxis"
+  },
+  {
+    "id": 104311,
+    "name": "Guide to Prosperity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104311",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Prosperity"
+  },
+  {
+    "id": 104305,
+    "name": "Guide to Resistance",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104305",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Resistance"
+  },
+  {
+    "id": 104321,
+    "name": "Guide to Transience",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104321",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Transience"
+  },
+  {
+    "id": 104363,
+    "name": "Guide to Vagrancy",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104363",
+    "rank": 3,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Guide to Vagrancy"
+  },
+  {
+    "id": 111016,
+    "name": "Gushing Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111016",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Gushing Essential Oil"
+  },
+  {
+    "id": 111006,
+    "name": "Heatshield Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111006",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Heatshield Potion"
+  },
+  {
+    "id": 302,
+    "name": "Hydro Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_302",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": false,
+    "route": "Hydro Sigil"
+  },
+  {
+    "id": 220086,
+    "name": "Hydroculus Resonance Stone",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220086",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Hydroculus Resonance Stone"
+  },
+  {
+    "id": 112111,
+    "name": "Ignited Seed of Life",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112111",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Ignited Seed of Life"
+  },
+  {
+    "id": 111010,
+    "name": "Insulation Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111010",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Insulation Potion"
+  },
+  {
+    "id": 114038,
+    "name": "Iron Talisman of the Forest Dew",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114038",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Iron Talisman of the Forest Dew"
+  },
+  {
+    "id": 114026,
+    "name": "Jeweled Branch of a Distant Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114026",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Jeweled Branch of a Distant Sea"
+  },
+  {
+    "id": 112034,
+    "name": "Lieutenant's Insignia",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112034",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Lieutenant's Insignia"
+  },
+  {
+    "id": 112108,
+    "name": "Locus of a Clear Will",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112108",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Locus of a Clear Will"
+  },
+  {
+    "id": 112096,
+    "name": "Lunar Fin",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112096",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Lunar Fin"
+  },
+  {
+    "id": 114014,
+    "name": "Lustrous Stone from Guyun",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114014",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Lustrous Stone from Guyun"
+  },
+  {
+    "id": 114034,
+    "name": "Mask of the Tiger's Bite",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114034",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mask of the Tiger's Bite"
+  },
+  {
+    "id": 112027,
+    "name": "Mist Grass",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112027",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mist Grass"
+  },
+  {
+    "id": 114018,
+    "name": "Mist Veiled Mercury Elixir",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114018",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mist Veiled Mercury Elixir"
+  },
+  {
+    "id": 112135,
+    "name": "Mistshroud Plate",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112135",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mistshroud Plate"
+  },
+  {
+    "id": 202,
+    "name": "Mora",
+    "category": "Common Currency",
+    "icon": "UI_ItemIcon_202",
+    "rank": 3,
+    "type": "commonCurrency",
+    "mapMark": true,
+    "route": "Mora"
+  },
+  {
+    "id": 104013,
+    "name": "Mystic Enhancement Ore",
+    "category": "Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_104013",
+    "rank": 3,
+    "type": "weaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mystic Enhancement Ore"
+  },
+  {
+    "id": 104132,
+    "name": "Nagadus Emerald Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104132",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Nagadus Emerald Fragment"
+  },
+  {
+    "id": 114030,
+    "name": "Narukami's Joy",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114030",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Narukami's Joy"
+  },
+  {
+    "id": 114070,
+    "name": "Night-Wind's Mystic Premonition",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114070",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Night-Wind's Mystic Premonition"
+  },
+  {
+    "id": 114042,
+    "name": "Oasis Garden's Kindness",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114042",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Oasis Garden's Kindness"
+  },
+  {
+    "id": 112007,
+    "name": "Ominous Mask",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112007",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Ominous Mask"
+  },
+  {
+    "id": 220043,
+    "name": "Omni-Ubiquity Net",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220043",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Omni-Ubiquity Net"
+  },
+  {
+    "id": 112093,
+    "name": "Operative's Standard Pocket Watch",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112093",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Operative's Standard Pocket Watch"
+  },
+  {
+    "id": 106,
+    "name": "Original Resin",
+    "category": "Challenge Result Item",
+    "icon": "UI_ItemIcon_106",
+    "rank": 3,
+    "type": "challengeResultItem",
+    "mapMark": false,
+    "route": "Original Resin"
+  },
+  {
+    "id": 114022,
+    "name": "Piece of Aerosiderite",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114022",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Piece of Aerosiderite"
+  },
+  {
+    "id": 112124,
+    "name": "Precision Drive Shaft",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112124",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Precision Drive Shaft"
+  },
+  {
+    "id": 104172,
+    "name": "Prithiva Topaz Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104172",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Prithiva Topaz Fragment"
+  },
+  {
+    "id": 301,
+    "name": "Pyro Sigil",
+    "category": "City States Sigil",
+    "icon": "UI_ItemIcon_301",
+    "rank": 3,
+    "type": "cityStatesSigil",
+    "mapMark": false,
+    "route": "Pyro Sigil"
+  },
+  {
+    "id": 220103,
+    "name": "Pyroculus Resonance Stone",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220103",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Pyroculus Resonance Stone"
+  },
+  {
+    "id": 204,
+    "name": "Realm Currency",
+    "category": "Special Currency",
+    "icon": "UI_ItemIcon_204",
+    "rank": 3,
+    "type": "specialCurrency",
+    "mapMark": false,
+    "route": "Realm Currency"
+  },
+  {
+    "id": 114046,
+    "name": "Remnant Glow of Scorching Might",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114046",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Remnant Glow of Scorching Might"
+  },
+  {
+    "id": 112067,
+    "name": "Rich Red Brocade",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112067",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Rich Red Brocade"
+  },
+  {
+    "id": 112106,
+    "name": "Saurian-Crowned Warrior's Golden Whistle",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112106",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Saurian-Crowned Warrior's Golden Whistle"
+  },
+  {
+    "id": 112087,
+    "name": "Scoop of Tainted Water",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112087",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Scoop of Tainted Water"
+  },
+  {
+    "id": 112114,
+    "name": "Sheath of the Secret Source",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112114",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sheath of the Secret Source"
+  },
+  {
+    "id": 104162,
+    "name": "Shivada Jade Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104162",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Shivada Jade Fragment"
+  },
+  {
+    "id": 111017,
+    "name": "Shocking Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111017",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Shocking Essential Oil"
+  },
+  {
+    "id": 112004,
+    "name": "Slime Concentrate",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112004",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Slime Concentrate"
+  },
+  {
+    "id": 112055,
+    "name": "Spectral Nucleus",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112055",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Spectral Nucleus"
+  },
+  {
+    "id": 112099,
+    "name": "Splintered Hilt",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112099",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Splintered Hilt"
+  },
+  {
+    "id": 111014,
+    "name": "Streaming Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111014",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Streaming Essential Oil"
+  },
+  {
+    "id": 112042,
+    "name": "Sturdy Bone Shard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112042",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sturdy Bone Shard"
+  },
+  {
+    "id": 112075,
+    "name": "Sturdy Shell",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112075",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sturdy Shell"
+  },
+  {
+    "id": 114054,
+    "name": "Sublimation of Pure Sacred Dewdrop",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114054",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Sublimation of Pure Sacred Dewdrop"
+  },
+  {
+    "id": 112078,
+    "name": "Treasured Flower",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112078",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Treasured Flower"
+  },
+  {
+    "id": 112072,
+    "name": "Turbid Prism",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112072",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Turbid Prism"
+  },
+  {
+    "id": 112103,
+    "name": "Tyrant's Fang",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112103",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Tyrant's Fang"
+  },
+  {
+    "id": 111018,
+    "name": "Unmoving Essential Oil",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111018",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Unmoving Essential Oil"
+  },
+  {
+    "id": 114082,
+    "name": "Unyielding Delusion of the Far-North Scions",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114082",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Unyielding Delusion of the Far-North Scions"
+  },
+  {
+    "id": 104142,
+    "name": "Vajrada Amethyst Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104142",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vajrada Amethyst Fragment"
+  },
+  {
+    "id": 104122,
+    "name": "Varunada Lazurite Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104122",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Varunada Lazurite Fragment"
+  },
+  {
+    "id": 104152,
+    "name": "Vayuda Turquoise Fragment",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104152",
+    "rank": 3,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vayuda Turquoise Fragment"
+  },
+  {
+    "id": 112120,
+    "name": "Warm Back-Shell",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112120",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Warm Back-Shell"
+  },
+  {
+    "id": 220017,
+    "name": "Warming Bottle",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_220017",
+    "rank": 3,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Warming Bottle"
+  },
+  {
+    "id": 112013,
+    "name": "Weathered Arrowhead",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112013",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Weathered Arrowhead"
+  },
+  {
+    "id": 111009,
+    "name": "Windbarrier Potion",
+    "category": "Potion",
+    "icon": "UI_ItemIcon_111009",
+    "rank": 3,
+    "type": "potion",
+    "mapMark": false,
+    "route": "Windbarrier Potion"
+  },
+  {
+    "id": 114058,
+    "name": "Wine Goblet of the Pristine Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114058",
+    "rank": 3,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Wine Goblet of the Pristine Sea"
+  },
+  {
+    "id": 112082,
+    "name": "Xenochromatic Crystal",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112082",
+    "rank": 3,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Xenochromatic Crystal"
+  },
+  {
+    "id": 112077,
+    "name": "A Flower Yet to Bloom",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112077",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "A Flower Yet to Bloom"
+  },
+  {
+    "id": 104111,
+    "name": "Agnidus Agate Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104111",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Agnidus Agate Sliver"
+  },
+  {
+    "id": 114073,
+    "name": "Artful Device Fragment",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114073",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Artful Device Fragment"
+  },
+  {
+    "id": 112113,
+    "name": "Axis of the Secret Source",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112113",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Axis of the Secret Source"
+  },
+  {
+    "id": 114061,
+    "name": "Blazing Sacrificial Heart's Terror",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114061",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Blazing Sacrificial Heart's Terror"
+  },
+  {
+    "id": 114005,
+    "name": "Boreal Wolf's Milk Tooth",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114005",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Boreal Wolf's Milk Tooth"
+  },
+  {
+    "id": 104101,
+    "name": "Brilliant Diamond Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104101",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Brilliant Diamond Sliver"
+  },
+  {
+    "id": 114057,
+    "name": "Broken Goblet of the Pristine Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114057",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Broken Goblet of the Pristine Sea"
+  },
+  {
+    "id": 112023,
+    "name": "Chaos Device",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112023",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Device"
+  },
+  {
+    "id": 112047,
+    "name": "Chaos Gear",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112047",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Gear"
+  },
+  {
+    "id": 112068,
+    "name": "Chaos Storage",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112068",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Chaos Storage"
+  },
+  {
+    "id": 112119,
+    "name": "Cold-Cracked Shellshard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112119",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Cold-Cracked Shellshard"
+  },
+  {
+    "id": 112056,
+    "name": "Concealed Claw",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112056",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Concealed Claw"
+  },
+  {
+    "id": 114037,
+    "name": "Copper Talisman of the Forest Dew",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114037",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Copper Talisman of the Forest Dew"
+  },
+  {
+    "id": 114025,
+    "name": "Coral Branch of a Distant Sea",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114025",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Coral Branch of a Distant Sea"
+  },
+  {
+    "id": 112071,
+    "name": "Damaged Prism",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112071",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Damaged Prism"
+  },
+  {
+    "id": 112020,
+    "name": "Dead Ley Line Branch",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112020",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Dead Ley Line Branch"
+  },
+  {
+    "id": 114065,
+    "name": "Delirious Decadence of the Sacred Lord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114065",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Delirious Decadence of the Sacred Lord"
+  },
+  {
+    "id": 112074,
+    "name": "Desiccated Shell",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112074",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Desiccated Shell"
+  },
+  {
+    "id": 112050,
+    "name": "Dismal Prism",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112050",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Dismal Prism"
+  },
+  {
+    "id": 112086,
+    "name": "Drop of Tainted Water",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112086",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Drop of Tainted Water"
+  },
+  {
+    "id": 114053,
+    "name": "Dross of Pure Sacred Dewdrop",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114053",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Dross of Pure Sacred Dewdrop"
+  },
+  {
+    "id": 104201,
+    "name": "Dust of Azoth",
+    "category": "Consumable",
+    "icon": "UI_ItemIcon_104201",
+    "rank": 2,
+    "type": "consumable",
+    "mapMark": false,
+    "route": "Dust of Azoth"
+  },
+  {
+    "id": 114045,
+    "name": "Echo of Scorching Might",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114045",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Echo of Scorching Might"
+  },
+  {
+    "id": 114077,
+    "name": "Ember of Long Night Flint",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114077",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Ember of Long Night Flint"
+  },
+  {
+    "id": 112095,
+    "name": "Feathery Fin",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112095",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Feathery Fin"
+  },
+  {
+    "id": 114009,
+    "name": "Fetters of the Dandelion Gladiator",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114009",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Fetters of the Dandelion Gladiator"
+  },
+  {
+    "id": 104012,
+    "name": "Fine Enhancement Ore",
+    "category": "Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_104012",
+    "rank": 2,
+    "type": "weaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Fine Enhancement Ore"
+  },
+  {
+    "id": 112137,
+    "name": "Fractured Eye of the Deep Shadow",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112137",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Fractured Eye of the Deep Shadow"
+  },
+  {
+    "id": 112041,
+    "name": "Fragile Bone Shard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112041",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Fragile Bone Shard"
+  },
+  {
+    "id": 114049,
+    "name": "Fragment of an Ancient Chord",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114049",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Fragment of an Ancient Chord"
+  },
+  {
+    "id": 112128,
+    "name": "Frostnight's Glimmer",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112128",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Frostnight's Glimmer"
+  },
+  {
+    "id": 112017,
+    "name": "Gloomy Statuette",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112017",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Gloomy Statuette"
+  },
+  {
+    "id": 114021,
+    "name": "Grain of Aerosiderite",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114021",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Grain of Aerosiderite"
+  },
+  {
+    "id": 112014,
+    "name": "Heavy Horn",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112014",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Heavy Horn"
+  },
+  {
+    "id": 112029,
+    "name": "Hunter's Sacrificial Knife",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112029",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Hunter's Sacrificial Knife"
+  },
+  {
+    "id": 112110,
+    "name": "Ignited Stone",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112110",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Ignited Stone"
+  },
+  {
+    "id": 112126,
+    "name": "Immaculate Warrant",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112126",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Immaculate Warrant"
+  },
+  {
+    "id": 112062,
+    "name": "Inactivated Fungal Nucleus",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112062",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Inactivated Fungal Nucleus"
+  },
+  {
+    "id": 112045,
+    "name": "Kageuchi Handguard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112045",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Kageuchi Handguard"
+  },
+  {
+    "id": 112131,
+    "name": "Lightless Bone",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112131",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Lightless Bone"
+  },
+  {
+    "id": 112060,
+    "name": "Luminescent Pollen",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112060",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Luminescent Pollen"
+  },
+  {
+    "id": 114013,
+    "name": "Luminous Sands from Guyun",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114013",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Luminous Sands from Guyun"
+  },
+  {
+    "id": 114033,
+    "name": "Mask of the Wicked Lieutenant",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114033",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mask of the Wicked Lieutenant"
+  },
+  {
+    "id": 112084,
+    "name": "Mechanical Spur Gear",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112084",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mechanical Spur Gear"
+  },
+  {
+    "id": 112026,
+    "name": "Mist Grass Pollen",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112026",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mist Grass Pollen"
+  },
+  {
+    "id": 114017,
+    "name": "Mist Veiled Lead Elixir",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114017",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Mist Veiled Lead Elixir"
+  },
+  {
+    "id": 112134,
+    "name": "Mistshroud Manifestation",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112134",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Mistshroud Manifestation"
+  },
+  {
+    "id": 104131,
+    "name": "Nagadus Emerald Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104131",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Nagadus Emerald Sliver"
+  },
+  {
+    "id": 114029,
+    "name": "Narukami's Wisdom",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114029",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Narukami's Wisdom"
+  },
+  {
+    "id": 114069,
+    "name": "Night-Wind's Mystic Consideration",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114069",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Night-Wind's Mystic Consideration"
+  },
+  {
+    "id": 114041,
+    "name": "Oasis Garden's Reminiscence",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114041",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Oasis Garden's Reminiscence"
+  },
+  {
+    "id": 112092,
+    "name": "Old Operative's Pocket Watch",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112092",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Old Operative's Pocket Watch"
+  },
+  {
+    "id": 104171,
+    "name": "Prithiva Topaz Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104171",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Prithiva Topaz Sliver"
+  },
+  {
+    "id": 112116,
+    "name": "Refractive Bud",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112116",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Refractive Bud"
+  },
+  {
+    "id": 112123,
+    "name": "Reinforced Drive Shaft",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112123",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Reinforced Drive Shaft"
+  },
+  {
+    "id": 112089,
+    "name": "Rift Core",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112089",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Rift Core"
+  },
+  {
+    "id": 112098,
+    "name": "Ruined Hilt",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112098",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Ruined Hilt"
+  },
+  {
+    "id": 112009,
+    "name": "Sealed Scroll",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112009",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sealed Scroll"
+  },
+  {
+    "id": 112102,
+    "name": "Seasoned Fang",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112102",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Seasoned Fang"
+  },
+  {
+    "id": 112033,
+    "name": "Sergeant's Insignia",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112033",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sergeant's Insignia"
+  },
+  {
+    "id": 112107,
+    "name": "Shard of a Shattered Will",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112107",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Shard of a Shattered Will"
+  },
+  {
+    "id": 112012,
+    "name": "Sharp Arrowhead",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112012",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sharp Arrowhead"
+  },
+  {
+    "id": 112039,
+    "name": "Shimmering Nectar",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112039",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Shimmering Nectar"
+  },
+  {
+    "id": 104161,
+    "name": "Shivada Jade Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104161",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Shivada Jade Sliver"
+  },
+  {
+    "id": 112036,
+    "name": "Silver Raven Insignia",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112036",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Silver Raven Insignia"
+  },
+  {
+    "id": 112003,
+    "name": "Slime Secretions",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112003",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Slime Secretions"
+  },
+  {
+    "id": 112054,
+    "name": "Spectral Heart",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112054",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Spectral Heart"
+  },
+  {
+    "id": 112006,
+    "name": "Stained Mask",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112006",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Stained Mask"
+  },
+  {
+    "id": 114081,
+    "name": "Sundered Glory of the Far-North Scions",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114081",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Sundered Glory of the Far-North Scions"
+  },
+  {
+    "id": 104329,
+    "name": "Teachings of Admonition",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104329",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Admonition"
+  },
+  {
+    "id": 104307,
+    "name": "Teachings of Ballad",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104307",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Ballad"
+  },
+  {
+    "id": 104353,
+    "name": "Teachings of Conflict",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104353",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Conflict"
+  },
+  {
+    "id": 104347,
+    "name": "Teachings of Contention",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104347",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Contention"
+  },
+  {
+    "id": 104313,
+    "name": "Teachings of Diligence",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104313",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Diligence"
+  },
+  {
+    "id": 104323,
+    "name": "Teachings of Elegance",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104323",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Elegance"
+  },
+  {
+    "id": 104359,
+    "name": "Teachings of Elysium",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104359",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Elysium"
+  },
+  {
+    "id": 104338,
+    "name": "Teachings of Equity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104338",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Equity"
+  },
+  {
+    "id": 104301,
+    "name": "Teachings of Freedom",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104301",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Freedom"
+  },
+  {
+    "id": 104316,
+    "name": "Teachings of Gold",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104316",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Gold"
+  },
+  {
+    "id": 104332,
+    "name": "Teachings of Ingenuity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104332",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Ingenuity"
+  },
+  {
+    "id": 104341,
+    "name": "Teachings of Justice",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104341",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Justice"
+  },
+  {
+    "id": 104350,
+    "name": "Teachings of Kindling",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104350",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Kindling"
+  },
+  {
+    "id": 104326,
+    "name": "Teachings of Light",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104326",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Light"
+  },
+  {
+    "id": 104356,
+    "name": "Teachings of Moonlight",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104356",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Moonlight"
+  },
+  {
+    "id": 104344,
+    "name": "Teachings of Order",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104344",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Order"
+  },
+  {
+    "id": 104335,
+    "name": "Teachings of Praxis",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104335",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Praxis"
+  },
+  {
+    "id": 104310,
+    "name": "Teachings of Prosperity",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104310",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Prosperity"
+  },
+  {
+    "id": 104304,
+    "name": "Teachings of Resistance",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104304",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Resistance"
+  },
+  {
+    "id": 104320,
+    "name": "Teachings of Transience",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104320",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Transience"
+  },
+  {
+    "id": 104362,
+    "name": "Teachings of Vagrancy",
+    "category": "Character Talent Material",
+    "icon": "UI_ItemIcon_104362",
+    "rank": 2,
+    "type": "characterTalentMaterial",
+    "mapMark": false,
+    "route": "Teachings of Vagrancy"
+  },
+  {
+    "id": 114001,
+    "name": "Tile of Decarabian's Tower",
+    "category": "Weapon Ascension Material",
+    "icon": "UI_ItemIcon_114001",
+    "rank": 2,
+    "type": "weaponAscensionMaterial",
+    "mapMark": false,
+    "route": "Tile of Decarabian's Tower"
+  },
+  {
+    "id": 112081,
+    "name": "Transoceanic Chunk",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112081",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Transoceanic Chunk"
+  },
+  {
+    "id": 112066,
+    "name": "Trimmed Red Silk",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112066",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Trimmed Red Silk"
+  },
+  {
+    "id": 104141,
+    "name": "Vajrada Amethyst Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104141",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vajrada Amethyst Sliver"
+  },
+  {
+    "id": 104121,
+    "name": "Varunada Lazurite Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104121",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Varunada Lazurite Sliver"
+  },
+  {
+    "id": 104151,
+    "name": "Vayuda Turquoise Sliver",
+    "category": "Character Ascension Material",
+    "icon": "UI_ItemIcon_104151",
+    "rank": 2,
+    "type": "characterAscensionMaterial",
+    "mapMark": false,
+    "route": "Vayuda Turquoise Sliver"
+  },
+  {
+    "id": 104001,
+    "name": "Wanderer's Advice",
+    "category": "Character EXP Material",
+    "icon": "UI_ItemIcon_104001",
+    "rank": 2,
+    "type": "characterEXPMaterial",
+    "mapMark": false,
+    "route": "Wanderer's Advice"
+  },
+  {
+    "id": 112105,
+    "name": "Warrior's Metal Whistle",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112105",
+    "rank": 2,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Warrior's Metal Whistle"
+  },
+  {
+    "id": 101315,
+    "name": "Adhigama Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101315",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Adhigama Wood"
+  },
+  {
+    "id": 101221,
+    "name": "Ajilenakh Nut",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101221",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Ajilenakh Nut"
+  },
+  {
+    "id": 101330,
+    "name": "Alder Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101330",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Alder Wood"
+  },
+  {
+    "id": 100089,
+    "name": "Almond",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100089",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Almond"
+  },
+  {
+    "id": 101208,
+    "name": "Amakumo Fruit",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101208",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Amakumo Fruit"
+  },
+  {
+    "id": 101008,
+    "name": "Amethyst Lump",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101008",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "Amethyst Lump"
+  },
+  {
+    "id": 107001,
+    "name": "Anemoculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107001",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Anemoculus"
+  },
+  {
+    "id": 101311,
+    "name": "Aralia Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101311",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Aralia Wood"
+  },
+  {
+    "id": 101320,
+    "name": "Ash Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101320",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Ash Wood"
+  },
+  {
+    "id": 101324,
+    "name": "Ashen Aratiku Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101324",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Ashen Aratiku Wood"
+  },
+  {
+    "id": 101317,
+    "name": "Athel Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101317",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Athel Wood"
+  },
+  {
+    "id": 110010,
+    "name": "Bacon",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110010",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Bacon"
+  },
+  {
+    "id": 101305,
+    "name": "Bamboo Segment",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101305",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Bamboo Segment"
+  },
+  {
+    "id": 100091,
+    "name": "Bamboo Shoot",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100091",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Bamboo Shoot"
+  },
+  {
+    "id": 100051,
+    "name": "Berry",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100051",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Berry"
+  },
+  {
+    "id": 101232,
+    "name": "Beryl Conch",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101232",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Beryl Conch"
+  },
+  {
+    "id": 101301,
+    "name": "Birch Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101301",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Birch Wood"
+  },
+  {
+    "id": 100062,
+    "name": "Bird Egg",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100062",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Bird Egg"
+  },
+  {
+    "id": 101404,
+    "name": "Blue Dye",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101404",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Blue Dye"
+  },
+  {
+    "id": 101313,
+    "name": "Brightwood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101313",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Brightwood"
+  },
+  {
+    "id": 101248,
+    "name": "Brilliant Chrysanthemum",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101248",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": true,
+    "route": "Brilliant Chrysanthemum"
+  },
+  {
+    "id": 112122,
+    "name": "Broken Drive Shaft",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112122",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Broken Drive Shaft"
+  },
+  {
+    "id": 110004,
+    "name": "Butter",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110004",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Butter"
+  },
+  {
+    "id": 100072,
+    "name": "Butterfly Wings",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100072",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Butterfly Wings"
+  },
+  {
+    "id": 100018,
+    "name": "Cabbage",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100018",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Cabbage"
+  },
+  {
+    "id": 101246,
+    "name": "Cacahuatl",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101246",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Cacahuatl"
+  },
+  {
+    "id": 100056,
+    "name": "Calla Lily",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100056",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Calla Lily"
+  },
+  {
+    "id": 100013,
+    "name": "Carrot",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100013",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Carrot"
+  },
+  {
+    "id": 100023,
+    "name": "Cecilia",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100023",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Cecilia"
+  },
+  {
+    "id": 110009,
+    "name": "Cheese",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110009",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Cheese"
+  },
+  {
+    "id": 101242,
+    "name": "Chenyu Adeptea",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101242",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Chenyu Adeptea"
+  },
+  {
+    "id": 100094,
+    "name": "Chilled Meat",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100094",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Chilled Meat"
+  },
+  {
+    "id": 101241,
+    "name": "Clearwater Jade",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_101241",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Clearwater Jade"
+  },
+  {
+    "id": 100098,
+    "name": "Coffee Beans",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100098",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Coffee Beans"
+  },
+  {
+    "id": 101009,
+    "name": "Condessence Crystal",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101009",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "Condessence Crystal"
+  },
+  {
+    "id": 100058,
+    "name": "Cor Lapis",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100058",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Cor Lapis"
+  },
+  {
+    "id": 100073,
+    "name": "Crab",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100073",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Crab"
+  },
+  {
+    "id": 100074,
+    "name": "Crab Roe",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110007",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Crab Roe"
+  },
+  {
+    "id": 110002,
+    "name": "Cream",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110002",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Cream"
+  },
+  {
+    "id": 107010,
+    "name": "Crimson Agate",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107010",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Crimson Agate"
+  },
+  {
+    "id": 101003,
+    "name": "Crystal Chunk",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101003",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "Crystal Chunk"
+  },
+  {
+    "id": 100085,
+    "name": "Crystal Core",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100085",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Crystal Core"
+  },
+  {
+    "id": 101203,
+    "name": "Crystal Marrow",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101203",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Crystal Marrow"
+  },
+  {
+    "id": 101302,
+    "name": "Cuihua Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101302",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Cuihua Wood"
+  },
+  {
+    "id": 101321,
+    "name": "Cypress Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101321",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Cypress Wood"
+  },
+  {
+    "id": 112005,
+    "name": "Damaged Mask",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112005",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Damaged Mask"
+  },
+  {
+    "id": 100057,
+    "name": "Dandelion Seed",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100057",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Dandelion Seed"
+  },
+  {
+    "id": 101204,
+    "name": "Dendrobium",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101204",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Dendrobium"
+  },
+  {
+    "id": 107017,
+    "name": "Dendroculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107017",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Dendroculus"
+  },
+  {
+    "id": 112008,
+    "name": "Divining Scroll",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112008",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Divining Scroll"
+  },
+  {
+    "id": 101255,
+    "name": "Dracolite",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101255",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": false,
+    "route": "Dracolite"
+  },
+  {
+    "id": 100095,
+    "name": "Eel Meat",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100095",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Eel Meat"
+  },
+  {
+    "id": 100054,
+    "name": "Electro Crystal",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100054",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Electro Crystal"
+  },
+  {
+    "id": 107014,
+    "name": "Electroculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107014",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Electroculus"
+  },
+  {
+    "id": 101251,
+    "name": "Embercore Flower",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101251",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Embercore Flower"
+  },
+  {
+    "id": 100619,
+    "name": "Empowered Dragontooth",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100619",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Empowered Dragontooth"
+  },
+  {
+    "id": 104011,
+    "name": "Enhancement Ore",
+    "category": "Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_104011",
+    "rank": 1,
+    "type": "weaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Enhancement Ore"
+  },
+  {
+    "id": 101401,
+    "name": "Fabric",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101401",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Fabric"
+  },
+  {
+    "id": 112065,
+    "name": "Faded Red Satin",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112065",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Faded Red Satin"
+  },
+  {
+    "id": 100099,
+    "name": "Fermented Juice",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100099",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Fermented Juice"
+  },
+  {
+    "id": 101308,
+    "name": "Fir Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101308",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Fir Wood"
+  },
+  {
+    "id": 112011,
+    "name": "Firm Arrowhead",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112011",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Firm Arrowhead"
+  },
+  {
+    "id": 100084,
+    "name": "Fish",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100084",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Fish"
+  },
+  {
+    "id": 100053,
+    "name": "Flaming Flower Stamen",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100053",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Flaming Flower Stamen"
+  },
+  {
+    "id": 101325,
+    "name": "Flammabomb Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101325",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Flammabomb Wood"
+  },
+  {
+    "id": 110001,
+    "name": "Flour",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110001",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Flour"
+  },
+  {
+    "id": 101209,
+    "name": "Fluorescent Fungus",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101209",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Fluorescent Fungus"
+  },
+  {
+    "id": 100064,
+    "name": "Fowl",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100064",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Fowl"
+  },
+  {
+    "id": 101307,
+    "name": "Fragrant Cedar Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101307",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Fragrant Cedar Wood"
+  },
+  {
+    "id": 100081,
+    "name": "Frog",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100081",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Frog"
+  },
+  {
+    "id": 101261,
+    "name": "Frostlamp Flower",
+    "category": "Local Specialty (Nod-Krai)",
+    "icon": "UI_ItemIcon_101261",
+    "rank": 1,
+    "type": "localSpecialtyNodKrai",
+    "mapMark": false,
+    "route": "Frostlamp Flower"
+  },
+  {
+    "id": 112059,
+    "name": "Fungal Spores",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112059",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Fungal Spores"
+  },
+  {
+    "id": 107003,
+    "name": "Geoculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107003",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Geoculus"
+  },
+  {
+    "id": 100096,
+    "name": "Glabrous Beans",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100096",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Glabrous Beans"
+  },
+  {
+    "id": 100030,
+    "name": "Glaze Lily",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100030",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Glaze Lily"
+  },
+  {
+    "id": 101252,
+    "name": "Glowing Hornshroom",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101252",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": true,
+    "route": "Glowing Hornshroom"
+  },
+  {
+    "id": 101243,
+    "name": "Grainfruit",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101243",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Grainfruit"
+  },
+  {
+    "id": 110005,
+    "name": "Ham",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110005",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Ham"
+  },
+  {
+    "id": 101216,
+    "name": "Harra Fruit",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101216",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Harra Fruit"
+  },
+  {
+    "id": 101328,
+    "name": "Hazelnut Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101328",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Hazelnut Wood"
+  },
+  {
+    "id": 101220,
+    "name": "Henna Berry",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101220",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Henna Berry"
+  },
+  {
+    "id": 100032,
+    "name": "Horsetail",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100032",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Horsetail"
+  },
+  {
+    "id": 107023,
+    "name": "Hydroculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107023",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Hydroculus"
+  },
+  {
+    "id": 101259,
+    "name": "Icy Pebble",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101259",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Icy Pebble"
+  },
+  {
+    "id": 101001,
+    "name": "Iron Chunk",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101001",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "Iron Chunk"
+  },
+  {
+    "id": 110008,
+    "name": "Jam",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110008",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Jam"
+  },
+  {
+    "id": 100027,
+    "name": "Jueyun Chili",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100027",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Jueyun Chili"
+  },
+  {
+    "id": 112101,
+    "name": "Juvenile Fang",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112101",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Juvenile Fang"
+  },
+  {
+    "id": 101217,
+    "name": "Kalpalata Lotus",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101217",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Kalpalata Lotus"
+  },
+  {
+    "id": 101314,
+    "name": "Karmaphala Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101314",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Karmaphala Wood"
+  },
+  {
+    "id": 101238,
+    "name": "Lakelight Lily",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101238",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Lakelight Lily"
+  },
+  {
+    "id": 101264,
+    "name": "Lakkaberry",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101264",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Lakkaberry"
+  },
+  {
+    "id": 101211,
+    "name": "Lavender Melon",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101211",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Lavender Melon"
+  },
+  {
+    "id": 101319,
+    "name": "Linden Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101319",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Linden Wood"
+  },
+  {
+    "id": 100083,
+    "name": "Lizard Tail",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100083",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Lizard Tail"
+  },
+  {
+    "id": 100090,
+    "name": "Loach Pearl",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100090",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Loach Pearl"
+  },
+  {
+    "id": 100026,
+    "name": "Lotus Head",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100026",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Lotus Head"
+  },
+  {
+    "id": 101235,
+    "name": "Lumidouce Bell",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101235",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Lumidouce Bell"
+  },
+  {
+    "id": 100082,
+    "name": "Luminescent Spine",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100082",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Luminescent Spine"
+  },
+  {
+    "id": 101237,
+    "name": "Lumitoile",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101237",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Lumitoile"
+  },
+  {
+    "id": 107030,
+    "name": "Lunoculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107030",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": false,
+    "route": "Lunoculus"
+  },
+  {
+    "id": 101004,
+    "name": "Magical Crystal Chunk",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101004",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "Magical Crystal Chunk"
+  },
+  {
+    "id": 101318,
+    "name": "Mallow Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101318",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Mallow Wood"
+  },
+  {
+    "id": 101310,
+    "name": "Maple Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101310",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Maple Wood"
+  },
+  {
+    "id": 101231,
+    "name": "Marcotte",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101231",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Marcotte"
+  },
+  {
+    "id": 100063,
+    "name": "Matsutake",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100063",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Matsutake"
+  },
+  {
+    "id": 112083,
+    "name": "Meshing Gear",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112083",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Meshing Gear"
+  },
+  {
+    "id": 101265,
+    "name": "Midsommar Berry",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101265",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Midsommar Berry"
+  },
+  {
+    "id": 100078,
+    "name": "Milk",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100078",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Milk"
+  },
+  {
+    "id": 100016,
+    "name": "Mint",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100016",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Mint"
+  },
+  {
+    "id": 100052,
+    "name": "Mist Flower Corolla",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100052",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Mist Flower Corolla"
+  },
+  {
+    "id": 101263,
+    "name": "Moonfall Silver",
+    "category": "Local Specialty (Nod-Krai)",
+    "icon": "UI_ItemIcon_101263",
+    "rank": 1,
+    "type": "localSpecialtyNodKrai",
+    "mapMark": false,
+    "route": "Moonfall Silver"
+  },
+  {
+    "id": 101316,
+    "name": "Mountain Date Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101316",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Mountain Date Wood"
+  },
+  {
+    "id": 101223,
+    "name": "Mourning Flower",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101223",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Mourning Flower"
+  },
+  {
+    "id": 100011,
+    "name": "Mushroom",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100011",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Mushroom"
+  },
+  {
+    "id": 100097,
+    "name": "Mysterious Meat",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100097",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Mysterious Meat"
+  },
+  {
+    "id": 101205,
+    "name": "Naku Weed",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101205",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Naku Weed"
+  },
+  {
+    "id": 101215,
+    "name": "Nilotpala Lotus",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101215",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Nilotpala Lotus"
+  },
+  {
+    "id": 100028,
+    "name": "Noctilucous Jade",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100028",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Noctilucous Jade"
+  },
+  {
+    "id": 101262,
+    "name": "Nocturnal Blossom",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101262",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Nocturnal Blossom"
+  },
+  {
+    "id": 112044,
+    "name": "Old Handguard",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112044",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Old Handguard"
+  },
+  {
+    "id": 101201,
+    "name": "Onikabuto",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101201",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Onikabuto"
+  },
+  {
+    "id": 100076,
+    "name": "Onion",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100076",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Onion"
+  },
+  {
+    "id": 101312,
+    "name": "Otogi Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101312",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Otogi Wood"
+  },
+  {
+    "id": 101214,
+    "name": "Padisarah",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101214",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Padisarah"
+  },
+  {
+    "id": 101326,
+    "name": "Peach Palm Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101326",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Peach Palm Wood"
+  },
+  {
+    "id": 101329,
+    "name": "Pedunculate Oak Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101329",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Pedunculate Oak Wood"
+  },
+  {
+    "id": 100077,
+    "name": "Pepper",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100077",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Pepper"
+  },
+  {
+    "id": 100025,
+    "name": "Philanemo Mushroom",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100025",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Philanemo Mushroom"
+  },
+  {
+    "id": 101269,
+    "name": "Pine Amber",
+    "category": "Local Specialty (Nod-Krai)",
+    "icon": "UI_ItemIcon_101269",
+    "rank": 1,
+    "type": "localSpecialtyNodKrai",
+    "mapMark": false,
+    "route": "Pine Amber"
+  },
+  {
+    "id": 101303,
+    "name": "Pine Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101303",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Pine Wood"
+  },
+  {
+    "id": 100020,
+    "name": "Pinecone",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100020",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Pinecone"
+  },
+  {
+    "id": 101229,
+    "name": "Pluie Lotus",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101229",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Pluie Lotus"
+  },
+  {
+    "id": 101257,
+    "name": "Portable Bearing",
+    "category": "Local Specialty (Nod-Krai)",
+    "icon": "UI_ItemIcon_101257",
+    "rank": 1,
+    "type": "localSpecialtyNodKrai",
+    "mapMark": false,
+    "route": "Portable Bearing"
+  },
+  {
+    "id": 100080,
+    "name": "Potato",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100080",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Potato"
+  },
+  {
+    "id": 107028,
+    "name": "Pyroculus",
+    "category": "Adventure Item",
+    "icon": "UI_ItemIcon_107028",
+    "rank": 1,
+    "type": "adventureItem",
+    "mapMark": true,
+    "route": "Pyroculus"
+  },
+  {
+    "id": 100031,
+    "name": "Qingxin",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100031",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Qingxin"
+  },
+  {
+    "id": 101249,
+    "name": "Quenepa Berry",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101249",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": true,
+    "route": "Quenepa Berry"
+  },
+  {
+    "id": 100014,
+    "name": "Radish",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100014",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Radish"
+  },
+  {
+    "id": 101236,
+    "name": "Rainbow Rose",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101236",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Rainbow Rose"
+  },
+  {
+    "id": 101010,
+    "name": "Rainbowdrop Crystal",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101258",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": false,
+    "route": "Rainbowdrop Crystal"
+  },
+  {
+    "id": 100061,
+    "name": "Raw Meat",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100061",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Raw Meat"
+  },
+  {
+    "id": 112032,
+    "name": "Recruit's Insignia",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112032",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Recruit's Insignia"
+  },
+  {
+    "id": 101256,
+    "name": "Red Berryshroom",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101256",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Red Berryshroom"
+  },
+  {
+    "id": 101402,
+    "name": "Red Dye",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101402",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Red Dye"
+  },
+  {
+    "id": 100092,
+    "name": "Rice",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100092",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Rice"
+  },
+  {
+    "id": 101233,
+    "name": "Romaritime Flower",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101233",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Romaritime Flower"
+  },
+  {
+    "id": 101213,
+    "name": "Rukkhashava Mushrooms",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101213",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": false,
+    "route": "Rukkhashava Mushrooms"
+  },
+  {
+    "id": 100100,
+    "name": "Rye",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101268",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Rye"
+  },
+  {
+    "id": 110016,
+    "name": "Rye Flour",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110016",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Rye Flour"
+  },
+  {
+    "id": 101202,
+    "name": "Sakura Bloom",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101202",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Sakura Bloom"
+  },
+  {
+    "id": 100075,
+    "name": "Salt",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100075",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Salt"
+  },
+  {
+    "id": 101222,
+    "name": "Sand Grease Pupa",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101222",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Sand Grease Pupa"
+  },
+  {
+    "id": 101304,
+    "name": "Sandbearer Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101304",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Sandbearer Wood"
+  },
+  {
+    "id": 101207,
+    "name": "Sango Pearl",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101207",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Sango Pearl"
+  },
+  {
+    "id": 101250,
+    "name": "Saurian Claw Succulent",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101250",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": true,
+    "route": "Saurian Claw Succulent"
+  },
+  {
+    "id": 110011,
+    "name": "Sausage",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110011",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Sausage"
+  },
+  {
+    "id": 101225,
+    "name": "Scarab",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101225",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Scarab"
+  },
+  {
+    "id": 101206,
+    "name": "Sea Ganoderma",
+    "category": "Local Specialty (Inazuma)",
+    "icon": "UI_ItemIcon_101206",
+    "rank": 1,
+    "type": "localSpecialtyInazuma",
+    "mapMark": true,
+    "route": "Sea Ganoderma"
+  },
+  {
+    "id": 101210,
+    "name": "Seagrass",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101210",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Seagrass"
+  },
+  {
+    "id": 112104,
+    "name": "Sentry's Wooden Whistle",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112104",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Sentry's Wooden Whistle"
+  },
+  {
+    "id": 100093,
+    "name": "Shrimp Meat",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100093",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Shrimp Meat"
+  },
+  {
+    "id": 100029,
+    "name": "Silk Flower",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100029",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Silk Flower"
+  },
+  {
+    "id": 101327,
+    "name": "Silver Fir Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101327",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Silver Fir Wood"
+  },
+  {
+    "id": 101254,
+    "name": "Skysplit Gembloom",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101254",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": false,
+    "route": "Skysplit Gembloom"
+  },
+  {
+    "id": 112002,
+    "name": "Slime Condensate",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112002",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Slime Condensate"
+  },
+  {
+    "id": 100055,
+    "name": "Small Lamp Grass",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100055",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Small Lamp Grass"
+  },
+  {
+    "id": 110015,
+    "name": "Smetana",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110015",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Smetana"
+  },
+  {
+    "id": 110003,
+    "name": "Smoked Fowl",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110003",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Smoked Fowl"
+  },
+  {
+    "id": 100015,
+    "name": "Snapdragon",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100015",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Snapdragon"
+  },
+  {
+    "id": 112053,
+    "name": "Spectral Husk",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112053",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Spectral Husk"
+  },
+  {
+    "id": 110014,
+    "name": "Spice",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110014",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Spice"
+  },
+  {
+    "id": 101245,
+    "name": "Spinel Fruit",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101245",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Spinel Fruit"
+  },
+  {
+    "id": 101247,
+    "name": "Sprayfeather Gill",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101247",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": true,
+    "route": "Sprayfeather Gill"
+  },
+  {
+    "id": 101240,
+    "name": "Spring of the First Dewdrop",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101240",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Spring of the First Dewdrop"
+  },
+  {
+    "id": 100033,
+    "name": "Starconch",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100033",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Starconch"
+  },
+  {
+    "id": 101006,
+    "name": "Starsilver",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101006",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "Starsilver"
+  },
+  {
+    "id": 100618,
+    "name": "Strange Tooth",
+    "category": "Material",
+    "icon": "UI_ItemIcon_100618",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Strange Tooth"
+  },
+  {
+    "id": 101239,
+    "name": "Subdetection Unit",
+    "category": "Local Specialty (Fontaine)",
+    "icon": "UI_ItemIcon_101239",
+    "rank": 1,
+    "type": "localSpecialtyFontaine",
+    "mapMark": true,
+    "route": "Subdetection Unit"
+  },
+  {
+    "id": 110006,
+    "name": "Sugar",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_110006",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Sugar"
+  },
+  {
+    "id": 101219,
+    "name": "Sumeru Rose",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101219",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Sumeru Rose"
+  },
+  {
+    "id": 100012,
+    "name": "Sweet Flower",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100012",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Sweet Flower"
+  },
+  {
+    "id": 112125,
+    "name": "Tattered Warrant",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112125",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Tattered Warrant"
+  },
+  {
+    "id": 101234,
+    "name": "Tidalga",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101234",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Tidalga"
+  },
+  {
+    "id": 100088,
+    "name": "Tofu",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100088",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Tofu"
+  },
+  {
+    "id": 100079,
+    "name": "Tomato",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100079",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Tomato"
+  },
+  {
+    "id": 101322,
+    "name": "Torch Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101322",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Torch Wood"
+  },
+  {
+    "id": 112080,
+    "name": "Transoceanic Pearl",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112080",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Transoceanic Pearl"
+  },
+  {
+    "id": 112035,
+    "name": "Treasure Hoarder Insignia",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112035",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Treasure Hoarder Insignia"
+  },
+  {
+    "id": 101224,
+    "name": "Trishiraite",
+    "category": "Local Specialty (Sumeru)",
+    "icon": "UI_ItemIcon_101224",
+    "rank": 1,
+    "type": "localSpecialtySumeru",
+    "mapMark": true,
+    "route": "Trishiraite"
+  },
+  {
+    "id": 100022,
+    "name": "Valberry",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100022",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Valberry"
+  },
+  {
+    "id": 100034,
+    "name": "Violetgrass",
+    "category": "Local Specialty (Liyue)",
+    "icon": "UI_ItemIcon_100034",
+    "rank": 1,
+    "type": "localSpecialtyLiyue",
+    "mapMark": true,
+    "route": "Violetgrass"
+  },
+  {
+    "id": 101228,
+    "name": "Viparyas",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101228",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Viparyas"
+  },
+  {
+    "id": 100017,
+    "name": "Wheat",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_100017",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": false,
+    "route": "Wheat"
+  },
+  {
+    "id": 101323,
+    "name": "White Chestnut Oak Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101323",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "White Chestnut Oak Wood"
+  },
+  {
+    "id": 101002,
+    "name": "White Iron Chunk",
+    "category": "Forging Ore",
+    "icon": "UI_ItemIcon_101002",
+    "rank": 1,
+    "type": "forgingOre",
+    "mapMark": true,
+    "route": "White Iron Chunk"
+  },
+  {
+    "id": 112038,
+    "name": "Whopperflower Nectar",
+    "category": "Character and Weapon Enhancement Material",
+    "icon": "UI_ItemIcon_112038",
+    "rank": 1,
+    "type": "characterandWeaponEnhancementMaterial",
+    "mapMark": false,
+    "route": "Whopperflower Nectar"
+  },
+  {
+    "id": 100024,
+    "name": "Windwheel Aster",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100024",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Windwheel Aster"
+  },
+  {
+    "id": 101268,
+    "name": "Winter Icelea",
+    "category": "Local Specialty (Nod-Krai)",
+    "icon": "UI_ItemIcon_101266",
+    "rank": 1,
+    "type": "localSpecialtyNodKrai",
+    "mapMark": false,
+    "route": "Winter Icelea"
+  },
+  {
+    "id": 120011,
+    "name": "Withered Kusava",
+    "category": "Quest Item",
+    "icon": "UI_ItemIcon_120011",
+    "rank": 1,
+    "type": "questItem",
+    "mapMark": false,
+    "route": "Withered Kusava"
+  },
+  {
+    "id": 101253,
+    "name": "Withering Purpurbloom",
+    "category": "Local Specialty (Natlan)",
+    "icon": "UI_ItemIcon_101253",
+    "rank": 1,
+    "type": "localSpecialtyNatlan",
+    "mapMark": true,
+    "route": "Withering Purpurbloom"
+  },
+  {
+    "id": 100021,
+    "name": "Wolfhook",
+    "category": "Local Specialty (Mondstadt)",
+    "icon": "UI_ItemIcon_100021",
+    "rank": 1,
+    "type": "localSpecialtyMondstadt",
+    "mapMark": true,
+    "route": "Wolfhook"
+  },
+  {
+    "id": 101403,
+    "name": "Yellow Dye",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101403",
+    "rank": 1,
+    "type": "material",
+    "mapMark": false,
+    "route": "Yellow Dye"
+  },
+  {
+    "id": 101309,
+    "name": "Yumemiru Wood",
+    "category": "Material",
+    "icon": "UI_ItemIcon_101309",
+    "rank": 1,
+    "type": "material",
+    "mapMark": true,
+    "route": "Yumemiru Wood"
+  },
+  {
+    "id": 101218,
+    "name": "Zaytun Peach",
+    "category": "Cooking Ingredient",
+    "icon": "UI_ItemIcon_101218",
+    "rank": 1,
+    "type": "cookingIngredient",
+    "mapMark": true,
+    "route": "Zaytun Peach"
+  }
 ]

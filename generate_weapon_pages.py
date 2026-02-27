@@ -510,6 +510,10 @@ def generate_weapon_page(weapon_id, weapon_name):
 <script>
     const weaponId = {weapon_id};
 
+    function sanitizeFileName(name) {{
+        return name.replace(/'/g, '').replace(/"/g, '').replace(/\\\\/g, '_').replace(/\\//g, '_');
+    }}
+
     async function loadWeapon() {{
         const contentDiv = document.getElementById('weaponContent');
         try {{
@@ -522,7 +526,8 @@ def generate_weapon_page(weapon_id, weapon_name):
             }}
             let fullWeapon = null;
             try {{
-                const fullRes = await fetch(`../Data/weapons/${{weapon.name}}.json`);
+                const sanitizedName = sanitizeFileName(weapon.name);
+                const fullRes = await fetch(`../Data/weapons/${{sanitizedName}}.json`);
                 fullWeapon = await fullRes.json();
             }} catch (e) {{}}
             renderWeapon(weapon, fullWeapon);

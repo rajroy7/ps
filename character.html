@@ -301,6 +301,9 @@ async function initPage() {
         console.log('Initializing character detail page...');
         console.log('Character map loaded, found', Object.keys(characterMap).length, 'characters');
         
+        // Pre-load inventory data
+        await loadInventoryData();
+        
         const urlParams = new URLSearchParams(window.location.search);
         const characterId = urlParams.get('id');
         console.log('Looking for character ID:', characterId);
@@ -458,8 +461,8 @@ function generateCharacterContent(charData) {
                 <h3>Level Configuration</h3>
                 <p style="font-size:14px; color:#aaa; margin-bottom:12px;">Select target level:</p>
                 <div id="levelButtons" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;"></div>
-                <div id="materialCalculator" style="background:rgba(255,255,255,0.05); border-radius:12px; padding:16px;">
-                    <h4 style="margin-top:0; color:#7c5cff;">Materials & Mora Required</h4>
+                <div id="materialCalculator" style="background: linear-gradient(135deg, rgba(100,100,255,0.05) 0%, rgba(200,150,255,0.05) 100%); border: 1px solid rgba(124,92,255,0.3); border-radius:12px; padding:16px;">
+                    <h4 style="margin-top:0; color:#7c5cff;">⚗️ Materials & Mora Required</h4>
                     <div id="materialsDisplay" style="font-size:14px; color:#ddd;"></div>
                 </div>
                 <h4 style="margin-top:20px; color:#7c5cff;">Stats at Selected Level</h4>
@@ -934,24 +937,93 @@ function calculateStatsAtLevel(charData, targetLevel) {
     return stats;
 }
 
+// Global inventory cache
+let inventoryCache = null;
+
+function loadInventoryData() {
+    return fetch('inventory.json')
+        .then(r => r.json())
+        .then(data => {
+            inventoryCache = data;
+            return data;
+        })
+        .catch(err => {
+            console.warn('Failed to load inventory.json:', err);
+            return null;
+        });
+}
+
 function updateMaterialCalculator(charData, targetLevel) {
     const { materials, mora } = calculateMaterialsForLevel(charData, targetLevel);
     const stats = calculateStatsAtLevel(charData, targetLevel);
     
-    // Display materials
-    let materialHtml = '';
+    // Display materials with icons
     if (Object.keys(materials).length === 0) {
-        materialHtml = '<p style="color:#aaa;">No materials required for this level.</p>';
+        document.getElementById('materialsDisplay').innerHTML = '<p style="color:#aaa;">No materials required for this level.</p>';
     } else {
-        materialHtml = '<table style="width:100%; font-size:13px;">';
-        Object.entries(materials).forEach(([matId, qty]) => {
-            materialHtml += `<tr style="border-bottom:1px solid rgba(255,255,255,0.1); padding:4px 0;"><td>${getMaterialName(matId)}</td><td style="text-align:right; color:#7c5cff;">${qty}x</td></tr>`;
-        });
-        materialHtml += `<tr style="border-top:2px solid rgba(124,92,255,0.3); margin-top:8px; padding-top:8px;"><td><strong>Mora</strong></td><td style="text-align:right; color:#ffd700;"><strong>${mora.toLocaleString()}</strong></td></tr>`;
-        materialHtml += '</table>';
+        // Use cached inventory or fetch if not cached
+        const displayMaterials = (inventory) => {
+            let cardsHtml = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; margin-bottom: 16px;">';
+            
+            // Create material cards
+            Object.entries(materials).forEach(([matId, qty]) => {
+                const matIdNum = parseInt(matId);
+                const invItem = inventory ? inventory.find(item => item.id === matIdNum) : null;
+                
+                if (invItem) {
+                    // Use inventory data with icon
+                    const iconUrl = `https://gi.yatta.moe/assets/UI/${invItem.icon}.png`;
+                    const rankColor = ['#888', '#4a9eff', '#00d4ff', '#b291dc', '#ffc107'][invItem.rank - 1] || '#888';
+                    
+                    cardsHtml += `
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(100,100,255,0.08) 0%, rgba(200,150,255,0.08) 100%); border: 2px solid ${rankColor}; border-radius: 6px; text-align: center; transition: all 0.2s;">
+                            <img src="${iconUrl}" alt="${invItem.name}" style="width: 48px; height: 48px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect fill=%22%23333%22 width=%2248%22 height=%2248%22/%3E%3Ctext fill=%22%23666%22 text-anchor=%22middle%22 x=%2224%22 y=%2730%22 font-size=%2220%22%3E?%3C/text%3E%3C/svg%3E'">
+                            <div style="font-size: 12px; color: #7c5cff; font-weight: 700;">${qty}x</div>
+                            <div style="font-size: 11px; color: #ddd; line-height: 1.3; word-break: break-word; width: 90px;">${invItem.name}</div>
+                        </div>
+                    `;
+                } else {
+                    // Fallback - show material ID
+                    cardsHtml += `
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(100,100,100,0.08) 0%, rgba(150,150,150,0.08) 100%); border: 2px solid #666; border-radius: 6px; text-align: center;">
+                            <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 28px;">❓</div>
+                            <div style="font-size: 12px; color: #7c5cff; font-weight: 700;">${qty}x</div>
+                            <div style="font-size: 10px; color: #999; line-height: 1.3;">ID: ${matId}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            // Add mora card
+            const moraColor = '#ffd700';
+            cardsHtml += `
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,200,0,0.08) 100%); border: 2px solid ${moraColor}; border-radius: 6px; text-align: center; transition: all 0.2s;">
+                    <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 32px;">💰</div>
+                    <div style="font-size: 10px; color: ${moraColor}; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Mora</div>
+                    <div style="font-size: 12px; color: ${moraColor}; font-weight: 700; line-height: 1.3;">${mora.toLocaleString()}</div>
+                </div>
+            `;
+            
+            cardsHtml += '</div>';
+            document.getElementById('materialsDisplay').innerHTML = cardsHtml;
+        };
+        
+        // Use cached inventory or fetch
+        if (inventoryCache) {
+            displayMaterials(inventoryCache);
+        } else {
+            fetch('inventory.json')
+                .then(r => r.json())
+                .then(inventory => {
+                    inventoryCache = inventory;
+                    displayMaterials(inventory);
+                })
+                .catch(err => {
+                    console.warn('Failed to load inventory:', err);
+                    displayMaterials(null);
+                });
+        }
     }
-    
-    document.getElementById('materialsDisplay').innerHTML = materialHtml;
     
     // Update stats display
     document.getElementById('statHP').textContent = Math.round(stats.hp);
