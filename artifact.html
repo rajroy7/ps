@@ -30,8 +30,9 @@
             background: linear-gradient(135deg, rgba(124, 92, 255, 0.2) 0%, rgba(124, 92, 255, 0.1) 100%);
             border: 2px solid rgba(124, 92, 255, 0.4);
             border-radius: 12px;
-            padding: 40px;
-            aspect-ratio: 1;
+            padding: 20px;
+            width: 200px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -331,18 +332,10 @@
                 </div>
 
                 <div class="content-tabs">
-                    <button class="tab-btn active" onclick="switchTab(event, 'story')">Story</button>
-                    <button class="tab-btn" onclick="switchTab(event, 'stats')">Stats</button>
+                    <button class="tab-btn active" onclick="switchTab(event, 'stats')">Stats</button>
                 </div>
 
-                <div id="story" class="content-section active">
-                    <div class="artifact-info-section">
-                        <h4>History</h4>
-                        <p class="artifact-story-text">This artifact set is part of the Genshin Impact world. Explore its history and significance through your adventures.</p>
-                    </div>
-                </div>
-
-                <div id="stats" class="content-section">
+                <div id="stats" class="content-section active">
                     <div class="artifact-info-section">
                         <h4>Artifact Pieces</h4>
                         <div class="artifact-story-text">
@@ -359,8 +352,6 @@
                             <p>Rarity: ${artifact.rarity}★</p>
                             <p>This artifact set can be found in domains and from various sources in the game.</p>
                         </div>
-                    </div>
-                </div>
             `;
         } catch (error) {
             console.error('Error loading artifact:', error);
