@@ -309,34 +309,47 @@ function showError(message) {
 async function loadCharacterData(characterId) {
     try {
         console.log('Loading character data for ID:', characterId);
-        const charInfo = characterMap[characterId];
-        console.log('Character info from map:', charInfo);
         
-        const dataPath = `Data/data/${charInfo.file}.json`;
-        console.log('Attempting to fetch from:', dataPath);
-        console.log('Current page URL:', window.location.href);
-        
-        let response;
+        // Try to load from consolidated characters-data.json first (for GitHub compatibility)
+        let charData;
         try {
-            response = await fetch(dataPath);
-        } catch (fetchError) {
-            console.error('Fetch error (this is normal for file:// protocol):', fetchError);
-            throw new Error(`Cannot load Data/data/${charInfo.file}.json - ensure you're running this through an HTTP server, not opening as file:// (${fetchError.message})`);
-        }
-        
-        console.log('Fetch response status:', response.status, response.statusText);
-        
-        if (!response.ok) {
-            // For 404, provide specific path help
-            if (response.status === 404) {
-                throw new Error(`File not found: Data/data/${charInfo.file}.json - Check that the file exists in the Data/data directory`);
+            const response = await fetch('characters-data.json');
+            if (response.ok) {
+                const allCharsData = await response.json();
+                charData = allCharsData[characterId];
+                if (charData) {
+                    console.log('Character data loaded from characters-data.json');
+                    // Wrap in the expected format
+                    charData = charData;
+                } else {
+                    throw new Error('Character not found in consolidated data');
+                }
+            } else {
+                throw new Error('Consolidated data file not available');
             }
-            throw new Error(`Failed to load ${dataPath}: ${response.status} ${response.statusText}`);
+        } catch (consolidatedError) {
+            console.log('Trying fallback method from Data/data/ folder:', consolidatedError.message);
+            
+            // Fallback to individual data files (for local development)
+            const charInfo = characterMap[characterId];
+            if (!charInfo) {
+                throw new Error(`Character ID ${characterId} not found in character map`);
+            }
+            
+            const dataPath = `Data/data/${charInfo.file}.json`;
+            console.log('Attempting to fetch from:', dataPath);
+            
+            const response = await fetch(dataPath);
+            if (!response.ok) {
+                if (response.status === 404) {
+                    throw new Error(`Character data file not found. Make sure:\n1. GitHub repository has Data/data/ folder pushed\n2. Or upload characters-data.json to the root directory\n3. Or run locally with HTTP server`);
+                }
+                throw new Error(`Failed to load ${dataPath}: ${response.status} ${response.statusText}`);
+            }
+            
+            const jsonData = await response.json();
+            charData = jsonData.data;
         }
-        
-        const jsonData = await response.json();
-        console.log('Character JSON loaded successfully');
-        const charData = jsonData.data;
         
         // Update page title
         document.title = `${charData.name} - Project Skirk`;
