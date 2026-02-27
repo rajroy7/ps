@@ -1310,7 +1310,7 @@ function updateTalentCostsDisplay(totalMaterials, totalMora) {
         document.querySelectorAll('#talentCostsDisplay .material-card').forEach(card => {
             card.addEventListener('click', () => {
                 const itemId = card.dataset.itemId;
-                window.location.href = `inventory-items/${itemId}.html`;
+                window.location.href = `inventory-item.html?id=${itemId}`;
             });
         });
     };
@@ -1389,7 +1389,7 @@ function updateMaterialCalculator(charData, targetLevel) {
             document.querySelectorAll('.material-card').forEach(card => {
                 card.addEventListener('click', () => {
                     const itemId = card.dataset.itemId;
-                    window.location.href = `inventory-items/${itemId}.html`;
+                    window.location.href = `inventory-item.html?id=${itemId}`;
                 });
             });
         };

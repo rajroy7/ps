@@ -742,7 +742,7 @@ function initializePageSearch() {
             
             // Click handler to navigate to item page
             card.addEventListener('click', () => {
-                window.location.href = `inventory-items/${item.id}.html`;
+                window.location.href = `inventory-item.html?id=${item.id}`;
             });
         } else {
             // Fallback for other item types
