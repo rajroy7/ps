@@ -16,9 +16,9 @@
 .detail-tabs { display:flex; gap:24px; padding:0 20px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:16px; overflow-x:auto; }
 .detail-tabs a { color:#aaa; text-decoration:none; padding:12px 0; transition:color 0.2s; cursor:pointer; white-space:nowrap; }
 .detail-tabs a.active { color:#fff; border-bottom:2px solid #7c5cff; }
-.character-overview { text-align:center; padding:20px; animation:fadeIn 1s ease; }
-.character-overview img { width:120px; border-radius:50%; }
-.character-overview p { opacity:0.8; margin-top:8px; }
+.character-overview { text-align:center; padding:20px; animation:fadeIn 1s ease; display:flex; flex-direction:column; align-items:center; gap:20px; }
+.character-overview img { border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.3); }
+.character-overview p { opacity:0.8; margin:0; max-width:600px; font-size:15px; line-height:1.6; }
 .info-panels { display:flex; flex-wrap:wrap; gap:20px; padding:0 20px; }
 .basic-info, .ascension { background:rgba(255,255,255,0.05); border-radius:12px; padding:20px; flex:1 1 300px; animation:fadeIn 0.8s ease; }
 .basic-info table { width:100%; color:#fff; }
@@ -375,14 +375,14 @@ async function loadCharacterData(characterId) {
 }
 
 function generateCharacterContent(charData) {
-    const iconUrl = `https://gi.yatta.moe/assets/UI/UI_${charData.icon}.png?vh=2024123000`;
+    const iconUrl = `https://gi.yatta.moe/assets/UI/${charData.icon}.png?vh=2024123000`;
     const detail = charData.fetter?.detail || 'No description available';
     const releaseDate = new Date(charData.release * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     
     return `
         <div id="tab-info">
             <div class="character-overview">
-                <img src="${iconUrl}" alt="${charData.name}" onerror="this.src='https://via.placeholder.com/120'">
+                <img src="${iconUrl}" alt="${charData.name}" style="width:240px;height:240px;object-fit:cover;" onerror="this.src='https://via.placeholder.com/240'">
                 <p>${detail}</p>
             </div>
             <div class="info-panels">
@@ -391,8 +391,8 @@ function generateCharacterContent(charData) {
                     <table>
                         <tr><td>Name</td><td>${charData.name}</td></tr>
                         <tr><td>Title</td><td>${charData.fetter?.title || 'N/A'}</td></tr>
-                        <tr><td>Element</td><td>${charData.element || 'N/A'}</td></tr>
-                        <tr><td>Weapon Type</td><td>${formatWeaponType(charData.weaponType)}</td></tr>
+                        <tr><td>Element</td><td>${charData.element ? `<img src="${getElementIcon(mapElementName(charData.element))}" alt="${mapElementName(charData.element)}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;">${mapElementName(charData.element)}` : 'N/A'}</td></tr>
+                        <tr><td>Weapon Type</td><td><img src="${getWeaponIcon(charData.weaponType)}" alt="${formatWeaponType(charData.weaponType)}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;">${formatWeaponType(charData.weaponType)}</td></tr>
                         <tr><td>Region</td><td>${charData.region || 'N/A'}</td></tr>
                         <tr><td>Rarity</td><td>${charData.rank || 'N/A'}⭐</td></tr>
                         <tr><td>Body Type</td><td>${charData.bodyType || 'N/A'}</td></tr>
@@ -737,6 +737,51 @@ function formatPropName(propType) {
         'FIGHT_PROP_GRASS_ADD_HURT': 'Dendro Bonus'
     };
     return propNames[propType] || propType;
+}
+
+function getElementIcon(element) {
+    const elementIcons = {
+        'Pyro': 'https://ik.imagekit.io/gukc1okbd/pyro.png',
+        'Hydro': 'https://ik.imagekit.io/gukc1okbd/hydro.png',
+        'Electro': 'https://ik.imagekit.io/gukc1okbd/electro.png',
+        'Cryo': 'https://ik.imagekit.io/gukc1okbd/cryo.png',
+        'Anemo': 'https://ik.imagekit.io/gukc1okbd/anemo.png',
+        'Geo': 'https://ik.imagekit.io/gukc1okbd/geo.png',
+        'Dendro': 'https://ik.imagekit.io/gukc1okbd/dendro.png'
+    };
+    return elementIcons[element] || '';
+}
+
+function mapElementName(element) {
+    const elementMap = {
+        'Fire': 'Pyro',
+        'Water': 'Hydro',
+        'Electric': 'Electro',
+        'Ice': 'Cryo',
+        'Wind': 'Anemo',
+        'Rock': 'Geo',
+        'Grass': 'Dendro'
+    };
+    return elementMap[element] || element;
+}
+
+function getWeaponIcon(weaponType) {
+    const weaponTypeMap = {
+        'WEAPON_SWORD_ONE_HAND': 'Sword',
+        'WEAPON_CLAYMORE': 'Claymore',
+        'WEAPON_CATALYST': 'Catalyst',
+        'WEAPON_BOW': 'Bow',
+        'WEAPON_POLEARM': 'Polearm'
+    };
+    const weaponName = weaponTypeMap[weaponType] || weaponType;
+    const weaponIcons = {
+        'Sword': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png',
+        'Claymore': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png',
+        'Catalyst': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png',
+        'Bow': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png',
+        'Polearm': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png'
+    };
+    return weaponIcons[weaponName] || '';
 }
 
 function initDetailPage() {

@@ -159,18 +159,25 @@ function renderCharacters(chars, container) {
     elementIcon.style.height = '24px';
     elementIcon.title = c.vision;
 
-    // Weapon icon (using emoji placeholders)
-    const weaponIcon = document.createElement('span');
-    weaponIcon.style.fontSize = '20px';
+    // Weapon icon
+    const weaponIcon = document.createElement('img');
     weaponIcon.title = c.weapon;
-    const weaponEmojis = {
-      'Sword': '⚔️',
-      'Polearm': '🔱',
-      'Bow': '🏹',
-      'Claymore': '🔨',
-      'Catalyst': '📖'
+    weaponIcon.style.width = '24px';
+    weaponIcon.style.height = '24px';
+    const weaponIcons = {
+      'Sword': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png',
+      'Claymore': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png',
+      'Catalyst': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png',
+      'Bow': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png',
+      'Polearm': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png'
     };
-    weaponIcon.innerText = weaponEmojis[c.weapon] || '❓';
+    const weaponIconUrl = weaponIcons[c.weapon];
+    if (weaponIconUrl && weaponIconUrl.startsWith('http')) {
+      weaponIcon.src = weaponIconUrl;
+      weaponIcon.alt = c.weapon;
+    } else {
+      weaponIcon.style.display = 'none';
+    }
 
     meta.appendChild(elementIcon);
     meta.appendChild(weaponIcon);

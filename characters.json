@@ -9,7 +9,7 @@
     "region": "MONDSTADT",
     "version": "Luna V",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Varka.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2026-02-25"
   },
   {
@@ -30,7 +30,7 @@
     "name": "Illuga",
     "title": "Nightmare's Burning Heart",
     "vision": "Geo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "NODKRAI",
     "version": "Luna IV",
@@ -48,7 +48,7 @@
     "region": "NODKRAI",
     "version": "Luna IV",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Columbina.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2026-01-14"
   },
   {
@@ -61,7 +61,7 @@
     "region": "MONDSTADT",
     "version": "Luna III",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Durin.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2025-12-03"
   },
   {
@@ -74,7 +74,7 @@
     "region": "NODKRAI",
     "version": "Luna III",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Jahoda.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2025-12-03"
   },
   {
@@ -87,7 +87,7 @@
     "region": "NODKRAI",
     "version": "Luna II",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nefer.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2025-10-22"
   },
   {
@@ -95,12 +95,12 @@
     "name": "Flins",
     "title": "Shadowy Lights, Stranger Wights",
     "vision": "Electro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "NODKRAI",
     "version": "Luna I",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Flins.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2025-09-30"
   },
   {
@@ -113,7 +113,7 @@
     "region": "NODKRAI",
     "version": "Luna I",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lauma.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2025-09-10"
   },
   {
@@ -126,7 +126,7 @@
     "region": "NODKRAI",
     "version": "Luna I",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Aino.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2025-09-10"
   },
   {
@@ -134,12 +134,12 @@
     "name": "Ineffa",
     "title": "Boom Boom Thunderwave",
     "vision": "Electro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "NODKRAI",
     "version": "5.8",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ineffa.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2025-07-30"
   },
   {
@@ -152,7 +152,7 @@
     "region": "OMNI_SCOURGE",
     "version": "5.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_SkirkNew.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2025-06-18"
   },
   {
@@ -165,7 +165,7 @@
     "region": "MONDSTADT",
     "version": "5.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Dahlia.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2025-06-18"
   },
   {
@@ -173,12 +173,12 @@
     "name": "Escoffier",
     "title": "Tasteful Excellence",
     "vision": "Cryo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "FONTAINE",
     "version": "5.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Escoffier.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2025-05-07"
   },
   {
@@ -191,7 +191,7 @@
     "region": "NATLAN",
     "version": "5.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ifa.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2025-05-07"
   },
   {
@@ -199,12 +199,12 @@
     "name": "Iansan",
     "title": "Tempered in Molten Stone",
     "vision": "Electro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "NATLAN",
     "version": "5.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Iansan.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2025-03-26"
   },
   {
@@ -217,7 +217,7 @@
     "region": "NATLAN",
     "version": "5.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Varesa.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2025-03-26"
   },
   {
@@ -230,7 +230,7 @@
     "region": "INAZUMA",
     "version": "5.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mizuki.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2025-02-12"
   },
   {
@@ -243,7 +243,7 @@
     "region": "LIYUE",
     "version": "5.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lanyan.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2025-01-21"
   },
   {
@@ -256,7 +256,7 @@
     "region": "NATLAN",
     "version": "5.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mavuika.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2025-01-01"
   },
   {
@@ -269,7 +269,7 @@
     "region": "NATLAN",
     "version": "5.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Citlali.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2025-01-01"
   },
   {
@@ -282,7 +282,7 @@
     "region": "NATLAN",
     "version": "5.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chasca.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2024-11-20"
   },
   {
@@ -295,7 +295,7 @@
     "region": "NATLAN",
     "version": "5.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Olorun.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2024-11-20"
   },
   {
@@ -321,7 +321,7 @@
     "region": "NATLAN",
     "version": "5.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kinich.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2024-09-17"
   },
   {
@@ -329,7 +329,7 @@
     "name": "Kachina",
     "title": "Mottled Gold Yet Unsmelted",
     "vision": "Geo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "NATLAN",
     "version": "5.0",
@@ -347,7 +347,7 @@
     "region": "NATLAN",
     "version": "5.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mualani.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2024-08-28"
   },
   {
@@ -355,12 +355,12 @@
     "name": "Emilie",
     "title": "A Thousand Scents Traced",
     "vision": "Dendro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "FONTAINE",
     "version": "4.8",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Emilie.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2024-08-06"
   },
   {
@@ -373,7 +373,7 @@
     "region": "FONTAINE",
     "version": "4.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sigewinne.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2024-06-25"
   },
   {
@@ -386,7 +386,7 @@
     "region": "SUMERU",
     "version": "4.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sethos.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2024-06-05"
   },
   {
@@ -399,7 +399,7 @@
     "region": "FONTAINE",
     "version": "4.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Clorinde.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2024-06-05"
   },
   {
@@ -407,12 +407,12 @@
     "name": "Arlecchino",
     "title": "Dire Balemoon",
     "vision": "Pyro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "FATUI",
     "version": "4.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Arlecchino.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2024-04-24"
   },
   {
@@ -438,7 +438,7 @@
     "region": "LIYUE",
     "version": "4.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Gaming.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2024-01-31"
   },
   {
@@ -451,7 +451,7 @@
     "region": "LIYUE",
     "version": "4.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Liuyun.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2024-01-31"
   },
   {
@@ -459,12 +459,12 @@
     "name": "Chevreuse",
     "title": "Executor of Justice",
     "vision": "Pyro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "FONTAINE",
     "version": "4.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chevreuse.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2024-01-09"
   },
   {
@@ -490,7 +490,7 @@
     "region": "FONTAINE",
     "version": "4.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Charlotte.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2023-11-08"
   },
   {
@@ -503,7 +503,7 @@
     "region": "FONTAINE",
     "version": "4.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Furina.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2023-11-08"
   },
   {
@@ -516,7 +516,7 @@
     "region": "FONTAINE",
     "version": "4.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Wriothesley.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2023-10-17"
   },
   {
@@ -529,7 +529,7 @@
     "region": "FONTAINE",
     "version": "4.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Neuvillette.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2023-09-27"
   },
   {
@@ -542,7 +542,7 @@
     "region": "FONTAINE",
     "version": "4.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Freminet.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2023-09-05"
   },
   {
@@ -555,7 +555,7 @@
     "region": "FONTAINE",
     "version": "4.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Linette.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2023-08-16"
   },
   {
@@ -568,7 +568,7 @@
     "region": "FONTAINE",
     "version": "4.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Liney.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2023-08-16"
   },
   {
@@ -581,7 +581,7 @@
     "region": "INAZUMA",
     "version": "3.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Momoka.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2023-05-24"
   },
   {
@@ -594,7 +594,7 @@
     "region": "SUMERU",
     "version": "3.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kaveh.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2023-05-02"
   },
   {
@@ -607,7 +607,7 @@
     "region": "LIYUE",
     "version": "3.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Baizhuer.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2023-05-02"
   },
   {
@@ -615,12 +615,12 @@
     "name": "Mika",
     "title": "Coordinates of Clear Frost",
     "vision": "Cryo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "MONDSTADT",
     "version": "3.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mika.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2023-03-21"
   },
   {
@@ -633,7 +633,7 @@
     "region": "SUMERU",
     "version": "3.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Dehya.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2023-03-01"
   },
   {
@@ -641,12 +641,12 @@
     "name": "Yaoyao",
     "title": "Burgeoning Grace",
     "vision": "Dendro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "LIYUE",
     "version": "3.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yaoyao.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2023-01-18"
   },
   {
@@ -659,7 +659,7 @@
     "region": "SUMERU",
     "version": "3.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Alhatham.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2023-01-18"
   },
   {
@@ -672,7 +672,7 @@
     "region": "SUMERU",
     "version": "3.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Wanderer.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2022-12-07"
   },
   {
@@ -685,7 +685,7 @@
     "region": "SUMERU",
     "version": "3.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Faruzan.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2022-12-07"
   },
   {
@@ -698,7 +698,7 @@
     "region": "SUMERU",
     "version": "3.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Layla.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2022-11-18"
   },
   {
@@ -711,7 +711,7 @@
     "region": "SUMERU",
     "version": "3.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nahida.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2022-11-02"
   },
   {
@@ -724,7 +724,7 @@
     "region": "SUMERU",
     "version": "3.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nilou.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2022-10-14"
   },
   {
@@ -732,12 +732,12 @@
     "name": "Cyno",
     "title": "Judicator of Secrets",
     "vision": "Electro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "SUMERU",
     "version": "3.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Cyno.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2022-09-28"
   },
   {
@@ -745,12 +745,12 @@
     "name": "Candace",
     "title": "Golden Vow",
     "vision": "Hydro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "SUMERU",
     "version": "3.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Candace.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2022-09-28"
   },
   {
@@ -763,7 +763,7 @@
     "region": "SUMERU",
     "version": "3.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Dori.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2022-09-09"
   },
   {
@@ -776,7 +776,7 @@
     "region": "SUMERU",
     "version": "3.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Collei.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2022-08-24"
   },
   {
@@ -789,7 +789,7 @@
     "region": "SUMERU",
     "version": "3.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Tighnari.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/dendro.png",
     "release_date": "2022-08-24"
   },
   {
@@ -802,7 +802,7 @@
     "region": "INAZUMA",
     "version": "2.8",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Heizo.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2022-07-13"
   },
   {
@@ -815,7 +815,7 @@
     "region": "INAZUMA",
     "version": "2.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shinobu.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2022-06-21"
   },
   {
@@ -828,7 +828,7 @@
     "region": "LIYUE",
     "version": "2.7",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yelan.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2022-05-31"
   },
   {
@@ -841,7 +841,7 @@
     "region": "INAZUMA",
     "version": "2.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ayato.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2022-03-30"
   },
   {
@@ -854,7 +854,7 @@
     "region": "INAZUMA",
     "version": "2.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yae.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2022-02-16"
   },
   {
@@ -862,12 +862,12 @@
     "name": "Shenhe",
     "title": "Lonesome Transcendence",
     "vision": "Cryo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "LIYUE",
     "version": "2.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shenhe.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2022-01-05"
   },
   {
@@ -875,7 +875,7 @@
     "name": "Yun Jin",
     "title": "Stage Lucida",
     "vision": "Geo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "LIYUE",
     "version": "2.4",
@@ -914,12 +914,12 @@
     "name": "Thoma",
     "title": "Protector From Afar",
     "vision": "Pyro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "INAZUMA",
     "version": "2.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Tohma.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2021-11-02"
   },
   {
@@ -932,7 +932,7 @@
     "region": "INAZUMA",
     "version": "2.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kokomi.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2021-09-21"
   },
   {
@@ -940,12 +940,12 @@
     "name": "Raiden Shogun",
     "title": "Plane of Euthymia",
     "vision": "Electro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "INAZUMA",
     "version": "2.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shougun.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2021-09-01"
   },
   {
@@ -958,7 +958,7 @@
     "region": "INAZUMA",
     "version": "2.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sara.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2021-09-01"
   },
   {
@@ -971,7 +971,7 @@
     "region": "RANGER",
     "version": "2.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Aloy.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2021-09-01"
   },
   {
@@ -984,7 +984,7 @@
     "region": "INAZUMA",
     "version": "2.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yoimiya.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2021-08-10"
   },
   {
@@ -997,7 +997,7 @@
     "region": "INAZUMA",
     "version": "2.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sayu.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2021-08-10"
   },
   {
@@ -1010,7 +1010,7 @@
     "region": "INAZUMA",
     "version": "2.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ayaka.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2021-07-21"
   },
   {
@@ -1023,7 +1023,7 @@
     "region": "INAZUMA",
     "version": "1.6",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kazuha.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2021-06-29"
   },
   {
@@ -1036,7 +1036,7 @@
     "region": "MONDSTADT",
     "version": "1.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Eula.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2021-05-18"
   },
   {
@@ -1049,7 +1049,7 @@
     "region": "LIYUE",
     "version": "1.5",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Feiyan.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2021-04-28"
   },
   {
@@ -1057,12 +1057,12 @@
     "name": "Rosaria",
     "title": "Thorny Benevolence",
     "vision": "Cryo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "MONDSTADT",
     "version": "1.4",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Rosaria.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2021-04-06"
   },
   {
@@ -1070,12 +1070,12 @@
     "name": "Hu Tao",
     "title": "Fragrance in Thaw",
     "vision": "Pyro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "LIYUE",
     "version": "1.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Hutao.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2021-03-02"
   },
   {
@@ -1083,12 +1083,12 @@
     "name": "Xiao",
     "title": "Vigilant Yaksha",
     "vision": "Anemo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "LIYUE",
     "version": "1.3",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xiao.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2021-02-03"
   },
   {
@@ -1101,7 +1101,7 @@
     "region": "LIYUE",
     "version": "1.2",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ganyu.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2021-01-12"
   },
   {
@@ -1122,7 +1122,7 @@
     "name": "Zhongli",
     "title": "Vago Mundo",
     "vision": "Geo",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 5,
     "region": "LIYUE",
     "version": "1.1",
@@ -1140,7 +1140,7 @@
     "region": "LIYUE",
     "version": "1.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xinyan.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2020-12-01"
   },
   {
@@ -1153,7 +1153,7 @@
     "region": "FATUI",
     "version": "1.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Tartaglia.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2020-11-11"
   },
   {
@@ -1166,7 +1166,7 @@
     "region": "MONDSTADT",
     "version": "1.1",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Diona.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2020-11-11"
   },
   {
@@ -1179,7 +1179,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Klee.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2020-10-20"
   },
   {
@@ -1192,7 +1192,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Qin.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1205,7 +1205,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lisa.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1231,7 +1231,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Barbara.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1244,7 +1244,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kaeya.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1257,7 +1257,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Diluc.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1270,7 +1270,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Razor.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1283,7 +1283,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ambor.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1296,7 +1296,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Venti.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1304,12 +1304,12 @@
     "name": "Xiangling",
     "title": "Exquisite Delicacy",
     "vision": "Pyro",
-    "weapon": "WEAPON_POLE",
+    "weapon": "Polearm",
     "rarity": 4,
     "region": "LIYUE",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xiangling.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1322,7 +1322,7 @@
     "region": "LIYUE",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Beidou.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1335,7 +1335,7 @@
     "region": "LIYUE",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xingqiu.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1361,7 +1361,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Fischl.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1374,7 +1374,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Bennett.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/pyro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1400,7 +1400,7 @@
     "region": "LIYUE",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Qiqi.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1413,7 +1413,7 @@
     "region": "LIYUE",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chongyun.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/cryo.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1426,7 +1426,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mona.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/hydro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1439,7 +1439,7 @@
     "region": "LIYUE",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Keqing.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/electro.png",
     "release_date": "2020-09-28"
   },
   {
@@ -1452,7 +1452,7 @@
     "region": "MONDSTADT",
     "version": "1.0",
     "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sucrose.png?vh=2024123000",
-    "icon": "",
+    "icon": "https://ik.imagekit.io/gukc1okbd/anemo.png",
     "release_date": "2020-09-28"
   },
   {
