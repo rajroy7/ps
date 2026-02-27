@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artifact - Project Skirk</title>
     <link rel="icon" href="https://ik.imagekit.io/gukc1okbd/Crystallina_Shape.webp" type="image/webp">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .artifact-detail-wrapper {
             min-height: 100vh;
@@ -253,15 +253,15 @@
         </button>
         <div class="logo">PROJECT SKIRK</div>
         <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="../characters.html">Characters</a>
-            <a href="../weapons.html">Weapons</a>
-            <a href="../artifacts.html">Artifacts</a>
+            <a href="index.html">Home</a>
+            <a href="characters.html">Characters</a>
+            <a href="weapons.html">Weapons</a>
+            <a href="artifacts.html">Artifacts</a>
             <button class="nav-search-btn" id="searchBtn" title="Search">
-                <img src="../icons/search.png" alt="Search" class="search-icon">
+                <img src="icons/search.png" alt="Search" class="search-icon">
             </button>
             <button class="nav-settings-btn" id="topSettingsBtn" title="Settings">
-                <img src="../icons/settings.png" alt="Settings" class="settings-icon">
+                <img src="icons/settings.png" alt="Settings" class="settings-icon">
             </button>
         </div>
     </nav>
@@ -278,7 +278,7 @@
     </div>
 </div>
 
-<script src="../script.js"></script>
+<script src="script.js"></script>
 <script>
     async function loadArtifactDetail() {
         const params = new URLSearchParams(window.location.search);
@@ -291,7 +291,7 @@
         }
         
         try {
-            const response = await fetch('../artifacts.json');
+            const response = await fetch('artifacts.json');
             const artifacts = await response.json();
             const artifact = artifacts.find(a => a.id == artifactId);
             

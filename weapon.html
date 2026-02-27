@@ -504,6 +504,21 @@
     const params = new URLSearchParams(window.location.search);
     const weaponId = params.get('id');
 
+    function sanitizeFileName(name) {
+        return name
+            .replace(/\//g, '_')
+            .replace(/\\/g, '_')
+            .replace(/:/g, '_')
+            .replace(/\*/g, '_')
+            .replace(/\?/g, '_')
+            .replace(/"/g, '_')
+            .replace(/</g, '_')
+            .replace(/>/g, '_')
+            .replace(/\|/g, '_')
+            .replace(/'/g, '')
+            .replace(/"/g, '');
+    }
+
     async function loadWeapon() {
         const contentDiv = document.getElementById('weaponContent');
         
@@ -524,7 +539,8 @@
 
             let fullWeapon = null;
             try {
-                const fullRes = await fetch(`Data/weapons/${weapon.name}.json`);
+                const sanitizedName = sanitizeFileName(weapon.name);
+                const fullRes = await fetch(`Data/weapons/${sanitizedName}.json`);
                 fullWeapon = await fullRes.json();
             } catch (e) {
                 console.log('Could not load full weapon data');

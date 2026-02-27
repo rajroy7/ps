@@ -662,7 +662,7 @@ function initializePageSearch() {
             
             // Add click handler to navigate to weapon detail page
             card.addEventListener('click', () => {
-                window.location.href = `weapons.html?id=${item.id}`;
+                window.location.href = `weapon.html?id=${item.id}`;
             });
         } else if (url === 'artifacts.json') {
             // Artifact card
@@ -688,7 +688,7 @@ function initializePageSearch() {
             
             // Add click handler to navigate to artifact detail page
             card.addEventListener('click', () => {
-                window.location.href = `artifacts.html?id=${item.id}`;
+                window.location.href = `artifact.html?id=${item.id}`;
             });
         } else if (url === 'inventory.json') {
             // Inventory/Material card
