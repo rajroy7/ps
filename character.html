@@ -86,6 +86,20 @@
     </ul>
 </div>
 
+<!-- SEARCH MODAL -->
+<div id="searchModal" class="search-modal">
+  <div class="search-overlay" id="searchOverlay"></div>
+  <div class="search-container">
+    <div class="search-header">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search characters, weapons, artifacts...">
+      <button class="search-close" id="searchClose">&times;</button>
+    </div>
+    <div class="search-results" id="searchResults">
+      <p style="text-align: center; color: #999; margin-top: 20px;">Start typing to search...</p>
+    </div>
+  </div>
+</div>
+
 <!-- SETTINGS MODAL -->
 <div id="settingsModal" class="modal">
   <div class="modal-content">
@@ -119,7 +133,12 @@
       <a href="artifacts.html">Artifacts</a>
       <a href="achievements.html">Achievements</a>
       <a href="inventory.html">Inventory</a>
-      <a href="search.html">Search</a>
+      <button class="nav-search-btn" id="searchBtn" title="Search">
+        <img src="icons/search.png" alt="Search" class="search-icon">
+      </button>
+      <button class="nav-settings-btn" id="topSettingsBtn" title="Settings">
+        <img src="icons/settings.png" alt="Settings" class="settings-icon">
+      </button>
     </div>
   </nav>
 

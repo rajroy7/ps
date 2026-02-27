@@ -1,0 +1,377 @@
+#!/usr/bin/env python3
+import json
+import os
+
+# Load artifacts.json
+with open('artifacts.json', 'r', encoding='utf-8') as f:
+    artifacts = json.load(f)
+
+# Create artifacts directory
+os.makedirs('artifacts', exist_ok=True)
+
+print(f"Generating {len(artifacts)} artifact detail pages...")
+print("=" * 70)
+
+def sanitize_filename(name):
+    """Convert artifact name to valid filename"""
+    filename = name.replace('/', '_').replace('\\', '_').replace(':', '_')
+    filename = filename.replace('*', '_').replace('?', '_').replace('"', '_')
+    filename = filename.replace('<', '_').replace('>', '_').replace('|', '_')
+    return filename
+
+def create_artifact_page(artifact):
+    """Create a complete HTML page for an artifact"""
+    name = artifact['name']
+    icon_url = f"https://gi.yatta.moe/assets/UI/reliquary/{artifact['icon']}.png?vh=2024123000"
+    rarity_stars = '⭐' * artifact.get('rarity', 3)
+    bonus_2pc = artifact.get('setBonus2pc', 'N/A')
+    bonus_4pc = artifact.get('setBonus4pc', 'N/A')
+    rarity = artifact.get('rarity', 3)
+    
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{name} - Project Skirk</title>
+    <link rel="icon" href="https://ik.imagekit.io/gukc1okbd/Crystallina_Shape.webp" type="image/webp">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .artifact-detail-wrapper {{
+            min-height: 100vh;
+            padding: 24px;
+        }}
+
+        .artifact-hero {{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+            align-items: start;
+        }}
+
+        .artifact-hero-left {{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }}
+
+        .artifact-hero-image {{
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.2) 0%, rgba(124, 92, 255, 0.1) 100%);
+            border: 2px solid rgba(124, 92, 255, 0.4);
+            border-radius: 12px;
+            padding: 40px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }}
+
+        .artifact-hero-image::before {{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(124, 92, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }}
+
+        .artifact-hero-image img {{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+        }}
+
+        .artifact-hero-text {{
+            padding-top: 8px;
+        }}
+
+        .artifact-title {{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }}
+
+        .artifact-title-badge {{
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            background: rgba(124, 92, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #9370db;
+        }}
+
+        .artifact-title-name {{
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }}
+
+        .artifact-rarity {{
+            display: flex;
+            gap: 6px;
+            font-size: 24px;
+            margin-top: 8px;
+        }}
+
+        .artifact-hero-right {{
+            padding: 20px;
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(124, 92, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }}
+
+        .bonus-section {{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }}
+
+        .bonus-section h3 {{
+            font-size: 14px;
+            color: #9370db;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }}
+
+        .bonus-text {{
+            font-size: 13px;
+            line-height: 1.8;
+            color: #ddd;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid rgba(124, 92, 255, 0.5);
+        }}
+
+        .content-tabs {{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 32px 0;
+        }}
+
+        .tab-btn {{
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(124, 92, 255, 0.3);
+            border-radius: 8px;
+            color: #aaa;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }}
+
+        .tab-btn:hover {{
+            border-color: rgba(124, 92, 255, 0.6);
+            color: #ddd;
+        }}
+
+        .tab-btn.active {{
+            background: rgba(124, 92, 255, 0.2);
+            border-color: rgba(124, 92, 255, 0.8);
+            color: #9370db;
+        }}
+
+        .content-section {{
+            display: none;
+        }}
+
+        .content-section.active {{
+            display: block;
+        }}
+
+        .artifact-info-section {{
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(124, 92, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }}
+
+        .artifact-info-section h4 {{
+            font-size: 14px;
+            color: #9370db;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }}
+
+        .artifact-story-text {{
+            font-size: 13px;
+            line-height: 1.8;
+            color: #ddd;
+        }}
+
+        @media (max-width: 1024px) {{
+            .artifact-hero {{
+                grid-template-columns: 1fr;
+            }}
+
+            .artifact-hero-image {{
+                min-height: 300px;
+            }}
+        }}
+
+        @media (max-width: 768px) {{
+            .artifact-detail-wrapper {{
+                padding: 16px;
+            }}
+
+            .artifact-title-name {{
+                font-size: 24px;
+            }}
+
+            .content-tabs {{
+                grid-template-columns: 1fr;
+            }}
+        }}
+    </style>
+</head>
+<body>
+<div class="main-content">
+    <nav>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">PROJECT SKIRK</div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../characters.html">Characters</a>
+            <a href="../weapons.html">Weapons</a>
+            <a href="../artifacts.html">Artifacts</a>
+            <button class="nav-search-btn" id="searchBtn" title="Search">
+                <img src="../icons/search.png" alt="Search" class="search-icon">
+            </button>
+            <button class="nav-settings-btn" id="topSettingsBtn" title="Settings">
+                <img src="../icons/settings.png" alt="Settings" class="settings-icon">
+            </button>
+        </div>
+    </nav>
+
+    <div class="artifact-detail-wrapper">
+        <div class="artifact-hero">
+            <div class="artifact-hero-left">
+                <div class="artifact-hero-image">
+                    <img src="{icon_url}" alt="{name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E'">
+                </div>
+                <div class="artifact-hero-text">
+                    <div class="artifact-title">
+                        <div class="artifact-title-badge">✦ Artifact Set</div>
+                        <div class="artifact-title-name">{name}</div>
+                        <div class="artifact-rarity">{rarity_stars}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artifact-hero-right">
+                <div class="bonus-section">
+                    <h3>2-Piece Bonus</h3>
+                    <div class="bonus-text">{bonus_2pc}</div>
+                </div>
+                <div class="bonus-section">
+                    <h3>4-Piece Bonus</h3>
+                    <div class="bonus-text">{bonus_4pc}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'story')">Story</button>
+            <button class="tab-btn" onclick="switchTab(event, 'stats')">Stats</button>
+        </div>
+
+        <div id="story" class="content-section active">
+            <div class="artifact-info-section">
+                <h4>History</h4>
+                <p class="artifact-story-text">This artifact set is part of the Genshin Impact world. Explore its history and significance through your adventures.</p>
+            </div>
+        </div>
+
+        <div id="stats" class="content-section">
+            <div class="artifact-info-section">
+                <h4>Artifact Pieces</h4>
+                <div class="artifact-story-text">
+                    <p>• Flower of Life</p>
+                    <p>• Plume of Death</p>
+                    <p>• Sands of Eon</p>
+                    <p>• Goblet of Eonothem</p>
+                    <p>• Circlet of Logos</p>
+                </div>
+            </div>
+            <div class="artifact-info-section">
+                <h4>Set Rarity</h4>
+                <div class="artifact-story-text">
+                    <p>Rarity: {rarity}★</p>
+                    <p>This artifact set can be found in domains and from various sources in the game.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <h2>PROJECT SKIRK</h2>
+            <p class="footer-credit">Created by <strong>Raj Roy</strong></p>
+        </div>
+    </div>
+</div>
+
+<script src="../script.js"></script>
+<script>
+    function switchTab(event, tabName) {{
+        event.preventDefault();
+        
+        document.querySelectorAll('.content-section').forEach(section => {{
+            section.classList.remove('active');
+        }});
+        document.querySelectorAll('.tab-btn').forEach(btn => {{
+            btn.classList.remove('active');
+        }});
+        
+        document.getElementById(tabName).classList.add('active');
+        event.target.classList.add('active');
+    }}
+</script>
+</body>
+</html>
+"""
+    return html
+
+success_count = 0
+for idx, artifact in enumerate(artifacts, 1):
+    try:
+        html_content = create_artifact_page(artifact)
+        filename = sanitize_filename(artifact['name'])
+        filepath = f'artifacts/{filename}.html'
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        
+        success_count += 1
+        status = f"[{idx:3d}/{len(artifacts)}] ✓ {artifact['name'][:40]:40s} ({artifact.get('rarity', 3)}★)"
+        print(status)
+        
+    except Exception as e:
+        print(f"[{idx:3d}/{len(artifacts)}] ✗ {artifact.get('name', 'Unknown')}: {str(e)[:40]}")
+
+print("=" * 70)
+print(f"SUCCESS: Generated {success_count}/{len(artifacts)} artifact pages!")

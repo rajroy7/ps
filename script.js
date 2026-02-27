@@ -7,6 +7,145 @@ hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("open");
 });
 
+// SEARCH FUNCTIONALITY
+function initializeSearch() {
+    const searchBtn = document.getElementById('searchBtn');
+    const searchModal = document.getElementById('searchModal');
+    const searchInput = document.getElementById('searchInput');
+    const searchClose = document.getElementById('searchClose');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchResults = document.getElementById('searchResults');
+    let charactersData = [];
+    let weaponsData = [];
+    let artifactsData = [];
+
+    // Open search modal
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            searchModal.classList.add('open');
+            searchInput.focus();
+        });
+    }
+
+    // Close search modal
+    const closeSearch = () => {
+        searchModal.classList.remove('open');
+        searchInput.value = '';
+        searchResults.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">Start typing to search...</p>';
+    };
+
+    if (searchClose) {
+        searchClose.addEventListener('click', closeSearch);
+    }
+
+    if (searchOverlay) {
+        searchOverlay.addEventListener('click', closeSearch);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchModal.classList.contains('open')) {
+            closeSearch();
+        }
+    });
+
+    // Fetch data
+    Promise.all([
+        fetch('characters.json').then(r => r.json()).catch(() => []),
+        fetch('weapons.json').then(r => r.json()).catch(() => []),
+        fetch('artifacts.json').then(r => r.json()).catch(() => [])
+    ]).then(([chars, weaps, arts]) => {
+        charactersData = chars || [];
+        weaponsData = weaps || [];
+        artifactsData = arts || [];
+    });
+
+    // Search input functionality
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (query.length === 0) {
+                searchResults.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">Start typing to search...</p>';
+                return;
+            }
+
+            let results = [];
+
+            // Search characters
+            const matchingChars = charactersData.filter(c => 
+                c.name.toLowerCase().includes(query) || 
+                c.title?.toLowerCase().includes(query)
+            ).slice(0, 5);
+
+            matchingChars.forEach(char => {
+                results.push({
+                    type: 'character',
+                    name: char.name,
+                    description: char.title || 'Character',
+                    link: `characters.html?search=${char.name}`,
+                    image: char.image
+                });
+            });
+
+            // Search weapons
+            const matchingWeaps = weaponsData.filter(w => 
+                w.name.toLowerCase().includes(query) || 
+                w.type?.toLowerCase().includes(query)
+            ).slice(0, 3);
+
+            matchingWeaps.forEach(weap => {
+                results.push({
+                    type: 'weapon',
+                    name: weap.name,
+                    description: weap.type || 'Weapon',
+                    link: 'weapons.html',
+                    image: weap.image
+                });
+            });
+
+            // Search artifacts
+            const matchingArts = artifactsData.filter(a => 
+                a.name.toLowerCase().includes(query)
+            ).slice(0, 3);
+
+            matchingArts.forEach(art => {
+                results.push({
+                    type: 'artifact',
+                    name: art.name,
+                    description: 'Artifact Set',
+                    link: 'artifacts.html',
+                    image: art.image
+                });
+            });
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">No results found</p>';
+                return;
+            }
+
+            searchResults.innerHTML = results.map(r => `
+                <a href="${r.link}" class="search-result-item" onclick="document.getElementById('searchModal').classList.remove('open');">
+                    <div class="search-result-image">
+                        <img src="${r.image}" alt="${r.name}" onerror="this.src='https://via.placeholder.com/60';">
+                    </div>
+                    <div class="search-result-info">
+                        <h4>${r.name}</h4>
+                        <p>${r.description}</p>
+                        <span class="search-result-type">${r.type}</span>
+                    </div>
+                </a>
+            `).join('');
+        });
+    }
+}
+
+// Initialize search on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSearch);
+} else {
+    initializeSearch();
+}
+
 // Close sidebar when a link is clicked
 const sidebarLinks = sidebar.querySelectorAll("a, button");
 sidebarLinks.forEach(link => {
@@ -221,29 +360,65 @@ function initializeCharacterCardCycling() {
         .catch(error => console.error('Error loading characters:', error));
 }
 
-// WEAPONS AND ARTIFACTS CARD FADE ANIMATION
+// WEAPONS AND ARTIFACTS CARD IMAGE CYCLING
 function initializeCardFadeAnimation() {
-    const cardElements = [
-        document.getElementById('weaponsCardImg'),
-        document.getElementById('artifactsCardImg')
-    ];
-    
-    // Function to create fade animation for a card
-    const createFadeLoop = (cardElement) => {
-        if (!cardElement) return;
+    // Weapons card cycling
+    const weaponsCardImg = document.getElementById('weaponsCardImg');
+    if (weaponsCardImg) {
+        let weapons = [];
+        let currentWeaponIndex = 0;
         
-        setInterval(() => {
-            // Fade out
-            cardElement.style.opacity = '0';
-            
-            setTimeout(() => {
-                // Fade in
-                cardElement.style.opacity = '0.6';
-            }, 250);
-        }, 2000);
-    };
+        fetch('weapons.json')
+            .then(response => response.json())
+            .then(data => {
+                weapons = data;
+                if (weapons.length > 0) {
+                    setInterval(() => {
+                        if (weapons.length > 0) {
+                            const weapon = weapons[currentWeaponIndex];
+                            weaponsCardImg.style.opacity = '0';
+                            
+                            setTimeout(() => {
+                                weaponsCardImg.src = `https://gi.yatta.moe/assets/UI/${weapon.icon}.png`;
+                                weaponsCardImg.style.opacity = '0.6';
+                            }, 250);
+                            
+                            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.length;
+                        }
+                    }, 2000);
+                }
+            })
+            .catch(error => console.error('Error loading weapons:', error));
+    }
     
-    cardElements.forEach(createFadeLoop);
+    // Artifacts card cycling
+    const artifactsCardImg = document.getElementById('artifactsCardImg');
+    if (artifactsCardImg) {
+        let artifacts = [];
+        let currentArtifactIndex = 0;
+        
+        fetch('artifacts.json')
+            .then(response => response.json())
+            .then(data => {
+                artifacts = data;
+                if (artifacts.length > 0) {
+                    setInterval(() => {
+                        if (artifacts.length > 0) {
+                            const artifact = artifacts[currentArtifactIndex];
+                            artifactsCardImg.style.opacity = '0';
+                            
+                            setTimeout(() => {
+                                artifactsCardImg.src = `https://gi.yatta.moe/assets/UI/${artifact.icon}.png`;
+                                artifactsCardImg.style.opacity = '0.6';
+                            }, 250);
+                            
+                            currentArtifactIndex = (currentArtifactIndex + 1) % artifacts.length;
+                        }
+                    }, 2000);
+                }
+            })
+            .catch(error => console.error('Error loading artifacts:', error));
+    }
 }
 
 // Initialize on page load
@@ -441,6 +616,115 @@ function initializePageSearch() {
     if (!input || !results) return;
     const url = results.dataset.source;
     let items = [];
+    
+    // Filter state
+    let activeFilters = {
+        rarity: 'all',
+        type: 'all',
+        stat: 'all'
+    };
+
+    const renderCard = (item) => {
+        const card = document.createElement('div');
+        
+        if (url === 'weapons.json') {
+            // Weapon card
+            card.className = `weapon-card rarity-${item.rarity || 3}`;
+            card.style.cursor = 'pointer';
+            
+            // Get icon URL with proper formatting
+            const iconName = item.icon || item.name || 'weapon';
+            const iconUrl = `https://gi.yatta.moe/assets/UI/${iconName}.png`;
+            
+            card.innerHTML = `
+                <div class="weapon-image-container">
+                    <img src="${iconUrl}" alt="${item.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3Ctext fill=%22%23666%22 text-anchor=%22middle%22 x=%2250%22 y=%2250%22%3E?%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="weapon-info">
+                    <div class="weapon-name">${item.name || 'Unknown Weapon'}</div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat-row">
+                            <span class="weapon-stat-label">⚔️ <strong>ATK</strong></span>
+                            <span class="weapon-stat-value">${item.atk}</span>
+                        </div>
+                        ${item.secondaryStat && item.secondaryStat !== '—' ? `<div class="weapon-stat-row">
+                            <span class="weapon-stat-label">✦</span>
+                            <span style="color: #ddd; font-size: 12px;">${item.secondaryLabel}</span>
+                            <span class="weapon-stat-value" style="flex: 1; text-align: right;">${item.secondaryStat}</span>
+                        </div>` : ''}
+                        ${item.type ? `<div class="weapon-stat-row" style="color: #aaa; font-size: 12px; margin-top: 4px;">
+                            ${item.type}
+                        </div>` : ''}
+                    </div>
+                </div>
+            `;
+            
+            // Add click handler to navigate to weapon detail page
+            card.addEventListener('click', () => {
+                const weaponName = item.name.replace(/\//g, '_').replace(/\\/g, '_').replace(/:/g, '_').replace(/\*/g, '_').replace(/\?/g, '_').replace(/"/g, '_').replace(/</g, '_').replace(/>/g, '_').replace(/\|/g, '_');
+                window.location.href = `weapons/${weaponName}.html`;
+            });
+        } else if (url === 'artifacts.json') {
+            // Artifact card
+            card.className = `artifact-card rarity-${item.rarity || 3}`;
+            card.style.cursor = 'pointer';
+            
+            // Get icon URL with proper formatting
+            const iconName = item.icon || item.name || 'artifact';
+            const iconUrl = `https://gi.yatta.moe/assets/UI/reliquary/${iconName}.png?vh=2024123000`;
+            
+            // Generate rarity stars
+            const rarityStars = '⭐'.repeat(item.rarity || 3);
+            
+            card.innerHTML = `
+                <div class="artifact-image-container">
+                    <img src="${iconUrl}" alt="${item.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3Ctext fill=%22%23666%22 text-anchor=%22middle%22 x=%2250%22 y=%2250%22%3E?%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="artifact-info">
+                    <div class="artifact-name">${item.name || 'Unknown Artifact'}</div>
+                    <div class="artifact-rarity">${rarityStars}</div>
+                </div>
+            `;
+            
+            // Add click handler to navigate to artifact detail page
+            card.addEventListener('click', () => {
+                const artifactName = item.name.replace(/\//g, '_').replace(/\\/g, '_').replace(/:/g, '_').replace(/\*/g, '_').replace(/\?/g, '_').replace(/"/g, '_').replace(/</g, '_').replace(/>/g, '_').replace(/\|/g, '_');
+                window.location.href = `artifacts/${artifactName}.html`;
+            });
+        } else {
+            // Fallback for other item types
+            card.className = 'card';
+            card.style.padding = '14px';
+            card.style.minHeight = '80px';
+            card.style.display = 'flex';
+            card.style.alignItems = 'center';
+            card.style.justifyContent = 'center';
+            card.innerText = item.name || '(unnamed)';
+        }
+        
+        return card;
+    };
+
+    const applyFilters = (list) => {
+        return list.filter(item => {
+            // Rarity filter
+            if (activeFilters.rarity !== 'all' && String(item.rarity) !== String(activeFilters.rarity)) {
+                return false;
+            }
+            
+            // Type filter
+            if (activeFilters.type !== 'all' && item.type !== activeFilters.type) {
+                return false;
+            }
+            
+            // Special stat filter
+            if (activeFilters.stat !== 'all' && item.secondaryLabel !== activeFilters.stat) {
+                return false;
+            }
+            
+            return true;
+        });
+    };
 
     const render = (list) => {
         results.innerHTML = '';
@@ -449,16 +733,15 @@ function initializePageSearch() {
             return;
         }
         list.forEach(i => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.style.padding = '14px';
-            card.style.minHeight = '80px';
-            card.style.display = 'flex';
-            card.style.alignItems = 'center';
-            card.style.justifyContent = 'center';
-            card.innerText = i.name || '(unnamed)';
-            results.appendChild(card);
+            results.appendChild(renderCard(i));
         });
+    };
+
+    const updateDisplay = () => {
+        const term = input.value.trim().toLowerCase();
+        let filtered = items.filter(i => (i.name || '').toLowerCase().includes(term));
+        filtered = applyFilters(filtered);
+        render(filtered);
     };
 
     fetch(url)
@@ -472,14 +755,29 @@ function initializePageSearch() {
             results.innerHTML = '<p style="grid-column:1/-1;text-align:center;opacity:0.6">Failed to load data.</p>';
         });
 
-    input.addEventListener('input', () => {
-        const term = input.value.trim().toLowerCase();
-        if (!term) {
-            render(items);
-        } else {
-            render(items.filter(i => (i.name || '').toLowerCase().includes(term)));
-        }
-    });
+    input.addEventListener('input', updateDisplay);
+
+    // Handle filter button clicks
+    if (url === 'weapons.json' || url === 'artifacts.json') {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filterType = this.dataset.filter;
+                const filterValue = this.dataset.value;
+                
+                // Update active state
+                document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Update filter state
+                activeFilters[filterType] = filterValue;
+                
+                // Re-render
+                updateDisplay();
+            });
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', initializePageSearch);

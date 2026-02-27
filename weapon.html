@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapon - Project Skirk</title>
+    <link rel="icon" href="https://ik.imagekit.io/gukc1okbd/Crystallina_Shape.webp" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .weapon-detail-wrapper {
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        .weapon-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+            align-items: start;
+        }
+
+        .weapon-hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .weapon-hero-image {
+            background: linear-gradient(135deg, rgba(139, 90, 43, 0.3) 0%, rgba(255, 200, 50, 0.1) 100%);
+            border: 2px solid rgba(255, 200, 50, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .weapon-hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 200, 50, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .weapon-hero-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+        }
+
+        .weapon-hero-text {
+            padding-top: 8px;
+        }
+
+        .weapon-title {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .weapon-title-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            background: rgba(139, 90, 43, 0.6);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #d4a574;
+        }
+
+        .weapon-title-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .weapon-rarity {
+            display: flex;
+            gap: 6px;
+            font-size: 24px;
+            margin-top: 8px;
+        }
+
+        .weapon-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00f0ff;
+        }
+
+        .weapon-hero-right {
+            padding: 20px;
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(124, 92, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .story-section h3 {
+            font-size: 14px;
+            color: #9370db;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .story-text {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .weapon-controls-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .control-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .control-label {
+            font-size: 11px;
+            color: #aaa;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .level-slider-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(to right, rgba(124, 92, 255, 0.3), rgba(124, 92, 255, 0.6));
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(124, 92, 255, 0.8);
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: rgba(124, 92, 255, 1);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 12px rgba(124, 92, 255, 0.5);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(124, 92, 255, 0.8);
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .level-value {
+            font-size: 12px;
+            min-width: 30px;
+            text-align: right;
+            color: #00f0ff;
+            font-weight: 600;
+        }
+
+        .content-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 32px 0;
+        }
+
+        .tab-btn {
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(124, 92, 255, 0.3);
+            border-radius: 8px;
+            color: #aaa;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tab-btn:hover {
+            border-color: rgba(124, 92, 255, 0.6);
+            color: #ddd;
+        }
+
+        .tab-btn.active {
+            background: rgba(124, 92, 255, 0.2);
+            border-color: rgba(124, 92, 255, 0.8);
+            color: #9370db;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .weapon-info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .basic-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-group {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid rgba(124, 92, 255, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info-group h4 {
+            font-size: 14px;
+            color: #9370db;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-name {
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .stat-val {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00f0ff;
+            text-align: right;
+        }
+
+        .passive-ability {
+            background: rgba(255, 200, 50, 0.08);
+            border-left: 3px solid rgba(255, 200, 50, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .passive-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffc832;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .refinement-ranks {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .rank-btn {
+            padding: 6px 12px;
+            background: rgba(255, 200, 50, 0.1);
+            border: 2px solid rgba(255, 200, 50, 0.3);
+            border-radius: 6px;
+            color: #ddd;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .rank-btn:hover {
+            border-color: rgba(255, 200, 50, 0.6);
+            background: rgba(255, 200, 50, 0.15);
+        }
+
+        .rank-btn.active {
+            background: rgba(255, 200, 50, 0.25);
+            border-color: rgba(255, 200, 50, 0.8);
+            color: #ffc832;
+        }
+
+        .passive-description {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #ddd;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .ascension-materials {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 12px;
+        }
+
+        .material-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .material-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(124, 92, 255, 0.1);
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .material-quantity {
+            font-size: 12px;
+            color: #00f0ff;
+            font-weight: 600;
+        }
+
+        .material-name {
+            font-size: 11px;
+            color: #aaa;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: rgba(124, 92, 255, 0.15);
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            border-radius: 6px;
+            color: #9370db;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background: rgba(124, 92, 255, 0.25);
+            border-color: rgba(124, 92, 255, 0.5);
+            color: #b8a4e8;
+        }
+
+        @media (max-width: 900px) {
+            .weapon-hero {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .weapon-info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .content-tabs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Mobile Sidebar -->
+<div class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html"><img src="icons/home.png" class="icon"><span class="text">Home</span></a></li>
+        <li><a href="characters.html"><img src="icons/characters.png" class="icon"><span class="text">Characters</span></a></li>
+        <li><a href="weapons.html"><img src="icons/weapons.png" class="icon"><span class="text">Weapons</span></a></li>
+        <li><a href="artifacts.html"><img src="icons/artifacts.png" class="icon"><span class="text">Artifacts</span></a></li>
+    </ul>
+</div>
+
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header"><h2>Settings</h2><button class="modal-close">&times;</button></div>
+        <div class="modal-body">
+            <div class="settings-section"><h3>Main</h3></div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <nav>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <div class="logo">PROJECT SKIRK</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="weapons.html">Weapons</a>
+            <button class="nav-search-btn" id="searchBtn" title="Search"><img src="icons/search.png" alt="Search" class="search-icon"></button>
+            <button class="nav-settings-btn" id="topSettingsBtn" title="Settings"><img src="icons/settings.png" alt="Settings" class="settings-icon"></button>
+        </div>
+    </nav>
+
+    <section class="weapon-detail-wrapper">
+        <a href="weapons.html" class="back-button">← Back to Weapons</a>
+        <div id="weaponContent"></div>
+    </section>
+
+    <div class="footer">
+        <div class="footer-content">
+            <h2>PROJECT SKIRK</h2>
+            <p class="footer-credit">Created by <strong>Raj Roy</strong></p>
+            <div class="footer-divider"></div>
+            <p class="footer-copyright">&copy; 2024 Project Skirk. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const weaponId = params.get('id');
+
+    async function loadWeapon() {
+        const contentDiv = document.getElementById('weaponContent');
+        
+        if (!weaponId) {
+            contentDiv.innerHTML = '<p style="text-align: center; color: #f00;">Weapon ID not found.</p>';
+            return;
+        }
+
+        try {
+            const weaponsRes = await fetch('weapons.json');
+            const weapons = await weaponsRes.json();
+            const weapon = weapons.find(w => w.id == weaponId);
+
+            if (!weapon) {
+                contentDiv.innerHTML = '<p style="text-align: center; color: #f00;">Weapon not found.</p>';
+                return;
+            }
+
+            let fullWeapon = null;
+            try {
+                const fullRes = await fetch(`Data/weapons/${weapon.name}.json`);
+                fullWeapon = await fullRes.json();
+            } catch (e) {
+                console.log('Could not load full weapon data');
+            }
+
+            renderWeapon(weapon, fullWeapon);
+        } catch (error) {
+            console.error('Error loading weapon:', error);
+            contentDiv.innerHTML = '<p style="text-align: center; color: #f00;">Error loading weapon data.</p>';
+        }
+    }
+
+    function wikiToHtml(text) {
+        if (!text) return '';
+        return text
+            .replace(/<color=#[0-9A-F]+>/g, '')
+            .replace(/<\/color>/g, '')
+            .replace(/\|/g, ' | ');
+    }
+
+    function renderWeapon(weapon, fullWeapon) {
+        const contentDiv = document.getElementById('weaponContent');
+        const iconUrl = `https://gi.yatta.moe/assets/UI/${weapon.icon}.png`;
+        const stars = '⭐'.repeat(weapon.rarity);
+
+        let passiveHtml = '';
+        if (fullWeapon && fullWeapon.affix) {
+            const affixKey = Object.keys(fullWeapon.affix)[0];
+            const affix = fullWeapon.affix[affixKey];
+            let rankButtons = '';
+            
+            for (let i = 0; i < 5; i++) {
+                rankButtons += `<button class="rank-btn ${i === 0 ? 'active' : ''}" onclick="changeRank(${i}, this)">R${i + 1}</button>`;
+            }
+
+            const desc0 = wikiToHtml(affix.upgrade['0'] || '');
+            passiveHtml = `
+                <div class="passive-ability">
+                    <div class="passive-name">⚡ ${affix.name}</div>
+                    <div class="refinement-ranks">${rankButtons}</div>
+                    <div class="passive-description" id="passiveDesc">${desc0}</div>
+                </div>
+            `;
+
+            window.currentAffix = affix;
+        }
+
+        let ascensionHtml = '';
+        if (fullWeapon && fullWeapon.ascension) {
+            const ascMaterials = fullWeapon.ascension;
+            let materialsContent = '';
+            for (const [id, qty] of Object.entries(ascMaterials)) {
+                const itemName = fullWeapon.items && fullWeapon.items[id] ? fullWeapon.items[id].name : `Item ${id}`;
+                materialsContent += `
+                    <div class="material-item">
+                        <div class="material-icon">⊙</div>
+                        <div class="material-quantity">×${qty}</div>
+                        <div class="material-name">${itemName}</div>
+                    </div>
+                `;
+            }
+
+            ascensionHtml = `
+                <div class="info-group">
+                    <h4>Ascension Materials</h4>
+                    <div class="materials-grid">${materialsContent}</div>
+                </div>
+            `;
+        }
+
+        const storyText = wikiToHtml(weapon.description || 'No story available.');
+
+        const html = `
+            <div class="weapon-hero">
+                <div class="weapon-hero-left">
+                    <div class="weapon-hero-image">
+                        <img src="${iconUrl}" alt="${weapon.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E'">
+                    </div>
+                    <div class="weapon-hero-text">
+                        <div class="weapon-title">
+                            <span class="weapon-title-badge">⚔️ ${weapon.type}</span>
+                            <div class="weapon-title-name">${weapon.name}</div>
+                            <div class="weapon-rarity">${stars}</div>
+                        </div>
+                        <div class="weapon-info-grid">
+                            <div class="info-card">
+                                <div class="info-label">Base ATK</div>
+                                <div class="info-value">${weapon.atk}</div>
+                            </div>
+                            ${weapon.secondaryStat && weapon.secondaryStat !== '—' ? `
+                            <div class="info-card">
+                                <div class="info-label">${weapon.secondaryLabel}</div>
+                                <div class="info-value">${weapon.secondaryStat}</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon-hero-right">
+                    <div class="story-section">
+                        <h3>Story</h3>
+                        <div class="story-text">${storyText}</div>
+                    </div>
+                    <div class="weapon-controls-section">
+                        <div class="control-item">
+                            <div class="control-label">Level</div>
+                            <div class="level-slider-container">
+                                <input type="range" id="levelSlider" min="0" max="90" value="90" style="flex: 1;">
+                                <div class="level-value" id="levelValue">Lv. 90</div>
+                            </div>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-label">Ascension</div>
+                            <select id="ascensionSelect" style="padding: 6px; background: rgba(0,0,0,0.4); border: 1px solid rgba(124,92,255,0.3); border-radius: 4px; color: #00f0ff; font-weight: 600;">
+                                <option value="0">Phase 0</option>
+                                <option value="1">Phase 1</option>
+                                <option value="2">Phase 2</option>
+                                <option value="3">Phase 3</option>
+                                <option value="4">Phase 4</option>
+                                <option value="5">Phase 5</option>
+                                <option value="6">Phase 6</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-tabs">
+                <button class="tab-btn active" onclick="switchTab('weapon-info')">Weapon Information</button>
+                <button class="tab-btn" onclick="switchTab('assets')">Assets</button>
+                <button class="tab-btn" onclick="switchTab('diffs')">Diffs</button>
+            </div>
+
+            <div class="content-section active" id="weapon-info">
+                <div class="weapon-info-section">
+                    <div class="basic-info">
+                        <div class="info-group">
+                            <h4>Basic Information</h4>
+                            <div class="stat-row">
+                                <div class="stat-name">Base ATK</div>
+                                <div class="stat-val">${weapon.atk}</div>
+                            </div>
+                            ${weapon.secondaryStat && weapon.secondaryStat !== '—' ? `
+                            <div class="stat-row">
+                                <div class="stat-name">${weapon.secondaryLabel}</div>
+                                <div class="stat-val">${weapon.secondaryStat}</div>
+                            </div>
+                            ` : ''}
+                            <div class="stat-row">
+                                <div class="stat-name">Weapon Type</div>
+                                <div class="stat-val">${weapon.type}</div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-name">Rarity</div>
+                                <div class="stat-val">${weapon.rarity}★</div>
+                            </div>
+                        </div>
+                        ${passiveHtml}
+                    </div>
+                    <div class="ascension-materials">
+                        ${ascensionHtml}
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" id="assets" style="text-align: center; padding: 40px; color: #aaa;">
+                <p>Asset information unavailable</p>
+            </div>
+
+            <div class="content-section" id="diffs" style="text-align: center; padding: 40px; color: #aaa;">
+                <p>Version differences unavailable</p>
+            </div>
+        `;
+
+        contentDiv.innerHTML = html;
+
+        document.getElementById('levelSlider').addEventListener('input', (e) => {
+            document.getElementById('levelValue').textContent = `Lv. ${e.target.value}`;
+        });
+    }
+
+    function switchTab(tabName) {
+        document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabName).classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    function changeRank(rank, btn) {
+        document.querySelectorAll('.rank-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        if (window.currentAffix && window.currentAffix.upgrade) {
+            const description = window.currentAffix.upgrade[rank] || '';
+            document.getElementById('passiveDesc').textContent = wikiToHtml(description);
+        }
+    }
+
+    loadWeapon();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

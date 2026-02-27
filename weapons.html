@@ -63,11 +63,69 @@
       <a href="artifacts.html">Artifacts</a>
       <a href="achievements.html">Achievements</a>
       <a href="inventory.html">Inventory</a>
-      <a href="search.html">Search</a>
+      <button class="nav-search-btn" id="searchBtn" title="Search">
+        <img src="icons/search.png" alt="Search" class="search-icon">
+      </button>
+      <button class="nav-settings-btn" id="topSettingsBtn" title="Settings">
+        <img src="icons/settings.png" alt="Settings" class="settings-icon">
+      </button>
     </div>
   </nav>
   <section style="padding:24px">
     <h1 class="page-title">Weapons</h1>
+    
+    <!-- Filters Section -->
+    <div style="margin: 24px 0; display: flex; flex-direction: column; gap: 20px;">
+      <!-- Rarity Filter -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <label style="font-weight: 600; color: #ddd; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Rarity</label>
+          <button class="filter-btn active" data-filter="rarity" data-value="all" style="padding: 4px 10px; font-size: 12px;">All</button>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="filter-btn" data-filter="rarity" data-value="1">1★</button>
+          <button class="filter-btn" data-filter="rarity" data-value="2">2★</button>
+          <button class="filter-btn" data-filter="rarity" data-value="3">3★</button>
+          <button class="filter-btn" data-filter="rarity" data-value="4">4★</button>
+          <button class="filter-btn" data-filter="rarity" data-value="5">5★</button>
+        </div>
+      </div>
+
+      <!-- Type Filter -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <label style="font-weight: 600; color: #ddd; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Type</label>
+          <button class="filter-btn active" data-filter="type" data-value="all" style="padding: 4px 10px; font-size: 12px;">All</button>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="filter-btn" data-filter="type" data-value="Sword">⚔️ Sword</button>
+          <button class="filter-btn" data-filter="type" data-value="Claymore">🗡️ Claymore</button>
+          <button class="filter-btn" data-filter="type" data-value="Polearm">🔱 Polearm</button>
+          <button class="filter-btn" data-filter="type" data-value="Catalyst">✧ Catalyst</button>
+          <button class="filter-btn" data-filter="type" data-value="Bow">🏹 Bow</button>
+        </div>
+      </div>
+
+      <!-- Special Stat Filter -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <label style="font-weight: 600; color: #ddd; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Special Stat</label>
+          <button class="filter-btn active" data-filter="stat" data-value="all" style="padding: 4px 10px; font-size: 12px;">All</button>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="filter-btn" data-filter="stat" data-value="—">None</button>
+          <button class="filter-btn" data-filter="stat" data-value="ATK">ATK</button>
+          <button class="filter-btn" data-filter="stat" data-value="CRIT Rate">CRIT Rate</button>
+          <button class="filter-btn" data-filter="stat" data-value="CRIT DMG">CRIT DMG</button>
+          <button class="filter-btn" data-filter="stat" data-value="Physical DMG Bonus">Phys DMG</button>
+          <button class="filter-btn" data-filter="stat" data-value="Energy Recharge">Energy Rech</button>
+          <button class="filter-btn" data-filter="stat" data-value="Elemental Mastery">EM</button>
+          <button class="filter-btn" data-filter="stat" data-value="DEF">DEF</button>
+          <button class="filter-btn" data-filter="stat" data-value="HP">HP</button>
+        </div>
+      </div>
+    </div>
+
     <input type="text" id="pageSearchInput" placeholder="Search weapons..." style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(0,0,0,0.4);color:white;margin:12px 0;" />
     <div id="pageSearchResults" data-source="weapons.json" class="cards-grid" style="min-height:120px"></div>
   </section>
