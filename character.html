@@ -580,6 +580,31 @@ function cleanDescription(text) {
     return text.replace(/<color=#[0-9A-Fa-f]{8}FF?>|<\/color>/g, '').replace(/\\n/g, '<br>');
 }
 
+function formatTalentDescription(description, params) {
+    if (!description || !Array.isArray(params)) return '';
+    
+    return description.map(desc => {
+        if (!desc) return '';
+        
+        // Replace {paramX:format} with actual values
+        return desc.replace(/\{param(\d+):([^}]+)\}/g, (match, paramIdx, format) => {
+            const idx = parseInt(paramIdx) - 1;
+            if (idx < 0 || idx >= params.length) return match;
+            
+            const value = params[idx];
+            
+            // Parse format string
+            if (format.includes('F1P')) return (value * 100).toFixed(1) + '%';
+            if (format.includes('F1')) return value.toFixed(1);
+            if (format.includes('F2P')) return (value * 100).toFixed(2) + '%';
+            if (format.includes('F2')) return value.toFixed(2);
+            if (format.includes('P')) return (value * 100).toFixed(0) + '%';
+            if (format.includes('I')) return Math.round(value).toString();
+            return value.toString();
+        });
+    }).filter(line => line.trim() !== '').join('\n');
+}
+
 function displaySkills(charData) {
     const container = document.getElementById('skillsContainer');
     if (!charData.talent) {
@@ -587,42 +612,87 @@ function displaySkills(charData) {
         return;
     }
     
-    let html = '';
+    let html = '<div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">';
+    html += '<label style="color: #ffc107; font-weight: 600;">View Attributes at Level:</label>';
+    html += '<select id="talentLevelSelector" style="padding: 8px 12px; background: rgba(0,0,0,0.3); border: 1px solid #7c5cff; border-radius: 4px; color: #fff; font-size: 14px; cursor: pointer;">';
+    for (let i = 1; i <= 10; i++) {
+        html += `<option value="${i}" ${i === 10 ? 'selected' : ''}>Level ${i}</option>`;
+    }
+    html += '</select></div>';
+    
     const talents = charData.talent;
     const sortedKeys = Object.keys(talents).sort((a, b) => parseInt(a) - parseInt(b));
+    
+    html += '<div id="skillsContent">';
     
     sortedKeys.forEach(key => {
         const talent = talents[key];
         if (!talent) return;
         
         const description = cleanDescription(talent.description || '');
-        let attrs = '';
         const iconUrl = talent.icon ? `https://gi.yatta.moe/assets/UI/${talent.icon}.png?vh=2024123000` : '';
-        
-        if (talent.descriptionBuff && Array.isArray(talent.descriptionBuff)) {
-            attrs = '<div class="ability-attrs"><h4>Attributes</h4><table>';
-            talent.descriptionBuff.forEach((buff, idx) => {
-                const buffText = cleanDescription(buff || '');
-                if (buffText) {
-                    attrs += `<tr><td>Lv. ${idx + 1}</td><td>${buffText}</td></tr>`;
-                }
-            });
-            attrs += '</table></div>';
-        }
-        
         const iconImg = iconUrl ? `<img src="${iconUrl}" alt="${talent.name}" style="width:80px; height:80px; border-radius:8px; margin-bottom:12px; border:2px solid #7c5cff;">` : '';
         
+        // Get level 10 as default for attributes
+        const defaultPromote = talent.promote ? talent.promote['10'] : null;
+        let attrsHtml = '';
+        
+        if (talent.promote && defaultPromote && defaultPromote.description) {
+            const formattedAttrs = formatTalentDescription(defaultPromote.description, defaultPromote.params);
+            if (formattedAttrs) {
+                attrsHtml = `<div class="ability-attrs" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,200,50,0.2);">
+                    <h4 style="color: #ffc107; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">📊 Attributes (Level 10)</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 12px;">
+                        ${formattedAttrs.split('\n').map(line => `<div style="color: #ddd;">${line}</div>`).join('')}
+                    </div>
+                </div>`;
+            }
+        }
+        
         html += `
-            <div class="ability-card">
+            <div class="ability-card" data-talent-key="${key}">
                 ${iconImg}
                 <h3>${talent.name || 'Unknown Skill'}</h3>
                 <p>${description}</p>
-                ${attrs}
+                ${attrsHtml}
             </div>
         `;
     });
     
-    container.innerHTML = html || '<div class="ability-card"><h3>Skills</h3><p>No skill data available.</p></div>';
+    html += '</div>';
+    
+    container.innerHTML = html;
+    
+    // Add event listener for level selector
+    const levelSelector = document.getElementById('talentLevelSelector');
+    if (levelSelector) {
+        levelSelector.addEventListener('change', (e) => {
+            const selectedLevel = e.target.value;
+            
+            sortedKeys.forEach(key => {
+                const talent = talents[key];
+                const card = document.querySelector(`[data-talent-key="${key}"]`);
+                if (!card) return;
+                
+                const existingAttrs = card.querySelector('.ability-attrs');
+                if (existingAttrs) existingAttrs.remove();
+                
+                const promote = talent.promote ? talent.promote[selectedLevel] : null;
+                if (promote && promote.description) {
+                    const formattedAttrs = formatTalentDescription(promote.description, promote.params);
+                    if (formattedAttrs) {
+                        const attrsHtml = `<div class="ability-attrs" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,200,50,0.2);">
+                            <h4 style="color: #ffc107; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">📊 Attributes (Level ${selectedLevel})</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 12px;">
+                                ${formattedAttrs.split('\n').map(line => `<div style="color: #ddd;">${line}</div>`).join('')}
+                            </div>
+                        </div>`;
+                        card.insertAdjacentHTML('beforeend', attrsHtml);
+                    }
+                }
+            });
+        });
+    }
 }
 
 function displayConstellations(charData) {
