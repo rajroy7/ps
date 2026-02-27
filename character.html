@@ -1004,16 +1004,15 @@ function initTalentCalculator(charData) {
     
     const talent = charData.talent;
     const talentsList = document.getElementById('talentsList');
-    const mainTalentIds = [0, 1, 2]; // Normal attack, elemental skill, burst (levels 1-10 only)
+    const mainTalentIds = [0, 1, 2]; // Normal attack, elemental skill, burst
+    const talentNames = ['Normal Attack', 'Elemental Skill', 'Elemental Burst'];
     
     talentsList.innerHTML = '';
     
+    // Create 3 talent cards with icons and level selectors
     mainTalentIds.forEach((talentId, index) => {
         const talentData = talent[talentId];
-        if (!talentData) return;
-        
-        const talentNames = ['Normal Attack', 'Elemental Skill', 'Elemental Burst'];
-        const iconUrl = `https://gi.yatta.moe/assets/UI/${talentData.icon}.png?vh=2024123000`;
+        const iconUrl = talentData ? `https://gi.yatta.moe/assets/UI/${talentData.icon}.png?vh=2024123000` : '';
         
         const talentCard = document.createElement('div');
         talentCard.style.cssText = `
@@ -1032,14 +1031,13 @@ function initTalentCalculator(charData) {
                 <div style="font-size: 12px; color: #ffc107; font-weight: 600; text-transform: uppercase;">${talentNames[index]}</div>
                 <div style="display: flex; gap: 8px; margin-top: 8px; align-items: center;">
                     <label style="font-size: 11px; color: #aaa;">From:</label>
-                    <select class="talent-from-level" data-talent-id="${talentId}" style="padding: 4px 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,200,50,0.2); border-radius: 4px; color: #fff; font-size: 11px;">
+                    <select class="talent-from-level-${talentId}" style="padding: 4px 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,200,50,0.2); border-radius: 4px; color: #fff; font-size: 11px;">
                         ${Array.from({length: 10}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
                     </select>
                     <label style="font-size: 11px; color: #aaa;">To:</label>
-                    <select class="talent-to-level" data-talent-id="${talentId}" style="padding: 4px 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,200,50,0.2); border-radius: 4px; color: #fff; font-size: 11px;">
+                    <select class="talent-to-level-${talentId}" style="padding: 4px 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,200,50,0.2); border-radius: 4px; color: #fff; font-size: 11px;">
                         ${Array.from({length: 10}, (_, i) => `<option value="${i + 1}" ${i + 9 === 10 ? 'selected' : ''}>${i + 1}</option>`).join('')}
                     </select>
-                    <button class="talent-calc-btn" data-talent-id="${talentId}" style="padding: 4px 12px; background: rgba(255,200,50,0.2); border: 1px solid rgba(255,200,50,0.4); border-radius: 4px; color: #ffc107; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,200,50,0.3)'" onmouseout="this.style.background='rgba(255,200,50,0.2)'">Calculate</button>
                 </div>
             </div>
         `;
@@ -1047,32 +1045,62 @@ function initTalentCalculator(charData) {
         talentsList.appendChild(talentCard);
     });
     
-    // Add event listeners
-    document.querySelectorAll('.talent-calc-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const talentId = btn.dataset.talentId;
-            const fromLevel = parseInt(document.querySelector(`select.talent-from-level[data-talent-id="${talentId}"]`).value);
-            const toLevel = parseInt(document.querySelector(`select.talent-to-level[data-talent-id="${talentId}"]`).value);
-            updateTalentCostsDisplay(charData, talentId, fromLevel, toLevel);
+    // Add single Calculate button below all 3 talents
+    const calcButtonDiv = document.createElement('div');
+    calcButtonDiv.style.cssText = `
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,200,50,0.2);
+    `;
+    
+    calcButtonDiv.innerHTML = `
+        <button id="talent-calculate-all" style="flex: 1; padding: 12px 24px; background: linear-gradient(135deg, rgba(255,200,50,0.3) 0%, rgba(255,200,50,0.15) 100%); border: 2px solid rgba(255,200,50,0.5); border-radius: 8px; color: #ffc107; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px;">📊 Calculate All Talents</button>
+    `;
+    
+    talentsList.appendChild(calcButtonDiv);
+    
+    // Add single event listener for the Calculate button
+    document.getElementById('talent-calculate-all').addEventListener('click', () => {
+        const talentCosts = {};
+        let totalMaterials = {};
+        let totalMora = 0;
+        
+        // Get levels for all 3 talents
+        mainTalentIds.forEach((talentId) => {
+            const fromLevel = parseInt(document.querySelector(`.talent-from-level-${talentId}`).value);
+            const toLevel = parseInt(document.querySelector(`.talent-to-level-${talentId}`).value);
+            
+            if (fromLevel < toLevel) {
+                const { materials, mora } = calculateTalentUpgradeCosts(charData.talent[talentId], fromLevel, toLevel);
+                talentCosts[talentId] = { materials, mora, fromLevel, toLevel };
+                
+                // Accumulate materials and mora
+                Object.entries(materials).forEach(([itemId, qty]) => {
+                    totalMaterials[itemId] = (totalMaterials[itemId] || 0) + qty;
+                });
+                totalMora += mora;
+            }
         });
+        
+        if (Object.keys(talentCosts).length === 0 || (Object.keys(totalMaterials).length === 0 && totalMora === 0)) {
+            document.getElementById('talentCostsDisplay').innerHTML = '<p style="color:#aaa;">Select valid level ranges (From < To) to calculate costs.</p>';
+            return;
+        }
+        
+        updateTalentCostsDisplay(totalMaterials, totalMora);
     });
 }
 
-function updateTalentCostsDisplay(charData, talentId, fromLevel, toLevel) {
-    const { materials, mora } = calculateTalentUpgradeCosts(charData.talent[talentId], fromLevel, toLevel);
-    
-    if (Object.keys(materials).length === 0 && mora === 0) {
-        document.getElementById('talentCostsDisplay').innerHTML = '<p style="color:#aaa;">Select valid level range to see costs.</p>';
-        return;
-    }
-    
+function updateTalentCostsDisplay(totalMaterials, totalMora) {
     const displayCosts = (inventory) => {
         let costsHtml = `<div style="border-top: 1px solid rgba(255,200,50,0.2); padding-top: 12px; margin-top: 12px;">
-            <div style="font-size: 12px; color: #ffc107; margin-bottom: 12px; font-weight: 600;">📊 Costs from Lv. ${fromLevel} to Lv. ${toLevel}:</div>
+            <div style="font-size: 12px; color: #ffc107; margin-bottom: 12px; font-weight: 600;">📊 Total Cost for All Selected Talents:</div>
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px;">`;
         
         // Display materials
-        Object.entries(materials).forEach(([matId, qty]) => {
+        Object.entries(totalMaterials).forEach(([matId, qty]) => {
             const matIdNum = parseInt(matId);
             const invItem = inventory ? inventory.find(item => item.id === matIdNum) : null;
             
@@ -1081,7 +1109,7 @@ function updateTalentCostsDisplay(charData, talentId, fromLevel, toLevel) {
                 const rankColor = ['#888', '#4a9eff', '#00d4ff', '#b291dc', '#ffc107'][invItem.rank - 1] || '#888';
                 
                 costsHtml += `
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(100,100,255,0.08) 0%, rgba(200,150,255,0.08) 100%); border: 2px solid ${rankColor}; border-radius: 6px; text-align: center; transition: all 0.2s;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(100,100,255,0.08) 0%, rgba(200,150,255,0.08) 100%); border: 2px solid ${rankColor}; border-radius: 6px; text-align: center;">
                         <img src="${iconUrl}" alt="${invItem.name}" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Crect fill=%22%23333%22 width=%2240%22 height=%2240%22/%3E%3Ctext fill=%22%23666%22 text-anchor=%22middle%22 x=%2220%22 y=%2725%22 font-size=%2218%22%3E?%3C/text%3E%3C/svg%3E'">
                         <div style="font-size: 11px; color: #7c5cff; font-weight: 700;">${qty}x</div>
                         <div style="font-size: 10px; color: #ddd; line-height: 1.2; word-break: break-word; width: 85px;">${invItem.name}</div>
@@ -1101,10 +1129,10 @@ function updateTalentCostsDisplay(charData, talentId, fromLevel, toLevel) {
         // Add mora card
         const moraColor = '#ffd700';
         costsHtml += `
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,200,0,0.08) 100%); border: 2px solid ${moraColor}; border-radius: 6px; text-align: center; transition: all 0.2s;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,200,0,0.08) 100%); border: 2px solid ${moraColor}; border-radius: 6px; text-align: center;">
                 <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 28px;">💰</div>
                 <div style="font-size: 9px; color: ${moraColor}; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Mora</div>
-                <div style="font-size: 11px; color: ${moraColor}; font-weight: 700; line-height: 1.2;">${mora.toLocaleString()}</div>
+                <div style="font-size: 11px; color: ${moraColor}; font-weight: 700; line-height: 1.2;">${totalMora.toLocaleString()}</div>
             </div>
         `;
         
