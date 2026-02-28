@@ -832,14 +832,14 @@ nav{
     }
     
     .card {
-        width: 160px;
+        width: 120px;
     }
     
     .character-card,
     .weapons-card,
     .artifacts-card {
-        width: 160px !important;
-        height: 160px !important;
+        width: 120px !important;
+        height: 138px !important;
     }
     
     .card img {

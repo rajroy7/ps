@@ -9,6 +9,31 @@
 <!-- styles moved to styles.css for consistent theme across pages -->
 <link rel="stylesheet" href="styles.css">
 <style>
+  /* Search Results Scrollbar Styling */
+  #searchResults {
+    scrollbar-color: rgba(124, 92, 255, 0.6) rgba(124, 92, 255, 0.1);
+    scrollbar-width: thin;
+  }
+  
+  #searchResults::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #searchResults::-webkit-scrollbar-track {
+    background: rgba(124, 92, 255, 0.05);
+    border-radius: 10px;
+  }
+  
+  #searchResults::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(124, 92, 255, 0.6) 0%, rgba(124, 92, 255, 0.4) 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(124, 92, 255, 0.05);
+  }
+  
+  #searchResults::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(124, 92, 255, 0.8) 0%, rgba(124, 92, 255, 0.6) 100%);
+  }
+
   @media (max-width: 600px) {
     #globalSearch {
       font-size: 14px !important;
@@ -47,20 +72,6 @@
         <li><a href="wishes.html"><img src="https://ik.imagekit.io/gukc1okbd/wishes.webp" class="icon"><span class="text">Character Wishes</span></a></li>
         <li class="about-menu-item"><a href="about.html" class="about-menu-btn"><img src="https://ik.imagekit.io/gukc1okbd/settings.webp" class="icon"><span class="text">About Developer</span></a></li>
     </ul>
-</div>
-
-<!-- SEARCH MODAL -->
-<div id="searchModal" class="search-modal">
-  <div class="search-overlay" id="searchOverlay"></div>
-  <div class="search-container">
-    <div class="search-header">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search characters, weapons, artifacts...">
-      <button class="search-close" id="searchClose">&times;</button>
-    </div>
-    <div class="search-results" id="searchResults">
-      <p style="text-align: center; color: #999; margin-top: 20px;">Start typing to search...</p>
-    </div>
-  </div>
 </div>
 
 <!-- SETTINGS MODAL -->
@@ -204,12 +215,30 @@
 
 <!-- SEARCH BAR -->
 <div style="padding: 40px 16px; max-width: 900px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+  <style>
+    #globalSearch {
+      color: white !important;
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.05) 0%, rgba(124, 92, 255, 0.02) 100%) !important;
+    }
+    #globalSearch::placeholder {
+      color: rgba(255, 255, 255, 0.5) !important;
+      opacity: 1 !important;
+    }
+    #globalSearch::-webkit-autofill,
+    #globalSearch::-webkit-autofill:hover,
+    #globalSearch::-webkit-autofill:focus,
+    #globalSearch::-webkit-autofill:active {
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.05) 0%, rgba(124, 92, 255, 0.02) 100%) !important;
+      -webkit-box-shadow: 0 0 0 30px linear-gradient(135deg, rgba(124, 92, 255, 0.05) 0%, rgba(124, 92, 255, 0.02) 100%) inset !important;
+      -webkit-text-fill-color: white !important;
+    }
+  </style>
   <div style="position: relative; width: 100%; box-sizing: border-box;">
     <div style="position: relative; display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box;">
       <svg style="width: 20px; height: 20px; color: #7c5cff; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
-      <input type="text" id="globalSearch" placeholder="Search characters, weapons, artifacts..." style="flex: 1; padding: 14px 16px; border: 2px solid rgba(124, 92, 255, 0.3); border-radius: 10px; background: linear-gradient(135deg, rgba(124, 92, 255, 0.05) 0%, rgba(124, 92, 255, 0.02) 100%); color: white; font-size: 15px; font-family: 'SkirkFont', 'Segoe UI', system-ui, -apple-system, sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(124, 92, 255, 0.05); min-width: 0; box-sizing: border-box;" onkeyup="performGlobalSearch(this.value)" onfocus="showSearchResults(); this.style.borderColor='rgba(124, 92, 255, 0.6)'; this.style.boxShadow='0 8px 24px rgba(124, 92, 255, 0.1)'" onblur="this.style.borderColor='rgba(124, 92, 255, 0.3)'; this.style.boxShadow='0 4px 12px rgba(124, 92, 255, 0.05)'">
+      <input type="text" id="globalSearch" placeholder="Search characters, weapons, artifacts..." style="flex: 1; padding: 14px 16px; border: 2px solid rgba(124, 92, 255, 0.3); border-radius: 10px; color: white; font-size: 15px; font-family: 'SkirkFont', 'Segoe UI', system-ui, -apple-system, sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(124, 92, 255, 0.05); min-width: 0; box-sizing: border-box;" onkeyup="performGlobalSearch(this.value)" onfocus="showSearchResults(); this.style.borderColor='rgba(124, 92, 255, 0.6)'; this.style.boxShadow='0 8px 24px rgba(124, 92, 255, 0.1)'" onblur="this.style.borderColor='rgba(124, 92, 255, 0.3)'; this.style.boxShadow='0 4px 12px rgba(124, 92, 255, 0.05)'">
     </div>
     <div id="searchResults" style="position: absolute; top: calc(100% + 12px); left: 0; right: 0; background: linear-gradient(135deg, rgba(50, 40, 80, 0.6) 0%, rgba(30, 20, 60, 0.5) 100%); border: 1px solid rgba(124, 92, 255, 0.3); border-radius: 12px; max-height: 450px; overflow-y: auto; overflow-x: hidden; display: none; z-index: 1000; box-shadow: 0 12px 32px rgba(124, 92, 255, 0.2); backdrop-filter: blur(10px); box-sizing: border-box;" onclick="event.stopPropagation()"></div>
   </div>
@@ -530,82 +559,152 @@ let allSearchData = {
   inventory: []
 };
 
+let searchDataLoaded = false;
+
 // Load all data for search
 async function loadSearchData() {
+  console.log('🔍 Starting to load search data...');
   try {
-    const charResponse = await fetch('./characters.json');
-    const weaponResponse = await fetch('./weapons.json');
-    const artifactResponse = await fetch('./artifacts.json');
-    const inventoryResponse = await fetch('./inventory.json');
-    
-    if (charResponse.ok) {
-      allSearchData.characters = await charResponse.json();
-    }
-    if (weaponResponse.ok) {
-      allSearchData.weapons = await weaponResponse.json();
-    }
-    if (artifactResponse.ok) {
-      allSearchData.artifacts = await artifactResponse.json();
-    }
-    if (inventoryResponse.ok) {
-      allSearchData.inventory = await inventoryResponse.json();
+    // Load characters
+    try {
+      const charResponse = await fetch('./characters.json');
+      if (charResponse.ok) {
+        const charData = await charResponse.json();
+        allSearchData.characters = Array.isArray(charData) ? charData : [];
+        console.log('✓ Characters loaded:', allSearchData.characters.length);
+      }
+    } catch (e) {
+      console.warn('✗ Could not load characters:', e);
     }
     
-    console.log('Search data loaded:', allSearchData);
+    // Load weapons
+    try {
+      const weaponResponse = await fetch('./weapons.json');
+      if (weaponResponse.ok) {
+        const weaponData = await weaponResponse.json();
+        allSearchData.weapons = Array.isArray(weaponData) ? weaponData : [];
+        console.log('✓ Weapons loaded:', allSearchData.weapons.length);
+      }
+    } catch (e) {
+      console.warn('✗ Could not load weapons:', e);
+    }
+    
+    // Load artifacts
+    try {
+      const artifactResponse = await fetch('./artifacts.json');
+      if (artifactResponse.ok) {
+        const artifactData = await artifactResponse.json();
+        allSearchData.artifacts = Array.isArray(artifactData) ? artifactData : [];
+        console.log('✓ Artifacts loaded:', allSearchData.artifacts.length);
+      }
+    } catch (e) {
+      console.warn('✗ Could not load artifacts:', e);
+    }
+    
+    // Load inventory
+    try {
+      const inventoryResponse = await fetch('./inventory.json');
+      if (inventoryResponse.ok) {
+        const inventoryData = await inventoryResponse.json();
+        allSearchData.inventory = Array.isArray(inventoryData) ? inventoryData : [];
+        console.log('✓ Inventory loaded:', allSearchData.inventory.length);
+      }
+    } catch (e) {
+      console.warn('✗ Could not load inventory:', e);
+    }
+    
+    searchDataLoaded = true;
+    console.log('✓ All search data ready!');
   } catch (error) {
-    console.error('Error loading search data:', error);
+    console.error('❌ Error in loadSearchData:', error);
   }
 }
 
 // Perform global search
 function performGlobalSearch(query) {
-  if (!query.trim()) {
-    document.getElementById('searchResults').style.display = 'none';
+  if (!query || !query.trim()) {
+    const resultsDiv = document.getElementById('searchResults');
+    if (resultsDiv) resultsDiv.style.display = 'none';
+    return;
+  }
+  
+  if (!searchDataLoaded) {
+    console.log('⏳ Search data not loaded yet, loading now...');
+    loadSearchData();
     return;
   }
   
   const results = [];
   const lowerQuery = query.toLowerCase();
   
-  // Search characters
-  allSearchData.characters.forEach(char => {
-    if (char.name && char.name.toLowerCase().includes(lowerQuery)) {
-      // Try to link to individual character page if it exists, otherwise use characters.html
-      const charPath = `characters.html?search=${encodeURIComponent(char.name)}`;
-      results.push({ type: 'character', name: char.name, path: charPath });
+  try {
+    // Search characters
+    if (Array.isArray(allSearchData.characters) && allSearchData.characters.length > 0) {
+      allSearchData.characters.forEach(char => {
+        if (char && char.name && char.name.toLowerCase().includes(lowerQuery)) {
+          results.push({ 
+            type: 'character', 
+            name: char.name, 
+            path: `character.html?id=${char.id}`,
+            icon: char.image
+          });
+        }
+      });
     }
-  });
-  
-  // Search weapons
-  allSearchData.weapons.forEach(weapon => {
-    if (weapon.name && weapon.name.toLowerCase().includes(lowerQuery)) {
-      const weaponPath = `weapons/${encodeURIComponent(weapon.name)}.html`;
-      results.push({ type: 'weapon', name: weapon.name, path: weaponPath });
+    
+    // Search weapons
+    if (Array.isArray(allSearchData.weapons) && allSearchData.weapons.length > 0) {
+      allSearchData.weapons.forEach(weapon => {
+        if (weapon && weapon.name && weapon.name.toLowerCase().includes(lowerQuery)) {
+          results.push({ 
+            type: 'weapon', 
+            name: weapon.name, 
+            path: `weapons/${encodeURIComponent(weapon.name)}.html`,
+            icon: `https://gi.yatta.moe/assets/UI/${weapon.icon}.png`
+          });
+        }
+      });
     }
-  });
-  
-  // Search artifacts
-  allSearchData.artifacts.forEach(artifact => {
-    if (artifact.name && artifact.name.toLowerCase().includes(lowerQuery)) {
-      const artifactPath = `Data/artifacts/${encodeURIComponent(artifact.name)}.html`;
-      results.push({ type: 'artifact', name: artifact.name, path: artifactPath });
+    
+    // Search artifacts
+    if (Array.isArray(allSearchData.artifacts) && allSearchData.artifacts.length > 0) {
+      allSearchData.artifacts.forEach(artifact => {
+        if (artifact && artifact.name && artifact.name.toLowerCase().includes(lowerQuery)) {
+          results.push({ 
+            type: 'artifact', 
+            name: artifact.name, 
+            path: `Data/artifacts/${encodeURIComponent(artifact.name)}.html`,
+            icon: `https://gi.yatta.moe/assets/UI/reliquary/${artifact.icon}.png`
+          });
+        }
+      });
     }
-  });
-  
-  // Search inventory
-  allSearchData.inventory.forEach(inv => {
-    if (inv.name && inv.name.toLowerCase().includes(lowerQuery)) {
-      const invPath = `inventory-items/${inv.id}.html`;
-      results.push({ type: 'inventory', name: inv.name, path: invPath });
+    
+    // Search inventory
+    if (Array.isArray(allSearchData.inventory) && allSearchData.inventory.length > 0) {
+      allSearchData.inventory.forEach(inv => {
+        if (inv && inv.name && inv.name.toLowerCase().includes(lowerQuery)) {
+          results.push({ 
+            type: 'inventory', 
+            name: inv.name, 
+            path: `inventory-items/${inv.id}.html`,
+            icon: `https://gi.yatta.moe/assets/UI/ItemIcon_${inv.id}.png`
+          });
+        }
+      });
     }
-  });
-  
-  displaySearchResults(results.slice(0, 12)); // Limit to 12 results
+    
+    console.log('🔎 Search for "' + query + '" found', results.length, 'results');
+    displaySearchResults(results.slice(0, 15));
+  } catch (e) {
+    console.error('❌ Error during search:', e);
+  }
 }
 
 // Display search results
 function displaySearchResults(results) {
   const resultsContainer = document.getElementById('searchResults');
+  if (!resultsContainer) return;
   
   if (results.length === 0) {
     resultsContainer.innerHTML = '<div style="padding: 20px; color: #a8a0c8; text-align: center; font-family: \'SkirkFont\', \'Segoe UI\', system-ui; font-size: 14px;">No results found</div>';
@@ -614,14 +713,17 @@ function displaySearchResults(results) {
   }
   
   resultsContainer.innerHTML = results.map(result => `
-    <a href="${result.path}" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid rgba(124, 92, 255, 0.1); text-decoration: none; transition: all 0.2s ease; font-family: 'SkirkFont', 'Segoe UI', system-ui;" onmouseover="this.style.background='rgba(124, 92, 255, 0.15)'; this.style.borderLeft='4px solid #7c5cff'; this.style.paddingLeft='12px';" onmouseout="this.style.background='transparent'; this.style.borderLeft='none'; this.style.paddingLeft='16px';">
-      <div style="background: linear-gradient(135deg, #7c5cff 0%, #5a42cc 100%); color: white; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: bold; min-width: 70px; text-align: center; font-family: 'SkirkFont';">${result.type}</div>
-      <span style="color: #e8e0ff; font-size: 15px; font-weight: 500;">${result.name}</span>
+    <a href="${result.path}" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid rgba(124, 92, 255, 0.1); text-decoration: none; transition: all 0.2s ease; font-family: 'SkirkFont', 'Segoe UI', system-ui;" onmouseover="this.style.background='rgba(124, 92, 255, 0.15)'; this.style.borderLeft='4px solid #7c5cff'; this.style.paddingLeft='12px';" onmouseout="this.style.background='transparent'; this.style.borderLeft='none'; this.style.paddingLeft='16px';">
+      <img src="${result.icon}" alt="${result.name}" style="width: 44px; height: 44px; border-radius: 6px; object-fit: cover; background: rgba(124, 92, 255, 0.1); border: 1px solid rgba(124, 92, 255, 0.2); flex-shrink: 0;" onerror="this.style.display='none'">
+      <div style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;">
+        <div style="background: linear-gradient(135deg, #7c5cff 0%, #5a42cc 100%); color: white; padding: 4px 8px; border-radius: 5px; font-size: 10px; font-weight: bold; min-width: 65px; text-align: center; font-family: 'SkirkFont'; flex-shrink: 0;">${result.type}</div>
+        <span style="color: #e8e0ff; font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${result.name}</span>
+      </div>
     </a>
   `).join('');
   
   if (results.length > 0) {
-    resultsContainer.innerHTML += '<div style="padding: 12px 16px; text-align: center; color: #8878b3; font-size: 12px; font-family: \'SkirkFont\"; border-top: 1px solid rgba(124, 92, 255, 0.1);">Found ' + results.length + ' result' + (results.length !== 1 ? 's' : '') + '</div>';
+    resultsContainer.innerHTML += '<div style="padding: 12px 16px; text-align: center; color: #8878b3; font-size: 12px; font-family: \'SkirkFont\'; border-top: 1px solid rgba(124, 92, 255, 0.1);">Found ' + results.length + ' result' + (results.length !== 1 ? 's' : '') + '</div>';
   }
   
   resultsContainer.style.display = 'block';
@@ -637,17 +739,19 @@ function showSearchResults() {
 
 // Hide results on click outside
 document.addEventListener('click', (e) => {
-  if (!e.target.closest('#globalSearch') && !e.target.closest('#searchResults')) {
-    document.getElementById('searchResults').style.display = 'none';
+  const searchInput = document.getElementById('globalSearch');
+  const searchResults = document.getElementById('searchResults');
+  if (searchInput && searchResults) {
+    if (!e.target.closest('#globalSearch') && !e.target.closest('#searchResults')) {
+      searchResults.style.display = 'none';
+    }
   }
 });
 
 // Load search data on page load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadSearchData);
-} else {
-  loadSearchData();
-}
+window.addEventListener('load', () => {
+  setTimeout(loadSearchData, 500);
+});
 </script>
 <script src="script.js"></script>
 </body>
