@@ -485,7 +485,7 @@ def generate_weapon_page(weapon_id, weapon_name):
 <div class="main-content">
     <nav>
         <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-        <div class="logo">PROJECT SKIRK</div>
+        <div class="logo">PROJECT SK<span class="logo-accent">I</span>R<span class="logo-accent">K</span></div>
         <div class="nav-links">
             <a href="../index.html">Home</a>
             <a href="../weapons.html">Weapons</a>
@@ -501,7 +501,7 @@ def generate_weapon_page(weapon_id, weapon_name):
 
     <div class="footer">
         <div class="footer-content">
-            <h2>PROJECT SKIRK</h2>
+            <h2>PROJECT SK<span class="logo-accent">I</span>R<span class="logo-accent">K</span></h2>
             <p class="footer-credit">Created by <strong>Raj Roy</strong></p>
         </div>
     </div>
