@@ -1,0 +1,1036 @@
+{
+  "meta": {
+    "total_weapons_with_changes": 98,
+    "last_updated": "2026-02-28",
+    "source": "gi.yatta.moe API + version mapping"
+  },
+  "weapons": {
+    "11417": {
+      "name": "Sapwood Blade",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "12417": {
+      "name": "Forest Regalia",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "13417": {
+      "name": "Moonpiercer",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "14417": {
+      "name": "Weapon 14417",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "15417": {
+      "name": "King's Squire",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "15418": {
+      "name": "Weapon 15418",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "15511": {
+      "name": "Hunter's Path",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
+        "3.0.0"
+      ]
+    },
+    "11418": {
+      "name": "Xiphos' Moonlight",
+      "changed_in_versions": [
+        "3.1"
+      ],
+      "changed_in_patch_versions": [
+        "3.1.0"
+      ]
+    },
+    "12415": {
+      "name": "Makhaira Aquamarine",
+      "changed_in_versions": [
+        "3.1"
+      ],
+      "changed_in_patch_versions": [
+        "3.1.0"
+      ]
+    },
+    "13419": {
+      "name": "Missive Windspear",
+      "changed_in_versions": [
+        "3.1"
+      ],
+      "changed_in_patch_versions": [
+        "3.1.0"
+      ]
+    },
+    "14416": {
+      "name": "Wandering Evenstar",
+      "changed_in_versions": [
+        "3.1"
+      ],
+      "changed_in_patch_versions": [
+        "3.1.0"
+      ]
+    },
+    "11511": {
+      "name": "Weapon 11511",
+      "changed_in_versions": [
+        "3.1"
+      ],
+      "changed_in_patch_versions": [
+        "3.1.0"
+      ]
+    },
+    "13511": {
+      "name": "Staff of the Scarlet Sands",
+      "changed_in_versions": [
+        "3.1"
+      ],
+      "changed_in_patch_versions": [
+        "3.1.0"
+      ]
+    },
+    "14511": {
+      "name": "A Thousand Floating Dreams",
+      "changed_in_versions": [
+        "3.2"
+      ],
+      "changed_in_patch_versions": [
+        "3.2.0"
+      ]
+    },
+    "11422": {
+      "name": "Weapon 11422",
+      "changed_in_versions": [
+        "3.3"
+      ],
+      "changed_in_patch_versions": [
+        "3.3.0"
+      ]
+    },
+    "14512": {
+      "name": "Tulaytullah's Remembrance",
+      "changed_in_versions": [
+        "3.3"
+      ],
+      "changed_in_patch_versions": [
+        "3.3.0"
+      ]
+    },
+    "11512": {
+      "name": "Light of Foliar Incision",
+      "changed_in_versions": [
+        "3.4"
+      ],
+      "changed_in_patch_versions": [
+        "3.4.0"
+      ]
+    },
+    "12418": {
+      "name": "Mailed Flower",
+      "changed_in_versions": [
+        "3.5"
+      ],
+      "changed_in_patch_versions": [
+        "3.5.0"
+      ]
+    },
+    "12511": {
+      "name": "Beacon of the Reed Sea",
+      "changed_in_versions": [
+        "3.5"
+      ],
+      "changed_in_patch_versions": [
+        "3.5.0"
+      ]
+    },
+    "14505": {
+      "name": "Jadefall's Splendor",
+      "changed_in_versions": [
+        "3.6"
+      ],
+      "changed_in_patch_versions": [
+        "3.6.0"
+      ]
+    },
+    "15419": {
+      "name": "Ibis Piercer",
+      "changed_in_versions": [
+        "3.7"
+      ],
+      "changed_in_patch_versions": [
+        "3.7.0"
+      ]
+    },
+    "11424": {
+      "name": "Wolf-Fang",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "11425": {
+      "name": "Finale of the Deep",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "11426": {
+      "name": "Fleuve Cendre Ferryman",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "12424": {
+      "name": "Talking Stick",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "12425": {
+      "name": "Tidal Shadow",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "13424": {
+      "name": "Ballad of the Fjords",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "13425": {
+      "name": "Rightful Reward",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "14424": {
+      "name": "Sacrificial Jade",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "14425": {
+      "name": "Flowing Purity",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "15424": {
+      "name": "Scion of the Blazing Sun",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "15425": {
+      "name": "Song of Stillness",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "15512": {
+      "name": "The First Great Magic",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "11427": {
+      "name": "The Dockhand's Assistant",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "12427": {
+      "name": "Portable Power Saw",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "13427": {
+      "name": "Prospector's Drill",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "14426": {
+      "name": "Ballad of the Boundless Blue",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "14513": {
+      "name": "Cashflow Supervision",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "14514": {
+      "name": "Tome of the Eternal Flow",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "15427": {
+      "name": "Range Gauge",
+      "changed_in_versions": [
+        "4.1"
+      ],
+      "changed_in_patch_versions": [
+        "4.1.1",
+        "4.1.0"
+      ]
+    },
+    "11428": {
+      "name": "Sword of Narzissenkreuz",
+      "changed_in_versions": [
+        "4.2"
+      ],
+      "changed_in_patch_versions": [
+        "4.2.1",
+        "4.2.0"
+      ]
+    },
+    "11513": {
+      "name": "Splendor of Tranquil Waters",
+      "changed_in_versions": [
+        "4.2"
+      ],
+      "changed_in_patch_versions": [
+        "4.2.1",
+        "4.2.0"
+      ]
+    },
+    "12426": {
+      "name": "\"Ultimate Overlord's Mega Magic Sword\"",
+      "changed_in_versions": [
+        "4.3"
+      ],
+      "changed_in_patch_versions": [
+        "4.3.1",
+        "4.3.0"
+      ]
+    },
+    "12512": {
+      "name": "Verdict",
+      "changed_in_versions": [
+        "4.3"
+      ],
+      "changed_in_patch_versions": [
+        "4.3.1",
+        "4.3.0"
+      ]
+    },
+    "14515": {
+      "name": "Crane's Echoing Call",
+      "changed_in_versions": [
+        "4.4"
+      ],
+      "changed_in_patch_versions": [
+        "4.4.1",
+        "4.4.0"
+      ]
+    },
+    "11514": {
+      "name": "Uraku Misugiri",
+      "changed_in_versions": [
+        "4.5"
+      ],
+      "changed_in_patch_versions": [
+        "4.5.1",
+        "4.5.0"
+      ]
+    },
+    "13426": {
+      "name": "Dialogues of the Desert Sages",
+      "changed_in_versions": [
+        "4.5"
+      ],
+      "changed_in_patch_versions": [
+        "4.5.1",
+        "4.5.0"
+      ]
+    },
+    "13512": {
+      "name": "Crimson Moon's Semblance",
+      "changed_in_versions": [
+        "4.6"
+      ],
+      "changed_in_patch_versions": [
+        "4.6.1",
+        "4.6.0"
+      ]
+    },
+    "11515": {
+      "name": "Absolution",
+      "changed_in_versions": [
+        "4.7"
+      ],
+      "changed_in_patch_versions": [
+        "4.7.1",
+        "4.7.0"
+      ]
+    },
+    "15426": {
+      "name": "Cloudforged",
+      "changed_in_versions": [
+        "4.7"
+      ],
+      "changed_in_patch_versions": [
+        "4.7.1",
+        "4.7.0"
+      ]
+    },
+    "15513": {
+      "name": "Silvershower Heartstrings",
+      "changed_in_versions": [
+        "4.7"
+      ],
+      "changed_in_patch_versions": [
+        "4.7.1",
+        "4.7.0"
+      ]
+    },
+    "13513": {
+      "name": "Lumidouce Elegy",
+      "changed_in_versions": [
+        "4.8"
+      ],
+      "changed_in_patch_versions": [
+        "4.8.1",
+        "4.8.0"
+      ]
+    },
+    "11431": {
+      "name": "Flute of Ezpitzal",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "12431": {
+      "name": "Earth Shaker",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "12513": {
+      "name": "Fang of the Mountain King",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "13431": {
+      "name": "Footprint of the Rainbow",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "14427": {
+      "name": "Ash-Graven Drinking Horn",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "14431": {
+      "name": "Ring of Yaxche",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "14516": {
+      "name": "Surf's Up",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "15431": {
+      "name": "Chain Breaker",
+      "changed_in_versions": [
+        "5.0"
+      ],
+      "changed_in_patch_versions": [
+        "5.0.2",
+        "5.0.1",
+        "5.0.0"
+      ]
+    },
+    "11430": {
+      "name": "Sturdy Bone",
+      "changed_in_versions": [
+        "5.1"
+      ],
+      "changed_in_patch_versions": [
+        "5.1.2",
+        "5.1.1",
+        "5.1.0"
+      ]
+    },
+    "11516": {
+      "name": "Peak Patrol Song",
+      "changed_in_versions": [
+        "5.1"
+      ],
+      "changed_in_patch_versions": [
+        "5.1.2",
+        "5.1.1",
+        "5.1.0"
+      ]
+    },
+    "12430": {
+      "name": "Fruitful Hook",
+      "changed_in_versions": [
+        "5.1"
+      ],
+      "changed_in_patch_versions": [
+        "5.1.2",
+        "5.1.1",
+        "5.1.0"
+      ]
+    },
+    "13430": {
+      "name": "Mountain-Bracing Bolt",
+      "changed_in_versions": [
+        "5.1"
+      ],
+      "changed_in_patch_versions": [
+        "5.1.2",
+        "5.1.1",
+        "5.1.0"
+      ]
+    },
+    "11432": {
+      "name": "Calamity of Eshu",
+      "changed_in_versions": [
+        "5.2"
+      ],
+      "changed_in_patch_versions": [
+        "5.2.2",
+        "5.2.1",
+        "5.2.0"
+      ]
+    },
+    "14430": {
+      "name": "Waveriding Whirl",
+      "changed_in_versions": [
+        "5.2"
+      ],
+      "changed_in_patch_versions": [
+        "5.2.2",
+        "5.2.1",
+        "5.2.0"
+      ]
+    },
+    "15430": {
+      "name": "Flower-Wreathed Feathers",
+      "changed_in_versions": [
+        "5.2"
+      ],
+      "changed_in_patch_versions": [
+        "5.2.2",
+        "5.2.1",
+        "5.2.0"
+      ]
+    },
+    "15514": {
+      "name": "Astral Vulture's Crimson Plumage",
+      "changed_in_versions": [
+        "5.2"
+      ],
+      "changed_in_patch_versions": [
+        "5.2.2",
+        "5.2.1",
+        "5.2.0"
+      ]
+    },
+    "12514": {
+      "name": "A Thousand Blazing Suns",
+      "changed_in_versions": [
+        "5.3"
+      ],
+      "changed_in_patch_versions": [
+        "5.3.2",
+        "5.3.1",
+        "5.3.0"
+      ]
+    },
+    "14517": {
+      "name": "Starcaller's Watch",
+      "changed_in_versions": [
+        "5.3"
+      ],
+      "changed_in_patch_versions": [
+        "5.3.2",
+        "5.3.1",
+        "5.3.0"
+      ]
+    },
+    "13432": {
+      "name": "Tamayuratei no Ohanashi",
+      "changed_in_versions": [
+        "5.4"
+      ],
+      "changed_in_patch_versions": [
+        "5.4.2",
+        "5.4.1",
+        "5.4.0"
+      ]
+    },
+    "14518": {
+      "name": "Sunny Morning Sleep-In",
+      "changed_in_versions": [
+        "5.4"
+      ],
+      "changed_in_patch_versions": [
+        "5.4.2",
+        "5.4.1",
+        "5.4.0"
+      ]
+    },
+    "14519": {
+      "name": "Vivid Notions",
+      "changed_in_versions": [
+        "5.5"
+      ],
+      "changed_in_patch_versions": [
+        "5.5.2",
+        "5.5.1",
+        "5.5.0"
+      ]
+    },
+    "13514": {
+      "name": "Symphonist of Scents",
+      "changed_in_versions": [
+        "5.6"
+      ],
+      "changed_in_patch_versions": [
+        "5.6.2",
+        "5.6.1",
+        "5.6.0"
+      ]
+    },
+    "15432": {
+      "name": "Sequence of Solitude",
+      "changed_in_versions": [
+        "5.6"
+      ],
+      "changed_in_patch_versions": [
+        "5.6.2",
+        "5.6.1",
+        "5.6.0"
+      ]
+    },
+    "11517": {
+      "name": "Azurelight",
+      "changed_in_versions": [
+        "5.7"
+      ],
+      "changed_in_patch_versions": [
+        "5.7.2",
+        "5.7.1",
+        "5.7.0"
+      ]
+    },
+    "12432": {
+      "name": "Flame-Forged Insight",
+      "changed_in_versions": [
+        "5.8"
+      ],
+      "changed_in_patch_versions": [
+        "5.8.2",
+        "5.8.1",
+        "5.8.0"
+      ]
+    },
+    "13515": {
+      "name": "Fractured Halo",
+      "changed_in_versions": [
+        "5.8"
+      ],
+      "changed_in_patch_versions": [
+        "5.8.2",
+        "5.8.1",
+        "5.8.0"
+      ]
+    },
+    "11433": {
+      "name": "Serenity's Call",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "11434": {
+      "name": "Moonweaver's Dawn",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "12433": {
+      "name": "Master Key",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "13433": {
+      "name": "Prospector's Shovel",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "13516": {
+      "name": "Bloodsoaked Ruins",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "14432": {
+      "name": "Etherlight Spindlelute",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "14433": {
+      "name": "Blackmarrow Lantern",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "14520": {
+      "name": "Nightweaver's Looking Glass",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "15433": {
+      "name": "Snare Hook",
+      "changed_in_versions": [
+        "6.0"
+      ],
+      "changed_in_patch_versions": [
+        "6.0.2",
+        "6.0.1",
+        "6.0.0"
+      ]
+    },
+    "13434": {
+      "name": "Sacrificer's Staff",
+      "changed_in_versions": [
+        "6.1"
+      ],
+      "changed_in_patch_versions": [
+        "6.1.75",
+        "6.1.74",
+        "6.1.73",
+        "6.1.72",
+        "6.1.71",
+        "6.1.70"
+      ]
+    },
+    "14434": {
+      "name": "Dawning Frost",
+      "changed_in_versions": [
+        "6.1"
+      ],
+      "changed_in_patch_versions": [
+        "6.1.75",
+        "6.1.74",
+        "6.1.73",
+        "6.1.72",
+        "6.1.71",
+        "6.1.70"
+      ]
+    },
+    "14521": {
+      "name": "Reliquary of Truth",
+      "changed_in_versions": [
+        "6.1"
+      ],
+      "changed_in_patch_versions": [
+        "6.1.75",
+        "6.1.74",
+        "6.1.73",
+        "6.1.72",
+        "6.1.71",
+        "6.1.70"
+      ]
+    },
+    "11518": {
+      "name": "Athame Artis",
+      "changed_in_versions": [
+        "6.2"
+      ],
+      "changed_in_patch_versions": [
+        "6.2.55",
+        "6.2.54",
+        "6.2.53",
+        "6.2.52",
+        "6.2.51",
+        "6.2.50"
+      ]
+    },
+    "15434": {
+      "name": "Rainbow Serpent's Rain Bow",
+      "changed_in_versions": [
+        "6.2"
+      ],
+      "changed_in_patch_versions": [
+        "6.2.55",
+        "6.2.54",
+        "6.2.53",
+        "6.2.52",
+        "6.2.51",
+        "6.2.50"
+      ]
+    },
+    "15515": {
+      "name": "The Daybreak Chronicles",
+      "changed_in_versions": [
+        "6.2"
+      ],
+      "changed_in_patch_versions": [
+        "6.2.55",
+        "6.2.54",
+        "6.2.53",
+        "6.2.52",
+        "6.2.51",
+        "6.2.50"
+      ]
+    },
+    "11519": {
+      "name": "Lightbearing Moonshard",
+      "changed_in_versions": [
+        "6.3"
+      ],
+      "changed_in_patch_versions": [
+        "6.3.54",
+        "6.3.53",
+        "6.3.52",
+        "6.3.51",
+        "6.3.50"
+      ]
+    },
+    "14522": {
+      "name": "Nocturne's Curtain Call",
+      "changed_in_versions": [
+        "6.3"
+      ],
+      "changed_in_patch_versions": [
+        "6.3.54",
+        "6.3.53",
+        "6.3.52",
+        "6.3.51",
+        "6.3.50"
+      ]
+    },
+    "12515": {
+      "name": "Gest of the Mighty Wolf",
+      "changed_in_versions": [
+        "6.4"
+      ],
+      "changed_in_patch_versions": [
+        "6.4.2",
+        "6.4.1",
+        "6.4.0"
+      ]
+    },
+    "380001": {
+      "name": "Phantasmal Gift: Star Omen",
+      "changed_in_versions": [
+        "6.4"
+      ],
+      "changed_in_patch_versions": [
+        "6.4.2",
+        "6.4.1",
+        "6.4.0"
+      ]
+    },
+    "390001": {
+      "name": "Unbreakable: Durandarte",
+      "changed_in_versions": [
+        "6.4"
+      ],
+      "changed_in_patch_versions": [
+        "6.4.2",
+        "6.4.1",
+        "6.4.0"
+      ]
+    }
+  }
+}
