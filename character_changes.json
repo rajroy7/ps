@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_characters_with_changes": 71,
+    "total_characters_with_changes": 76,
     "last_updated": "2026-02-28",
-    "source": "gi.yatta.moe API + version mapping"
+    "source": "gi.yatta.moe API"
   },
   "characters": {
     "10000067": {
-      "name": "Collei",
+      "name": "Unknown_10000067",
       "changed_in_versions": [
         "3.0"
       ],
@@ -15,7 +15,7 @@
       ]
     },
     "10000068": {
-      "name": "Dori",
+      "name": "Unknown_10000068",
       "changed_in_versions": [
         "3.0"
       ],
@@ -24,7 +24,7 @@
       ]
     },
     "10000069": {
-      "name": "Tighnari",
+      "name": "Unknown_10000069",
       "changed_in_versions": [
         "3.0"
       ],
@@ -32,24 +32,26 @@
         "3.0.0"
       ]
     },
-    "10000007": {
-      "name": "Traveler",
+    "10000005-dendro": {
+      "name": "Unknown_10000005-dendro",
       "changed_in_versions": [
-        "3.0",
-        "4.0",
-        "5.3"
+        "3.0"
       ],
       "changed_in_patch_versions": [
-        "5.3.2",
-        "5.3.1",
-        "5.3.0",
-        "4.0.1",
-        "4.0.0",
+        "3.0.0"
+      ]
+    },
+    "10000007-dendro": {
+      "name": "Unknown_10000007-dendro",
+      "changed_in_versions": [
+        "3.0"
+      ],
+      "changed_in_patch_versions": [
         "3.0.0"
       ]
     },
     "10000070": {
-      "name": "Nilou",
+      "name": "Unknown_10000070",
       "changed_in_versions": [
         "3.1"
       ],
@@ -58,7 +60,7 @@
       ]
     },
     "10000071": {
-      "name": "Cyno",
+      "name": "Unknown_10000071",
       "changed_in_versions": [
         "3.1"
       ],
@@ -67,7 +69,7 @@
       ]
     },
     "10000072": {
-      "name": "Candace",
+      "name": "Unknown_10000072",
       "changed_in_versions": [
         "3.1"
       ],
@@ -76,7 +78,7 @@
       ]
     },
     "10000073": {
-      "name": "Nahida",
+      "name": "Unknown_10000073",
       "changed_in_versions": [
         "3.2"
       ],
@@ -85,7 +87,7 @@
       ]
     },
     "10000074": {
-      "name": "Layla",
+      "name": "Unknown_10000074",
       "changed_in_versions": [
         "3.2"
       ],
@@ -94,7 +96,7 @@
       ]
     },
     "10000075": {
-      "name": "Wanderer",
+      "name": "Unknown_10000075",
       "changed_in_versions": [
         "3.3"
       ],
@@ -103,7 +105,7 @@
       ]
     },
     "10000076": {
-      "name": "Faruzan",
+      "name": "Unknown_10000076",
       "changed_in_versions": [
         "3.3"
       ],
@@ -112,7 +114,7 @@
       ]
     },
     "10000077": {
-      "name": "Yaoyao",
+      "name": "Unknown_10000077",
       "changed_in_versions": [
         "3.4"
       ],
@@ -121,7 +123,7 @@
       ]
     },
     "10000078": {
-      "name": "Alhaitham",
+      "name": "Unknown_10000078",
       "changed_in_versions": [
         "3.4"
       ],
@@ -130,7 +132,7 @@
       ]
     },
     "10000079": {
-      "name": "Dehya",
+      "name": "Unknown_10000079",
       "changed_in_versions": [
         "3.5"
       ],
@@ -139,7 +141,7 @@
       ]
     },
     "10000080": {
-      "name": "Mika",
+      "name": "Unknown_10000080",
       "changed_in_versions": [
         "3.5"
       ],
@@ -148,7 +150,7 @@
       ]
     },
     "10000081": {
-      "name": "Kaveh",
+      "name": "Unknown_10000081",
       "changed_in_versions": [
         "3.6"
       ],
@@ -157,7 +159,7 @@
       ]
     },
     "10000082": {
-      "name": "Baizhu",
+      "name": "Unknown_10000082",
       "changed_in_versions": [
         "3.6"
       ],
@@ -166,7 +168,7 @@
       ]
     },
     "10000061": {
-      "name": "Kirara",
+      "name": "Unknown_10000061",
       "changed_in_versions": [
         "3.7"
       ],
@@ -175,122 +177,128 @@
       ]
     },
     "10000083": {
-      "name": "Lynette",
+      "name": "Unknown_10000083",
       "changed_in_versions": [
         "4.0"
       ],
       "changed_in_patch_versions": [
-        "4.0.1",
         "4.0.0"
       ]
     },
     "10000084": {
-      "name": "Lyney",
+      "name": "Unknown_10000084",
       "changed_in_versions": [
         "4.0"
       ],
       "changed_in_patch_versions": [
-        "4.0.1",
         "4.0.0"
       ]
     },
     "10000085": {
-      "name": "Freminet",
+      "name": "Unknown_10000085",
       "changed_in_versions": [
         "4.0"
       ],
       "changed_in_patch_versions": [
-        "4.0.1",
+        "4.0.0"
+      ]
+    },
+    "10000005-hydro": {
+      "name": "Unknown_10000005-hydro",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
+        "4.0.0"
+      ]
+    },
+    "10000007-hydro": {
+      "name": "Unknown_10000007-hydro",
+      "changed_in_versions": [
+        "4.0"
+      ],
+      "changed_in_patch_versions": [
         "4.0.0"
       ]
     },
     "10000086": {
-      "name": "Wriothesley",
+      "name": "Unknown_10000086",
       "changed_in_versions": [
         "4.1"
       ],
       "changed_in_patch_versions": [
-        "4.1.1",
         "4.1.0"
       ]
     },
     "10000087": {
-      "name": "Neuvillette",
+      "name": "Unknown_10000087",
       "changed_in_versions": [
         "4.1"
       ],
       "changed_in_patch_versions": [
-        "4.1.1",
         "4.1.0"
       ]
     },
     "10000088": {
-      "name": "Charlotte",
+      "name": "Unknown_10000088",
       "changed_in_versions": [
         "4.2"
       ],
       "changed_in_patch_versions": [
-        "4.2.1",
         "4.2.0"
       ]
     },
     "10000089": {
-      "name": "Furina",
+      "name": "Unknown_10000089",
       "changed_in_versions": [
         "4.2"
       ],
       "changed_in_patch_versions": [
-        "4.2.1",
         "4.2.0"
       ]
     },
     "10000090": {
-      "name": "Chevreuse",
+      "name": "Unknown_10000090",
       "changed_in_versions": [
         "4.3"
       ],
       "changed_in_patch_versions": [
-        "4.3.1",
         "4.3.0"
       ]
     },
     "10000091": {
-      "name": "Navia",
+      "name": "Unknown_10000091",
       "changed_in_versions": [
         "4.3"
       ],
       "changed_in_patch_versions": [
-        "4.3.1",
         "4.3.0"
       ]
     },
     "10000092": {
-      "name": "Gaming",
+      "name": "Unknown_10000092",
       "changed_in_versions": [
         "4.4"
       ],
       "changed_in_patch_versions": [
-        "4.4.1",
         "4.4.0"
       ]
     },
     "10000093": {
-      "name": "Xianyun",
+      "name": "Unknown_10000093",
       "changed_in_versions": [
         "4.4"
       ],
       "changed_in_patch_versions": [
-        "4.4.1",
         "4.4.0"
       ]
     },
     "10000094": {
-      "name": "Chiori",
+      "name": "Unknown_10000094",
       "changed_in_versions": [
         "4.5"
       ],
       "changed_in_patch_versions": [
-        "4.5.1",
         "4.5.0"
       ]
     },
@@ -300,223 +308,204 @@
         "4.6"
       ],
       "changed_in_patch_versions": [
-        "4.6.1",
         "4.6.0"
       ]
     },
     "10000097": {
-      "name": "Sethos",
+      "name": "Unknown_10000097",
       "changed_in_versions": [
         "4.7"
       ],
       "changed_in_patch_versions": [
-        "4.7.1",
         "4.7.0"
       ]
     },
     "10000098": {
-      "name": "Clorinde",
+      "name": "Unknown_10000098",
       "changed_in_versions": [
         "4.7"
       ],
       "changed_in_patch_versions": [
-        "4.7.1",
         "4.7.0"
       ]
     },
     "10000095": {
-      "name": "Sigewinne",
+      "name": "Unknown_10000095",
       "changed_in_versions": [
         "4.7"
       ],
       "changed_in_patch_versions": [
-        "4.7.1",
         "4.7.0"
       ]
     },
     "10000099": {
-      "name": "Emilie",
+      "name": "Unknown_10000099",
       "changed_in_versions": [
         "4.8"
       ],
       "changed_in_patch_versions": [
-        "4.8.1",
         "4.8.0"
       ]
     },
     "10000100": {
-      "name": "Kachina",
+      "name": "Unknown_10000100",
       "changed_in_versions": [
         "5.0"
       ],
       "changed_in_patch_versions": [
-        "5.0.2",
-        "5.0.1",
         "5.0.0"
       ]
     },
     "10000101": {
-      "name": "Kinich",
+      "name": "Unknown_10000101",
       "changed_in_versions": [
         "5.0"
       ],
       "changed_in_patch_versions": [
-        "5.0.2",
-        "5.0.1",
         "5.0.0"
       ]
     },
     "10000102": {
-      "name": "Mualani",
+      "name": "Unknown_10000102",
       "changed_in_versions": [
         "5.0"
       ],
       "changed_in_patch_versions": [
-        "5.0.2",
-        "5.0.1",
         "5.0.0"
       ]
     },
     "10000103": {
-      "name": "Xilonen",
+      "name": "Unknown_10000103",
       "changed_in_versions": [
         "5.1"
       ],
       "changed_in_patch_versions": [
-        "5.1.2",
-        "5.1.1",
         "5.1.0"
       ]
     },
     "10000104": {
-      "name": "Chasca",
+      "name": "Unknown_10000104",
       "changed_in_versions": [
         "5.2"
       ],
       "changed_in_patch_versions": [
-        "5.2.2",
-        "5.2.1",
         "5.2.0"
       ]
     },
     "10000105": {
-      "name": "Ororon",
+      "name": "Unknown_10000105",
       "changed_in_versions": [
         "5.2"
       ],
       "changed_in_patch_versions": [
-        "5.2.2",
-        "5.2.1",
         "5.2.0"
       ]
     },
     "10000106": {
-      "name": "Mavuika",
+      "name": "Unknown_10000106",
       "changed_in_versions": [
         "5.3"
       ],
       "changed_in_patch_versions": [
-        "5.3.2",
-        "5.3.1",
         "5.3.0"
       ]
     },
     "10000107": {
-      "name": "Citlali",
+      "name": "Unknown_10000107",
       "changed_in_versions": [
         "5.3"
       ],
       "changed_in_patch_versions": [
-        "5.3.2",
-        "5.3.1",
         "5.3.0"
       ]
     },
     "10000108": {
-      "name": "Lan Yan",
+      "name": "Unknown_10000108",
       "changed_in_versions": [
         "5.3"
       ],
       "changed_in_patch_versions": [
-        "5.3.2",
-        "5.3.1",
+        "5.3.0"
+      ]
+    },
+    "10000005-pyro": {
+      "name": "Unknown_10000005-pyro",
+      "changed_in_versions": [
+        "5.3"
+      ],
+      "changed_in_patch_versions": [
+        "5.3.0"
+      ]
+    },
+    "10000007-pyro": {
+      "name": "Unknown_10000007-pyro",
+      "changed_in_versions": [
+        "5.3"
+      ],
+      "changed_in_patch_versions": [
         "5.3.0"
       ]
     },
     "10000109": {
-      "name": "Yumemizuki Mizuki",
+      "name": "Unknown_10000109",
       "changed_in_versions": [
         "5.4"
       ],
       "changed_in_patch_versions": [
-        "5.4.2",
-        "5.4.1",
         "5.4.0"
       ]
     },
     "10000110": {
-      "name": "Iansan",
+      "name": "Unknown_10000110",
       "changed_in_versions": [
         "5.5"
       ],
       "changed_in_patch_versions": [
-        "5.5.2",
-        "5.5.1",
         "5.5.0"
       ]
     },
     "10000111": {
-      "name": "Varesa",
+      "name": "Unknown_10000111",
       "changed_in_versions": [
         "5.5"
       ],
       "changed_in_patch_versions": [
-        "5.5.2",
-        "5.5.1",
         "5.5.0"
       ]
     },
     "10000112": {
-      "name": "Escoffier",
+      "name": "Unknown_10000112",
       "changed_in_versions": [
         "5.6"
       ],
       "changed_in_patch_versions": [
-        "5.6.2",
-        "5.6.1",
         "5.6.0"
       ]
     },
     "10000113": {
-      "name": "Ifa",
+      "name": "Unknown_10000113",
       "changed_in_versions": [
         "5.6"
       ],
       "changed_in_patch_versions": [
-        "5.6.2",
-        "5.6.1",
         "5.6.0"
       ]
     },
     "10000114": {
-      "name": "Skirk",
+      "name": "Unknown_10000114",
       "changed_in_versions": [
         "5.7"
       ],
       "changed_in_patch_versions": [
-        "5.7.2",
-        "5.7.1",
         "5.7.0"
       ]
     },
     "10000115": {
-      "name": "Dahlia",
+      "name": "Unknown_10000115",
       "changed_in_versions": [
         "5.7"
       ],
       "changed_in_patch_versions": [
-        "5.7.2",
-        "5.7.1",
         "5.7.0"
       ]
     },
@@ -526,46 +515,38 @@
         "5.8"
       ],
       "changed_in_patch_versions": [
-        "5.8.2",
-        "5.8.1",
         "5.8.0"
       ]
     },
     "10000120": {
-      "name": "Flins",
+      "name": "Unknown_10000120",
       "changed_in_versions": [
         "6.0"
       ],
       "changed_in_patch_versions": [
-        "6.0.2",
-        "6.0.1",
         "6.0.0"
       ]
     },
     "10000121": {
-      "name": "Aino",
+      "name": "Unknown_10000121",
       "changed_in_versions": [
         "6.0"
       ],
       "changed_in_patch_versions": [
-        "6.0.2",
-        "6.0.1",
         "6.0.0"
       ]
     },
     "10000119": {
-      "name": "Lauma",
+      "name": "Unknown_10000119",
       "changed_in_versions": [
         "6.0"
       ],
       "changed_in_patch_versions": [
-        "6.0.2",
-        "6.0.1",
         "6.0.0"
       ]
     },
     "10000122": {
-      "name": "Nefer",
+      "name": "Unknown_10000122",
       "changed_in_versions": [
         "6.1"
       ],
@@ -579,7 +560,7 @@
       ]
     },
     "10000117": {
-      "name": "Manekin",
+      "name": "Unknown_10000117",
       "changed_in_versions": [
         "6.1"
       ],
@@ -593,7 +574,7 @@
       ]
     },
     "10000118": {
-      "name": "Manekina",
+      "name": "Unknown_10000118",
       "changed_in_versions": [
         "6.1"
       ],
@@ -607,7 +588,7 @@
       ]
     },
     "10000123": {
-      "name": "Durin",
+      "name": "Unknown_10000123",
       "changed_in_versions": [
         "6.2"
       ],
@@ -621,7 +602,7 @@
       ]
     },
     "10000124": {
-      "name": "Jahoda",
+      "name": "Unknown_10000124",
       "changed_in_versions": [
         "6.2"
       ],
@@ -635,7 +616,7 @@
       ]
     },
     "10000020": {
-      "name": "Razor",
+      "name": "Unknown_10000020",
       "changed_in_versions": [
         "6.2"
       ],
@@ -649,7 +630,7 @@
       ]
     },
     "10000022": {
-      "name": "Venti",
+      "name": "Unknown_10000022",
       "changed_in_versions": [
         "6.2"
       ],
@@ -663,7 +644,7 @@
       ]
     },
     "10000029": {
-      "name": "Klee",
+      "name": "Unknown_10000029",
       "changed_in_versions": [
         "6.2"
       ],
@@ -677,7 +658,7 @@
       ]
     },
     "10000031": {
-      "name": "Fischl",
+      "name": "Unknown_10000031",
       "changed_in_versions": [
         "6.2"
       ],
@@ -691,7 +672,7 @@
       ]
     },
     "10000038": {
-      "name": "Albedo",
+      "name": "Unknown_10000038",
       "changed_in_versions": [
         "6.2"
       ],
@@ -705,7 +686,7 @@
       ]
     },
     "10000041": {
-      "name": "Mona",
+      "name": "Unknown_10000041",
       "changed_in_versions": [
         "6.2"
       ],
@@ -719,7 +700,7 @@
       ]
     },
     "10000043": {
-      "name": "Sucrose",
+      "name": "Unknown_10000043",
       "changed_in_versions": [
         "6.2"
       ],
@@ -772,14 +753,16 @@
       ]
     },
     "10000128": {
-      "name": "Varka",
+      "name": "Unknown_10000128",
       "changed_in_versions": [
         "6.4"
       ],
       "changed_in_patch_versions": [
         "6.4.2",
         "6.4.1",
-        "6.4.0"
+        "6.4.0",
+        "6.3.52",
+        "6.3.51"
       ]
     }
   }
