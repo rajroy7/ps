@@ -327,7 +327,8 @@ const CHAR_MAP_EMBEDDED = {
   "10000125": { "name": "Columbina", "file": "Columbina" },
   "10000126": { "name": "Zibai", "file": "Zibai" },
   "10000127": { "name": "Illuga", "file": "Illuga" },
-  "10000128": { "name": "Varka", "file": "Varka" }
+  "10000128": { "name": "Varka", "file": "Varka" },
+  "10000130": { "name": "Linnea", "file": "Linnea" }
 };
 
 // Character map loaded from embedded data
@@ -464,7 +465,10 @@ async function loadCharacterData(characterId) {
 }
 
 function generateCharacterContent(charData) {
-    const iconUrl = `https://gi.yatta.moe/assets/UI/${charData.icon}.png?vh=2024123000`;
+    // Check if icon is a full URL or just a name
+    const iconUrl = charData.icon?.startsWith('http') 
+        ? charData.icon 
+        : `https://gi.yatta.moe/assets/UI/${charData.icon}.png?vh=2024123000`;
     const detail = charData.fetter?.detail || 'No description available';
     const releaseDate = new Date(charData.release * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     
@@ -919,36 +923,95 @@ function displayAscension(charData) {
     
     const promotes = charData.upgrade.promote || [];
     let html = '<h2>Ascension Requirements</h2>';
-    html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">';
+    html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">';
     
-    promotes.forEach((promote, idx) => {
-        if (idx === 0 || !promote.costItems) return;
-        
-        html += `
-            <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
-                <h3 style="color:#7c5cff; margin-top:0;">Ascension ${idx} → Lv. ${promote.unlockMaxLevel}</h3>
-                <table style="width:100%; font-size:14px;">
-                    <tr><td>Player Level Required:</td><td style="color:#7c5cff;">${promote.requiredPlayerLevel || 'N/A'}</td></tr>
-                    <tr><td>Mora Required:</td><td style="color:#ffd700;">${promote.coinCost ? promote.coinCost.toLocaleString() : 'N/A'}</td></tr>
-                </table>
-                <h4 style="margin: 12px 0 8px 0; color:#aaa;">Materials:</h4>
-                <ul style="margin:0; padding-left:20px; font-size:13px;">
-        `;
-        
-        if (promote.costItems) {
-            Object.entries(promote.costItems).forEach(([itemId, count]) => {
-                html += `<li>Item ${itemId}: ${count} required</li>`;
+    // Load inventory data for material icons
+    fetch('inventory.json')
+        .then(r => r.json())
+        .then(inventory => {
+            promotes.forEach((promote, idx) => {
+                if (idx === 0 || !promote.costItems) return;
+                
+                html += `
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; border: 1px solid rgba(124,92,255,0.2);">
+                        <h3 style="color:#7c5cff; margin-top:0;">Ascension ${idx} → Lv. ${promote.unlockMaxLevel}</h3>
+                        <table style="width:100%; font-size:14px; margin-bottom: 16px;">
+                            <tr><td>Player Level Required:</td><td style="color:#7c5cff;">${promote.requiredPlayerLevel || 'N/A'}</td></tr>
+                            <tr><td>Mora Required:</td><td style="color:#ffd700;">${promote.coinCost ? promote.coinCost.toLocaleString() : 'N/A'}</td></tr>
+                        </table>
+                        <h4 style="margin: 12px 0 12px 0; color:#aaa;">Materials:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px;">
+                `;
+                
+                if (promote.costItems) {
+                    Object.entries(promote.costItems).forEach(([itemId, qty]) => {
+                        const matIdNum = parseInt(itemId);
+                        const invItem = inventory ? inventory.find(item => item.id === matIdNum) : null;
+                        
+                        if (invItem) {
+                            const iconUrl = `https://gi.yatta.moe/assets/UI/${invItem.icon}.png`;
+                            const rankColor = ['#888', '#4a9eff', '#00d4ff', '#b291dc', '#ffc107'][invItem.rank - 1] || '#888';
+                            
+                            html += `
+                                <div data-item-id="${matIdNum}" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px; background: linear-gradient(135deg, rgba(100,100,255,0.08) 0%, rgba(200,150,255,0.08) 100%); border: 2px solid ${rankColor}; border-radius: 6px; text-align: center; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='#ffc107';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='${rankColor}';">
+                                    <img src="${iconUrl}" alt="${invItem.name}" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Crect fill=%23333 width=%2240%22 height=%2240%22/%3E%3Ctext fill=%22%23666%22 text-anchor=%22middle%22 x=%2220%22 y=%2228%22 font-size=%2218%22%3E?%3C/text%3E%3C/svg%3E'">
+                                    <div style="font-size: 11px; color: #7c5cff; font-weight: 700;">${qty}x</div>
+                                    <div style="font-size: 9px; color: #aaa; line-height: 1.2; word-break: break-word; max-width: 80px;">${invItem.name}</div>
+                                </div>
+                            `;
+                        } else {
+                            html += `
+                                <div data-item-id="${matIdNum}" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px; background: linear-gradient(135deg, rgba(100,100,100,0.08) 0%, rgba(150,150,150,0.08) 100%); border: 2px solid #666; border-radius: 6px; text-align: center; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='#ffc107';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#666';">
+                                    <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 20px;">❓</div>
+                                    <div style="font-size: 11px; color: #7c5cff; font-weight: 700;">${qty}x</div>
+                                    <div style="font-size: 9px; color: #999; line-height: 1.2;">ID: ${itemId}</div>
+                                </div>
+                            `;
+                        }
+                    });
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
             });
-        }
-        
-        html += `
-                </ul>
-            </div>
-        `;
-    });
-    
-    html += '</div>';
-    container.innerHTML = html;
+            
+            html += '</div>';
+            container.innerHTML = html;
+        })
+        .catch(err => {
+            console.warn('Failed to load inventory data:', err);
+            // Fallback display without icons
+            promotes.forEach((promote, idx) => {
+                if (idx === 0 || !promote.costItems) return;
+                
+                html += `
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
+                        <h3 style="color:#7c5cff; margin-top:0;">Ascension ${idx} → Lv. ${promote.unlockMaxLevel}</h3>
+                        <table style="width:100%; font-size:14px;">
+                            <tr><td>Player Level Required:</td><td style="color:#7c5cff;">${promote.requiredPlayerLevel || 'N/A'}</td></tr>
+                            <tr><td>Mora Required:</td><td style="color:#ffd700;">${promote.coinCost ? promote.coinCost.toLocaleString() : 'N/A'}</td></tr>
+                        </table>
+                        <h4 style="margin: 12px 0 8px 0; color:#aaa;">Materials:</h4>
+                        <ul style="margin:0; padding-left:20px; font-size:13px;">
+                `;
+                
+                if (promote.costItems) {
+                    Object.entries(promote.costItems).forEach(([itemId, count]) => {
+                        html += `<li>Item ${itemId}: ${count} required</li>`;
+                    });
+                }
+                
+                html += `
+                        </ul>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+        });
 }
 
 function displayVoiceActors(charData) {

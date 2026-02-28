@@ -1,5 +1,18 @@
 [
   {
+    "id": 10000130,
+    "name": "Linnea",
+    "title": "Spring's Embrace",
+    "vision": "Geo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "region": "NODKRAI",
+    "version": "Luna VI",
+    "image": "https://ik.imagekit.io/gukc1okbd/UI_AvatarIcon_Linnea.webp",
+    "icon": "https://ik.imagekit.io/gukc1okbd/geo.png",
+    "release_date": "2025-12-25"
+  },
+  {
     "id": 10000128,
     "name": "Varka",
     "title": "Knight of Boreas",

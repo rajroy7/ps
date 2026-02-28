@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_characters_with_changes": 76,
+    "total_characters_with_changes": 77,
     "last_updated": "2026-02-28",
     "source": "gi.yatta.moe API"
   },
@@ -884,6 +884,20 @@
         "6.3.52",
         "6.3.51",
         "6.3.50"
+      ]
+    },
+    "10000130": {
+      "name": "Linnea",
+      "changed_in_versions": [
+        "6.4"
+      ],
+      "changed_in_patch_versions": [
+        "6.3.50",
+        "6.3.51",
+        "6.3.52",
+        "6.3.53",
+        "6.3.54",
+        "6.4"
       ]
     }
   }
