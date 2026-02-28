@@ -8,6 +8,17 @@
 
 <!-- styles moved to styles.css for consistent theme across pages -->
 <link rel="stylesheet" href="styles.css">
+<style>
+  @media (max-width: 600px) {
+    #globalSearch {
+      font-size: 14px !important;
+      padding: 12px 12px !important;
+    }
+    #globalSearch::placeholder {
+      font-size: 12px;
+    }
+  }
+</style>
 </head>
 
 <body>
@@ -173,7 +184,7 @@
     <a href="characters.html">Characters</a>
     <a href="weapons.html">Weapons</a>
     <a href="artifacts.html">Artifacts</a>
-    <a href="achievements.html">Achievements</a>
+    <a href="wishes.html">Banners</a>
     <a href="inventory.html">Inventory</a>
     <button class="nav-search-btn" id="searchBtn" title="Search">
       <img src="https://ik.imagekit.io/gukc1okbd/search.webp" alt="Search" class="search-icon">
@@ -190,6 +201,19 @@
   <h1>Project Skirk</h1>
   <p>A fan database for Genshin Impact players.</p>
 </section>
+
+<!-- SEARCH BAR -->
+<div style="padding: 40px 16px; max-width: 900px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+  <div style="position: relative; width: 100%; box-sizing: border-box;">
+    <div style="position: relative; display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box;">
+      <svg style="width: 20px; height: 20px; color: #7c5cff; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input type="text" id="globalSearch" placeholder="Search characters, weapons, artifacts..." style="flex: 1; padding: 14px 16px; border: 2px solid rgba(124, 92, 255, 0.3); border-radius: 10px; background: linear-gradient(135deg, rgba(124, 92, 255, 0.05) 0%, rgba(124, 92, 255, 0.02) 100%); color: white; font-size: 15px; font-family: 'SkirkFont', 'Segoe UI', system-ui, -apple-system, sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(124, 92, 255, 0.05); min-width: 0; box-sizing: border-box;" onkeyup="performGlobalSearch(this.value)" onfocus="showSearchResults(); this.style.borderColor='rgba(124, 92, 255, 0.6)'; this.style.boxShadow='0 8px 24px rgba(124, 92, 255, 0.1)'" onblur="this.style.borderColor='rgba(124, 92, 255, 0.3)'; this.style.boxShadow='0 4px 12px rgba(124, 92, 255, 0.05)'">
+    </div>
+    <div id="searchResults" style="position: absolute; top: calc(100% + 12px); left: 0; right: 0; background: linear-gradient(135deg, rgba(50, 40, 80, 0.6) 0%, rgba(30, 20, 60, 0.5) 100%); border: 1px solid rgba(124, 92, 255, 0.3); border-radius: 12px; max-height: 450px; overflow-y: auto; overflow-x: hidden; display: none; z-index: 1000; box-shadow: 0 12px 32px rgba(124, 92, 255, 0.2); backdrop-filter: blur(10px); box-sizing: border-box;" onclick="event.stopPropagation()"></div>
+  </div>
+</div>
 
 <!-- COUNTDOWN -->
 <div class="countdown-wrapper">
@@ -497,6 +521,133 @@ window.addEventListener('scroll', () => {
 scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Global Search Functionality
+let allSearchData = {
+  characters: [],
+  weapons: [],
+  artifacts: [],
+  inventory: []
+};
+
+// Load all data for search
+async function loadSearchData() {
+  try {
+    const charResponse = await fetch('./characters.json');
+    const weaponResponse = await fetch('./weapons.json');
+    const artifactResponse = await fetch('./artifacts.json');
+    const inventoryResponse = await fetch('./inventory.json');
+    
+    if (charResponse.ok) {
+      allSearchData.characters = await charResponse.json();
+    }
+    if (weaponResponse.ok) {
+      allSearchData.weapons = await weaponResponse.json();
+    }
+    if (artifactResponse.ok) {
+      allSearchData.artifacts = await artifactResponse.json();
+    }
+    if (inventoryResponse.ok) {
+      allSearchData.inventory = await inventoryResponse.json();
+    }
+    
+    console.log('Search data loaded:', allSearchData);
+  } catch (error) {
+    console.error('Error loading search data:', error);
+  }
+}
+
+// Perform global search
+function performGlobalSearch(query) {
+  if (!query.trim()) {
+    document.getElementById('searchResults').style.display = 'none';
+    return;
+  }
+  
+  const results = [];
+  const lowerQuery = query.toLowerCase();
+  
+  // Search characters
+  allSearchData.characters.forEach(char => {
+    if (char.name && char.name.toLowerCase().includes(lowerQuery)) {
+      // Try to link to individual character page if it exists, otherwise use characters.html
+      const charPath = `characters.html?search=${encodeURIComponent(char.name)}`;
+      results.push({ type: 'character', name: char.name, path: charPath });
+    }
+  });
+  
+  // Search weapons
+  allSearchData.weapons.forEach(weapon => {
+    if (weapon.name && weapon.name.toLowerCase().includes(lowerQuery)) {
+      const weaponPath = `weapons/${encodeURIComponent(weapon.name)}.html`;
+      results.push({ type: 'weapon', name: weapon.name, path: weaponPath });
+    }
+  });
+  
+  // Search artifacts
+  allSearchData.artifacts.forEach(artifact => {
+    if (artifact.name && artifact.name.toLowerCase().includes(lowerQuery)) {
+      const artifactPath = `Data/artifacts/${encodeURIComponent(artifact.name)}.html`;
+      results.push({ type: 'artifact', name: artifact.name, path: artifactPath });
+    }
+  });
+  
+  // Search inventory
+  allSearchData.inventory.forEach(inv => {
+    if (inv.name && inv.name.toLowerCase().includes(lowerQuery)) {
+      const invPath = `inventory-items/${inv.id}.html`;
+      results.push({ type: 'inventory', name: inv.name, path: invPath });
+    }
+  });
+  
+  displaySearchResults(results.slice(0, 12)); // Limit to 12 results
+}
+
+// Display search results
+function displaySearchResults(results) {
+  const resultsContainer = document.getElementById('searchResults');
+  
+  if (results.length === 0) {
+    resultsContainer.innerHTML = '<div style="padding: 20px; color: #a8a0c8; text-align: center; font-family: \'SkirkFont\', \'Segoe UI\', system-ui; font-size: 14px;">No results found</div>';
+    resultsContainer.style.display = 'block';
+    return;
+  }
+  
+  resultsContainer.innerHTML = results.map(result => `
+    <a href="${result.path}" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid rgba(124, 92, 255, 0.1); text-decoration: none; transition: all 0.2s ease; font-family: 'SkirkFont', 'Segoe UI', system-ui;" onmouseover="this.style.background='rgba(124, 92, 255, 0.15)'; this.style.borderLeft='4px solid #7c5cff'; this.style.paddingLeft='12px';" onmouseout="this.style.background='transparent'; this.style.borderLeft='none'; this.style.paddingLeft='16px';">
+      <div style="background: linear-gradient(135deg, #7c5cff 0%, #5a42cc 100%); color: white; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: bold; min-width: 70px; text-align: center; font-family: 'SkirkFont';">${result.type}</div>
+      <span style="color: #e8e0ff; font-size: 15px; font-weight: 500;">${result.name}</span>
+    </a>
+  `).join('');
+  
+  if (results.length > 0) {
+    resultsContainer.innerHTML += '<div style="padding: 12px 16px; text-align: center; color: #8878b3; font-size: 12px; font-family: \'SkirkFont\"; border-top: 1px solid rgba(124, 92, 255, 0.1);">Found ' + results.length + ' result' + (results.length !== 1 ? 's' : '') + '</div>';
+  }
+  
+  resultsContainer.style.display = 'block';
+}
+
+// Show/hide results on focus
+function showSearchResults() {
+  const query = document.getElementById('globalSearch').value;
+  if (query.trim()) {
+    document.getElementById('searchResults').style.display = 'block';
+  }
+}
+
+// Hide results on click outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#globalSearch') && !e.target.closest('#searchResults')) {
+    document.getElementById('searchResults').style.display = 'none';
+  }
+});
+
+// Load search data on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadSearchData);
+} else {
+  loadSearchData();
+}
 </script>
 <script src="script.js"></script>
 </body>

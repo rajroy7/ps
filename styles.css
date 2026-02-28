@@ -782,6 +782,23 @@ nav{
     z-index: 998;
 }
 
+/* Responsive: Tablet screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-links a {
+        font-size: 13px;
+    }
+    
+    .logo {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
+
 /* Responsive: Show hamburger on smaller screens */
 @media (max-width: 768px) {
     .hamburger {
