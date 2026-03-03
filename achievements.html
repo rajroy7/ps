@@ -70,10 +70,104 @@
       </button>
     </div>
   </nav>
-  <section style="padding:24px">
-    <h1 class="page-title">Achievements</h1>
-    <p style="opacity:0.85">Placeholder page for Achievements.</p>
+  <section style="padding:0; display:flex; flex-direction:column; min-height:calc(100vh - 120px); gap:0;">
+    <!-- Top: Categories Section (Fixed Height, Scrollable) -->
+    <div style="background:rgba(0,0,0,0.3); border-bottom:1px solid rgba(124,92,255,0.2); padding:16px 24px; flex-shrink:0;">
+      <div style="margin-bottom:12px;">
+        <h3 style="color:#7c5cff; margin:0 0 12px 0; font-size:14px; text-transform:uppercase;">Filter</h3>
+        <select id="achievementVersion" style="width:100%; padding:10px 14px; border:2px solid rgba(124,92,255,0.3); border-radius:8px; background:rgba(255,255,255,0.05); color:white; font-size:14px; margin-bottom:12px; box-sizing:border-box;">
+          <option value="">All Versions</option>
+        </select>
+        <input type="text" id="achievementSearch" placeholder="Search..." style="width:100%; padding:10px 14px; border:2px solid rgba(124,92,255,0.3); border-radius:8px; background:rgba(255,255,255,0.05); color:white; font-size:14px; box-sizing:border-box;">
+      </div>
+      <h3 style="color:#7c5cff; margin:12px 0 12px 0; font-size:14px; text-transform:uppercase;">Categories</h3>
+      <div id="categoryList" style="display:flex; flex-direction:row; gap:12px; overflow-x:auto; padding:8px 0; scroll-behavior:smooth;">
+        <div style="text-align:center; opacity:0.6;">Loading categories...</div>
+      </div>
+    </div>
+    
+    <!-- Bottom: Achievements Section (Scrollable) -->
+    <div style="flex:1; overflow-y:auto; padding:24px 24px;">
+      <div id="achievementsContainer" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="text-align:center; opacity:0.6; padding:40px 20px;">Loading achievements...</div>
+      </div>
+    </div>
   </section>
+
+  <style>
+    /* Select dropdown styling */
+    #achievementVersion {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+      padding-right: 40px !important;
+    }
+    
+    #achievementVersion option {
+      background: #1a1a2e;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      min-height: 40px;
+      line-height: 1.5;
+    }
+    
+    #achievementVersion option:checked {
+      background: linear-gradient(#7c5cff, #7c5cff);
+      background-color: #7c5cff;
+      color: white;
+    }
+    
+    #achievementVersion option:hover {
+      background: #7c5cff;
+      color: white;
+    }
+    
+    #categoryList::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    #categoryList::-webkit-scrollbar-track {
+      background: rgba(124, 92, 255, 0.05);
+      border-radius: 10px;
+    }
+    
+    #categoryList::-webkit-scrollbar-thumb {
+      background: rgba(124, 92, 255, 0.3);
+      border-radius: 10px;
+    }
+    
+    #categoryList::-webkit-scrollbar-thumb:hover {
+      background: rgba(124, 92, 255, 0.5);
+    }
+    
+    @media (max-width: 768px) {
+      section[style*="flex-direction:column"] {
+        padding: 0 !important;
+      }
+      
+      section[style*="flex-direction:column"] > div:first-child {
+        padding: 12px 16px !important;
+      }
+      
+      section[style*="flex-direction:column"] > div:last-child {
+        padding: 16px !important;
+      }
+      
+      .achievement-category-btn {
+        min-width: 100px !important;
+        flex-shrink: 0 !important;
+      }
+      
+      #achievementsContainer {
+        gap: 10px !important;
+      }
+    }
+  </style>
   <div class="footer">
     <div class="footer-content">
       <h2>PROJECT SK<span class="logo-accent">I</span>R<span class="logo-accent">K</span></h2>
@@ -85,6 +179,250 @@
   </div>
 </div>
 <script src="script.js"></script>
+<script>
+// Achievement data loading and display
+let allAchievements = [];
+let categories = {};
+let selectedCategory = null;
+let versions = new Set();
+
+async function loadAchievements() {
+  try {
+    const response = await fetch('https://gi.yatta.moe/api/v2/EN/achievement?vh=64F0');
+    const data = await response.json();
+    
+    const achievementsData = data.data;
+    
+    // Process data
+    for (const categoryId in achievementsData) {
+      const category = achievementsData[categoryId];
+      categories[categoryId] = {
+        id: category.id,
+        name: category.name,
+        icon: category.icon,
+        achievements: []
+      };
+      
+      // Process achievements in this category
+      for (const achId in category.achievementList) {
+        const ach = category.achievementList[achId];
+        const details = ach.details[0]; // Get first detail
+        
+        if (details) {
+          const achievement = {
+            id: ach.id,
+            categoryId: categoryId,
+            categoryName: category.name,
+            title: details.title,
+            description: details.description,
+            icon: ach.icon || category.icon,
+            version: ach.version,
+            order: ach.order,
+            rewards: details.rewards || {}
+          };
+          
+          allAchievements.push(achievement);
+          categories[categoryId].achievements.push(achievement);
+          versions.add(ach.version);
+        }
+      }
+    }
+    
+    // Sort versions
+    const sortedVersions = Array.from(versions).sort((a, b) => {
+      const aNum = parseFloat(a);
+      const bNum = parseFloat(b);
+      return aNum - bNum;
+    });
+    
+    populateVersionFilter(sortedVersions);
+    displayCategories();
+    selectCategory(Object.keys(categories)[0]);
+    
+  } catch (error) {
+    console.error('Error loading achievements:', error);
+    document.getElementById('achievementsContainer').innerHTML = 
+      '<div style="text-align: center; opacity: 0.6;">Failed to load achievements</div>';
+  }
+}
+
+function getIconUrl(iconName) {
+  if (!iconName) return 'https://via.placeholder.com/40';
+  return `https://gi.yatta.moe/assets/UI/${iconName}.png`;
+}
+
+function displayCategories() {
+  const container = document.getElementById('categoryList');
+  let html = '';
+  
+  const sortedCategories = Object.keys(categories).sort((a, b) => parseInt(a) - parseInt(b));
+  
+  sortedCategories.forEach(catId => {
+    const cat = categories[catId];
+    const iconHtml = cat.icon ? `<img src="${getIconUrl(cat.icon)}" alt="${cat.name}" style="width:40px; height:40px; border-radius:6px; flex-shrink:0;" onerror="this.style.display='none'">` : '<div style="width:40px; height:40px; background:rgba(124,92,255,0.2); border-radius:6px; display:flex; align-items:center; justify-content:center; color:#7c5cff; font-size:20px;">⚡</div>';
+    
+    html += `
+      <div class="achievement-category-btn" data-category="${catId}" 
+           style="padding:12px 16px; background:rgba(124,92,255,0.08); border:1px solid rgba(124,92,255,0.2); border-radius:8px; cursor:pointer; transition:all 0.3s ease; display:flex; flex-direction:column; align-items:center; gap:8px; min-width:90px; flex-shrink:0; text-align:center;">
+        ${iconHtml}
+        <span style="font-size:12px; font-weight:500; color:#ccc; line-height:1.3; word-break:break-word; max-width:80px;">${cat.name}</span>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+  
+  // Add event listeners
+  document.querySelectorAll('.achievement-category-btn').forEach(btn => {
+    btn.addEventListener('click', () => selectCategory(btn.dataset.category));
+    btn.addEventListener('mouseenter', () => {
+      btn.style.background = 'rgba(124, 92, 255, 0.15)';
+      btn.style.boxShadow = '0 4px 12px rgba(124, 92, 255, 0.1)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      if (btn.dataset.category != selectedCategory) {
+        btn.style.background = 'rgba(124, 92, 255, 0.08)';
+        btn.style.boxShadow = 'none';
+      }
+    });
+  });
+}
+
+function selectCategory(catId) {
+  selectedCategory = catId;
+  
+  // Update button styles
+  document.querySelectorAll('.achievement-category-btn').forEach(btn => {
+    if (btn.dataset.category == catId) {
+      btn.style.background = 'rgba(124, 92, 255, 0.35)';
+      btn.style.borderColor = 'rgba(124, 92, 255, 0.6)';
+      btn.style.boxShadow = '0 4px 12px rgba(124, 92, 255, 0.2)';
+      btn.style.transform = 'scale(1.05)';
+      
+      // Scroll into view
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } else {
+      btn.style.background = 'rgba(124, 92, 255, 0.08)';
+      btn.style.borderColor = 'rgba(124, 92, 255, 0.2)';
+      btn.style.boxShadow = 'none';
+      btn.style.transform = 'scale(1)';
+    }
+  });
+  
+  filterAchievements();
+}
+
+function populateVersionFilter(versions) {
+  const select = document.getElementById('achievementVersion');
+  
+  versions.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = `Version ${v}`;
+    select.appendChild(opt);
+  });
+}
+
+function displayAchievements(achievements) {
+  const container = document.getElementById('achievementsContainer');
+  
+  if (achievements.length === 0) {
+    container.innerHTML = '<div style="text-align: center; opacity: 0.6; padding:40px 20px;">No achievements found</div>';
+    return;
+  }
+  
+  // Sort by order
+  const sorted = achievements.sort((a, b) => a.order - b.order);
+  
+  let html = '';
+  
+  sorted.forEach(ach => {
+    // Build reward text
+    let rewardText = '';
+    for (const rewardId in ach.rewards) {
+      const reward = ach.rewards[rewardId];
+      if (reward.count) {
+        rewardText = reward.count;
+        break;
+      }
+    }
+    
+    html += `
+      <div style="background:rgba(124,92,255,0.08); border:1px solid rgba(124,92,255,0.2); border-radius:8px; padding:14px; transition:all 0.3s ease; display:flex; align-items:center; gap:14px; cursor:pointer;"
+           class="achievement-item">
+        <div style="flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="font-size:11px; font-weight:bold; color:#7c5cff; background:rgba(124,92,255,0.2); padding:2px 6px; border-radius:4px; min-width:30px; text-align:center;">${ach.version}</div>
+        </div>
+        <div style="flex-shrink:0;">
+          <img src="${getIconUrl(ach.icon)}" alt="${ach.title}" 
+               style="width:56px; height:56px; border-radius:6px; background:rgba(124,92,255,0.1);"
+               onerror="this.src='https://via.placeholder.com/56'">
+        </div>
+        <div style="flex:1; min-width:0;">
+          <h4 style="margin:0 0 4px 0; color:#fff; font-size:14px; font-weight:600;">${ach.title}</h4>
+          <p style="margin:0; opacity:0.75; font-size:12px; line-height:1.4; color:#ccc;">${ach.description}</p>
+        </div>
+        <div style="flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="font-size:16px; font-weight:bold; color:#7c5cff;">${rewardText}</div>
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_201.png" alt="Primogem" 
+               style="width:24px; height:24px; border-radius:3px;" 
+               onerror="this.style.display='none'">
+        </div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+  
+  // Add hover effects
+  document.querySelectorAll('.achievement-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.style.background = 'rgba(124, 92, 255, 0.15)';
+      item.style.boxShadow = '0 4px 16px rgba(124, 92, 255, 0.15)';
+      item.style.transform = 'translateX(4px)';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.background = 'rgba(124, 92, 255, 0.08)';
+      item.style.boxShadow = 'none';
+      item.style.transform = 'translateX(0)';
+    });
+  });
+}
+
+function filterAchievements() {
+  const searchTerm = document.getElementById('achievementSearch').value.toLowerCase();
+  const versionFilter = document.getElementById('achievementVersion').value;
+  
+  let filtered = allAchievements;
+  
+  // Filter by category
+  if (selectedCategory) {
+    filtered = filtered.filter(a => a.categoryId == selectedCategory);
+  }
+  
+  // Filter by version
+  if (versionFilter) {
+    filtered = filtered.filter(a => a.version === versionFilter);
+  }
+  
+  // Filter by search term
+  if (searchTerm) {
+    filtered = filtered.filter(a => 
+      a.title.toLowerCase().includes(searchTerm) ||
+      a.description.toLowerCase().includes(searchTerm)
+    );
+  }
+  
+  displayAchievements(filtered);
+}
+
+// Event listeners
+document.getElementById('achievementSearch').addEventListener('input', filterAchievements);
+document.getElementById('achievementVersion').addEventListener('change', filterAchievements);
+
+// Load achievements on page load
+document.addEventListener('DOMContentLoaded', loadAchievements);
+</script>
 <script>
 // Scroll to Top Button
 const scrollToTopBtn = document.createElement('button');

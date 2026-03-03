@@ -328,6 +328,15 @@
     </div>
   </a>
 
+  <a href="achievements.html" class="card-link">
+    <div class="card achievements-card">
+      <img src="https://ik.imagekit.io/gukc1okbd/achievements.webp" class="small-card-img">
+      <div class="card-content">
+        <h3>Achievements</h3>
+      </div>
+    </div>
+  </a>
+
 </section>
 
 <!-- UPCOMING BIRTHDAYS -->
@@ -369,29 +378,73 @@
 </div>
 
 <script>
-var updateDate = new Date("March 2, 2026 15:30:00").getTime();
-
-var x = setInterval(function() {
-
-  var now = new Date().getTime();
-  var distance = updateDate - now;
-
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById('days').innerHTML = days;
-  document.getElementById('hours').innerHTML = hours;
-  document.getElementById('minutes').innerHTML = minutes;
-  document.getElementById('seconds').innerHTML = seconds;
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.querySelector('.countdown').innerHTML = "Update Released!";
+// Calculate next Monday 3:30 PM IST countdown
+function calculateNextMondayIST() {
+  // IST offset: UTC+5:30
+  const istOffsetMs = 5.5 * 60 * 60 * 1000;
+  const msPerDay = 24 * 60 * 60 * 1000;
+  
+  // Get current UTC time
+  const nowUTC = Date.now();
+  
+  // Simulate current IST time
+  const nowIST = nowUTC + istOffsetMs;
+  
+  // Calculate days since epoch (Jan 1, 1970 was Thursday = day 4)
+  const daysSinceEpoch = Math.floor(nowIST / msPerDay);
+  const dayOfWeek = (daysSinceEpoch + 4) % 7; // 0=Sun, 1=Mon, 2=Tue, etc.
+  
+  // Days until next Monday
+  let daysUntilMonday = (1 - dayOfWeek + 7) % 7;
+  
+  // If today is Monday, check if 3:30 PM has already passed
+  if (daysUntilMonday === 0) {
+    const timeIntoDay = nowIST % msPerDay;
+    const target330pm = 15.5 * 60 * 60 * 1000; // 3:30 PM in milliseconds
+    if (timeIntoDay >= target330pm) {
+      daysUntilMonday = 7; // Next Monday is 7 days away
+    }
   }
+  
+  // Calculate target Monday 3:30 PM in IST
+  const nextMondayIST = Math.floor(nowIST / msPerDay) * msPerDay + daysUntilMonday * msPerDay + (15.5 * 60 * 60 * 1000);
+  
+  // Convert back to UTC for countdown
+  const nextMondayUTC = nextMondayIST - istOffsetMs;
+  
+  return nextMondayUTC;
+}
 
-}, 1000);
+var x;
+
+function startCountdown() {
+  var updateDate = calculateNextMondayIST();
+  
+  x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = updateDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.querySelector('.countdown').innerHTML = "Update Released!";
+      // Restart countdown for next Monday after a short delay
+      setTimeout(startCountdown, 100);
+    }
+  }, 1000);
+}
+
+// Start the countdown when page loads
+startCountdown();
 </script>
 <script>
 // Load upcoming birthdays from characters.json
@@ -414,7 +467,8 @@ function loadUpcomingBirthdays() {
 }
 
 async function getUpcomingBirthdays(characters) {
-  const today = new Date(2026, 1, 27); // Feb 27, 2026
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Set to start of day for accurate date comparison
   const upcomingBirthdays = [];
 
   // Helper function to check if a year is a leap year
@@ -436,39 +490,40 @@ async function getUpcomingBirthdays(characters) {
       if (!birthday || !Array.isArray(birthday) || birthday.length < 2) continue;
       
       let [month, day] = birthday;
+      const originalDay = day;
+      
+      // Calculate next birthday in current year
+      let currentYear = today.getFullYear();
+      let nextBirthday = new Date(currentYear, month - 1, day);
       
       // Handle Feb 29 in non-leap years - adjust to Feb 28
-      if (month === 2 && day === 29 && !isLeapYear(2026)) {
+      if (month === 2 && originalDay === 29 && !isLeapYear(currentYear)) {
+        nextBirthday = new Date(currentYear, month - 1, 28);
         day = 28;
       }
       
-      // Calculate next birthday
-      let nextBirthday = new Date(2026, month - 1, day);
-      
       // If birthday has already passed this year, schedule for next year
       if (nextBirthday < today) {
-        // Also check leap year for next year when advancing
-        if (month === 2 && day === 29 && birthday[1] === 29 && !isLeapYear(2027)) {
-          nextBirthday = new Date(2027, 1, 28); // Feb 28 in non-leap 2027
+        currentYear++;
+        if (month === 2 && originalDay === 29 && !isLeapYear(currentYear)) {
+          nextBirthday = new Date(currentYear, 1, 28);
+          day = 28;
         } else {
-          nextBirthday = new Date(2027, month - 1, day);
+          nextBirthday = new Date(currentYear, month - 1, day);
         }
       }
       
-      // Only show birthdays within next 30 days
       const daysUntil = Math.floor((nextBirthday - today) / (1000 * 60 * 60 * 24));
       
-      if (daysUntil >= 0 && daysUntil <= 30) {
-        upcomingBirthdays.push({
-          id: char.id,
-          name: char.name,
-          image: char.image,
-          birthMonth: month,
-          birthDay: day,
-          nextBirthday: nextBirthday,
-          daysUntil: daysUntil
-        });
-      }
+      upcomingBirthdays.push({
+        id: char.id,
+        name: char.name,
+        image: char.image,
+        birthMonth: month,
+        birthDay: day,
+        nextBirthday: nextBirthday,
+        daysUntil: daysUntil
+      });
     }
     
     // Sort by days until birthday
@@ -485,13 +540,13 @@ function displayBirthdays(birthdays) {
   const container = document.getElementById('upcomingBirthdays');
   
   if (!birthdays || birthdays.length === 0) {
-    container.innerHTML = '<p style="text-align:center; opacity:0.6;">No upcoming birthdays in the next 30 days</p>';
+    container.innerHTML = '<p style="text-align:center; opacity:0.6;">No upcoming birthdays found</p>';
     return;
   }
   
   let html = '';
-  // Only display the first 5 birthdays
-  birthdays.slice(0, 5).forEach(birthday => {
+  // Display the first 6 birthdays
+  birthdays.slice(0, 6).forEach(birthday => {
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const dateStr = `${monthNames[birthday.birthMonth - 1]}/${birthday.birthDay}`;
     
@@ -510,17 +565,26 @@ function displayBirthdays(birthdays) {
 // Countdown toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('countdownToggle');
+  const countdownTitle = document.querySelector('.countdown-title');
   const countdownContent = document.getElementById('countdownContent');
   
   if (toggleBtn && countdownContent) {
-    toggleBtn.addEventListener('click', () => {
+    const toggleCountdown = () => {
       toggleBtn.classList.toggle('collapsed');
       countdownContent.classList.toggle('hidden');
       
       // Save preference to localStorage
       const isHidden = countdownContent.classList.contains('hidden');
       localStorage.setItem('countdownHidden', isHidden);
-    });
+    };
+    
+    toggleBtn.addEventListener('click', toggleCountdown);
+    
+    // Also make the title clickable
+    if (countdownTitle) {
+      countdownTitle.style.cursor = 'pointer';
+      countdownTitle.addEventListener('click', toggleCountdown);
+    }
     
     // Restore preference from localStorage
     const wasHidden = localStorage.getItem('countdownHidden') === 'true';
