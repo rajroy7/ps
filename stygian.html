@@ -71,8 +71,25 @@
     </div>
   </nav>
   <section style="padding:24px">
-    <h1 class="page-title">Stygian Onslaught</h1>
-    <p style="opacity:0.85">Placeholder page for Stygian Onslaught.</p>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <button id="prevVersion" style="background: none; border: 1px solid #7c5cff; color: #7c5cff; padding: 8px 12px; border-radius: 4px; cursor: pointer;">←</button>
+        <h1 class="page-title" style="margin: 0;">Stygian Onslaught</h1>
+        <button id="nextVersion" style="background: none; border: 1px solid #7c5cff; color: #7c5cff; padding: 8px 12px; border-radius: 4px; cursor: pointer;">→</button>
+      </div>
+      <div style="text-align: right;">
+        <div id="versionInfo" style="color: #7c5cff; font-weight: bold; margin-bottom: 8px;">v5.7</div>
+        <div id="dateRange" style="font-size: 12px; opacity: 0.7;">2025-06-25 - 2025-08-06</div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+      <button id="difficultySelector" style="background: #7c5cff; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">Difficulty <span id="difficultyNum">40</span></button>
+    </div>
+
+    <div id="challengeCardsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-bottom: 24px;">
+      <!-- Challenge cards will be loaded here -->
+    </div>
   </section>
   <div class="footer">
     <div class="footer-content">
@@ -86,6 +103,188 @@
 </div>
 <script src="script.js"></script>
 <script>
+// Stygian Onslaught Challenge UI
+const challengeState = {
+  currentVersionIndex: 0,
+  currentDifficulty: 40,
+  versions: [],
+  currentVersion: null
+};
+
+// Version schedule data
+const versionSchedules = [
+  { id: 5269001, name: '5.7', dateRange: '2025-06-25 - 2025-08-06' },
+  { id: 5269002, name: '5.8', dateRange: '2025-08-06 - 2025-09-24' },
+  { id: 5269003, name: '6.0', dateRange: '2025-09-24 - 2025-11-12' },
+  { id: 5269004, name: '6.1', dateRange: '2025-11-12 - 2025-12-31' },
+  { id: 5269005, name: '6.2', dateRange: '2025-12-31 - 2026-02-18' },
+  { id: 5269006, name: '6.3', dateRange: '2026-02-18 - 2026-04-08' },
+  { id: 5269007, name: '6.4', dateRange: '2026-04-08 - 2026-05-27' },
+  { id: 5269008, name: '6.5', dateRange: '2026-05-27 - 2026-07-15' }
+];
+
+// Load all version data
+async function loadAllVersions() {
+  for (const schedule of versionSchedules) {
+    try {
+      const response = await fetch(`leyline-challenges/challenge-${schedule.id}.json`);
+      if (response.ok) {
+        const data = await response.json();
+        challengeState.versions.push({
+          ...schedule,
+          data: data
+        });
+      }
+    } catch (error) {
+      console.warn(`Could not load version ${schedule.name}:`, error);
+    }
+  }
+  
+  if (challengeState.versions.length === 0) {
+    console.error('No challenge versions loaded');
+    return;
+  }
+  
+  challengeState.currentVersion = challengeState.versions[0];
+  initializeUI();
+}
+
+function initializeUI() {
+  updateVersionDisplay();
+  renderChallengeCards();
+  setupEventListeners();
+}
+
+function setupEventListeners() {
+  document.getElementById('prevVersion').addEventListener('click', () => {
+    challengeState.currentVersionIndex = (challengeState.currentVersionIndex - 1 + challengeState.versions.length) % challengeState.versions.length;
+    challengeState.currentVersion = challengeState.versions[challengeState.currentVersionIndex];
+    updateVersionDisplay();
+    renderChallengeCards();
+  });
+  
+  document.getElementById('nextVersion').addEventListener('click', () => {
+    challengeState.currentVersionIndex = (challengeState.currentVersionIndex + 1) % challengeState.versions.length;
+    challengeState.currentVersion = challengeState.versions[challengeState.currentVersionIndex];
+    updateVersionDisplay();
+    renderChallengeCards();
+  });
+  
+  document.getElementById('difficultySelector').addEventListener('click', () => {
+    const difficulties = [40, 70, 90, 100, 105, 110];
+    const currentIndex = difficulties.indexOf(challengeState.currentDifficulty);
+    const nextIndex = (currentIndex + 1) % difficulties.length;
+    challengeState.currentDifficulty = difficulties[nextIndex];
+    document.getElementById('difficultyNum').textContent = challengeState.currentDifficulty;
+    renderChallengeCards();
+  });
+}
+
+function updateVersionDisplay() {
+  if (!challengeState.currentVersion) return;
+  
+  document.getElementById('versionInfo').textContent = `v${challengeState.currentVersion.name}`;
+  document.getElementById('dateRange').textContent = challengeState.currentVersion.dateRange;
+}
+
+function renderChallengeCards() {
+  if (!challengeState.currentVersion || !challengeState.currentVersion.data) return;
+  
+  const container = document.getElementById('challengeCardsContainer');
+  container.innerHTML = '';
+  
+  const monsters = challengeState.currentVersion.data.monsters || [];
+  const difficultyStr = String(challengeState.currentDifficulty);
+  
+  monsters.forEach(monster => {
+    // Get stats for current difficulty
+    const monsterStats = monster.stats[difficultyStr] || monster.stats["40"];
+    const hp = monsterStats.hp || 0;
+    const attack = monsterStats.attack || 0;
+    const defense = monsterStats.defense || 0;
+    
+    // Get description and mechanics info
+    const description = monster.enDescription || monster.description || 'A mysterious challenger of the Ley Lines.';
+    const mechanicsDesc = monster.enMechanicsDesc || monster.mechanics?.join(', ') || 'Unknown abilities';
+    const mechanicNames = monster.mechanics || [];
+    
+    const card = document.createElement('div');
+    card.style.cssText = `
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.1) 0%, rgba(100, 50, 200, 0.05) 100%);
+      border: 1px solid rgba(124, 92, 255, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: default;
+    `;
+    
+    // Create emoji icon based on monster type
+    let icon = '⚔️';
+    if (monster.name.includes('Hydro') || monster.name.includes('Water') || monster.name.includes('Tulpa')) icon = '💧';
+    if (monster.name.includes('Lava') || monster.name.includes('Dragon') || monster.name.includes('Fire')) icon = '🔥';
+    if (monster.name.includes('Automaton') || monster.name.includes('Mechanism') || monster.name.includes('Secret')) icon = '⚙️';
+    
+    card.innerHTML = `
+      <div style="text-align: center; margin-bottom: 16px;">
+        <div style="font-size: 64px; margin-bottom: 12px; opacity: 0.9;">${icon}</div>
+        <h3 style="margin: 0 0 4px 0; color: #7c5cff; font-size: 22px; font-weight: bold;">${monster.name}</h3>
+        <p style="margin: 8px 0 0 0; font-size: 11px; opacity: 0.5; letter-spacing: 1px; text-transform: uppercase;">${monster.enName || ''}</p>
+      </div>
+      
+      <div style="background: rgba(0, 0, 0, 0.3); padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+        <div style="font-size: 12px; line-height: 1.6; opacity: 0.8; white-space: pre-wrap; word-break: break-word;">
+          ${description.replace(/\\n/g, '\n')}
+        </div>
+      </div>
+      
+      <div style="background: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; font-size: 12px;">
+          <div>
+            <label style="opacity: 0.6; display: block; font-size: 11px; margin-bottom: 4px;">HP</label>
+            <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">${hp.toLocaleString()}</div>
+          </div>
+          <div>
+            <label style="opacity: 0.6; display: block; font-size: 11px; margin-bottom: 4px;">ATK</label>
+            <div style="color: #ffb347; font-size: 18px; font-weight: bold;">${attack.toLocaleString()}</div>
+          </div>
+          <div>
+            <label style="opacity: 0.6; display: block; font-size: 11px; margin-bottom: 4px;">DEF</label>
+            <div style="color: #81c784; font-size: 18px; font-weight: bold;">${defense.toLocaleString()}</div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 12px;">
+        <label style="opacity: 0.6; font-size: 11px; display: block; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Key Mechanics</label>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          ${mechanicNames.map(mech => `
+            <span style="background: rgba(124, 92, 255, 0.3); color: #a8a5ff; padding: 4px 10px; border-radius: 12px; font-size: 11px; border: 1px solid rgba(124, 92, 255, 0.5);">
+              ${mech}
+            </span>
+          `).join('')}
+        </div>
+      </div>
+
+      <div style="background: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 8px;">
+        <label style="opacity: 0.6; font-size: 11px; display: block; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Abilities</label>
+        <div style="font-size: 12px; line-height: 1.6; opacity: 0.8; white-space: pre-wrap; word-break: break-word; max-height: 200px; overflow-y: auto;">
+          ${mechanicsDesc.replace(/\\n/g, '\n')}
+        </div>
+      </div>
+    `;
+    
+    container.appendChild(card);
+  });
+}
+
+// Load data on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadAllVersions);
+} else {
+  loadAllVersions();
+}
+
 // Scroll to Top Button
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.id = 'scrollToTopBtn';
