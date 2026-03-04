@@ -6,7 +6,11 @@
   <title>Books - Project Skirk</title>
   <link rel="icon" href="https://ik.imagekit.io/gukc1okbd/Crystallina_Shape.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
-  <style>.page-title{margin:18px 0;color:#7c5cff;letter-spacing:2px}</style>
+  <style>
+    .page-title { margin: 18px 0; color: #7c5cff; letter-spacing: 2px; }
+    .book-loading { grid-column: 1/-1; text-align: center; padding: 40px; }
+    .book-error { color: #ff6b6b; }
+  </style>
 </head>
 <body>
 <!-- Mobile Sidebar (hidden by default) -->
@@ -86,14 +90,13 @@
           <option value="4">4★</option>
         </select>
       </div>
-      <div id="bookCount" style="font-size: 14px; opacity: 0.7;">Loading books...</div>
+      <div id="bookCount" style="font-size: 14px; opacity: 0.7;">Initializing...</div>
     </div>
 
     <!-- Books Grid -->
     <div id="booksContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-      <!-- Books will be loaded here -->
-      <div style="grid-column: 1/-1; text-align: center; padding: 40px; opacity: 0.6;">
-        Loading books from API...
+      <div class="book-loading">
+        <div style="opacity: 0.6;">Loading 550+ books from API...</div>
       </div>
     </div>
   </section>
@@ -131,204 +134,256 @@ scrollToTopBtn.addEventListener('click', () => {
 });
 
 // ============================================
-// BOOKS PAGE FUNCTIONALITY
+// BOOKS PAGE - Load 550+ books with images
 // ============================================
 
 let allBooks = [];
 let filteredBooks = [];
 
-// Fetch books from books.json (local backup)
-async function loadLocalBooks() {
+const RARITY_COLORS = {
+  1: '#9c8e6b',
+  2: '#68b359',
+  3: '#5d9fbb',
+  4: '#a881d0'
+};
+
+const RARITY_LABELS = {
+  1: '1★',
+  2: '2★',
+  3: '3★',
+  4: '4★'
+};
+
+// Fetch with timeout
+async function fetchWithTimeout(url, options = {}, timeout = 5000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
+  
   try {
-    const response = await fetch('books.json');
-    if (response.ok) {
-      return await response.json();
-    }
-  } catch (e) {
-    console.log('Could not load local books.json');
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    throw error;
   }
-  return null;
 }
 
-// Fetch all books from API
-async function fetchBooksFromAPI() {
+// Fetch books from API
+async function loadBooksFromAPI() {
   try {
     console.log('Fetching books from API...');
-    const response = await fetch('https://gi.yatta.moe/api/v2/en/book?vh=64F0', {
+    document.getElementById('bookCount').textContent = 'Fetching from API...';
+    
+    const response = await fetchWithTimeout('https://gi.yatta.moe/api/v2/en/book?vh=64F0', {
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Accept': 'application/json'
       }
-    });
+    }, 5000);
     
     if (!response.ok) {
-      console.log('API response not OK:', response.status);
-      return null;
+      throw new Error(`API returned ${response.status}`);
     }
     
     const data = await response.json();
-    console.log('API Response:', data);
+    console.log('API Response status:', data.response);
     
-    if (data.response === 200 && data.data && data.data.items) {
-      // Convert to array
-      const bookIds = Object.keys(data.data.items);
-      console.log('Found', bookIds.length, 'books');
-      
-      const books = bookIds.map(idStr => {
-        const book = data.data.items[idStr];
-        return {
-          id: parseInt(idStr),
-          name: book.name || '',
-          rank: book.rank || 1,
-          icon: book.icon || '',
-          route: book.route || '',
-          volumes: []
-        };
-      });
-      
-      return books;
-    }
-  } catch (error) {
-    console.error('Error fetching from API:', error);
-  }
-  return null;
-}
-
-// Initialize books
-async function fetchBooks() {
-  try {
-    // Try API first
-    let books = await fetchBooksFromAPI();
-    
-    // Fallback to local books.json
-    if (!books || books.length === 0) {
-      console.log('Using local books.json as fallback...');
-      books = await loadLocalBooks();
+    if (data.response !== 200 || !data.data || !data.data.items) {
+      throw new Error('Invalid API response structure');
     }
     
-    if (!books || books.length === 0) {
-      throw new Error('No books data available');
-    }
+    // Convert object to array
+    const booksObj = data.data.items;
+    const bookIds = Object.keys(booksObj);
+    console.log(`Found ${bookIds.length} books in API`);
     
-    console.log('Loaded', books.length, 'books');
-    allBooks = books;
+    allBooks = bookIds.map(idStr => {
+      const bookData = booksObj[idStr];
+      return {
+        id: parseInt(idStr),
+        name: bookData.name || 'Unknown Book',
+        rank: bookData.rank || 1,
+        icon: bookData.icon || '',
+        route: bookData.route || '',
+        volumes: []
+      };
+    });
     
     // Sort by rank (descending) then by name
     allBooks.sort((a, b) => {
       if (b.rank !== a.rank) return b.rank - a.rank;
-      return (a.name || '').localeCompare(b.name || '');
+      return a.name.localeCompare(b.name);
     });
     
+    console.log(`Processed ${allBooks.length} books`);
     filteredBooks = [...allBooks];
     renderBooks();
     setupFilters();
+    
   } catch (error) {
-    console.error('Error initializing books:', error);
-    document.getElementById('booksContainer').innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #ff6b6b;">Error: Unable to load books. Please check your connection and refresh the page.</div>';
-    document.getElementById('bookCount').textContent = 'Error loading books';
+    console.error('Error loading books from API:', error);
+    console.log('Falling back to local books.json...');
+    loadBooksFromLocal();
   }
 }
 
-// Render books to the page
+// Fallback: Load books from local books.json
+async function loadBooksFromLocal() {
+  try {
+    console.log('Attempting to load books.json...');
+    const response = await fetch('books.json');
+    console.log('Response received:', response.status);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to load books.json: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log('JSON parsed. Books count:', data.length);
+    
+    allBooks = (data || []).map(book => ({
+      id: book.id || 0,
+      name: book.name || 'Unknown Book',
+      rank: book.rank || 1,
+      icon: book.icon || '',
+      route: book.route || '',
+      volumes: book.volumes || []
+    }));
+    
+    console.log(`Processed ${allBooks.length} books from local data`);
+    document.getElementById('bookCount').textContent = `Loading ${allBooks.length} books...`;
+    
+    filteredBooks = [...allBooks];
+    
+    console.log('Calling renderBooks()...');
+    renderBooks();
+    
+    console.log('Calling setupFilters()...');
+    setupFilters();
+    
+    console.log('✓ Successfully loaded books!');
+    
+  } catch (error) {
+    console.error('Error loading from local books.json:', error);
+    document.getElementById('bookCount').textContent = `Error: ${error.message}`;
+    document.getElementById('booksContainer').innerHTML = `
+      <div class="book-loading book-error">
+        Failed to load books: ${error.message}<br>
+        <small style="opacity: 0.7;">Check console (F12) for details. Try refreshing the page.</small>
+      </div>
+    `;
+  }
+}
+
+// Render all books to grid
 function renderBooks() {
   const container = document.getElementById('booksContainer');
-  const count = document.getElementById('bookCount');
+  const countDiv = document.getElementById('bookCount');
   
   if (!filteredBooks || filteredBooks.length === 0) {
-    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; opacity: 0.6;">No books found matching your filters.</div>';
-    count.textContent = 'No books found';
+    container.innerHTML = '<div class="book-loading">No books found</div>';
+    countDiv.textContent = 'No books found';
     return;
   }
   
-  count.textContent = `Showing ${filteredBooks.length} of ${allBooks.length} books`;
+  countDiv.textContent = `Showing ${filteredBooks.length} of ${allBooks.length} books`;
   
-  container.innerHTML = filteredBooks.map(book => {
-    const rarityColors = {
-      1: '#9c8e6b',
-      2: '#68b359',
-      3: '#5d9fbb',
-      4: '#a881d0'
-    };
+  const html = filteredBooks.map(book => {
+    const iconUrl = book.icon 
+      ? `https://gi.yatta.moe/assets/UI/${book.icon}.png?vh=2024123000`
+      : '';
     
-    const rarityLabels = {
-      1: '1★',
-      2: '2★',
-      3: '3★',
-      4: '4★'
-    };
-    
-    const iconUrl = book.icon ? `https://ik.imagekit.io/gukc1okbd/${book.icon}.webp` : '';
-    const volumeCount = book.volumes ? book.volumes.length : 0;
+    const rarity = book.rank || 1;
+    const rarityColor = RARITY_COLORS[rarity] || '#666';
+    const rarityLabel = RARITY_LABELS[rarity] || '?';
     
     return `
-      <div class="book-card" style="
-        background: rgba(124, 92, 255, 0.08);
-        border: 1px solid rgba(124, 92, 255, 0.3);
-        border-radius: 8px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-      " onclick="showBookDetail(${book.id})" onmouseenter="this.style.transform='translateY(-4px)'; this.style.borderColor='#7c5cff';" onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(124, 92, 255, 0.3)';">
-        
-        <!-- Book Image -->
-        <div style="
-          width: 100%;
-          aspect-ratio: 1;
-          background: linear-gradient(135deg, rgba(12, 12, 24, 0.9), rgba(7, 11, 34, 0.9));
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 12px;
-          position: relative;
-        ">
-          ${iconUrl ? `<img src="${iconUrl}" alt="${book.name}" onerror="this.style.display='none'" style="
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 12px rgba(124, 92, 255, 0.4));
-          ">` : '<div style="color: #666; font-size: 12px;">No Image</div>'}
-          
-          <!-- Rarity Badge -->
+        <a href="book.html?id=${book.id}" style="text-decoration: none; cursor: pointer;">
           <div style="
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: ${rarityColors[book.rank] || '#666'};
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-          ">${rarityLabels[book.rank] || '?'}</div>
-        </div>
-        
-        <!-- Book Info -->
-        <div style="padding: 12px; flex: 1; display: flex; flex-direction: column;">
-          <h3 style="
-            margin: 0 0 8px 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-            line-height: 1.3;
+            background: rgba(124, 92, 255, 0.08);
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            border-radius: 8px;
             overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-          ">${book.name || 'Unknown Book'}</h3>
-          
-          ${volumeCount > 0 ? `<div style="font-size: 12px; color: #7c5cff; margin-bottom: 8px;">${volumeCount} Volume${volumeCount > 1 ? 's' : ''}</div>` : ''}
-          
-          <div style="font-size: 12px; color: #aaa; margin-top: auto;">Click to view</div>
-        </div>
-      </div>
-    `;
-  }).join('');
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          " class="book-card" 
+            onmouseenter="this.style.transform='translateY(-4px)'; this.style.borderColor='#7c5cff';" 
+            onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(124, 92, 255, 0.3)';">
+            
+            <!-- Book Image -->
+            <div style="
+              width: 100%;
+              aspect-ratio: 1;
+              background: linear-gradient(135deg, rgba(12, 12, 24, 0.9), rgba(7, 11, 34, 0.9));
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 12px;
+              position: relative;
+              overflow: hidden;
+            ">
+              ${iconUrl ? `
+                <img src="${iconUrl}" alt="${book.name}" 
+                  style="
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                    filter: drop-shadow(0 0 12px rgba(124, 92, 255, 0.4));
+                  "
+                  onerror="this.style.display='none'; this.parentElement.style.fontSize='32px'; this.parentElement.textContent='📖';"
+                >
+              ` : '<div style="font-size: 32px;">📖</div>'}
+              
+              <!-- Rarity Badge -->
+              <div style="
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                background: ${rarityColor};
+                color: #fff;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: bold;
+                z-index: 10;
+              ">${rarityLabel}</div>
+            </div>
+            
+            <!-- Book Info -->
+            <div style="padding: 12px; flex: 1; display: flex; flex-direction: column;">
+              <h3 style="
+                margin: 0 0 8px 0;
+                font-size: 14px;
+                font-weight: 600;
+                color: #fff;
+                line-height: 1.3;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+              ">${book.name}</h3>
+              
+              <div style="font-size: 12px; color: #aaa; margin-top: auto;">
+                ID: ${book.id}
+              </div>
+            </div>
+          </div>
+        </a>
+      `;
+    }).join('');
+  
+  console.log('Generated HTML for', filteredBooks.length, 'books');
+  container.innerHTML = html;
 }
 
-// Setup filter functionality
+// Setup search and filter
 function setupFilters() {
   const searchInput = document.getElementById('bookSearch');
   const rankFilter = document.getElementById('rankFilter');
@@ -338,7 +393,7 @@ function setupFilters() {
     const rankValue = rankFilter.value;
     
     filteredBooks = allBooks.filter(book => {
-      const matchesSearch = book.name.toLowerCase().includes(searchTerm);
+      const matchesSearch = !searchTerm || book.name.toLowerCase().includes(searchTerm);
       const matchesRank = !rankValue || book.rank.toString() === rankValue;
       return matchesSearch && matchesRank;
     });
@@ -350,103 +405,10 @@ function setupFilters() {
   rankFilter.addEventListener('change', applyFilters);
 }
 
-// Show book detail
-function showBookDetail(bookId) {
-  const book = allBooks.find(b => b.id === bookId);
-  if (!book) return;
-  
-  let volumesHtml = '';
-  if (book.volumes && book.volumes.length > 0) {
-    volumesHtml = `
-      <div style="margin-top: 20px;">
-        <h3 style="color: #7c5cff; margin-bottom: 12px;">Volumes:</h3>
-        ${book.volumes.map(vol => `
-          <div style="background: rgba(124, 92, 255, 0.1); padding: 12px; border-radius: 4px; margin-bottom: 10px;">
-            <div style="font-weight: 600; color: #fff; margin-bottom: 6px;">${vol.name}</div>
-            <div style="font-size: 14px; color: #ccc;">${vol.description || 'No description available'}</div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  }
-  
-  const iconUrl = `https://ik.imagekit.io/gukc1okbd/${book.icon}.webp`;
-  
-  const rarityLabels = { 1: '1★', 2: '2★', 3: '3★', 4: '4★' };
-  const rarityColors = { 1: '#9c8e6b', 2: '#68b359', 3: '#5d9fbb', 4: '#a881d0' };
-  
-  const detailHtml = `
-    <div style="display: flex; gap: 24px; align-items: flex-start;">
-      <img src="${iconUrl}" alt="${book.name}" style="
-        width: 180px;
-        height: 180px;
-        object-fit: contain;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 12px;
-        border-radius: 8px;
-        filter: drop-shadow(0 0 16px rgba(124, 92, 255, 0.5));
-      ">
-      
-      <div style="flex: 1;">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-          <h2 style="margin: 0; color: #7c5cff; font-size: 24px;">${book.name}</h2>
-          <span style="background: ${rarityColors[book.rank]}; color: #fff; padding: 6px 12px; border-radius: 4px; font-weight: bold;">${rarityLabels[book.rank]}</span>
-        </div>
-        
-        <div style="color: #aaa; margin-bottom: 16px; line-height: 1.5;">
-          <p><strong>ID:</strong> ${book.id}</p>
-          <p><strong>Route:</strong> ${book.route}</p>
-          ${book.volumes ? `<p><strong>Total Volumes:</strong> ${book.volumes.length}</p>` : ''}
-        </div>
-        
-        ${volumesHtml}
-      </div>
-    </div>
-  `;
-  
-  // Show in modal
-  const modal = document.getElementById('searchModal') || createDetailsModal();
-  const modalContent = modal.querySelector('.modal-body');
-  
-  if (modalContent) {
-    modalContent.innerHTML = detailHtml;
-    modal.classList.add('open');
-  }
-}
-
-// Create a details modal if it doesn't exist
-function createDetailsModal() {
-  const modal = document.createElement('div');
-  modal.id = 'bookDetailsModal';
-  modal.className = 'modal';
-  modal.innerHTML = `
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Book Details</h2>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body"></div>
-    </div>
-  `;
-  
-  document.body.appendChild(modal);
-  
-  const closeBtn = modal.querySelector('.modal-close');
-  closeBtn.addEventListener('click', () => modal.classList.remove('open'));
-  
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('open');
-  });
-  
-  return modal;
-}
-
-// Initialize on page load
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  // Small delay to ensure DOM is fully ready
-  setTimeout(() => {
-    fetchBooks();
-  }, 100);
+  // Try local file first (faster and complete), then API as backup
+  loadBooksFromLocal();
 });
 </script>
 <script type="module" src="https://tovik.app/tovik.js"></script>

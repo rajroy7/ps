@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -281,28 +281,105 @@
 
 <script src="script.js"></script>
 <script>
+    function formatReadableText(text) {
+        if (!text) return 'Story unavailable.';
+        return String(text)
+            .replace(/<color=#[0-9A-Fa-f]+>/g, '')
+            .replace(/<\/color>/g, '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/\r\n|\n|\r/g, '<br>');
+    }
+
+    async function fetchArtifactPieceStory(artifactId, pieceIndex) {
+        try {
+            const key = `Relic${artifactId}_${pieceIndex}`;
+            const res = await fetch(`https://gi.yatta.moe/api/v2/EN/readable/${key}?vh=64F0`);
+            if (!res.ok) return '';
+            const json = await res.json();
+            return String(json?.data || '').trim();
+        } catch (e) {
+            return '';
+        }
+    }
+
+    async function fetchAllPieceStories(artifactId) {
+        const pieces = [1, 2, 3, 4, 5];
+        const responses = await Promise.all(
+            pieces.map(async (idx) => [idx, await fetchArtifactPieceStory(artifactId, idx)])
+        );
+        return Object.fromEntries(responses);
+    }
+
+    async function fetchArtifactSuit(artifactId) {
+        try {
+            const res = await fetch(`https://gi.yatta.moe/api/v2/EN/reliquary/${artifactId}?vh=64F0`);
+            if (!res.ok) return null;
+            const json = await res.json();
+            return json?.data?.suit || null;
+        } catch (e) {
+            return null;
+        }
+    }
+
     async function loadArtifactDetail() {
         const params = new URLSearchParams(window.location.search);
         const artifactId = params.get('id');
         const container = document.getElementById('artifactDetails');
-        
+
         if (!artifactId) {
             container.innerHTML = '<p style="text-align:center; color:#999; margin-top:40px;">Artifact ID not found</p>';
             return;
         }
-        
+
         try {
             const response = await fetch('artifacts.json');
             const artifacts = await response.json();
-            const artifact = artifacts.find(a => a.id == artifactId);
-            
+            const artifact = artifacts.find(a => String(a.id) === String(artifactId));
+
             if (!artifact) {
                 container.innerHTML = '<p style="text-align:center; color:#999; margin-top:40px;">Artifact not found</p>';
                 return;
             }
 
+            const [pieceStories, suitData] = await Promise.all([
+                fetchAllPieceStories(artifact.id),
+                fetchArtifactSuit(artifact.id)
+            ]);
+            const defaultStoryHtml = formatReadableText(pieceStories[1] || 'Story unavailable.');
             const iconUrl = `https://gi.yatta.moe/assets/UI/reliquary/${artifact.icon}.png?vh=2024123000`;
-            const rarityStars = '⭐'.repeat(artifact.rarity || 3);
+            const rarityStars = '★'.repeat(artifact.rarity || 3);
+
+            const pieceOrder = [
+                ['EQUIP_BRACER', 'Flower of Life', 1],
+                ['EQUIP_NECKLACE', 'Plume of Death', 2],
+                ['EQUIP_SHOES', 'Sands of Eon', 3],
+                ['EQUIP_RING', 'Goblet of Eonothem', 4],
+                ['EQUIP_DRESS', 'Circlet of Logos', 5]
+            ];
+
+            const pieceEntries = pieceOrder.map(([slot, fallbackName, storyIndex]) => {
+                const piece = suitData && suitData[slot] ? suitData[slot] : null;
+                const pName = piece?.name || fallbackName;
+                const pDesc = formatReadableText(piece?.description || 'No story available.');
+                const pStory = formatReadableText(pieceStories[storyIndex] || 'Story unavailable.');
+                const pIcon = piece?.icon ? `https://gi.yatta.moe/assets/UI/reliquary/${piece.icon}.png?vh=64F0` : '';
+                return { pName, pDesc, pStory, pIcon, storyIndex };
+            });
+
+            const pieceCards = pieceEntries.map((entry, idx) => {
+                const { pName, pDesc, pIcon } = entry;
+                return `
+                    <button class="artifact-info-section piece-story-card" data-piece-index="${idx}" style="margin-bottom:14px; width:100%; text-align:left; cursor:pointer; background:rgba(0,0,0,0.2);">
+                        <h4 style="display:flex;align-items:center;gap:8px;">
+                            ${pIcon ? `<img src="${pIcon}" alt="${pName}" style="width:22px;height:22px;object-fit:contain;">` : ''}
+                            ${pName}
+                        </h4>
+                        <div class="artifact-story-text">${pDesc}</div>
+                    </button>
+                `;
+            }).join('');
 
             container.innerHTML = `
                 <div class="artifact-hero">
@@ -331,28 +408,35 @@
                     </div>
                 </div>
 
+                <div id="stats" class="content-section active">
+                    <div class="artifact-info-section">
+                        <h4 id="artifactMainStoryTitle">Story</h4>
+                        <div class="artifact-story-text" id="artifactMainStoryBody">${defaultStoryHtml}</div>
+                    </div>
+                    <div class="artifact-info-section">
+                        <h4>Piece Stories</h4>
+                        ${pieceCards}
+                    </div>
+                </div>
+
                 <div class="content-tabs">
                     <button class="tab-btn active" onclick="switchTab(event, 'stats')">Stats</button>
                 </div>
-
-                <div id="stats" class="content-section active">
-                    <div class="artifact-info-section">
-                        <h4>Artifact Pieces</h4>
-                        <div class="artifact-story-text">
-                            <p>• Flower of Life</p>
-                            <p>• Plume of Death</p>
-                            <p>• Sands of Eon</p>
-                            <p>• Goblet of Eonothem</p>
-                            <p>• Circlet of Logos</p>
-                        </div>
-                    </div>
-                    <div class="artifact-info-section">
-                        <h4>Set Rarity</h4>
-                        <div class="artifact-story-text">
-                            <p>Rarity: ${artifact.rarity}★</p>
-                            <p>This artifact set can be found in domains and from various sources in the game.</p>
-                        </div>
             `;
+
+            const mainStoryTitle = container.querySelector('#artifactMainStoryTitle');
+            const mainStoryBody = container.querySelector('#artifactMainStoryBody');
+            container.querySelectorAll('.piece-story-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const idx = Number(card.dataset.pieceIndex);
+                    const piece = pieceEntries[idx];
+                    if (!piece) return;
+                    if (mainStoryTitle) mainStoryTitle.textContent = `Story - ${piece.pName}`;
+                    if (mainStoryBody) mainStoryBody.innerHTML = piece.pStory;
+                    container.querySelectorAll('.piece-story-card').forEach(c => c.style.borderColor = 'rgba(124, 92, 255, 0.2)');
+                    card.style.borderColor = 'rgba(124, 92, 255, 0.8)';
+                });
+            });
         } catch (error) {
             console.error('Error loading artifact:', error);
             container.innerHTML = '<p style="text-align:center; color:#999; margin-top:40px;">Failed to load artifact details</p>';
@@ -361,14 +445,14 @@
 
     function switchTab(event, tabName) {
         event.preventDefault();
-        
+
         document.querySelectorAll('.content-section').forEach(section => {
             section.classList.remove('active');
         });
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.classList.remove('active');
         });
-        
+
         document.getElementById(tabName).classList.add('active');
         event.target.classList.add('active');
     }
@@ -380,7 +464,7 @@
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.id = 'scrollToTopBtn';
 scrollToTopBtn.title = 'Scroll to top';
-scrollToTopBtn.innerHTML = '▲';
+scrollToTopBtn.innerHTML = 'â–²';
 document.body.appendChild(scrollToTopBtn);
 
 window.addEventListener('scroll', () => {
@@ -399,3 +483,4 @@ scrollToTopBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
+

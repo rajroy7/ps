@@ -528,9 +528,11 @@ nav{
 .cards-section { display: flex; justify-content: center; padding: 20px; gap: 20px; flex-wrap: wrap; }
 .card{ width:200px; height:auto; background:rgba(255,255,255,0.04); border-radius:18px; padding:16px; backdrop-filter:blur(10px); transition:0.32s; box-sizing:border-box; }
 .card-link .card:hover{ transform:translateY(-8px); box-shadow:0 8px 30px rgba(124,92,255,0.12); }
-.card.achievements-card {
-  width: 99px !important;
-  height: 114px !important;
+.card.achievements-card,
+.card.banners-card,
+.card.inventory-card {
+  width: 79px !important;
+  height: 91px !important;
   position: relative !important;
   padding: 0 !important;
   overflow: hidden !important;
@@ -540,7 +542,9 @@ nav{
   background: transparent !important;
   border-radius: 10px !important;
 }
-.card.achievements-card .small-card-img {
+.card.achievements-card .small-card-img,
+.card.banners-card .small-card-img,
+.card.inventory-card .small-card-img {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -552,7 +556,9 @@ nav{
   opacity: 0.7 !important;
   z-index: 0 !important;
 }
-.card.achievements-card .card-content {
+.card.achievements-card .card-content,
+.card.banners-card .card-content,
+.card.inventory-card .card-content {
   position: relative !important;
   z-index: 1 !important;
   text-align: center !important;
@@ -563,14 +569,35 @@ nav{
   justify-content: center !important;
   align-items: center !important;
 }
-.card.achievements-card .card-content h3 {
+.card.achievements-card .card-content h3,
+.card.banners-card .card-content h3,
+.card.inventory-card .card-content h3 {
   margin: 0 !important;
-  font-size: 11px !important;
+  font-size: 10px !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9) !important;
+  letter-spacing: 0.2px !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 6px !important;
+  padding: 3px 6px !important;
+  -webkit-text-stroke: 0.2px #7c5cff !important;
+  text-stroke: 0.2px #7c5cff !important;
 }
-.card-link .card.achievements-card:hover { 
+
+.card.achievements-card .card-content h3,
+.card.inventory-card .card-content h3 {
+  font-size: 8.5px !important;
+}
+
+.card.achievements-card {
+  width: 87px !important;
+}
+.card-link .card.achievements-card:hover,
+.card-link .card.banners-card:hover,
+.card-link .card.inventory-card:hover { 
   box-shadow: 0 0 30px rgba(124, 92, 255, 0.8), inset 0 0 30px rgba(124, 92, 255, 0.2) !important; 
   transform: translateY(-8px) !important; 
 }
@@ -731,7 +758,9 @@ nav{
   box-shadow: 0 0 30px rgba(124, 92, 255, 0.8), inset 0 0 30px rgba(124, 92, 255, 0.2);
 }
 
-.card-link .card.achievements-card:hover {
+.card-link .card.achievements-card:hover,
+.card-link .card.banners-card:hover,
+.card-link .card.inventory-card:hover {
   box-shadow: 0 0 30px rgba(124, 92, 255, 0.8), inset 0 0 30px rgba(124, 92, 255, 0.2);
   transform: translateY(-8px);
 }
@@ -1550,16 +1579,43 @@ html[data-default-decimal="3"] {
 
 /* WEAPON CARDS */
 .weapon-card {
-    background: linear-gradient(135deg, rgba(60, 40, 80, 0.4), rgba(40, 30, 60, 0.3));
+    background: linear-gradient(180deg, rgba(12, 8, 24, 0.95), rgba(6, 6, 16, 0.98));
     border-radius: 12px;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 136, 0, 0.55);
     transition: all 0.3s ease;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
     height: 100%;
-    min-height: 280px;
+    min-height: 260px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.weapon-card.rarity-1 {
+    border-color: rgba(170, 170, 170, 0.65);
+    background: linear-gradient(180deg, rgba(36, 36, 40, 0.95), rgba(18, 18, 22, 0.98));
+}
+
+.weapon-card.rarity-2 {
+    border-color: rgba(110, 180, 120, 0.7);
+    background: linear-gradient(180deg, rgba(24, 44, 28, 0.95), rgba(10, 22, 14, 0.98));
+}
+
+.weapon-card.rarity-3 {
+    border-color: rgba(70, 150, 255, 0.75);
+    background: linear-gradient(180deg, rgba(12, 30, 60, 0.95), rgba(6, 14, 30, 0.98));
+}
+
+.weapon-card.rarity-4 {
+    border-color: rgba(145, 105, 255, 0.78);
+    background: linear-gradient(180deg, rgba(28, 16, 58, 0.95), rgba(10, 8, 26, 0.98));
+}
+
+.weapon-card.rarity-5 {
+    border-color: rgba(255, 175, 55, 0.82);
+    background: linear-gradient(180deg, rgba(58, 28, 8, 0.95), rgba(24, 12, 4, 0.98));
 }
 
 .weapon-card:hover {
@@ -1568,88 +1624,88 @@ html[data-default-decimal="3"] {
     border-color: rgba(124, 92, 255, 0.5);
 }
 
-.weapon-card.rarity-3 {
-    border-color: rgba(0, 200, 100, 0.4);
-}
-
-.weapon-card.rarity-3:hover {
-    box-shadow: 0 12px 30px rgba(0, 200, 100, 0.3);
-    border-color: rgba(0, 200, 100, 0.6);
-}
-
-.weapon-card.rarity-4 {
-    border-color: rgba(124, 92, 255, 0.4);
-}
-
-.weapon-card.rarity-4:hover {
-    box-shadow: 0 12px 30px rgba(124, 92, 255, 0.3);
-    border-color: rgba(124, 92, 255, 0.6);
-}
-
-.weapon-card.rarity-5 {
-    border-color: rgba(255, 200, 50, 0.4);
-}
-
-.weapon-card.rarity-5:hover {
-    box-shadow: 0 12px 30px rgba(255, 200, 50, 0.3);
-    border-color: rgba(255, 200, 50, 0.6);
-}
-
 .weapon-image-container {
     width: 100%;
-    height: 160px;
-    background: linear-gradient(135deg, rgba(30, 20, 50, 0.6), rgba(20, 15, 40, 0.5));
+    height: 168px;
+    background: radial-gradient(circle at 50% 20%, rgba(120, 50, 10, 0.42), rgba(46, 16, 4, 0.7) 65%, rgba(20, 8, 4, 0.9) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 10px;
     overflow: hidden;
     position: relative;
+    border-radius: 10px 10px 0 0;
+}
+
+.weapon-card.rarity-1 .weapon-image-container {
+    background: radial-gradient(circle at 50% 20%, rgba(110, 110, 120, 0.42), rgba(55, 55, 62, 0.72) 65%, rgba(26, 26, 30, 0.9) 100%);
+}
+
+.weapon-card.rarity-2 .weapon-image-container {
+    background: radial-gradient(circle at 50% 20%, rgba(76, 150, 88, 0.45), rgba(28, 70, 36, 0.74) 65%, rgba(14, 34, 18, 0.9) 100%);
+}
+
+.weapon-card.rarity-3 .weapon-image-container {
+    background: radial-gradient(circle at 50% 20%, rgba(78, 130, 220, 0.45), rgba(20, 52, 100, 0.74) 65%, rgba(10, 24, 48, 0.9) 100%);
+}
+
+.weapon-card.rarity-4 .weapon-image-container {
+    background: radial-gradient(circle at 50% 20%, rgba(142, 94, 240, 0.46), rgba(64, 24, 110, 0.74) 65%, rgba(24, 10, 46, 0.9) 100%);
+}
+
+.weapon-card.rarity-5 .weapon-image-container {
+    background: radial-gradient(circle at 50% 20%, rgba(220, 132, 44, 0.5), rgba(110, 48, 8, 0.78) 65%, rgba(40, 16, 4, 0.92) 100%);
 }
 
 .weapon-image-container img {
+    width: auto;
+    height: 100%;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    object-position: center center;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 .weapon-info {
-    padding: 12px;
-    flex: 1;
+    padding: 10px 8px 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    text-align: center;
 }
 
 .weapon-name {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 700;
     color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.15;
+    letter-spacing: 0.1px;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .weapon-stats {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    font-size: 13px;
+    gap: 3px;
+    font-size: 14px;
 }
 
 .weapon-stat-row {
     display: flex;
     align-items: center;
-    gap: 6px;
-    color: #ddd;
+    justify-content: center;
+    gap: 5px;
+    color: #f2f2f2;
+    font-weight: 600;
 }
 
 .weapon-stat-label {
     display: flex;
     align-items: center;
     gap: 2px;
-    min-width: 30px;
+    min-width: 20px;
 }
 
 .weapon-stat-icon {

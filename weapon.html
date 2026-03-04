@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -497,7 +497,7 @@
     </nav>
 
     <section class="weapon-detail-wrapper">
-        <a href="weapons.html" class="back-button">← Back to Weapons</a>
+        <a href="weapons.html" class="back-button">â† Back to Weapons</a>
         <div id="weaponContent"></div>
     </section>
 
@@ -530,6 +530,130 @@
             .replace(/"/g, '');
     }
 
+    function mapWeaponType(rawType) {
+        const type = String(rawType || '').toUpperCase();
+        if (type.includes('SWORD')) return 'Sword';
+        if (type.includes('CLAYMORE')) return 'Claymore';
+        if (type.includes('POLE')) return 'Polearm';
+        if (type.includes('CATALYST')) return 'Catalyst';
+        if (type.includes('BOW')) return 'Bow';
+        return rawType || 'Unknown';
+    }
+
+    function weaponTypeIcon(type) {
+        const t = String(type || '').toLowerCase();
+        if (t === 'sword') return 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png';
+        if (t === 'claymore') return 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png';
+        if (t === 'polearm') return 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Pole.png';
+        if (t === 'catalyst') return 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png';
+        if (t === 'bow') return 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png';
+        return '';
+    }
+
+    function mapQualityToRarity(qualityType, fallback = 3) {
+        const q = String(qualityType || '').toUpperCase();
+        if (q.includes('ORANGE') || q.includes('GOLD')) return 5;
+        if (q.includes('PURPLE')) return 4;
+        if (q.includes('BLUE')) return 3;
+        if (q.includes('GREEN')) return 2;
+        if (q.includes('WHITE')) return 1;
+        return fallback;
+    }
+
+    function extractSecondaryStat(ascensionStats) {
+        if (!ascensionStats || typeof ascensionStats !== 'object') {
+            return { secondaryLabel: '—', secondaryStat: '—' };
+        }
+        const secondaryEntry = Object.entries(ascensionStats).find(([k, v]) => {
+            const key = String(k || '').toLowerCase();
+            const num = Number(v);
+            return key !== 'atk' && key !== 'baseatk' && Number.isFinite(num) && num > 0;
+        });
+
+        if (!secondaryEntry) return { secondaryLabel: '—', secondaryStat: '—' };
+
+        const [rawLabel, rawValue] = secondaryEntry;
+        const cleanLabel = String(rawLabel).replace(/%/g, '');
+        const valueNum = Number(rawValue);
+        return {
+            secondaryLabel: cleanLabel || 'Substat',
+            secondaryStat: Number.isFinite(valueNum) ? `${valueNum}%` : String(rawValue)
+        };
+    }
+
+    function normalizeLunarisWeapon(apiWeapon, fallbackWeapon) {
+        const statsMap = apiWeapon?.stats || {};
+        const stats90 = statsMap['90'] || statsMap[90] || {};
+        const secondaryEntry = Object.entries(stats90).find(([k]) => String(k).toLowerCase() !== 'atk');
+        const secondary = secondaryEntry
+            ? { secondaryLabel: String(secondaryEntry[0]).replace(/%/g, ''), secondaryStat: `${secondaryEntry[1]}%` }
+            : extractSecondaryStat(apiWeapon?.ascensionStats || {});
+        const baseAtk = Number(
+            stats90?.atk ??
+            apiWeapon?.ascensionStats?.atk ??
+            apiWeapon?.atk ??
+            apiWeapon?.baseAtk ??
+            fallbackWeapon?.atk ??
+            0
+        );
+
+        const rarity = mapQualityToRarity(apiWeapon?.qualityType, Number(fallbackWeapon?.rarity || 3));
+        const name = apiWeapon?.enName || apiWeapon?.name || fallbackWeapon?.name || `Weapon ${weaponId}`;
+
+        return {
+            id: String(weaponId),
+            name,
+            type: mapWeaponType(apiWeapon?.weaponType || fallbackWeapon?.type),
+            rarity,
+            icon: apiWeapon?.weaponIcon || fallbackWeapon?.icon || '',
+            atk: Number.isFinite(baseAtk) ? Math.round(baseAtk) : (fallbackWeapon?.atk || 0),
+            secondaryLabel: secondary.secondaryLabel,
+            secondaryStat: secondary.secondaryStat,
+            description: apiWeapon?.description || apiWeapon?.story || apiWeapon?.desc || fallbackWeapon?.description || 'No story available.'
+        };
+    }
+
+    function normalizeDetailData(apiWeapon) {
+        const passive = apiWeapon?.passive
+            ? [{ name: apiWeapon.passive.name, upgrade: apiWeapon.passive.refinements || {} }]
+            : null;
+        const affix =
+            passive ||
+            apiWeapon?.affix ||
+            apiWeapon?.weaponAffix ||
+            apiWeapon?.skill ||
+            null;
+
+        const ascension =
+            apiWeapon?.ascension ||
+            apiWeapon?.ascensionMaterials ||
+            apiWeapon?.materials ||
+            null;
+
+        const items = apiWeapon?.items || apiWeapon?.materialItems || {};
+        const levelStats = apiWeapon?.stats || {};
+
+        return { affix, ascension, items, levelStats };
+    }
+
+    let materialLookupCache = null;
+    async function loadMaterialLookup() {
+        if (materialLookupCache) return materialLookupCache;
+        try {
+            const res = await fetch('https://api.lunaris.moe/data/6.4.51/materiallist.json');
+            if (!res.ok) {
+                materialLookupCache = {};
+                return materialLookupCache;
+            }
+            const json = await res.json();
+            materialLookupCache = json || {};
+            return materialLookupCache;
+        } catch (e) {
+            materialLookupCache = {};
+            return materialLookupCache;
+        }
+    }
+
     async function loadWeapon() {
         const contentDiv = document.getElementById('weaponContent');
         
@@ -539,23 +663,47 @@
         }
 
         try {
-            const weaponsRes = await fetch('weapons.json');
-            const weapons = await weaponsRes.json();
-            const weapon = weapons.find(w => w.id == weaponId);
+            const [weaponsRes, lunarisRes, yattaStoryRes] = await Promise.all([
+                fetch('weapons.json').catch(() => null),
+                fetch(`https://api.lunaris.moe/data/6.4.51/en/weapon/${weaponId}.json`).catch(() => null),
+                fetch(`https://gi.yatta.moe/api/v2/EN/readable/Weapon${weaponId}?vh=64F0`).catch(() => null)
+            ]);
 
-            if (!weapon) {
-                contentDiv.innerHTML = '<p style="text-align: center; color: #f00;">Weapon not found.</p>';
+            let fallbackWeapon = null;
+            if (weaponsRes && weaponsRes.ok) {
+                const weapons = await weaponsRes.json();
+                fallbackWeapon = (weapons || []).find(w => String(w.id) === String(weaponId)) || null;
+            }
+
+            let yattaStory = '';
+            if (yattaStoryRes && yattaStoryRes.ok) {
+                try {
+                    const yattaJson = await yattaStoryRes.json();
+                    yattaStory = String(yattaJson?.data || '').trim();
+                } catch (e) {
+                    yattaStory = '';
+                }
+            }
+
+            if (!lunarisRes || !lunarisRes.ok) {
+                if (!fallbackWeapon) {
+                    contentDiv.innerHTML = '<p style="text-align: center; color: #f00;">Weapon not found.</p>';
+                    return;
+                }
+                if (yattaStory) {
+                    fallbackWeapon.description = yattaStory;
+                }
+                renderWeapon(fallbackWeapon, null);
                 return;
             }
 
-            let fullWeapon = null;
-            try {
-                const sanitizedName = sanitizeFileName(weapon.name);
-                const fullRes = await fetch(`Data/weapons/${sanitizedName}.json`);
-                fullWeapon = await fullRes.json();
-            } catch (e) {
-                console.log('Could not load full weapon data');
+            const apiWeapon = await lunarisRes.json();
+            const weapon = normalizeLunarisWeapon(apiWeapon, fallbackWeapon);
+            if (yattaStory) {
+                weapon.description = yattaStory;
             }
+            const fullWeapon = normalizeDetailData(apiWeapon);
+            fullWeapon.materialLookup = await loadMaterialLookup();
 
             renderWeapon(weapon, fullWeapon);
         } catch (error) {
@@ -566,51 +714,106 @@
 
     function wikiToHtml(text) {
         if (!text) return '';
-        return text
+        const cleaned = String(text)
             .replace(/<color=#[0-9A-F]+>/g, '')
             .replace(/<\/color>/g, '')
             .replace(/\|/g, ' | ');
+        return cleaned
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/\r\n|\n|\r/g, '<br>');
     }
 
     function renderWeapon(weapon, fullWeapon) {
         const contentDiv = document.getElementById('weaponContent');
         const iconUrl = `https://gi.yatta.moe/assets/UI/${weapon.icon}.png`;
-        const stars = '⭐'.repeat(weapon.rarity);
+        const stars = '★'.repeat(weapon.rarity || 0);
+        const typeIcon = weaponTypeIcon(weapon.type);
+        const levelStatsMap = fullWeapon?.levelStats || {};
 
         let passiveHtml = '';
         if (fullWeapon && fullWeapon.affix) {
-            const affixKey = Object.keys(fullWeapon.affix)[0];
-            const affix = fullWeapon.affix[affixKey];
-            let rankButtons = '';
-            
-            for (let i = 0; i < 5; i++) {
-                rankButtons += `<button class="rank-btn ${i === 0 ? 'active' : ''}" onclick="changeRank(${i}, this)">R${i + 1}</button>`;
+            const affixList = Array.isArray(fullWeapon.affix)
+                ? fullWeapon.affix
+                : (typeof fullWeapon.affix === 'object' ? Object.values(fullWeapon.affix) : []);
+            const affix = affixList.find(a => a && (a.name || a.title || a.upgrade || a.description));
+
+            if (affix) {
+                const upgrades = affix.upgrade || affix.upgrades || {};
+                let rankButtons = '';
+                for (let i = 0; i < 5; i++) {
+                    rankButtons += `<button class="rank-btn ${i === 0 ? 'active' : ''}" onclick="changeRank(${i}, this)">${i + 1}</button>`;
+                }
+
+                const desc0 = wikiToHtml(upgrades['1'] || upgrades[1] || upgrades['0'] || upgrades[0] || affix.description || '');
+                passiveHtml = `
+                    <div class="passive-ability">
+                        <div class="passive-name">${affix.name || affix.title || 'Passive'}</div>
+                        <div id="refinementLabel" style="font-size:12px;color:#aaa;margin-bottom:8px;">R1</div>
+                        <div class="refinement-ranks">${rankButtons}</div>
+                        <div class="passive-description" id="passiveDesc">${desc0}</div>
+                    </div>
+                `;
+
+                window.currentAffix = { ...affix, upgrade: upgrades };
             }
-
-            const desc0 = wikiToHtml(affix.upgrade['0'] || '');
-            passiveHtml = `
-                <div class="passive-ability">
-                    <div class="passive-name">⚡ ${affix.name}</div>
-                    <div class="refinement-ranks">${rankButtons}</div>
-                    <div class="passive-description" id="passiveDesc">${desc0}</div>
-                </div>
-            `;
-
-            window.currentAffix = affix;
         }
+
+        const materialLookup = fullWeapon?.materialLookup || {};
+        const materialEntries = Object.values(materialLookup);
+        const findMaterialMeta = (icon, id) => {
+            const idStr = String(id || '');
+            return materialEntries.find(m =>
+                m && (
+                    (icon && (m.icon === icon || m.sideIcon === icon || m.itemIcon === icon)) ||
+                    (idStr && (String(m.id || '') === idStr || String(m.route || '') === idStr))
+                )
+            ) || null;
+        };
+        const formatCount = (n) => {
+            const num = Number(n);
+            if (!Number.isFinite(num)) return n;
+            if (num >= 1000) return `${Math.round(num / 1000)}K`;
+            return `${num}`;
+        };
 
         let ascensionHtml = '';
         if (fullWeapon && fullWeapon.ascension) {
             const ascMaterials = fullWeapon.ascension;
             let materialsContent = '';
-            for (const [id, qty] of Object.entries(ascMaterials)) {
-                const itemName = fullWeapon.items && fullWeapon.items[id] ? fullWeapon.items[id].name : `Item ${id}`;
-                const iconUrl = `https://gi.yatta.moe/assets/UI/ItemIcon_${id}.png`;
+
+            const materialRows = Array.isArray(ascMaterials)
+                ? ascMaterials
+                : Object.entries(ascMaterials).map(([id, qty]) => ({ id, qty }));
+
+            for (const row of materialRows) {
+                const ascIcon = String(row.icon || row.iconName || '');
+                const idFromIcon = (ascIcon.match(/(\d+)/) || [])[1] || '';
+                const id = String(row.id ?? row.itemId ?? row.materialId ?? idFromIcon ?? '');
+                const qty = row.qty ?? row.count ?? row.num ?? 0;
+                if (!id && !ascIcon) continue;
+
+                const item = fullWeapon.items && fullWeapon.items[id] ? fullWeapon.items[id] : null;
+                const meta = findMaterialMeta(ascIcon, id);
+                const itemName =
+                    (item && (item.name || item.enName)) ||
+                    (meta && (meta.name || meta.enName)) ||
+                    `Item ${id || ascIcon}`;
+                const itemDesc = wikiToHtml(
+                    (item && (item.description || item.desc)) ||
+                    (meta && (meta.description || meta.desc)) ||
+                    ''
+                );
+                const itemIcon = ascIcon || (item && (item.icon || item.iconName)) || (meta && (meta.icon || meta.sideIcon)) || `ItemIcon_${id}`;
+                const matIconUrl = `https://gi.yatta.moe/assets/UI/${itemIcon}.png`;
+
                 materialsContent += `
                     <div class="material-item">
-                        <img src="${iconUrl}" alt="${itemName}" class="material-icon" onerror="this.style.display='none'">
-                        <div class="material-quantity">×${qty}</div>
+                        <img src="${matIconUrl}" alt="${itemName}" class="material-icon" onerror="this.style.display='none'">
+                        <div class="material-quantity">${formatCount(qty)}</div>
                         <div class="material-name">${itemName}</div>
+                        ${itemDesc ? `<div style="font-size:11px;color:#bbb;line-height:1.35;margin-top:4px;text-align:left;">${itemDesc}</div>` : ''}
                     </div>
                 `;
             }
@@ -633,19 +836,22 @@
                     </div>
                     <div class="weapon-hero-text">
                         <div class="weapon-title">
-                            <span class="weapon-title-badge">⚔️ ${weapon.type}</span>
+                            <span class="weapon-title-badge">
+                                ${typeIcon ? `<img src="${typeIcon}" alt="${weapon.type}" style="width:16px;height:16px;object-fit:contain;">` : '&#9876;&#65039;'}
+                                ${weapon.type}
+                            </span>
                             <div class="weapon-title-name">${weapon.name}</div>
                             <div class="weapon-rarity">${stars}</div>
                         </div>
                         <div class="weapon-info-grid">
                             <div class="info-card">
                                 <div class="info-label">Base ATK</div>
-                                <div class="info-value">${weapon.atk}</div>
+                                <div class="info-value" id="heroAtkValue">${weapon.atk}</div>
                             </div>
                             ${weapon.secondaryStat && weapon.secondaryStat !== '—' ? `
-                            <div class="info-card">
-                                <div class="info-label">${weapon.secondaryLabel}</div>
-                                <div class="info-value">${weapon.secondaryStat}</div>
+                            <div class="info-card" id="heroSubCard">
+                                <div class="info-label" id="heroSubLabel">${weapon.secondaryLabel}</div>
+                                <div class="info-value" id="heroSubValue">${weapon.secondaryStat}</div>
                             </div>
                             ` : ''}
                         </div>
@@ -653,29 +859,13 @@
                 </div>
 
                 <div class="weapon-hero-right">
-                    <div class="story-section">
-                        <h3>Story</h3>
-                        <div class="story-text">${storyText}</div>
-                    </div>
                     <div class="weapon-controls-section">
                         <div class="control-item">
                             <div class="control-label">Level</div>
                             <div class="level-slider-container">
-                                <input type="range" id="levelSlider" min="0" max="90" value="90" style="flex: 1;">
+                                <input type="range" id="levelSlider" min="1" max="90" value="90" style="flex: 1;">
                                 <div class="level-value" id="levelValue">Lv. 90</div>
                             </div>
-                        </div>
-                        <div class="control-item">
-                            <div class="control-label">Ascension</div>
-                            <select id="ascensionSelect" style="padding: 6px; background: rgba(0,0,0,0.4); border: 1px solid rgba(124,92,255,0.3); border-radius: 4px; color: #00f0ff; font-weight: 600;">
-                                <option value="0">Phase 0</option>
-                                <option value="1">Phase 1</option>
-                                <option value="2">Phase 2</option>
-                                <option value="3">Phase 3</option>
-                                <option value="4">Phase 4</option>
-                                <option value="5">Phase 5</option>
-                                <option value="6">Phase 6</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -694,12 +884,12 @@
                             <h4>Basic Information</h4>
                             <div class="stat-row">
                                 <div class="stat-name">Base ATK</div>
-                                <div class="stat-val">${weapon.atk}</div>
+                                <div class="stat-val" id="basicAtkValue">${weapon.atk}</div>
                             </div>
                             ${weapon.secondaryStat && weapon.secondaryStat !== '—' ? `
-                            <div class="stat-row">
-                                <div class="stat-name">${weapon.secondaryLabel}</div>
-                                <div class="stat-val">${weapon.secondaryStat}</div>
+                            <div class="stat-row" id="basicSubRow">
+                                <div class="stat-name" id="basicSubLabel">${weapon.secondaryLabel}</div>
+                                <div class="stat-val" id="basicSubValue">${weapon.secondaryStat}</div>
                             </div>
                             ` : ''}
                             <div class="stat-row">
@@ -715,6 +905,10 @@
                     </div>
                     <div class="ascension-materials">
                         ${ascensionHtml}
+                        <div class="info-group">
+                            <h4>Story</h4>
+                            <div class="story-text">${storyText}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -730,12 +924,59 @@
 
         contentDiv.innerHTML = html;
 
-        document.getElementById('levelSlider').addEventListener('input', (e) => {
-            document.getElementById('levelValue').textContent = `Lv. ${e.target.value}`;
-        });
-    }
+        function getStatsForLevel(level) {
+            const direct = levelStatsMap[String(level)] || levelStatsMap[level];
+            if (direct) return direct;
+            const keys = Object.keys(levelStatsMap)
+                .map(k => Number(k))
+                .filter(n => Number.isFinite(n))
+                .sort((a, b) => a - b);
+            if (!keys.length) return null;
+            const fallbackLevel = keys.filter(k => k <= level).pop() || keys[0];
+            return levelStatsMap[String(fallbackLevel)] || levelStatsMap[fallbackLevel] || null;
+        }
 
-    function switchTab(tabName) {
+        function updateStatsAtLevel(level) {
+            const stats = getStatsForLevel(level);
+            if (!stats) return;
+
+            const atk = stats.atk ?? weapon.atk;
+            const secondaryEntry = Object.entries(stats).find(([k]) => String(k).toLowerCase() !== 'atk');
+            const secLabel = secondaryEntry ? String(secondaryEntry[0]).replace(/%/g, '') : '—';
+            const secVal = secondaryEntry
+                ? `${secondaryEntry[1]}${String(secondaryEntry[0]).includes('%') ? '%' : ''}`
+                : '—';
+
+            const heroAtk = document.getElementById('heroAtkValue');
+            const basicAtk = document.getElementById('basicAtkValue');
+            if (heroAtk) heroAtk.textContent = atk;
+            if (basicAtk) basicAtk.textContent = atk;
+
+            const heroSubCard = document.getElementById('heroSubCard');
+            const heroSubLabel = document.getElementById('heroSubLabel');
+            const heroSubValue = document.getElementById('heroSubValue');
+            const basicSubRow = document.getElementById('basicSubRow');
+            const basicSubLabel = document.getElementById('basicSubLabel');
+            const basicSubValue = document.getElementById('basicSubValue');
+
+            const hasSecondary = secLabel !== '—';
+            if (heroSubCard) heroSubCard.style.display = hasSecondary ? '' : 'none';
+            if (basicSubRow) basicSubRow.style.display = hasSecondary ? '' : 'none';
+            if (heroSubLabel) heroSubLabel.textContent = hasSecondary ? secLabel : '';
+            if (heroSubValue) heroSubValue.textContent = hasSecondary ? secVal : '';
+            if (basicSubLabel) basicSubLabel.textContent = hasSecondary ? secLabel : '';
+            if (basicSubValue) basicSubValue.textContent = hasSecondary ? secVal : '';
+        }
+
+        const slider = document.getElementById('levelSlider');
+        slider.addEventListener('input', (e) => {
+            const level = Number(e.target.value);
+            document.getElementById('levelValue').textContent = `Lv. ${level}`;
+            updateStatsAtLevel(level);
+        });
+        updateStatsAtLevel(Number(slider.value || 90));
+    }
+function switchTab(tabName) {
         document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
         document.getElementById(tabName).classList.add('active');
@@ -745,9 +986,16 @@
     function changeRank(rank, btn) {
         document.querySelectorAll('.rank-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        const refinementLabel = document.getElementById('refinementLabel');
+        if (refinementLabel) refinementLabel.textContent = `R${rank + 1}`;
         
         if (window.currentAffix && window.currentAffix.upgrade) {
-            const description = window.currentAffix.upgrade[rank] || '';
+            const description =
+                window.currentAffix.upgrade[String(rank + 1)] ||
+                window.currentAffix.upgrade[rank + 1] ||
+                window.currentAffix.upgrade[String(rank)] ||
+                window.currentAffix.upgrade[rank] ||
+                '';
             document.getElementById('passiveDesc').textContent = wikiToHtml(description);
         }
     }
@@ -761,7 +1009,7 @@
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.id = 'scrollToTopBtn';
 scrollToTopBtn.title = 'Scroll to top';
-scrollToTopBtn.innerHTML = '▲';
+scrollToTopBtn.innerHTML = 'â–²';
 document.body.appendChild(scrollToTopBtn);
 
 window.addEventListener('scroll', () => {
@@ -780,3 +1028,6 @@ scrollToTopBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
+
+

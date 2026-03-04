@@ -1,4 +1,4 @@
-const sidebar = document.getElementById("sidebar");
+﻿const sidebar = document.getElementById("sidebar");
 const hamburger = document.getElementById("hamburger");
 
 // Hamburger menu toggle
@@ -197,12 +197,12 @@ const translations = {
         'Characters': 'Personnages',
         'Weapons': 'Armes',
         'Artifacts': 'Artefacts',
-        'Achievements': 'Réalisations',
+        'Achievements': 'RÃ©alisations',
         'Inventory': 'Inventaire',
-        'Enemy Creatures': 'Créatures Ennemies',
+        'Enemy Creatures': 'CrÃ©atures Ennemies',
         'Genius Invokation TCG': 'Genius Invokation TCG',
-        'Spiral Abyss': 'Abysses Spiralés',
-        'Imaginarium Theater': 'Théâtre Imaginarium',
+        'Spiral Abyss': 'Abysses SpiralÃ©s',
+        'Imaginarium Theater': 'ThÃ©Ã¢tre Imaginarium',
         'Stygian Onslaught': 'Assaut Stygien',
         'Furnishings': 'Mobilier',
         'Furnishing Set': 'Ensemble Mobilier',
@@ -212,8 +212,8 @@ const translations = {
         'Miliastra Wonderland Inventory': 'Inventaire Miliastra Pays des Merveilles',
         'Search': 'Rechercher',
         'Diff': 'Diff',
-        'Character Wishes': 'Vœux de Personnage',
-        'Settings': 'Paramètres',
+        'Character Wishes': 'VÅ“ux de Personnage',
+        'Settings': 'ParamÃ¨tres',
         'PROJECT SKIRK': 'PROJECT SKIRK'
     },
     German: {
@@ -236,7 +236,7 @@ const translations = {
         'Miliastra Wonderland Inventory': 'Miliastra Wunderland Inventar',
         'Search': 'Suchen',
         'Diff': 'Diff',
-        'Character Wishes': 'Charakterwünsche',
+        'Character Wishes': 'CharakterwÃ¼nsche',
         'Settings': 'Einstellungen',
         'PROJECT SKIRK': 'PROJECT SKIRK'
     },
@@ -255,62 +255,62 @@ const translations = {
         'Furnishings': 'Amueblado',
         'Furnishing Set': 'Conjunto de Amueblado',
         'Miliastra': 'Miliastra',
-        'Wonderland': 'País de las Maravillas',
-        'Miliastra Wonderland Set': 'Conjunto Miliastra País de las Maravillas',
-        'Miliastra Wonderland Inventory': 'Inventario Miliastra País de las Maravillas',
+        'Wonderland': 'PaÃ­s de las Maravillas',
+        'Miliastra Wonderland Set': 'Conjunto Miliastra PaÃ­s de las Maravillas',
+        'Miliastra Wonderland Inventory': 'Inventario Miliastra PaÃ­s de las Maravillas',
         'Search': 'Buscar',
         'Diff': 'Diff',
         'Character Wishes': 'Deseos de Personajes',
-        'Settings': 'Configuración',
+        'Settings': 'ConfiguraciÃ³n',
         'PROJECT SKIRK': 'PROJECT SKIRK'
     },
     Chinese: {
-        'Home': '首页',
-        'Characters': '角色',
-        'Weapons': '武器',
-        'Artifacts': '圣遗物',
-        'Achievements': '成就',
-        'Inventory': '背包',
-        'Enemy Creatures': '敌人生物',
-        'Genius Invokation TCG': '天才召唤卡牌游戏',
-        'Spiral Abyss': '深境螺旋',
-        'Imaginarium Theater': '想象剧场',
-        'Stygian Onslaught': '冥想之茵梦游仙境',
-        'Furnishings': '家具',
-        'Furnishing Set': '家具套装',
-        'Miliastra': '米莱丝特拉',
-        'Wonderland': '仙境',
-        'Miliastra Wonderland Set': '米莱丝特拉仙境套装',
-        'Miliastra Wonderland Inventory': '米莱丝特拉仙境背包',
-        'Search': '搜索',
-        'Diff': '对比',
-        'Character Wishes': '角色祈愿',
-        'Settings': '设置',
-        'PROJECT SKIRK': '天命计划'
+        'Home': 'é¦–é¡µ',
+        'Characters': 'è§’è‰²',
+        'Weapons': 'æ­¦å™¨',
+        'Artifacts': 'åœ£é—ç‰©',
+        'Achievements': 'æˆå°±',
+        'Inventory': 'èƒŒåŒ…',
+        'Enemy Creatures': 'æ•Œäººç”Ÿç‰©',
+        'Genius Invokation TCG': 'å¤©æ‰å¬å”¤å¡ç‰Œæ¸¸æˆ',
+        'Spiral Abyss': 'æ·±å¢ƒèžºæ—‹',
+        'Imaginarium Theater': 'æƒ³è±¡å‰§åœº',
+        'Stygian Onslaught': 'å†¥æƒ³ä¹‹èŒµæ¢¦æ¸¸ä»™å¢ƒ',
+        'Furnishings': 'å®¶å…·',
+        'Furnishing Set': 'å®¶å…·å¥—è£…',
+        'Miliastra': 'ç±³èŽ±ä¸ç‰¹æ‹‰',
+        'Wonderland': 'ä»™å¢ƒ',
+        'Miliastra Wonderland Set': 'ç±³èŽ±ä¸ç‰¹æ‹‰ä»™å¢ƒå¥—è£…',
+        'Miliastra Wonderland Inventory': 'ç±³èŽ±ä¸ç‰¹æ‹‰ä»™å¢ƒèƒŒåŒ…',
+        'Search': 'æœç´¢',
+        'Diff': 'å¯¹æ¯”',
+        'Character Wishes': 'è§’è‰²ç¥ˆæ„¿',
+        'Settings': 'è®¾ç½®',
+        'PROJECT SKIRK': 'å¤©å‘½è®¡åˆ’'
     },
     Japanese: {
-        'Home': 'ホーム',
-        'Characters': 'キャラクター',
-        'Weapons': '武器',
-        'Artifacts': '聖遺物',
-        'Achievements': '実績',
-        'Inventory': 'インベントリ',
-        'Enemy Creatures': '敵の生き物',
-        'Genius Invokation TCG': 'ジーニアスインヴォケーション TCG',
-        'Spiral Abyss': '深境螺旋',
-        'Imaginarium Theater': '想像シアター',
-        'Stygian Onslaught': 'スティギアン・オンスロート',
-        'Furnishings': '家具',
-        'Furnishing Set': '家具セット',
-        'Miliastra': 'ミリアストラ',
-        'Wonderland': 'ワンダーランド',
-        'Miliastra Wonderland Set': 'ミリアストラ ワンダーランド セット',
-        'Miliastra Wonderland Inventory': 'ミリアストラ ワンダーランド インベントリ',
-        'Search': '検索',
-        'Diff': '差分',
-        'Character Wishes': 'キャラクターウィッシュ',
-        'Settings': '設定',
-        'PROJECT SKIRK': '天命計画'
+        'Home': 'ãƒ›ãƒ¼ãƒ ',
+        'Characters': 'ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼',
+        'Weapons': 'æ­¦å™¨',
+        'Artifacts': 'è–éºç‰©',
+        'Achievements': 'å®Ÿç¸¾',
+        'Inventory': 'ã‚¤ãƒ³ãƒ™ãƒ³ãƒˆãƒª',
+        'Enemy Creatures': 'æ•µã®ç”Ÿãç‰©',
+        'Genius Invokation TCG': 'ã‚¸ãƒ¼ãƒ‹ã‚¢ã‚¹ã‚¤ãƒ³ãƒ´ã‚©ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ TCG',
+        'Spiral Abyss': 'æ·±å¢ƒèžºæ—‹',
+        'Imaginarium Theater': 'æƒ³åƒã‚·ã‚¢ã‚¿ãƒ¼',
+        'Stygian Onslaught': 'ã‚¹ãƒ†ã‚£ã‚®ã‚¢ãƒ³ãƒ»ã‚ªãƒ³ã‚¹ãƒ­ãƒ¼ãƒˆ',
+        'Furnishings': 'å®¶å…·',
+        'Furnishing Set': 'å®¶å…·ã‚»ãƒƒãƒˆ',
+        'Miliastra': 'ãƒŸãƒªã‚¢ã‚¹ãƒˆãƒ©',
+        'Wonderland': 'ãƒ¯ãƒ³ãƒ€ãƒ¼ãƒ©ãƒ³ãƒ‰',
+        'Miliastra Wonderland Set': 'ãƒŸãƒªã‚¢ã‚¹ãƒˆãƒ© ãƒ¯ãƒ³ãƒ€ãƒ¼ãƒ©ãƒ³ãƒ‰ ã‚»ãƒƒãƒˆ',
+        'Miliastra Wonderland Inventory': 'ãƒŸãƒªã‚¢ã‚¹ãƒˆãƒ© ãƒ¯ãƒ³ãƒ€ãƒ¼ãƒ©ãƒ³ãƒ‰ ã‚¤ãƒ³ãƒ™ãƒ³ãƒˆãƒª',
+        'Search': 'æ¤œç´¢',
+        'Diff': 'å·®åˆ†',
+        'Character Wishes': 'ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚¦ã‚£ãƒƒã‚·ãƒ¥',
+        'Settings': 'è¨­å®š',
+        'PROJECT SKIRK': 'å¤©å‘½è¨ˆç”»'
     }
 };
 
@@ -614,6 +614,281 @@ function applyUnreleasedContent() {
 }
 
 // -------------------- generic search support --------------------
+const WEAPON_DASH_VALUES = new Set(['â€”', '-', 'Ã¢â‚¬â€', 'none', 'null', '']);
+
+function normalizeWeaponType(rawType) {
+    const t = String(rawType || '').trim();
+    if (!t) return '';
+    const lower = t.toLowerCase();
+    if (lower.includes('sword')) return 'Sword';
+    if (lower.includes('claymore')) return 'Claymore';
+    if (lower.includes('pole')) return 'Polearm';
+    if (lower.includes('catalyst')) return 'Catalyst';
+    if (lower.includes('bow')) return 'Bow';
+    return t;
+}
+
+function normalizeStatValue(value) {
+    const str = String(value ?? '').trim();
+    return WEAPON_DASH_VALUES.has(str.toLowerCase()) ? 'â€”' : str;
+}
+
+function normalizeWeaponStatLabel(rawLabel) {
+    const label = normalizeStatValue(rawLabel);
+    if (label === 'â€”') return 'â€”';
+    const lower = label.toLowerCase();
+    if (lower.includes('critical_hurt') || lower.includes('crit dmg')) return 'CRIT DMG';
+    if (lower.includes('critical') || lower.includes('crit rate')) return 'CRIT Rate';
+    if (lower.includes('charge') || lower.includes('energy')) return 'Energy Recharge';
+    if (lower.includes('element') && lower.includes('master')) return 'Elemental Mastery';
+    if (lower.includes('physical')) return 'Physical DMG Bonus';
+    if (lower.includes('def')) return 'DEF';
+    if (lower === 'hp' || lower.includes('hp_')) return 'HP';
+    if (lower.includes('attack') || lower.includes('atk')) return 'ATK';
+    return label;
+}
+
+function getNested(obj, path) {
+    return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+}
+
+function pickFirst(...values) {
+    for (const value of values) {
+        if (value !== undefined && value !== null && String(value).trim() !== '') {
+            return value;
+        }
+    }
+    return undefined;
+}
+
+function toNumber(value, fallback = 0) {
+    const num = Number(value);
+    return Number.isFinite(num) ? num : fallback;
+}
+
+function mapQualityToRarity(qualityType) {
+    const q = String(qualityType || '').toUpperCase();
+    if (q.includes('ORANGE') || q.includes('GOLD')) return 5;
+    if (q.includes('PURPLE')) return 4;
+    if (q.includes('BLUE')) return 3;
+    if (q.includes('GREEN')) return 2;
+    if (q.includes('WHITE')) return 1;
+    return 3;
+}
+
+function extractAscensionSecondary(ascensionStats) {
+    if (!ascensionStats || typeof ascensionStats !== 'object') {
+        return { label: '—', value: '—' };
+    }
+    const entries = Object.entries(ascensionStats);
+    const secondary = entries.find(([key, value]) => {
+        const k = String(key || '').toLowerCase();
+        const v = Number(value);
+        return k !== 'atk' && k !== 'baseatk' && Number.isFinite(v) && v > 0;
+    });
+    if (!secondary) return { label: '—', value: '—' };
+
+    const [labelRaw, valueRaw] = secondary;
+    const valueNum = Number(valueRaw);
+    const value = Number.isFinite(valueNum) ? `${valueNum}%` : normalizeStatValue(valueRaw);
+    return {
+        label: normalizeWeaponStatLabel(String(labelRaw).replace(/%/g, '')),
+        value
+    };
+}
+
+function normalizeWeaponRecord(raw) {
+    if (!raw || typeof raw !== 'object') return null;
+
+    const id = String(
+        pickFirst(raw.id, raw.itemId, raw.weaponId, raw.weapon_id, raw.Id, raw._id) ?? ''
+    );
+    const name = String(
+        pickFirst(raw.enName, raw.name, raw.title, raw.weaponName, raw.route, raw.englishName) ?? ''
+    ).trim();
+    const rarity = toNumber(
+        pickFirst(raw.rarity, raw.rank, raw.star, raw.stars, mapQualityToRarity(raw.qualityType)),
+        3
+    );
+    const type = normalizeWeaponType(
+        pickFirst(raw.type, raw.weaponType, raw.weapon_type, raw.category, getNested(raw, 'weapon.type'))
+    );
+
+    const atk = toNumber(
+        pickFirst(
+            raw.atk,
+            raw.baseAtk,
+            raw.baseATK,
+            raw.attack,
+            raw.atk90,
+            getNested(raw, 'ascensionStats.atk'),
+            getNested(raw, 'stats.atk'),
+            getNested(raw, 'stats.baseAtk'),
+            getNested(raw, 'baseStats.atk')
+        ),
+        0
+    );
+
+    const ascensionSecondary = extractAscensionSecondary(raw.ascensionStats);
+
+    const secondaryStatRaw = pickFirst(
+        raw.secondaryStat,
+        raw.subStatValue,
+        raw.substatValue,
+        raw.statValue,
+        ascensionSecondary.value,
+        getNested(raw, 'stats.secondaryStat'),
+        getNested(raw, 'baseStats.subStatValue')
+    );
+
+    const secondaryLabelRaw = pickFirst(
+        raw.secondaryLabel,
+        raw.subStatType,
+        raw.substatType,
+        raw.specialProp,
+        raw.statType,
+        ascensionSecondary.label,
+        getNested(raw, 'stats.secondaryLabel'),
+        getNested(raw, 'baseStats.subStatType')
+    );
+
+    return {
+        id,
+        name: name || `Weapon ${id || ''}`.trim(),
+        type,
+        rarity: Math.max(1, Math.min(5, rarity || 3)),
+        icon: String(
+            pickFirst(raw.weaponIcon, raw.icon, raw.iconName, raw.iconname, raw.image, raw.avatar) ?? ''
+        ).trim(),
+        atk,
+        secondaryStat: normalizeStatValue(secondaryStatRaw),
+        secondaryLabel: normalizeWeaponStatLabel(secondaryLabelRaw)
+    };
+}
+
+function normalizeWeaponDataset(data) {
+    let records = [];
+    if (Array.isArray(data)) {
+        records = data;
+    } else if (Array.isArray(data?.weapons)) {
+        records = data.weapons;
+    } else if (data?.weapons && typeof data.weapons === 'object') {
+        records = Object.entries(data.weapons).map(([id, record]) => ({ ...record, id: record?.id ?? id }));
+    } else if (data && typeof data === 'object') {
+        records = Object.entries(data).map(([id, record]) => ({ ...record, id: record?.id ?? id }));
+    }
+
+    return records
+        .map(normalizeWeaponRecord)
+        .filter(item => item && item.name && item.atk > 0);
+}
+
+function normalizeKey(value) {
+    return String(value || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, '');
+}
+
+function resolveMaterialIconName(entry, key) {
+    return pickFirst(
+        entry?.icon,
+        entry?.iconName,
+        entry?.iconname,
+        entry?.sideIcon,
+        entry?.sideicon,
+        entry?.image,
+        entry?.filename,
+        entry?.fileName,
+        key
+    );
+}
+
+function buildYattaIconUrl(iconName) {
+    const raw = String(iconName || '').trim();
+    if (!raw) return '';
+    if (/^https?:\/\//i.test(raw)) return raw;
+    if (raw.endsWith('.png')) {
+        const noExt = raw.replace(/\.png$/i, '');
+        if (noExt.includes('/')) {
+            return `https://gi.yatta.moe/assets/${noExt}.png`;
+        }
+        return `https://gi.yatta.moe/assets/UI/${noExt}.png`;
+    }
+    if (raw.includes('/')) {
+        return `https://gi.yatta.moe/assets/${raw}.png`;
+    }
+    return `https://gi.yatta.moe/assets/UI/${raw}.png`;
+}
+
+async function loadWeaponIconMapFromMaterialApi() {
+    try {
+        const res = await fetch('https://api.lunaris.moe/data/6.4.51/materiallist.json');
+        if (!res.ok) return { byId: new Map(), byName: new Map() };
+        const data = await res.json();
+        const byId = new Map();
+        const byName = new Map();
+        const entries = Object.entries(data || {});
+
+        for (const [key, value] of entries) {
+            const entry = value && typeof value === 'object' ? value : {};
+            const iconName = resolveMaterialIconName(entry, key);
+            const iconUrl = buildYattaIconUrl(iconName);
+            if (!iconUrl) continue;
+
+            const idKey = String(pickFirst(entry.id, entry.itemId, key) ?? '').trim();
+            if (idKey) byId.set(idKey, iconUrl);
+
+            const nameKey = normalizeKey(pickFirst(entry.name, entry.title, entry.route));
+            if (nameKey) byName.set(nameKey, iconUrl);
+        }
+
+        return { byId, byName };
+    } catch (error) {
+        console.warn('Failed to load material icons API, using weapon icon fallback.', error);
+        return { byId: new Map(), byName: new Map() };
+    }
+}
+
+function applyWeaponIcons(weapons, iconMap) {
+    return weapons.map(weapon => {
+        const dataIcon = buildYattaIconUrl(weapon.icon);
+        const idIcon = iconMap.byId.get(String(weapon.id || ''));
+        const nameIcon = iconMap.byName.get(normalizeKey(weapon.name));
+        const fallbackIcon = buildYattaIconUrl(weapon.name);
+        return {
+            ...weapon,
+            // Prefer icon explicitly provided by weapon_data.json (weaponIcon).
+            // Fall back to Lunaris mapping only when missing.
+            iconUrl: dataIcon || idIcon || nameIcon || fallbackIcon
+        };
+    });
+}
+
+async function loadWeaponsForPage(primaryUrl) {
+    const urls = [primaryUrl, 'weapons.json'].filter((value, idx, arr) => value && arr.indexOf(value) === idx);
+    let parsed = [];
+
+    for (const source of urls) {
+        try {
+            const res = await fetch(source);
+            if (!res.ok) continue;
+            const data = await res.json();
+            const normalized = normalizeWeaponDataset(data);
+            if (normalized.length > 0) {
+                parsed = normalized;
+                break;
+            }
+        } catch (error) {
+            console.warn(`Failed loading weapon dataset from ${source}`, error);
+        }
+    }
+
+    if (parsed.length === 0) return [];
+
+    const iconMap = await loadWeaponIconMapFromMaterialApi();
+    return applyWeaponIcons(parsed, iconMap);
+}
+
 function initializePageSearch() {
     const input = document.getElementById('pageSearchInput');
     const results = document.getElementById('pageSearchResults');
@@ -628,17 +903,43 @@ function initializePageSearch() {
         stat: 'all'
     };
 
+    const makeSvgIcon = (svgBody) =>
+        `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>${svgBody}</svg>`)}`;
+
+    const statIconMap = {
+        ATK: makeSvgIcon("<path d='M14 3l7 7'/><path d='M13 4l-9 9'/><path d='M3 21l6-6'/><path d='M13 4l7 7'/>"),
+        "CRIT Rate": makeSvgIcon("<circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/>"),
+        "CRIT DMG": makeSvgIcon("<path d='M12 2l2.8 5.7L21 9l-4.5 4.4L17.6 20 12 17l-5.6 3 1.1-6.6L3 9l6.2-1.3L12 2z'/>"),
+        "Energy Recharge": makeSvgIcon("<path d='M13 2L4 14h6l-1 8 9-12h-6l1-8z'/>"),
+        "Elemental Mastery": makeSvgIcon("<path d='M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9 5.5-.8L12 3z'/>"),
+        DEF: makeSvgIcon("<path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z'/>"),
+        HP: makeSvgIcon("<path d='M12 21s-7-4.4-9-9a5.5 5.5 0 019.4-4A5.5 5.5 0 0121 12c-2 4.6-9 9-9 9z'/>"),
+        "Physical DMG Bonus": makeSvgIcon("<path d='M4 20l16-16'/><path d='M9 4h11v11'/>")
+    };
+
+    const getStatIcon = (label) => {
+        const normalized = normalizeWeaponStatLabel(label);
+        return statIconMap[normalized] || statIconMap.ATK;
+    };
+
     const renderCard = (item) => {
         const card = document.createElement('div');
         
-        if (url === 'weapons.json') {
+        if (url === 'weapons.json' || url === 'weapon_data.json') {
             // Weapon card
             card.className = `weapon-card rarity-${item.rarity || 3}`;
             card.style.cursor = 'pointer';
+            const typeIconMap = {
+                Sword: 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png',
+                Claymore: 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png',
+                Polearm: 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Pole.png',
+                Catalyst: 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png',
+                Bow: 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png'
+            };
+            const typeIcon = typeIconMap[item.type] || 'https://ik.imagekit.io/gukc1okbd/weapons.webp';
             
-            // Get icon URL with proper formatting
-            const iconName = item.icon || item.name || 'weapon';
-            const iconUrl = `https://gi.yatta.moe/assets/UI/${iconName}.png`;
+            // Use API-resolved icon first, then fallback icon
+            const iconUrl = item.iconUrl || buildYattaIconUrl(item.icon || item.name || 'weapon');
             
             card.innerHTML = `
                 <div class="weapon-image-container">
@@ -648,16 +949,22 @@ function initializePageSearch() {
                     <div class="weapon-name">${item.name || 'Unknown Weapon'}</div>
                     <div class="weapon-stats">
                         <div class="weapon-stat-row">
-                            <span class="weapon-stat-label">⚔️ <strong>ATK</strong></span>
-                            <span class="weapon-stat-value">${item.atk}</span>
+                            <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;">
+                                <img src="${getStatIcon('ATK')}" alt="ATK" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
+                                <strong>ATK</strong>
+                            </span>
+                            <span class="weapon-stat-value">${item.atk || 0}</span>
                         </div>
-                        ${item.secondaryStat && item.secondaryStat !== '—' ? `<div class="weapon-stat-row">
-                            <span class="weapon-stat-label">✦</span>
-                            <span style="color: #ddd; font-size: 9px;">${item.secondaryLabel}</span>
+                        ${item.secondaryStat && normalizeStatValue(item.secondaryStat) !== '—' ? `<div class="weapon-stat-row">
+                            <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;color:#ddd;font-size:9px;min-width:fit-content;">
+                              <img src="${getStatIcon(item.secondaryLabel || 'ATK')}" alt="${item.secondaryLabel || 'Substat'}" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
+                              ${item.secondaryLabel || 'Substat'}
+                            </span>
                             <span class="weapon-stat-value" style="flex: 1; text-align: right;">${item.secondaryStat}</span>
                         </div>` : ''}
-                        ${item.type ? `<div class="weapon-stat-row" style="color: #aaa; font-size: 9px; margin-top: 4px;">
-                            ${item.type}
+                        ${item.type ? `<div class="weapon-stat-row" style="color: #aaa; font-size: 9px; margin-top: 4px; justify-content:flex-start; gap:4px;">
+                            <img src="${typeIcon}" alt="${item.type}" style="width:12px;height:12px;object-fit:contain;">
+                            <span>${item.type}</span>
                         </div>` : ''}
                     </div>
                 </div>
@@ -677,7 +984,7 @@ function initializePageSearch() {
             const iconUrl = `https://gi.yatta.moe/assets/UI/reliquary/${iconName}.png?vh=2024123000`;
             
             // Generate rarity stars
-            const rarityStars = '⭐'.repeat(item.rarity || 3);
+            const rarityStars = '★'.repeat(item.rarity || 3);
             
             card.innerHTML = `
                 <div class="artifact-image-container">
@@ -728,7 +1035,7 @@ function initializePageSearch() {
                     <div style="font-size: 13px; font-weight: 600; color: #fff; line-height: 1.2;">${item.name || 'Unknown Item'}</div>
                 </div>
                 <div style="display: flex; gap: 3px; font-size: 11px;">
-                    ${Array(item.rank || 1).fill('★').map((s, i) => `<span style="color: ${rankColor};">${s}</span>`).join('')}
+                    ${Array(item.rank || 1).fill('â˜…').map((s, i) => `<span style="color: ${rankColor};">${s}</span>`).join('')}
                 </div>
             `;
             
@@ -774,7 +1081,7 @@ function initializePageSearch() {
             }
             
             // Special stat filter
-            if (activeFilters.stat !== 'all' && item.secondaryLabel !== activeFilters.stat) {
+            if (activeFilters.stat !== 'all' && normalizeWeaponStatLabel(item.secondaryLabel) !== normalizeWeaponStatLabel(activeFilters.stat)) {
                 return false;
             }
             
@@ -800,21 +1107,36 @@ function initializePageSearch() {
         render(filtered);
     };
 
-    fetch(url)
-        .then(r => r.json())
-        .then(data => {
-            items = data || [];
+    const loadItems = async () => {
+        try {
+            if (url === 'weapons.json' || url === 'weapon_data.json') {
+                items = await loadWeaponsForPage(url);
+            } else {
+                const response = await fetch(url);
+                const data = await response.json();
+                items = data || [];
+                if (url === 'artifacts.json' && Array.isArray(items)) {
+                    items = [...items].sort((a, b) => {
+                        const aSort = Number(a?.sortOrder ?? a?.rawData?.sortOrder ?? -1);
+                        const bSort = Number(b?.sortOrder ?? b?.rawData?.sortOrder ?? -1);
+                        if (bSort !== aSort) return bSort - aSort;
+                        return Number(b?.id ?? 0) - Number(a?.id ?? 0);
+                    });
+                }
+            }
             render(items);
-        })
-        .catch(err => {
+        } catch (err) {
             console.error('Search data load failed', err);
             results.innerHTML = '<p style="grid-column:1/-1;text-align:center;opacity:0.6">Failed to load data.</p>';
-        });
+        }
+    };
+
+    loadItems();
 
     input.addEventListener('input', updateDisplay);
 
     // Handle filter button clicks
-    if (url === 'weapons.json' || url === 'artifacts.json' || url === 'inventory.json') {
+    if (url === 'weapons.json' || url === 'weapon_data.json' || url === 'artifacts.json' || url === 'inventory.json') {
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const filterType = this.dataset.filter;
@@ -837,3 +1159,6 @@ function initializePageSearch() {
 }
 
 document.addEventListener('DOMContentLoaded', initializePageSearch);
+
+
+

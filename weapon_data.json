@@ -1,0 +1,3454 @@
+{
+    "11101": {
+        "ascensionStats": {
+            "atk": 185
+        },
+        "chsName": "无锋剑",
+        "enName": "Dull Blade",
+        "ptName": "Lâmina Sem Fio",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450844,
+        "ruName": "Тупой меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Blunt",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11201": {
+        "ascensionStats": {
+            "atk": 243
+        },
+        "chsName": "银剑",
+        "enName": "Silver Sword",
+        "ptName": "Espada de Prata",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450844,
+        "ruName": "Серебряный меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Silver",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11301": {
+        "ascensionStats": {
+            "ATK%": 35.2,
+            "atk": 401
+        },
+        "chsName": "冷刃",
+        "enName": "Cool Steel",
+        "ptName": "Lâmina Fria",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450844,
+        "ruName": "Холодное лезвие",
+        "weaponIcon": "UI_EquipIcon_Sword_Steel",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11302": {
+        "ascensionStats": {
+            "CRIT DMG%": 46.9,
+            "atk": 401
+        },
+        "chsName": "黎明神剑",
+        "enName": "Harbinger of Dawn",
+        "ptName": "Prenúncio do Alvorecer",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450844,
+        "ruName": "Предвестник зари",
+        "weaponIcon": "UI_EquipIcon_Sword_Dawn",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11303": {
+        "ascensionStats": {
+            "DEF%": 29.3,
+            "atk": 448
+        },
+        "chsName": "旅行剑",
+        "enName": "Traveler's Handy Sword",
+        "ptName": "Espada do Viajante",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч путешественника",
+        "weaponIcon": "UI_EquipIcon_Sword_Traveler",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11304": {
+        "ascensionStats": {
+            "Elemental Mastery": 141,
+            "atk": 401
+        },
+        "chsName": "暗铁剑",
+        "enName": "Dark Iron Sword",
+        "ptName": "Espada de Ferro Negro",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450844,
+        "ruName": "Тёмный железный меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Darker",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11305": {
+        "ascensionStats": {
+            "ATK%": 35.2,
+            "atk": 401
+        },
+        "chsName": "吃虎鱼刀",
+        "enName": "Fillet Blade",
+        "ptName": "Lâmina de Filés",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450844,
+        "ruName": "Филейный нож",
+        "weaponIcon": "UI_EquipIcon_Sword_Sashimi",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11306": {
+        "ascensionStats": {
+            "Energy Recharge%": 52.1,
+            "atk": 354
+        },
+        "chsName": "飞天御剑",
+        "enName": "Skyrider Sword",
+        "ptName": "Espada do Cavaleiro do Céu",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч небесного всадника",
+        "weaponIcon": "UI_EquipIcon_Sword_Mitsurugi",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11401": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "西风剑",
+        "enName": "Favonius Sword",
+        "ptName": "Espada de Favonius",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч Фавония",
+        "weaponIcon": "UI_EquipIcon_Sword_Zephyrus",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11402": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "笛剑",
+        "enName": "The Flute",
+        "ptName": "A Flauta",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч-флейта",
+        "weaponIcon": "UI_EquipIcon_Sword_Troupe",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11403": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "祭礼剑",
+        "enName": "Sacrificial Sword",
+        "ptName": "Espada do Sacrifício",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Церемониальный меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Fossil",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11404": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "宗室长剑",
+        "enName": "Royal Longsword",
+        "ptName": "Espada Longa Real",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч аристократов",
+        "weaponIcon": "UI_EquipIcon_Sword_Theocrat",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11405": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "匣里龙吟",
+        "enName": "Lion's Roar",
+        "ptName": "Rugido do Leão",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Драконий рык",
+        "weaponIcon": "UI_EquipIcon_Sword_Rockkiller",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11406": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 34.5,
+            "atk": 565
+        },
+        "chsName": "试作斩岩",
+        "enName": "Prototype Rancour",
+        "ptName": "Protótipo Rancor",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Прототип: Злоба",
+        "weaponIcon": "UI_EquipIcon_Sword_Proto",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11407": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "铁蜂刺",
+        "enName": "Iron Sting",
+        "ptName": "Espinho de Ferro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Стальное жало",
+        "weaponIcon": "UI_EquipIcon_Sword_Exotic",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11408": {
+        "ascensionStats": {
+            "CRIT DMG%": 36.8,
+            "atk": 565
+        },
+        "chsName": "黑岩长剑",
+        "enName": "Blackcliff Longsword",
+        "ptName": "Espada do Penhasco Obscuro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Черногорский длинный меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Blackrock",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11409": {
+        "ascensionStats": {
+            "CRIT Rate%": 27.6,
+            "atk": 510
+        },
+        "chsName": "黑剑",
+        "enName": "The Black Sword",
+        "ptName": "Espada Negra",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Чёрный меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Bloodstained",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11410": {
+        "ascensionStats": {
+            "Elemental Mastery": 55,
+            "atk": 620
+        },
+        "chsName": "暗巷闪光",
+        "enName": "The Alley Flash",
+        "ptName": "Brilho do Beco",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Вспышка во тьме",
+        "weaponIcon": "UI_EquipIcon_Sword_Outlaw",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11412": {
+        "ascensionStats": {
+            "ATK%": 35.2,
+            "atk": 440
+        },
+        "chsName": "降临之剑",
+        "enName": "Sword of Descension",
+        "ptName": "Espada do Advento",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч нисхождения",
+        "weaponIcon": "UI_EquipIcon_Sword_Psalmus",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11413": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "腐殖之剑",
+        "enName": "Festering Desire",
+        "ptName": "Espada Pútrida",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Осквернённое желание",
+        "weaponIcon": "UI_EquipIcon_Sword_Magnum",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11414": {
+        "ascensionStats": {
+            "ATK%": 55.1,
+            "atk": 454
+        },
+        "chsName": "天目影打刀",
+        "enName": "Amenoma Kageuchi",
+        "ptName": "Lâmina Amenoma Kageuta",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Амэнома Кагэути",
+        "weaponIcon": "UI_EquipIcon_Sword_Bakufu",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11415": {
+        "ascensionStats": {
+            "DEF%": 69.0,
+            "atk": 454
+        },
+        "chsName": "辰砂之纺锤",
+        "enName": "Cinnabar Spindle",
+        "ptName": "Haste de Cinábrio",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Киноварное веретено",
+        "weaponIcon": "UI_EquipIcon_Sword_Opus",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11416": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "笼钓瓶一心",
+        "enName": "Kagotsurube Isshin",
+        "ptName": "Kagotsurube Isshin",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Кагоцурубэ Иссин",
+        "weaponIcon": "UI_EquipIcon_Sword_Youtou",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11417": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "原木刀",
+        "enName": "Sapwood Blade",
+        "ptName": "Espada de Madeira",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Деревянный клинок",
+        "weaponIcon": "UI_EquipIcon_Sword_Arakalari",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11418": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "西福斯的月光",
+        "enName": "Xiphos' Moonlight",
+        "ptName": "Luz Lunar de Xiphos",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Лунное сияние ксифоса",
+        "weaponIcon": "UI_EquipIcon_Sword_Pleroma",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11419": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "「一心传」名刀",
+        "enName": "Prized Isshin Blade",
+        "ptName": "Espada Famosa da \"Arte Isshin\"",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Легендарный клинок Иссин",
+        "weaponIcon": "UI_EquipIcon_Sword_YoutouEnchanted",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11420": {
+        "ascensionStats": {
+            "ATK%": 0.0,
+            "atk": 510
+        },
+        "chsName": "「一心传」名刀",
+        "enName": "Prized Isshin Blade",
+        "ptName": "Espada Famosa da \"Arte Isshin\"",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Легендарный клинок Иссин",
+        "weaponIcon": "UI_EquipIcon_Sword_YoutouShattered",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11421": {
+        "ascensionStats": {
+            "ATK%": 20.7,
+            "atk": 510
+        },
+        "chsName": "「一心传」名刀",
+        "enName": "Prized Isshin Blade",
+        "ptName": "Espada Famosa da \"Arte Isshin\"",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Легендарный клинок Иссин",
+        "weaponIcon": "UI_EquipIcon_Sword_YoutouEnchanted",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11422": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "东花坊时雨",
+        "enName": "Toukabou Shigure",
+        "ptName": "Chuva Floral",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Токабо сигурэ",
+        "weaponIcon": "UI_EquipIcon_Sword_Kasabouzu",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11424": {
+        "ascensionStats": {
+            "CRIT Rate%": 27.6,
+            "atk": 510
+        },
+        "chsName": "狼牙",
+        "enName": "Wolf-Fang",
+        "ptName": "Farpa",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Волчий клык",
+        "weaponIcon": "UI_EquipIcon_Sword_Boreas",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11425": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "海渊终曲",
+        "enName": "Finale of the Deep",
+        "ptName": "Epílogo das Profundezas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Грандиозный финал глубин",
+        "weaponIcon": "UI_EquipIcon_Sword_Vorpal",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11426": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "灰河渡手",
+        "enName": "Fleuve Cendre Ferryman",
+        "ptName": "Cruzamento de Fleuve Cendre",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Перевозчик Флёв Сандр",
+        "weaponIcon": "UI_EquipIcon_Sword_Machination",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11427": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "船坞长剑",
+        "enName": "The Dockhand's Assistant",
+        "ptName": "A Doca",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Верфь",
+        "weaponIcon": "UI_EquipIcon_Sword_Mechanic",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11428": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "水仙十字之剑",
+        "enName": "Sword of Narzissenkreuz",
+        "ptName": "Espada da Cruz de Narcissus",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч Нарциссенкрейца",
+        "weaponIcon": "UI_EquipIcon_Sword_Purewill",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11429": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "水仙十字之剑",
+        "enName": "Sword of Narzissenkreuz",
+        "ptName": "Espada da Cruz de Narcissus",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Меч Нарциссенкрейца",
+        "weaponIcon": "UI_EquipIcon_Sword_Purewill",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11430": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "弥坚骨",
+        "enName": "Sturdy Bone",
+        "ptName": "Osso Robusto",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Крепкая кость",
+        "weaponIcon": "UI_EquipIcon_Sword_Umpakati",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11431": {
+        "ascensionStats": {
+            "DEF%": 69.0,
+            "atk": 454
+        },
+        "chsName": "息燧之笛",
+        "enName": "Flute of Ezpitzal",
+        "ptName": "Flauta de Ezpitzal",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Флейта Эспицаль",
+        "weaponIcon": "UI_EquipIcon_Sword_Isikhulu",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11432": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "厄水之祸",
+        "enName": "Calamity of Eshu",
+        "ptName": "Calamidade de Eshu",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Бедствие Эшу",
+        "weaponIcon": "UI_EquipIcon_Sword_SacrificialNgombe",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11433": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "谧音吹哨",
+        "enName": "Serenity's Call",
+        "ptName": "Chamado da Serenidade",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Зов безмятежности",
+        "weaponIcon": "UI_EquipIcon_Sword_Ilmarinen",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11434": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "织月者的曙色",
+        "enName": "Moonweaver's Dawn",
+        "ptName": "Alvorada do Tecedor do Luar",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450844,
+        "ruName": "Рассвет прядильщицы луны",
+        "weaponIcon": "UI_EquipIcon_Sword_Miekka",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11501": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 41.3,
+            "atk": 674
+        },
+        "chsName": "风鹰剑",
+        "enName": "Aquila Favonia",
+        "ptName": "Falcão",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Меч Сокола",
+        "weaponIcon": "UI_EquipIcon_Sword_Falcon",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11502": {
+        "ascensionStats": {
+            "Energy Recharge%": 55.1,
+            "atk": 608
+        },
+        "chsName": "天空之刃",
+        "enName": "Skyward Blade",
+        "ptName": "Espada Celestial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Небесный меч",
+        "weaponIcon": "UI_EquipIcon_Sword_Dvalin",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11503": {
+        "ascensionStats": {
+            "Elemental Mastery": 198,
+            "atk": 608
+        },
+        "chsName": "苍古自由之誓",
+        "enName": "Freedom-Sworn",
+        "ptName": "Juramento pela Liberdade",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Клятва свободы",
+        "weaponIcon": "UI_EquipIcon_Sword_Widsith",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11504": {
+        "ascensionStats": {
+            "ATK%": 49.6,
+            "atk": 608
+        },
+        "chsName": "斫峰之刃",
+        "enName": "Summit Shaper",
+        "ptName": "Cortador de Montanhas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Кромсатель пиков",
+        "weaponIcon": "UI_EquipIcon_Sword_Kunwu",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11505": {
+        "ascensionStats": {
+            "CRIT Rate%": 44.1,
+            "atk": 542
+        },
+        "chsName": "磐岩结绿",
+        "enName": "Primordial Jade Cutter",
+        "ptName": "Cortador de Jade Primordial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Драгоценный омут",
+        "weaponIcon": "UI_EquipIcon_Sword_Morax",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11506": {
+        "ascensionStats": {
+            "atk": 171
+        },
+        "chsName": "",
+        "enName": "Primordial Jade Cutter",
+        "ptName": "Cortador de Jade Primordial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Древний Нефритовый Резак",
+        "weaponIcon": "UI_EquipIcon_Sword_Blunt",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11507": {
+        "ascensionStats": {
+            "atk": 171
+        },
+        "chsName": "",
+        "enName": "One Side",
+        "ptName": "Um Lado",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Одна Сторона",
+        "weaponIcon": "UI_EquipIcon_Sword_Blunt",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11509": {
+        "ascensionStats": {
+            "CRIT DMG%": 44.1,
+            "atk": 674
+        },
+        "chsName": "雾切之回光",
+        "enName": "Mistsplitter Reforged",
+        "ptName": "Cortadora da Neblina Reforjada",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Рассекающий туман",
+        "weaponIcon": "UI_EquipIcon_Sword_Narukami",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11510": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "波乱月白经津",
+        "enName": "Haran Geppaku Futsu",
+        "ptName": "Maremoto da Lua de Futsu",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Харан гэппаку фуцу",
+        "weaponIcon": "UI_EquipIcon_Sword_Amenoma",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11511": {
+        "ascensionStats": {
+            "HP%": 66.2,
+            "atk": 542
+        },
+        "chsName": "圣显之钥",
+        "enName": "Key of Khaj-Nisut",
+        "ptName": "Chave de Hierofania",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Ключ Хадж-нисут",
+        "weaponIcon": "UI_EquipIcon_Sword_Deshret",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11512": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "裁叶萃光",
+        "enName": "Light of Foliar Incision",
+        "ptName": "Luz das Folhas Cortadas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Свет лиственного разреза",
+        "weaponIcon": "UI_EquipIcon_Sword_Ayus",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11513": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "静水流涌之辉",
+        "enName": "Splendor of Tranquil Waters",
+        "ptName": "Esplendor das Águas Silenciosas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Блеск тихих вод",
+        "weaponIcon": "UI_EquipIcon_Sword_Regalis",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11514": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "有乐御簾切",
+        "enName": "Uraku Misugiri",
+        "ptName": "Urakugo Rensai",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Ураку мисугири",
+        "weaponIcon": "UI_EquipIcon_Sword_Needle",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11515": {
+        "ascensionStats": {
+            "CRIT DMG%": 44.1,
+            "atk": 674
+        },
+        "chsName": "赦罪",
+        "enName": "Absolution",
+        "ptName": "Absolvição",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Отпущение грехов",
+        "weaponIcon": "UI_EquipIcon_Sword_Estoc",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11516": {
+        "ascensionStats": {
+            "DEF%": 82.7,
+            "atk": 542
+        },
+        "chsName": "岩峰巡歌",
+        "enName": "Peak Patrol Song",
+        "ptName": "Canção da Patrulha do Pico",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Песнь патруля пиков",
+        "weaponIcon": "UI_EquipIcon_Sword_XochitlsTube",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11517": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "苍耀",
+        "enName": "Azurelight",
+        "ptName": "Azul Brilhante",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Лазурное сияние",
+        "weaponIcon": "UI_EquipIcon_Sword_OuterSword",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11518": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "黑蚀",
+        "enName": "Athame Artis",
+        "ptName": "Corrupção Sombria",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Атаме артис",
+        "weaponIcon": "UI_EquipIcon_Sword_Motsognir",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "11519": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "朏魄含光",
+        "enName": "Lightbearing Moonshard",
+        "ptName": "Fragmento Lunar da Luz",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Светоносный осколок луны",
+        "weaponIcon": "UI_EquipIcon_Sword_SilverwareSaw",
+        "weaponType": "WEAPON_SWORD_ONE_HAND"
+    },
+    "12101": {
+        "ascensionStats": {
+            "atk": 185
+        },
+        "chsName": "训练大剑",
+        "enName": "Waster Greatsword",
+        "ptName": "Espadão do Julgamento",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450845,
+        "ruName": "Двуручный меч богатыря",
+        "weaponIcon": "UI_EquipIcon_Claymore_Aniki",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12201": {
+        "ascensionStats": {
+            "atk": 243
+        },
+        "chsName": "佣兵重剑",
+        "enName": "Old Merc's Pal",
+        "ptName": "Espada do Mercenário",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450845,
+        "ruName": "Лучший друг наёмника",
+        "weaponIcon": "UI_EquipIcon_Claymore_Oyaji",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12301": {
+        "ascensionStats": {
+            "HP%": 35.2,
+            "atk": 401
+        },
+        "chsName": "铁影阔剑",
+        "enName": "Ferrous Shadow",
+        "ptName": "Sombra de Ferro",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Металлическая тень",
+        "weaponIcon": "UI_EquipIcon_Claymore_Glaive",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12302": {
+        "ascensionStats": {
+            "Elemental Mastery": 187,
+            "atk": 354
+        },
+        "chsName": "沐浴龙血的剑",
+        "enName": "Bloodtainted Greatsword",
+        "ptName": "Espadão Sangrento",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Меч драконьей крови",
+        "weaponIcon": "UI_EquipIcon_Claymore_Siegfry",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12303": {
+        "ascensionStats": {
+            "DEF%": 43.9,
+            "atk": 401
+        },
+        "chsName": "白铁大剑",
+        "enName": "White Iron Greatsword",
+        "ptName": "Espadão de Ferro Branco",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Меч из белого железа",
+        "weaponIcon": "UI_EquipIcon_Claymore_Tin",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12304": {
+        "ascensionStats": {
+            "Elemental Mastery": 141,
+            "atk": 401
+        },
+        "chsName": "石英大剑",
+        "enName": "Quartz",
+        "ptName": "Quartzo",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Кварц",
+        "weaponIcon": "UI_EquipIcon_Claymore_Quartz",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12305": {
+        "ascensionStats": {
+            "ATK%": 35.2,
+            "atk": 401
+        },
+        "chsName": "以理服人",
+        "enName": "Debate Club",
+        "ptName": "Pacifista",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Дубина переговоров",
+        "weaponIcon": "UI_EquipIcon_Claymore_Reasoning",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12306": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 43.9,
+            "atk": 401
+        },
+        "chsName": "飞天大御剑",
+        "enName": "Skyrider Greatsword",
+        "ptName": "Espadão do Cavaleiro do Céu",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Большой меч небесного всадника",
+        "weaponIcon": "UI_EquipIcon_Claymore_Mitsurugi",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12401": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "西风大剑",
+        "enName": "Favonius Greatsword",
+        "ptName": "Grande Espada de Favonius",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Двуручный меч Фавония",
+        "weaponIcon": "UI_EquipIcon_Claymore_Zephyrus",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12402": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "钟剑",
+        "enName": "The Bell",
+        "ptName": "O Sino",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Меч-колокол",
+        "weaponIcon": "UI_EquipIcon_Claymore_Troupe",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12403": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "祭礼大剑",
+        "enName": "Sacrificial Greatsword",
+        "ptName": "Espadão do Sacrifício",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Церемониальный двуручный меч",
+        "weaponIcon": "UI_EquipIcon_Claymore_Fossil",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12404": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "宗室大剑",
+        "enName": "Royal Greatsword",
+        "ptName": "Espadão Real",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Королевский двуручный меч",
+        "weaponIcon": "UI_EquipIcon_Claymore_Theocrat",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12405": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "雨裁",
+        "enName": "Rainslasher",
+        "ptName": "Segadeira da Chuva",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Дождерез",
+        "weaponIcon": "UI_EquipIcon_Claymore_Perdue",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12406": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "试作古华",
+        "enName": "Prototype Archaic",
+        "ptName": "Protótipo Arcaico",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Прототип: Архаичный",
+        "weaponIcon": "UI_EquipIcon_Claymore_Proto",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12407": {
+        "ascensionStats": {
+            "DEF%": 51.7,
+            "atk": 510
+        },
+        "chsName": "白影剑",
+        "enName": "Whiteblind",
+        "ptName": "Sombra Branca",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Белая тень",
+        "weaponIcon": "UI_EquipIcon_Claymore_Exotic",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12408": {
+        "ascensionStats": {
+            "CRIT DMG%": 55.1,
+            "atk": 510
+        },
+        "chsName": "黑岩斩刀",
+        "enName": "Blackcliff Slasher",
+        "ptName": "Foice do Penhasco Obscuro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Черногорская бритва",
+        "weaponIcon": "UI_EquipIcon_Claymore_Blackrock",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12409": {
+        "ascensionStats": {
+            "CRIT Rate%": 27.6,
+            "atk": 510
+        },
+        "chsName": "螭骨剑",
+        "enName": "Serpent Spine",
+        "ptName": "Espinha Dorsal da Serpente",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Меч драконьей кости",
+        "weaponIcon": "UI_EquipIcon_Claymore_Kione",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12410": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "千岩古剑",
+        "enName": "Lithic Blade",
+        "ptName": "Espada Antiga de Millelith",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Каменный меч",
+        "weaponIcon": "UI_EquipIcon_Claymore_Lapis",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12411": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 34.5,
+            "atk": 565
+        },
+        "chsName": "雪葬的星银",
+        "enName": "Snow-Tombed Starsilver",
+        "ptName": "Estrela de Prata Enterrada na Neve",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Заснеженное звёздное серебро",
+        "weaponIcon": "UI_EquipIcon_Claymore_Dragonfell",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12412": {
+        "ascensionStats": {
+            "ATK%": 55.1,
+            "atk": 454
+        },
+        "chsName": "衔珠海皇",
+        "enName": "Luxurious Sea-Lord",
+        "ptName": "Lorde do Mar Luxuoso",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Благодатный владыка вод",
+        "weaponIcon": "UI_EquipIcon_Claymore_MillenniaTuna",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12414": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "桂木斩长正",
+        "enName": "Katsuragikiri Nagamasa",
+        "ptName": "Espada Grande de Katsuragi",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Кацурагикири Нагамаса",
+        "weaponIcon": "UI_EquipIcon_Claymore_Bakufu",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12415": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "玛海菈的水色",
+        "enName": "Makhaira Aquamarine",
+        "ptName": "Água-Marinha de Mahara",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Аквамарин Махайры",
+        "weaponIcon": "UI_EquipIcon_Claymore_Pleroma",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12416": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "恶王丸",
+        "enName": "Akuoumaru",
+        "ptName": "Akuoumaru",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Акуомару",
+        "weaponIcon": "UI_EquipIcon_Claymore_Maria",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12417": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "森林王器",
+        "enName": "Forest Regalia",
+        "ptName": "Espada Real da Floresta",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Регалия леса",
+        "weaponIcon": "UI_EquipIcon_Claymore_Arakalari",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12418": {
+        "ascensionStats": {
+            "Elemental Mastery": 110,
+            "atk": 565
+        },
+        "chsName": "饰铁之花",
+        "enName": "Mailed Flower",
+        "ptName": "Flor de Aço",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Цветок в латах",
+        "weaponIcon": "UI_EquipIcon_Claymore_Fleurfair",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12424": {
+        "ascensionStats": {
+            "CRIT Rate%": 18.4,
+            "atk": 565
+        },
+        "chsName": "聊聊棒",
+        "enName": "Talking Stick",
+        "ptName": "Diálogo",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Говорящая палица",
+        "weaponIcon": "UI_EquipIcon_Claymore_BeastTamer",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12425": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "浪影阔剑",
+        "enName": "Tidal Shadow",
+        "ptName": "Lâmina das Ondas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Тень волны",
+        "weaponIcon": "UI_EquipIcon_Claymore_Vorpal",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12426": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "「究极霸王超级魔剑」",
+        "enName": "\"Ultimate Overlord's Mega Magic Sword\"",
+        "ptName": "Mega Ultra Espada Mágica do Soberano",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "«Магический супермеч высшего владыки»",
+        "weaponIcon": "UI_EquipIcon_Claymore_Champion",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12427": {
+        "ascensionStats": {
+            "HP%": 55.1,
+            "atk": 454
+        },
+        "chsName": "便携动力锯",
+        "enName": "Portable Power Saw",
+        "ptName": "Serra Elétrica Portátil",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Переносная мотопила",
+        "weaponIcon": "UI_EquipIcon_Claymore_Mechanic",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12430": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "硕果钩",
+        "enName": "Fruitful Hook",
+        "ptName": "Gancho Frutífero",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Плодотворный крюк",
+        "weaponIcon": "UI_EquipIcon_Claymore_Umpakati",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12431": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "撼地者",
+        "enName": "Earth Shaker",
+        "ptName": "Estremecedor da Terra",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Сотрясающий землю",
+        "weaponIcon": "UI_EquipIcon_Claymore_Isikhulu",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12432": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "拾慧铸熔",
+        "enName": "Flame-Forged Insight",
+        "ptName": "Forja da Sabedoria",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Выкованное пламенем озарение",
+        "weaponIcon": "UI_EquipIcon_Claymore_Polilith",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12433": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "万能钥匙",
+        "enName": "Master Key",
+        "ptName": "Chave Mestra",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Мастер-ключ",
+        "weaponIcon": "UI_EquipIcon_Claymore_Ilmarinen",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12501": {
+        "ascensionStats": {
+            "Energy Recharge%": 36.8,
+            "atk": 674
+        },
+        "chsName": "天空之傲",
+        "enName": "Skyward Pride",
+        "ptName": "Orgulho Celestial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Небесное величие",
+        "weaponIcon": "UI_EquipIcon_Claymore_Dvalin",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12502": {
+        "ascensionStats": {
+            "ATK%": 49.6,
+            "atk": 608
+        },
+        "chsName": "狼的末路",
+        "enName": "Wolf's Gravestone",
+        "ptName": "Túmulo do Lobo",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Волчья погибель",
+        "weaponIcon": "UI_EquipIcon_Claymore_Wolfmound",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12503": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 20.7,
+            "atk": 741
+        },
+        "chsName": "松籁响起之时",
+        "enName": "Song of Broken Pines",
+        "ptName": "Canção dos Pinhos",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Песнь разбитых сосен",
+        "weaponIcon": "UI_EquipIcon_Claymore_Widsith",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12504": {
+        "ascensionStats": {
+            "ATK%": 49.6,
+            "atk": 608
+        },
+        "chsName": "无工之剑",
+        "enName": "The Unforged",
+        "ptName": "Espada Áspera",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Некованый",
+        "weaponIcon": "UI_EquipIcon_Claymore_Kunwu",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12505": {
+        "ascensionStats": {
+            "atk": 349
+        },
+        "chsName": "",
+        "enName": "Primordial Jade Greatsword",
+        "ptName": "Espada de Jade Primordial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Древний Нефритовый Двуручный Меч",
+        "weaponIcon": "UI_EquipIcon_Claymore_Aniki",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12506": {
+        "ascensionStats": {
+            "atk": 349
+        },
+        "chsName": "",
+        "enName": "The Other Side",
+        "ptName": "O Outro Lado",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Другая Сторона",
+        "weaponIcon": "UI_EquipIcon_Claymore_Aniki",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12510": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "赤角石溃杵",
+        "enName": "Redhorn Stonethresher",
+        "ptName": "Chifres Vermelhos Destruidores de Pedras",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Краснорогий камнеруб",
+        "weaponIcon": "UI_EquipIcon_Claymore_Itadorimaru",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12511": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "苇海信标",
+        "enName": "Beacon of the Reed Sea",
+        "ptName": "Sinal dos Mares",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Маяк тростникового моря",
+        "weaponIcon": "UI_EquipIcon_Claymore_Deshret",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12512": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "裁断",
+        "enName": "Verdict",
+        "ptName": "Veredito",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Вердикт",
+        "weaponIcon": "UI_EquipIcon_Claymore_GoldenVerdict",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12513": {
+        "ascensionStats": {
+            "CRIT Rate%": 11.0,
+            "atk": 741
+        },
+        "chsName": "山王长牙",
+        "enName": "Fang of the Mountain King",
+        "ptName": "Presa do Rei da Montanha",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Клык Горного короля",
+        "weaponIcon": "UI_EquipIcon_Claymore_EmeraldSword",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12514": {
+        "ascensionStats": {
+            "CRIT Rate%": 11.0,
+            "atk": 741
+        },
+        "chsName": "焚曜千阳",
+        "enName": "A Thousand Blazing Suns",
+        "ptName": "Mil Sóis Ardentes",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Тысяча ослепительных солнц",
+        "weaponIcon": "UI_EquipIcon_Claymore_RadianceSword",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "12515": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "狼的武功歌",
+        "enName": "Gest of the Mighty Wolf",
+        "ptName": "Balada do Poderoso Lobo",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450845,
+        "ruName": "Подвиг могучего волка",
+        "weaponIcon": "UI_EquipIcon_Claymore_EnsisAquilonis",
+        "weaponType": "WEAPON_CLAYMORE"
+    },
+    "13101": {
+        "ascensionStats": {
+            "atk": 185
+        },
+        "chsName": "新手长枪",
+        "enName": "Beginner's Protector",
+        "ptName": "Protetor de Iniciante",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450845,
+        "ruName": "Копьё новичка",
+        "weaponIcon": "UI_EquipIcon_Pole_Gewalt",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13201": {
+        "ascensionStats": {
+            "atk": 243
+        },
+        "chsName": "铁尖枪",
+        "enName": "Iron Point",
+        "ptName": "Ponta de Ferro",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450845,
+        "ruName": "Железный наконечник",
+        "weaponIcon": "UI_EquipIcon_Pole_Rod",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13301": {
+        "ascensionStats": {
+            "CRIT Rate%": 23.4,
+            "atk": 401
+        },
+        "chsName": "白缨枪",
+        "enName": "White Tassel",
+        "ptName": "Borla Branca",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Белая кисть",
+        "weaponIcon": "UI_EquipIcon_Pole_Ruby",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13302": {
+        "ascensionStats": {
+            "ATK%": 23.5,
+            "atk": 448
+        },
+        "chsName": "钺矛",
+        "enName": "Halberd",
+        "ptName": "Alabarda",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Алебарда Миллелита",
+        "weaponIcon": "UI_EquipIcon_Pole_Halberd",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13303": {
+        "ascensionStats": {
+            "HP%": 46.9,
+            "atk": 354
+        },
+        "chsName": "黑缨枪",
+        "enName": "Black Tassel",
+        "ptName": "Borla Preta",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Чёрная кисть",
+        "weaponIcon": "UI_EquipIcon_Pole_Noire",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13304": {
+        "ascensionStats": {
+            "atk": 189
+        },
+        "chsName": "「旗杆」",
+        "enName": "The Flagstaff",
+        "ptName": "Mastro da Bandeira",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450845,
+        "ruName": "Флагшток",
+        "weaponIcon": "UI_EquipIcon_Pole_Flagpole",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13401": {
+        "ascensionStats": {
+            "Elemental Mastery": 221,
+            "atk": 454
+        },
+        "chsName": "匣里灭辰",
+        "enName": "Dragon's Bane",
+        "ptName": "Perdição do Dragão",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Гроза драконов",
+        "weaponIcon": "UI_EquipIcon_Pole_Stardust",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13402": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "试作星镰",
+        "enName": "Prototype Starglitter",
+        "ptName": "Protótipo Estelar",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Прототип: Звёздный блеск",
+        "weaponIcon": "UI_EquipIcon_Pole_Proto",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13403": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 34.5,
+            "atk": 565
+        },
+        "chsName": "流月针",
+        "enName": "Crescent Pike",
+        "ptName": "Pique Crescente",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Пика полумесяца",
+        "weaponIcon": "UI_EquipIcon_Pole_Exotic",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13404": {
+        "ascensionStats": {
+            "CRIT DMG%": 55.1,
+            "atk": 510
+        },
+        "chsName": "黑岩刺枪",
+        "enName": "Blackcliff Pole",
+        "ptName": "Lança do Penhasco Obscuro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Черногорская пика",
+        "weaponIcon": "UI_EquipIcon_Pole_Blackrock",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13405": {
+        "ascensionStats": {
+            "CRIT Rate%": 36.8,
+            "atk": 454
+        },
+        "chsName": "决斗之枪",
+        "enName": "Deathmatch",
+        "ptName": "Lança do Duelo",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Смертельный бой",
+        "weaponIcon": "UI_EquipIcon_Pole_Gladiator",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13406": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "千岩长枪",
+        "enName": "Lithic Spear",
+        "ptName": "Lança de Millelith",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Каменное копьё",
+        "weaponIcon": "UI_EquipIcon_Pole_Lapis",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13407": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "西风长枪",
+        "enName": "Favonius Lance",
+        "ptName": "Lança de Favonius",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Копьё Фавония",
+        "weaponIcon": "UI_EquipIcon_Pole_Zephyrus",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13408": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "宗室猎枪",
+        "enName": "Royal Spear",
+        "ptName": "Lança de Caça Real",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Королевское копьё",
+        "weaponIcon": "UI_EquipIcon_Pole_Theocrat",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13409": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 69.0,
+            "atk": 454
+        },
+        "chsName": "龙脊长枪",
+        "enName": "Dragonspine Spear",
+        "ptName": "Lança da Espinha do Dragão",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Копьё Драконьего хребта",
+        "weaponIcon": "UI_EquipIcon_Pole_Everfrost",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13414": {
+        "ascensionStats": {
+            "Elemental Mastery": 110,
+            "atk": 565
+        },
+        "chsName": "喜多院十文字",
+        "enName": "Kitain Cross Spear",
+        "ptName": "Lança Cruzada de Kitain",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Крест-копьё Китаин",
+        "weaponIcon": "UI_EquipIcon_Pole_Bakufu",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13415": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "「渔获」",
+        "enName": "\"The Catch\"",
+        "ptName": "\"A Fisgada\"",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "«Улов»",
+        "weaponIcon": "UI_EquipIcon_Pole_Mori",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13416": {
+        "ascensionStats": {
+            "ATK%": 13.8,
+            "atk": 620
+        },
+        "chsName": "断浪长鳍",
+        "enName": "Wavebreaker's Fin",
+        "ptName": "Barbatana do Quebra Ondas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450845,
+        "ruName": "Режущий волны плавник",
+        "weaponIcon": "UI_EquipIcon_Pole_Maria",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13417": {
+        "ascensionStats": {
+            "Elemental Mastery": 110,
+            "atk": 565
+        },
+        "chsName": "贯月矢",
+        "enName": "Moonpiercer",
+        "ptName": "Perfurador de Luas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Пронзающий луну",
+        "weaponIcon": "UI_EquipIcon_Pole_Arakalari",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13419": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "风信之锋",
+        "enName": "Missive Windspear",
+        "ptName": "Lâmina do Vento Mensageiro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Копьё послания ветров",
+        "weaponIcon": "UI_EquipIcon_Pole_Windvane",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13424": {
+        "ascensionStats": {
+            "CRIT Rate%": 27.6,
+            "atk": 510
+        },
+        "chsName": "峡湾长歌",
+        "enName": "Ballad of the Fjords",
+        "ptName": "Canção do Fiorde",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Баллада фьордов",
+        "weaponIcon": "UI_EquipIcon_Pole_Shanty",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13425": {
+        "ascensionStats": {
+            "HP%": 27.6,
+            "atk": 565
+        },
+        "chsName": "公义的酬报",
+        "enName": "Rightful Reward",
+        "ptName": "Justa Recompensa",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Справедливая награда",
+        "weaponIcon": "UI_EquipIcon_Pole_Vorpal",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13426": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "沙中伟贤的对答",
+        "enName": "Dialogues of the Desert Sages",
+        "ptName": "Conversas dos Sábios do Deserto",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Диалог пустынных мудрецов",
+        "weaponIcon": "UI_EquipIcon_Pole_Caduceus",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13427": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "勘探钻机",
+        "enName": "Prospector's Drill",
+        "ptName": "Broca do Prospector",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Бур рудоискателя",
+        "weaponIcon": "UI_EquipIcon_Pole_Mechanic",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13430": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "镇山之钉",
+        "enName": "Mountain-Bracing Bolt",
+        "ptName": "Prego Esmagador de Montanhas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Крепящий горы шип",
+        "weaponIcon": "UI_EquipIcon_Pole_Umpakati",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13431": {
+        "ascensionStats": {
+            "DEF%": 51.7,
+            "atk": 510
+        },
+        "chsName": "虹的行迹",
+        "enName": "Footprint of the Rainbow",
+        "ptName": "Trilha do Arco-Íris",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "След радуги",
+        "weaponIcon": "UI_EquipIcon_Pole_Isikhulu",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13432": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "且住亭御咄",
+        "enName": "Tamayuratei no Ohanashi",
+        "ptName": "Fofocas Breves do Pavilhão",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Тамаюратэй но оханаси",
+        "weaponIcon": "UI_EquipIcon_Pole_Aoandon",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13433": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "掘金之锹",
+        "enName": "Prospector's Shovel",
+        "ptName": "Pá do Escavador",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Лопата старателя",
+        "weaponIcon": "UI_EquipIcon_Pole_Ilmarinen",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13434": {
+        "ascensionStats": {
+            "CRIT Rate%": 9.2,
+            "atk": 620
+        },
+        "chsName": "圣祭者的辉杖",
+        "enName": "Sacrificer's Staff",
+        "ptName": "Cajado do Sacrificador",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Посох жертвующей",
+        "weaponIcon": "UI_EquipIcon_Pole_Krivule",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13501": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "护摩之杖",
+        "enName": "Staff of Homa",
+        "ptName": "Báculo de Homa",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Посох Хомы",
+        "weaponIcon": "UI_EquipIcon_Pole_Homa",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13502": {
+        "ascensionStats": {
+            "Energy Recharge%": 36.8,
+            "atk": 674
+        },
+        "chsName": "天空之脊",
+        "enName": "Skyward Spine",
+        "ptName": "Espinha Celestial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Небесная ось",
+        "weaponIcon": "UI_EquipIcon_Pole_Dvalin",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13504": {
+        "ascensionStats": {
+            "ATK%": 49.6,
+            "atk": 608
+        },
+        "chsName": "贯虹之槊",
+        "enName": "Vortex Vanquisher",
+        "ptName": "Perfuradora Prismática",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Покоритель вихря",
+        "weaponIcon": "UI_EquipIcon_Pole_Kunwu",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13505": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "和璞鸢",
+        "enName": "Primordial Jade Winged-Spear",
+        "ptName": "Lança de Jade Primitiva",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Нефритовый коршун",
+        "weaponIcon": "UI_EquipIcon_Pole_Morax",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13506": {
+        "ascensionStats": {
+            "atk": 337
+        },
+        "chsName": "",
+        "enName": "Deicide",
+        "ptName": "Deicida",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Богоубийство",
+        "weaponIcon": "UI_EquipIcon_Pole_Gewalt",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13507": {
+        "ascensionStats": {
+            "ATK%": 16.5,
+            "atk": 741
+        },
+        "chsName": "息灾",
+        "enName": "Calamity Queller",
+        "ptName": "Subjugadora de Calamidades",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Усмиритель бед",
+        "weaponIcon": "UI_EquipIcon_Pole_Santika",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13509": {
+        "ascensionStats": {
+            "Energy Recharge%": 55.1,
+            "atk": 608
+        },
+        "chsName": "薙草之稻光",
+        "enName": "Engulfing Lightning",
+        "ptName": "Luz do Cortador de Grama",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Сияющая жатва",
+        "weaponIcon": "UI_EquipIcon_Pole_Narukami",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13511": {
+        "ascensionStats": {
+            "CRIT Rate%": 44.1,
+            "atk": 542
+        },
+        "chsName": "赤沙之杖",
+        "enName": "Staff of the Scarlet Sands",
+        "ptName": "Báculo das Areias Escarlates",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Посох алых песков",
+        "weaponIcon": "UI_EquipIcon_Pole_Deshret",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13512": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "赤月之形",
+        "enName": "Crimson Moon's Semblance",
+        "ptName": "Semblante da Lua Carmesim",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Очертания алой луны",
+        "weaponIcon": "UI_EquipIcon_Pole_BloodMoon",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13513": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "柔灯挽歌",
+        "enName": "Lumidouce Elegy",
+        "ptName": "Elegia Lumidouce",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Элегия Люмидус",
+        "weaponIcon": "UI_EquipIcon_Pole_Muguet",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13514": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "香韵奏者",
+        "enName": "Symphonist of Scents",
+        "ptName": "Sinfonista de Aromas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Симфонист ароматов",
+        "weaponIcon": "UI_EquipIcon_Pole_Trident",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13515": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "支离轮光",
+        "enName": "Fractured Halo",
+        "ptName": "Resplendor Fragmentado",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Расколотый ореол",
+        "weaponIcon": "UI_EquipIcon_Pole_Perdix",
+        "weaponType": "WEAPON_POLE"
+    },
+    "13516": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "血染荒城",
+        "enName": "Bloodsoaked Ruins",
+        "ptName": "Ruínas Ensanguentadas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450846,
+        "ruName": "Окровавленные руины",
+        "weaponIcon": "UI_EquipIcon_Pole_TummaLyhty",
+        "weaponType": "WEAPON_POLE"
+    },
+    "14101": {
+        "ascensionStats": {
+            "atk": 185
+        },
+        "chsName": "学徒笔记",
+        "enName": "Apprentice's Notes",
+        "ptName": "Anotações do Aprendiz",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450846,
+        "ruName": "Записи ученика",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Apprentice",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14201": {
+        "ascensionStats": {
+            "atk": 243
+        },
+        "chsName": "口袋魔导书",
+        "enName": "Pocket Grimoire",
+        "ptName": "Grimório de Bolso",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450846,
+        "ruName": "Карманный гримуар",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Pocket",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14301": {
+        "ascensionStats": {
+            "Elemental Mastery": 187,
+            "atk": 354
+        },
+        "chsName": "魔导绪论",
+        "enName": "Magic Guide",
+        "ptName": "Guia de Magia",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450846,
+        "ruName": "Руководство по магии",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Intro",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14302": {
+        "ascensionStats": {
+            "HP%": 35.2,
+            "atk": 401
+        },
+        "chsName": "讨龙英杰谭",
+        "enName": "Thrilling Tales of Dragon Slayers",
+        "ptName": "Histórias Extraordinárias de Caçadores de Dragões",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450846,
+        "ruName": "Эпос о драконоборцах",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Pulpfic",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14303": {
+        "ascensionStats": {
+            "Energy Recharge%": 39.0,
+            "atk": 401
+        },
+        "chsName": "异世界行记",
+        "enName": "Otherworldly Story",
+        "ptName": "Histórias de Outros Mundos",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450846,
+        "ruName": "Потусторонняя история",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Lightnov",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14304": {
+        "ascensionStats": {
+            "Elemental Mastery": 94,
+            "atk": 448
+        },
+        "chsName": "翡玉法球",
+        "enName": "Emerald Orb",
+        "ptName": "Orbe de Esmeralda",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450846,
+        "ruName": "Изумрудный шар",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Jade",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14305": {
+        "ascensionStats": {
+            "CRIT Rate%": 15.6,
+            "atk": 448
+        },
+        "chsName": "甲级宝珏",
+        "enName": "Twin Nephrite",
+        "ptName": "Nefrita Gêmea",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450846,
+        "ruName": "Парный нефрит",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Phoney",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14306": {
+        "ascensionStats": {
+            "Elemental Mastery": 141,
+            "atk": 401
+        },
+        "chsName": "琥珀玥",
+        "enName": "Amber Bead",
+        "ptName": "Catalisador de Âmbar",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450846,
+        "ruName": "Янтарная жемчужина",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Amber",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14401": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "西风秘典",
+        "enName": "Favonius Codex",
+        "ptName": "Codex de Favonius",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Кодекс Фавония",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Zephyrus",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14402": {
+        "ascensionStats": {
+            "CRIT DMG%": 55.1,
+            "atk": 510
+        },
+        "chsName": "流浪乐章",
+        "enName": "The Widsith",
+        "ptName": "Sinfonia dos Indolentes",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Песнь странника",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Troupe",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14403": {
+        "ascensionStats": {
+            "Elemental Mastery": 221,
+            "atk": 454
+        },
+        "chsName": "祭礼残章",
+        "enName": "Sacrificial Fragments",
+        "ptName": "Memórias de Sacrifício",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Церемониальные мемуары",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Fossil",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14404": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "宗室秘法录",
+        "enName": "Royal Grimoire",
+        "ptName": "Grimório Real",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Королевский гримуар",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Theocrat",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14405": {
+        "ascensionStats": {
+            "CRIT Rate%": 27.6,
+            "atk": 510
+        },
+        "chsName": "匣里日月",
+        "enName": "Solar Pearl",
+        "ptName": "Pérola Solar",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Солнечная жемчужина",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Resurrection",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14406": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "试作金珀",
+        "enName": "Prototype Amber",
+        "ptName": "Protótipo Âmbar",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Прототип: Янтарь",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Proto",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14407": {
+        "ascensionStats": {
+            "Elemental Mastery": 110,
+            "atk": 565
+        },
+        "chsName": "万国诸海图谱",
+        "enName": "Mappa Mare",
+        "ptName": "Mappa Mare",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Морской атлас",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Exotic",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14408": {
+        "ascensionStats": {
+            "CRIT DMG%": 55.1,
+            "atk": 510
+        },
+        "chsName": "黑岩绯玉",
+        "enName": "Blackcliff Agate",
+        "ptName": "Ágata do Penhasco Obscuro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Черногорский агат",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Blackrock",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14409": {
+        "ascensionStats": {
+            "ATK%": 55.1,
+            "atk": 454
+        },
+        "chsName": "昭心",
+        "enName": "Eye of Perception",
+        "ptName": "Olho da Percepção",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Око сознания",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Truelens",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14410": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "暗巷的酒与诗",
+        "enName": "Wine and Song",
+        "ptName": "Vinho e Música",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Вино и песни",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Outlaw",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14412": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "忍冬之果",
+        "enName": "Frostbearer",
+        "ptName": "Fruto do Sabugueiro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Плод вечной мерзлоты",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Everfrost",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14413": {
+        "ascensionStats": {
+            "ATK%": 55.1,
+            "atk": 454
+        },
+        "chsName": "嘟嘟可故事集",
+        "enName": "Dodoco Tales",
+        "ptName": "Contos de Dodoco",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Истории Додоко",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Ludiharpastum",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14414": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "白辰之环",
+        "enName": "Hakushin Ring",
+        "ptName": "Anel de Hakushin",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Кольцо Хакусин",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Bakufu",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14415": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "证誓之明瞳",
+        "enName": "Oathsworn Eye",
+        "ptName": "Olho do Juramento",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Око клятвы",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Jyanome",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14416": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "流浪的晚星",
+        "enName": "Wandering Evenstar",
+        "ptName": "Estrela Itinerante",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Скитающаяся звезда",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Pleroma",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14417": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "盈满之实",
+        "enName": "Fruit of Fulfillment",
+        "ptName": "Fruto da Abundância",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Плод восполнения",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Arakalari",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14424": {
+        "ascensionStats": {
+            "CRIT Rate%": 36.8,
+            "atk": 454
+        },
+        "chsName": "遗祀玉珑",
+        "enName": "Sacrificial Jade",
+        "ptName": "Sacrifício de Jade",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Жертвенный нефрит",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Yue",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14425": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "纯水流华",
+        "enName": "Flowing Purity",
+        "ptName": "Fluxo da Pureza",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Сверкание чистых вод",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Vorpal",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14426": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "无垠蔚蓝之歌",
+        "enName": "Ballad of the Boundless Blue",
+        "ptName": "Canção do Vasto Azul",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Песнь необъятной лазури",
+        "weaponIcon": "UI_EquipIcon_Catalyst_DandelionPoem",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14427": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "苍纹角杯",
+        "enName": "Ash-Graven Drinking Horn",
+        "ptName": "Cálice de Chifre Cinza Escarlate",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Пепельный рог",
+        "weaponIcon": "UI_EquipIcon_Catalyst_ConchSprayer",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14430": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "乘浪的回旋",
+        "enName": "Waveriding Whirl",
+        "ptName": "Redemoinho das Ondas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Вихрь на волнах",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Umpakati",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14431": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "木棉之环",
+        "enName": "Ring of Yaxche",
+        "ptName": "Anel de Yaxche",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Кольцо Яшче",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Isikhulu",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14432": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "天光的纺琴",
+        "enName": "Etherlight Spindlelute",
+        "ptName": "Lira do Tecedor da Luz",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Лютня ткача света",
+        "weaponIcon": "UI_EquipIcon_Catalyst_SeeliesLute",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14433": {
+        "ascensionStats": {
+            "Elemental Mastery": 221,
+            "atk": 454
+        },
+        "chsName": "乌髓孑灯",
+        "enName": "Blackmarrow Lantern",
+        "ptName": "Lanterna do Tutano Preto",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450846,
+        "ruName": "Фонарь чёрной сердцевины",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Ilmarinen",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14434": {
+        "ascensionStats": {
+            "CRIT DMG%": 55.1,
+            "atk": 510
+        },
+        "chsName": "霜辰",
+        "enName": "Dawning Frost",
+        "ptName": "Estrela Gelada",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450847,
+        "ruName": "Рассветный иней",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Ziedas",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14501": {
+        "ascensionStats": {
+            "ATK%": 33.1,
+            "atk": 674
+        },
+        "chsName": "天空之卷",
+        "enName": "Skyward Atlas",
+        "ptName": "Atlas Celestial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Небесный атлас",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Dvalin",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14502": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "四风原典",
+        "enName": "Lost Prayer to the Sacred Winds",
+        "ptName": "Oração Perdida aos Ventos Sagrados",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Молитва святым ветрам",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Fourwinds",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14503": {
+        "ascensionStats": {
+            "atk": 337
+        },
+        "chsName": "",
+        "enName": "Lost Ballade",
+        "ptName": "Poema Perdido",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Утерянная Баллада",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Apprentice",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14504": {
+        "ascensionStats": {
+            "ATK%": 49.6,
+            "atk": 608
+        },
+        "chsName": "尘世之锁",
+        "enName": "Memory of Dust",
+        "ptName": "Memória da Poeira",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Память о пыли",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Kunwu",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14505": {
+        "ascensionStats": {
+            "HP%": 49.6,
+            "atk": 608
+        },
+        "chsName": "碧落之珑",
+        "enName": "Jadefall's Splendor",
+        "ptName": "Esplendor Índigo",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Великолепие лазурного свода",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Morax",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14506": {
+        "ascensionStats": {
+            "HP%": 49.6,
+            "atk": 608
+        },
+        "chsName": "不灭月华",
+        "enName": "Everlasting Moonglow",
+        "ptName": "Fumetsu Gekka",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Вечное лунное сияние",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Kaleido",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14509": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "神乐之真意",
+        "enName": "Kagura's Verity",
+        "ptName": "Prova de Kagura",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Истина кагура",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Narukami",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14511": {
+        "ascensionStats": {
+            "Elemental Mastery": 265,
+            "atk": 542
+        },
+        "chsName": "千夜浮梦",
+        "enName": "A Thousand Floating Dreams",
+        "ptName": "Sonhos Flutuantes das Mil Noites",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Сновидения тысячи ночей",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Ayus",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14512": {
+        "ascensionStats": {
+            "CRIT DMG%": 44.1,
+            "atk": 674
+        },
+        "chsName": "图莱杜拉的回忆",
+        "enName": "Tulaytullah's Remembrance",
+        "ptName": "Reminiscências de Tulaytullah",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Воспоминания Тулайтуллы",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Alaya",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14513": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "金流监督",
+        "enName": "Cashflow Supervision",
+        "ptName": "Supervisão de Caixa",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Казначейский надзор",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Wheatley",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14514": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "万世流涌大典",
+        "enName": "Tome of the Eternal Flow",
+        "ptName": "Rito do Fluxo Eterno",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Обряд вечного течения",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Iudex",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14515": {
+        "ascensionStats": {
+            "ATK%": 16.5,
+            "atk": 741
+        },
+        "chsName": "鹤鸣余音",
+        "enName": "Crane's Echoing Call",
+        "ptName": "Chamado Ecoante da Garça",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Звонкий клич журавля",
+        "weaponIcon": "UI_EquipIcon_Catalyst_MountainGale",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14516": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "冲浪时光",
+        "enName": "Surf's Up",
+        "ptName": "Hora do Surfe",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450847,
+        "ruName": "Лови волну",
+        "weaponIcon": "UI_EquipIcon_Catalyst_MechaPufferfish",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14517": {
+        "ascensionStats": {
+            "Elemental Mastery": 265,
+            "atk": 542
+        },
+        "chsName": "祭星者之望",
+        "enName": "Starcaller's Watch",
+        "ptName": "Observatório do Chamador de Estrelas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450848,
+        "ruName": "Бдение взывающего к звёздам",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Figurines",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14518": {
+        "ascensionStats": {
+            "Elemental Mastery": 265,
+            "atk": 542
+        },
+        "chsName": "寝正月初晴",
+        "enName": "Sunny Morning Sleep-In",
+        "ptName": "Hibernação Matinal do Ano Novo",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450848,
+        "ruName": "Сон солнечным утром",
+        "weaponIcon": "UI_EquipIcon_Catalyst_SakuraFan",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14519": {
+        "ascensionStats": {
+            "CRIT DMG%": 44.1,
+            "atk": 674
+        },
+        "chsName": "溢彩心念",
+        "enName": "Vivid Notions",
+        "ptName": "Coração Resplandecente",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450848,
+        "ruName": "Переливающиеся чаяния",
+        "weaponIcon": "UI_EquipIcon_Catalyst_VaresaTransformer",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14520": {
+        "ascensionStats": {
+            "Elemental Mastery": 265,
+            "atk": 542
+        },
+        "chsName": "纺夜天镜",
+        "enName": "Nightweaver's Looking Glass",
+        "ptName": "Luneta do Tecedor da Noite",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450848,
+        "ruName": "Зеркало прядильщицы ночи",
+        "weaponIcon": "UI_EquipIcon_Catalyst_MenulisRing",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14521": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "真语秘匣",
+        "enName": "Reliquary of Truth",
+        "ptName": "Relicário da Verdade",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450848,
+        "ruName": "Шкатулка истин",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Sistrum",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "14522": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "帷间夜曲",
+        "enName": "Nocturne's Curtain Call",
+        "ptName": "Cortinas Noturnas",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450848,
+        "ruName": "Вызов ноктюрна",
+        "weaponIcon": "UI_EquipIcon_Catalyst_Brisingamen",
+        "weaponType": "WEAPON_CATALYST"
+    },
+    "15101": {
+        "ascensionStats": {
+            "atk": 185
+        },
+        "chsName": "猎弓",
+        "enName": "Hunter's Bow",
+        "ptName": "Arco do Caçador",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450848,
+        "ruName": "Лук охотника",
+        "weaponIcon": "UI_EquipIcon_Bow_Hunters",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15201": {
+        "ascensionStats": {
+            "atk": 243
+        },
+        "chsName": "历练的猎弓",
+        "enName": "Seasoned Hunter's Bow",
+        "ptName": "Arco do Caçador Experiente",
+        "qualityType": "QUALITY_GREEN",
+        "releaseDate": 1772450848,
+        "ruName": "Лук опытного охотника",
+        "weaponIcon": "UI_EquipIcon_Bow_Old",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15301": {
+        "ascensionStats": {
+            "Elemental Mastery": 94,
+            "atk": 448
+        },
+        "chsName": "鸦羽弓",
+        "enName": "Raven Bow",
+        "ptName": "Arco de Corvo",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450848,
+        "ruName": "Лук ворона",
+        "weaponIcon": "UI_EquipIcon_Bow_Crowfeather",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15302": {
+        "ascensionStats": {
+            "CRIT DMG%": 46.9,
+            "atk": 401
+        },
+        "chsName": "神射手之誓",
+        "enName": "Sharpshooter's Oath",
+        "ptName": "Juramento de Sagitário",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450848,
+        "ruName": "Клятва стрелка",
+        "weaponIcon": "UI_EquipIcon_Bow_Arjuna",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15303": {
+        "ascensionStats": {
+            "HP%": 46.9,
+            "atk": 354
+        },
+        "chsName": "反曲弓",
+        "enName": "Recurve Bow",
+        "ptName": "Arco Recurvado",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450848,
+        "ruName": "Изогнутый лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Curve",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15304": {
+        "ascensionStats": {
+            "CRIT Rate%": 31.2,
+            "atk": 354
+        },
+        "chsName": "弹弓",
+        "enName": "Slingshot",
+        "ptName": "Estilingue",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450848,
+        "ruName": "Рогатка",
+        "weaponIcon": "UI_EquipIcon_Bow_Sling",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15305": {
+        "ascensionStats": {
+            "CRIT DMG%": 31.2,
+            "atk": 448
+        },
+        "chsName": "信使",
+        "enName": "Messenger",
+        "ptName": "Mensageiro",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450848,
+        "ruName": "Посыльный",
+        "weaponIcon": "UI_EquipIcon_Bow_Msg",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15306": {
+        "ascensionStats": {
+            "ATK%": 35.2,
+            "atk": 401
+        },
+        "chsName": "黑檀弓",
+        "enName": "Ebony Bow",
+        "ptName": "Arco de Ébano",
+        "qualityType": "QUALITY_BLUE",
+        "releaseDate": 1772450848,
+        "ruName": "Эбеновый лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Hardwood",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15401": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "西风猎弓",
+        "enName": "Favonius Warbow",
+        "ptName": "Arco de Favonius",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Боевой лук Фавония",
+        "weaponIcon": "UI_EquipIcon_Bow_Zephyrus",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15402": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "绝弦",
+        "enName": "The Stringless",
+        "ptName": "Último Acorde",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Бесструнный",
+        "weaponIcon": "UI_EquipIcon_Bow_Troupe",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15403": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "祭礼弓",
+        "enName": "Sacrificial Bow",
+        "ptName": "Arco do Sacrifício",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Церемониальный лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Fossil",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15404": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "宗室长弓",
+        "enName": "Royal Bow",
+        "ptName": "Arco Real",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Королевский лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Theocrat",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15405": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "弓藏",
+        "enName": "Rust",
+        "ptName": "Arco Enferrujado",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Ржавый лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Recluse",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15406": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "试作澹月",
+        "enName": "Prototype Crescent",
+        "ptName": "Protótipo da Luz Lunar Pálida",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Прототип: Полумесяц",
+        "weaponIcon": "UI_EquipIcon_Bow_Proto",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15407": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 69.0,
+            "atk": 454
+        },
+        "chsName": "钢轮弓",
+        "enName": "Compound Bow",
+        "ptName": "Arco Composto",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Составной лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Exotic",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15408": {
+        "ascensionStats": {
+            "CRIT DMG%": 36.8,
+            "atk": 565
+        },
+        "chsName": "黑岩战弓",
+        "enName": "Blackcliff Warbow",
+        "ptName": "Arco do Penhasco Obscuro",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Черногорский боевой лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Blackrock",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15409": {
+        "ascensionStats": {
+            "CRIT Rate%": 27.6,
+            "atk": 510
+        },
+        "chsName": "苍翠猎弓",
+        "enName": "The Viridescent Hunt",
+        "ptName": "Arco Esmeralda do Caçador",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Зелёный лук",
+        "weaponIcon": "UI_EquipIcon_Bow_Viridescent",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15410": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "暗巷猎手",
+        "enName": "Alley Hunter",
+        "ptName": "Caçador do Beco",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Охотник во тьме",
+        "weaponIcon": "UI_EquipIcon_Bow_Outlaw",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15411": {
+        "ascensionStats": {
+            "Energy Recharge%": 30.6,
+            "atk": 565
+        },
+        "chsName": "落霞",
+        "enName": "Fading Twilight",
+        "ptName": "Crepúsculo Desvanecido",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Гаснущие сумерки",
+        "weaponIcon": "UI_EquipIcon_Bow_Fallensun",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15412": {
+        "ascensionStats": {
+            "Physical DMG Bonus%": 51.7,
+            "atk": 510
+        },
+        "chsName": "幽夜华尔兹",
+        "enName": "Mitternachts Waltz",
+        "ptName": "Valsa do Crepúsculo",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Вальс Нирваны Ночи",
+        "weaponIcon": "UI_EquipIcon_Bow_Nachtblind",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15413": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "风花之颂",
+        "enName": "Windblume Ode",
+        "ptName": "Ode à Brisa Florescente",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Ода анемонии",
+        "weaponIcon": "UI_EquipIcon_Bow_Fleurfair",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15414": {
+        "ascensionStats": {
+            "ATK%": 55.1,
+            "atk": 454
+        },
+        "chsName": "破魔之弓",
+        "enName": "Hamayumi",
+        "ptName": "Arco Quebra-Demônios",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Хамаюми",
+        "weaponIcon": "UI_EquipIcon_Bow_Bakufu",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15415": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "掠食者",
+        "enName": "Predator",
+        "ptName": "Predador",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Хищник",
+        "weaponIcon": "UI_EquipIcon_Bow_Predator",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15416": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "曚云之月",
+        "enName": "Mouun's Moon",
+        "ptName": "Lua de Mouun",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Луна Моун",
+        "weaponIcon": "UI_EquipIcon_Bow_Maria",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15417": {
+        "ascensionStats": {
+            "ATK%": 55.1,
+            "atk": 454
+        },
+        "chsName": "王下近侍",
+        "enName": "King's Squire",
+        "ptName": "Vassalo do Rei",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450848,
+        "ruName": "Приближённый короля",
+        "weaponIcon": "UI_EquipIcon_Bow_Arakalari",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15418": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "竭泽",
+        "enName": "End of the Line",
+        "ptName": "Águas Secas",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Иссушитель",
+        "weaponIcon": "UI_EquipIcon_Bow_Fin",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15419": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "鹮穿之喙",
+        "enName": "Ibis Piercer",
+        "ptName": "Bico de Íbis",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Клюв ибиса",
+        "weaponIcon": "UI_EquipIcon_Bow_Ibis",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15424": {
+        "ascensionStats": {
+            "CRIT Rate%": 18.4,
+            "atk": 565
+        },
+        "chsName": "烈阳之嗣",
+        "enName": "Scion of the Blazing Sun",
+        "ptName": "Herdeiro do Sol",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Наследник слепящего солнца",
+        "weaponIcon": "UI_EquipIcon_Bow_Gurabad",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15425": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "静谧之曲",
+        "enName": "Song of Stillness",
+        "ptName": "Canção do Silêncio",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Мелодия покоя",
+        "weaponIcon": "UI_EquipIcon_Bow_Vorpal",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15426": {
+        "ascensionStats": {
+            "Elemental Mastery": 165,
+            "atk": 510
+        },
+        "chsName": "筑云",
+        "enName": "Cloudforged",
+        "ptName": "Tocador de Nuvens",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Выкованный из облаков",
+        "weaponIcon": "UI_EquipIcon_Bow_Ultimatum",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15427": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "测距规",
+        "enName": "Range Gauge",
+        "ptName": "Medidor de Alcance",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Дальномер",
+        "weaponIcon": "UI_EquipIcon_Bow_Mechanic",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15430": {
+        "ascensionStats": {
+            "ATK%": 41.3,
+            "atk": 510
+        },
+        "chsName": "缀花之翎",
+        "enName": "Flower-Wreathed Feathers",
+        "ptName": "Penas Cercadas de Flores",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Украшенные цветами перья",
+        "weaponIcon": "UI_EquipIcon_Bow_Umpakati",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15431": {
+        "ascensionStats": {
+            "ATK%": 27.6,
+            "atk": 565
+        },
+        "chsName": "碎链",
+        "enName": "Chain Breaker",
+        "ptName": "Quebrador de Correntes",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Разбивающий цепи",
+        "weaponIcon": "UI_EquipIcon_Bow_Isikhulu",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15432": {
+        "ascensionStats": {
+            "HP%": 41.3,
+            "atk": 510
+        },
+        "chsName": "冷寂迸音",
+        "enName": "Sequence of Solitude",
+        "ptName": "Ritmo da Solidão",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Каденция одиночества",
+        "weaponIcon": "UI_EquipIcon_Bow_Stinger",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15433": {
+        "ascensionStats": {
+            "Energy Recharge%": 61.3,
+            "atk": 454
+        },
+        "chsName": "罗网勾针",
+        "enName": "Snare Hook",
+        "ptName": "Gancho da Armadilha",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Крюк силка",
+        "weaponIcon": "UI_EquipIcon_Bow_Ilmarinen",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15434": {
+        "ascensionStats": {
+            "Energy Recharge%": 45.9,
+            "atk": 510
+        },
+        "chsName": "虹蛇的雨弦",
+        "enName": "Rainbow Serpent's Rain Bow",
+        "ptName": "Cordas da Chuva da Serpente Arco-Íris",
+        "qualityType": "QUALITY_PURPLE",
+        "releaseDate": 1772450849,
+        "ruName": "Струны дождя радужного змея",
+        "weaponIcon": "UI_EquipIcon_Bow_ElegguaBow",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15501": {
+        "ascensionStats": {
+            "CRIT Rate%": 22.1,
+            "atk": 674
+        },
+        "chsName": "天空之翼",
+        "enName": "Skyward Harp",
+        "ptName": "Harpa Celestial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Небесное крыло",
+        "weaponIcon": "UI_EquipIcon_Bow_Dvalin",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15502": {
+        "ascensionStats": {
+            "ATK%": 49.6,
+            "atk": 608
+        },
+        "chsName": "阿莫斯之弓",
+        "enName": "Amos' Bow",
+        "ptName": "Arco de Amos",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Лук Амоса",
+        "weaponIcon": "UI_EquipIcon_Bow_Amos",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15503": {
+        "ascensionStats": {
+            "Energy Recharge%": 55.1,
+            "atk": 608
+        },
+        "chsName": "终末嗟叹之诗",
+        "enName": "Elegy for the End",
+        "ptName": "Elegia do Suspiro Final",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Элегия погибели",
+        "weaponIcon": "UI_EquipIcon_Bow_Widsith",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15504": {
+        "ascensionStats": {
+            "atk": 337
+        },
+        "chsName": "",
+        "enName": "Kunwu's Wyrmbane",
+        "ptName": "Caça-Dragões de Kunwu",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Убийца Драконов Кунву",
+        "weaponIcon": "UI_EquipIcon_Bow_Hunters",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15505": {
+        "ascensionStats": {
+            "atk": 337
+        },
+        "chsName": "",
+        "enName": "Primordial Jade Vista",
+        "ptName": "Vista da Jade Primordial",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Древняя Нефритовая Виста",
+        "weaponIcon": "UI_EquipIcon_Bow_Hunters",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15506": {
+        "ascensionStats": {
+            "atk": 314
+        },
+        "chsName": "",
+        "enName": "Mirror Breaker",
+        "ptName": "Quebrador de Espelhos",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Разбитое зеркало",
+        "weaponIcon": "UI_EquipIcon_Bow_Hunters",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15507": {
+        "ascensionStats": {
+            "CRIT Rate%": 33.1,
+            "atk": 608
+        },
+        "chsName": "冬极白星",
+        "enName": "Polar Star",
+        "ptName": "Estrela Invernal",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Полярная звезда",
+        "weaponIcon": "UI_EquipIcon_Bow_Worldbane",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15508": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "若水",
+        "enName": "Aqua Simulacra",
+        "ptName": "Aqua Simulacra",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Аква симулякрум",
+        "weaponIcon": "UI_EquipIcon_Bow_Kirin",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15509": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "飞雷之弦振",
+        "enName": "Thundering Pulse",
+        "ptName": "Agitação Trovejante",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Громовой пульс",
+        "weaponIcon": "UI_EquipIcon_Bow_Narukami",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15511": {
+        "ascensionStats": {
+            "CRIT Rate%": 44.1,
+            "atk": 542
+        },
+        "chsName": "猎人之径",
+        "enName": "Hunter's Path",
+        "ptName": "Caminho do Caçador",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Охотничья тропа",
+        "weaponIcon": "UI_EquipIcon_Bow_Ayus",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15512": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "最初的大魔术",
+        "enName": "The First Great Magic",
+        "ptName": "Arcana Original",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Первый великий фокус",
+        "weaponIcon": "UI_EquipIcon_Bow_Pledge",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15513": {
+        "ascensionStats": {
+            "HP%": 66.2,
+            "atk": 542
+        },
+        "chsName": "白雨心弦",
+        "enName": "Silvershower Heartstrings",
+        "ptName": "Cordas da Chuva Branca",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Сердечные струны дождя",
+        "weaponIcon": "UI_EquipIcon_Bow_Arcdange",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15514": {
+        "ascensionStats": {
+            "CRIT DMG%": 66.2,
+            "atk": 608
+        },
+        "chsName": "星鹫赤羽",
+        "enName": "Astral Vulture's Crimson Plumage",
+        "ptName": "Plumagem Escarlate do Abutre Astral",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Алое перо звёздного грифа",
+        "weaponIcon": "UI_EquipIcon_Bow_Qoyllorsnova",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15515": {
+        "ascensionStats": {
+            "CRIT DMG%": 44.1,
+            "atk": 674
+        },
+        "chsName": "黎明破晓之史",
+        "enName": "The Daybreak Chronicles",
+        "ptName": "As Crônicas do Amanhecer",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1772450849,
+        "ruName": "Хроники рассвета",
+        "weaponIcon": "UI_EquipIcon_Bow_Arianna",
+        "weaponType": "WEAPON_BOW"
+    },
+    "15516": {
+        "ascensionStats": {
+            "CRIT DMG%": 88.2,
+            "atk": 542
+        },
+        "chsName": "霜结的誓金枝",
+        "enName": "Golden Frostbound Oath",
+        "ptName": "Ramo Dourado do Juramento Gelado",
+        "qualityType": "QUALITY_ORANGE",
+        "releaseDate": 1775617200,
+        "ruName": "Золотая клятва льда",
+        "weaponIcon": "UI_EquipIcon_Bow_Alkonost",
+        "weaponType": "WEAPON_BOW"
+    }
+}
