@@ -168,7 +168,7 @@
         <li><a href="stygian.html"><img src="icons/stygian.webp" class="icon"><span class="text">Stygian Onslaught</span></a></li>
         <li><a href="furnishings.html"><img src="https://ik.imagekit.io/gukc1okbd/furnishings.webp" class="icon"><span class="text">Furnishings</span></a></li>
         <li><a href="furnishing-set.html"><img src="https://ik.imagekit.io/gukc1okbd/furnishing-set.webp" class="icon"><span class="text">Furnishing Set</span></a></li>
-        <li><a href="miliastra.html"><img src="icons/miliastra.webp" class="icon"><span class="text">Miliastra</span></a></li>
+        <li><a href="books.html"><img src="icons/miliastra.webp" class="icon"><span class="text">Books</span></a></li>
         <li><a href="mw-set.html"><img src="https://ik.imagekit.io/gukc1okbd/mw-set.webp" class="icon"><span class="text">Miliastra Wonderland Set</span></a></li>
         <li><a href="mw-inventory.html"><img src="https://ik.imagekit.io/gukc1okbd/mw-inventory.webp" class="icon"><span class="text">Miliastra Wonderland Inventory</span></a></li>
         <li><a href="search.html"><img src="https://ik.imagekit.io/gukc1okbd/search.webp" class="icon"><span class="text">Search</span></a></li>
@@ -424,10 +424,245 @@ function showError(message) {
     container.innerHTML = `<div class="error">${message}</div>`;
 }
 
+function parseLunarisRarity(rarity) {
+    const rarityMap = {
+        'QUALITY_ORANGE': 5,
+        'QUALITY_PURPLE': 4,
+        'QUALITY_BLUE': 3,
+        'QUALITY_GREEN': 2,
+        'QUALITY_WHITE': 1
+    };
+    return rarityMap[rarity] || null;
+}
+
+function mapLunarisStatKeyToProp(key) {
+    const map = {
+        'HP': 'FIGHT_PROP_BASE_HP',
+        'ATK': 'FIGHT_PROP_BASE_ATTACK',
+        'DEF': 'FIGHT_PROP_BASE_DEFENSE',
+        'CRIT Rate%': 'FIGHT_PROP_CRITICAL',
+        'CRIT DMG%': 'FIGHT_PROP_CRITICAL_HURT',
+        'Energy Recharge%': 'FIGHT_PROP_CHARGE_EFFICIENCY',
+        'Elemental Mastery': 'FIGHT_PROP_ELEMENT_MASTERY',
+        'Healing Bonus%': 'FIGHT_PROP_HEAL_ADD',
+        'Geo DMG Bonus%': 'FIGHT_PROP_ROCK_ADD_HURT',
+        'Hydro DMG Bonus%': 'FIGHT_PROP_HYDRO_ADD_HURT',
+        'Pyro DMG Bonus%': 'FIGHT_PROP_PYRO_ADD_HURT',
+        'Electro DMG Bonus%': 'FIGHT_PROP_ELECTRO_ADD_HURT',
+        'Cryo DMG Bonus%': 'FIGHT_PROP_CRYO_ADD_HURT',
+        'Anemo DMG Bonus%': 'FIGHT_PROP_WIND_ADD_HURT',
+        'Dendro DMG Bonus%': 'FIGHT_PROP_GRASS_ADD_HURT',
+        'Physical DMG Bonus%': 'FIGHT_PROP_PHYSICAL_ADD_HURT'
+    };
+    return map[key] || null;
+}
+
+function parseNumericStatValue(value) {
+    if (typeof value === 'number') return value;
+    if (typeof value === 'string') {
+        const cleaned = value.replace(/%/g, '').trim();
+        const n = Number(cleaned);
+        return Number.isFinite(n) ? n : 0;
+    }
+    return 0;
+}
+
+function buildTalentPromoteFromMultipliers(multipliers) {
+    if (!multipliers || typeof multipliers !== 'object') return {};
+    const promote = {};
+    for (let level = 1; level <= 10; level++) {
+        const lines = [];
+        Object.entries(multipliers).forEach(([label, values]) => {
+            if (!Array.isArray(values)) return;
+            const idx = Math.min(level - 1, values.length - 1);
+            if (idx < 0 || !values[idx]) return;
+            lines.push(`${label}|${values[idx]}`);
+        });
+        if (lines.length) {
+            promote[String(level)] = { description: lines, params: [] };
+        }
+    }
+    return promote;
+}
+
+function normalizeLunarisCharacterData(rawData, characterId) {
+    if (!rawData || !rawData.info) return rawData;
+
+    const info = rawData.info || {};
+    const attributes = Array.isArray(info.attributes) ? info.attributes : [];
+    const base = attributes.find(a => a.level === 1) || attributes[0] || {};
+    const baseHp = Number(base.hp || 0);
+    const baseAtk = Number(base.atk || 0);
+    const baseDef = Number(base.def || 0);
+
+    const extraStatKey = Object.keys(base).find(k => !['level', 'ascension', 'hp', 'atk', 'def'].includes(k));
+    const specialProp = extraStatKey ? mapLunarisStatKeyToProp(extraStatKey) : null;
+    const specialValueRaw = extraStatKey ? parseNumericStatValue(base[extraStatKey]) : 0;
+    const specialIsPercent = !!extraStatKey && extraStatKey.includes('%');
+    const specialInitValue = specialIsPercent ? (specialValueRaw / 100) : specialValueRaw;
+
+    const props = [
+        { propType: 'FIGHT_PROP_BASE_HP', initValue: baseHp },
+        { propType: 'FIGHT_PROP_BASE_ATTACK', initValue: baseAtk },
+        { propType: 'FIGHT_PROP_BASE_DEFENSE', initValue: baseDef }
+    ];
+    if (specialProp) {
+        props.push({ propType: specialProp, initValue: specialInitValue });
+    }
+
+    const boundaryLevels = [20, 40, 50, 60, 70, 80, 90];
+    const getBestAtLevel = (level) => {
+        const exact = attributes.filter(a => Number(a.level) === level);
+        if (!exact.length) return null;
+        return exact.sort((a, b) => Number(b.ascension || 0) - Number(a.ascension || 0))[0];
+    };
+
+    const promote = [{ unlockMaxLevel: 1, addProps: {}, costItems: {}, coinCost: 0 }];
+    let prevHp = baseHp;
+    let prevAtk = baseAtk;
+    let prevDef = baseDef;
+    let prevSpecial = specialInitValue;
+
+    boundaryLevels.forEach(level => {
+        const lvlData = getBestAtLevel(level);
+        if (!lvlData) return;
+        const hp = Number(lvlData.hp || prevHp);
+        const atk = Number(lvlData.atk || prevAtk);
+        const def = Number(lvlData.def || prevDef);
+        const addProps = {
+            FIGHT_PROP_BASE_HP: Math.max(0, hp - prevHp),
+            FIGHT_PROP_BASE_ATTACK: Math.max(0, atk - prevAtk),
+            FIGHT_PROP_BASE_DEFENSE: Math.max(0, def - prevDef)
+        };
+        if (specialProp && Object.prototype.hasOwnProperty.call(lvlData, extraStatKey)) {
+            const rawSpecial = parseNumericStatValue(lvlData[extraStatKey]);
+            const normalizedSpecial = specialIsPercent ? (rawSpecial / 100) : rawSpecial;
+            addProps[specialProp] = Math.max(0, normalizedSpecial - prevSpecial);
+            prevSpecial = normalizedSpecial;
+        }
+        promote.push({
+            unlockMaxLevel: level,
+            requiredPlayerLevel: Math.max(1, Math.floor(level / 2)),
+            addProps,
+            costItems: {},
+            coinCost: 0
+        });
+        prevHp = hp;
+        prevAtk = atk;
+        prevDef = def;
+    });
+
+    const rank = parseLunarisRarity(info.rarity);
+    const iconName = rawData.icons?.forward || '';
+    const talents = {};
+    const skillMap = rawData.skills || {};
+    const orderedMain = ['normalattack', 'elementalskill', 'elementalburst'];
+    orderedMain.forEach((skillKey, idx) => {
+        const skill = skillMap[skillKey];
+        if (!skill) return;
+        talents[String(idx + 1)] = {
+            name: skill.name || '',
+            icon: skill.icon || '',
+            description: skill.description || '',
+            promote: buildTalentPromoteFromMultipliers(skill.multipliers)
+        };
+    });
+
+    let passiveIndex = 4;
+    const passives = rawData.passives || {};
+    Object.values(passives).forEach(passive => {
+        if (!passive) return;
+        talents[String(passiveIndex)] = {
+            name: passive.name || '',
+            icon: passive.icon || '',
+            description: passive.description || '',
+            promote: {}
+        };
+        passiveIndex += 1;
+    });
+
+    const constellationData = {};
+    const constellations = rawData.constellations || {};
+    Object.entries(constellations).forEach(([key, value], idx) => {
+        constellationData[String(idx + 1)] = {
+            name: value?.name || key,
+            description: value?.description || '',
+            icon: value?.icon || ''
+        };
+    });
+
+    return {
+        id: Number(characterId) || characterId,
+        name: info.name || `Character ${characterId}`,
+        icon: iconName,
+        element: info.element || '',
+        weaponType: info.weapon || '',
+        rank: rank || 'N/A',
+        region: 'N/A',
+        bodyType: 'N/A',
+        birthday: info.birthday || null,
+        release: 0,
+        specialProp: specialProp || null,
+        fetter: {
+            title: '',
+            detail: info.description || 'No description available.',
+            constellation: info.constellation || 'N/A',
+            native: 'N/A',
+            cv: {}
+        },
+        upgrade: {
+            prop: props,
+            promote
+        },
+        talent: talents,
+        constellation: constellationData
+    };
+}
+
+function normalizeCharacterData(rawData, characterId) {
+    if (!rawData) return rawData;
+    if (rawData.info && (rawData.skills || rawData.passives || rawData.constellations)) {
+        return normalizeLunarisCharacterData(rawData, characterId);
+    }
+    return rawData;
+}
+
 async function loadCharacterData(characterId) {
     try {
         console.log('Loading character data for ID:', characterId);
         
+        // Prefer Lunaris source for Linnea because local schema is incomplete/outdated
+        if (String(characterId) === '10000130') {
+            try {
+                const lunarisUrl = `https://api.lunaris.moe/data/6.4.51/en/char/${characterId}.json`;
+                const lunarisResponse = await fetch(lunarisUrl);
+                if (lunarisResponse.ok) {
+                    const lunarisData = await lunarisResponse.json();
+                    const charData = normalizeCharacterData(lunarisData, characterId);
+                    // Match the detail avatar to the same card icon used on characters listing.
+                    if (charData) {
+                        charData.icon = 'https://ik.imagekit.io/gukc1okbd/UI_AvatarIcon_Linnea.webp';
+                    }
+                    if (charData && charData.name) {
+                        document.title = `${charData.name} - Project Skirk`;
+                        document.getElementById('charName').textContent = charData.name;
+                        const content = generateCharacterContent(charData);
+                        document.getElementById('content-container').innerHTML = content;
+                        initLevelButtons(charData);
+                        displaySkills(charData);
+                        displayConstellations(charData);
+                        displayAscension(charData);
+                        initTalentCalculator(charData);
+                        displayVoiceActors(charData);
+                        displayDiffs(charData);
+                        return;
+                    }
+                }
+            } catch (linneaErr) {
+                console.warn('Linnea Lunaris fetch failed, using fallback data:', linneaErr);
+            }
+        }
+
         // Try to load from consolidated characters-data.json first (for GitHub compatibility)
         let charData;
         try {
@@ -468,6 +703,8 @@ async function loadCharacterData(characterId) {
             const jsonData = await response.json();
             charData = jsonData.data;
         }
+
+        charData = normalizeCharacterData(charData, characterId);
         
         // Update page title
         document.title = `${charData.name} - Project Skirk`;
@@ -519,7 +756,9 @@ function generateCharacterContent(charData) {
         ? charData.icon 
         : `https://gi.yatta.moe/assets/UI/${charData.icon}.png?vh=2024123000`;
     const detail = charData.fetter?.detail || 'No description available';
-    const releaseDate = new Date(charData.release * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const releaseDate = charData.release
+        ? new Date(charData.release * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        : 'N/A';
     
     return `
         <div id="tab-info">
@@ -536,7 +775,7 @@ function generateCharacterContent(charData) {
                         <tr><td>Element</td><td>${charData.element ? `<img src="${getElementIcon(mapElementName(charData.element))}" alt="${mapElementName(charData.element)}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;">${mapElementName(charData.element)}` : 'N/A'}</td></tr>
                         <tr><td>Weapon Type</td><td><img src="${getWeaponIcon(charData.weaponType)}" alt="${formatWeaponType(charData.weaponType)}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;">${formatWeaponType(charData.weaponType)}</td></tr>
                         <tr><td>Region</td><td>${charData.region || 'N/A'}</td></tr>
-                        <tr><td>Rarity</td><td>${charData.rank || 'N/A'}⭐</td></tr>
+                        <tr><td>Rarity</td><td>${charData.rank || 'N/A'}&#9733;</td></tr>
                         <tr><td>Body Type</td><td>${charData.bodyType || 'N/A'}</td></tr>
                         <tr><td>Birthday</td><td>${formatBirthday(charData.birthday)}</td></tr>
                         <tr><td>Release Date</td><td>${releaseDate}</td></tr>
@@ -635,6 +874,7 @@ function formatWeaponType(weaponType) {
 }
 
 function formatBirthday(birthday) {
+    if (typeof birthday === 'string') return birthday;
     if (!birthday || !Array.isArray(birthday) || birthday.length < 2) return 'N/A';
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${months[birthday[0] - 1]} ${birthday[1]}`;
@@ -920,7 +1160,7 @@ function displayStats(charData) {
     // Add special bonus stat row after base stats
     if (specialProp) {
         const specialPropName = formatPropName(specialProp);
-        html += `<tr style="border-bottom: 2px solid rgba(255,200,50,0.3); background: rgba(255,200,50,0.05);"><td style="padding:10px; font-weight:600; color:#ffc107;">⭐ ${specialPropName} (Special)</td>`;
+        html += `<tr style="border-bottom: 2px solid rgba(255,200,50,0.3); background: rgba(255,200,50,0.05);"><td style="padding:10px; font-weight:600; color:#ffc107;">P ${specialPropName} (Special)</td>`;
         
         // Get special prop value from base props
         const specialBaseProp = props.find(p => p.propType === specialProp);
@@ -983,7 +1223,7 @@ function displayAscension(charData) {
                 
                 html += `
                     <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; border: 1px solid rgba(124,92,255,0.2);">
-                        <h3 style="color:#7c5cff; margin:0 0 8px 0; font-size:12px;">Ascension ${idx} → Lv. ${promote.unlockMaxLevel}</h3>
+                        <h3 style="color:#7c5cff; margin:0 0 8px 0; font-size:12px;">Ascension ${idx} -> Lv. ${promote.unlockMaxLevel}</h3>
                         <table style="width:100%; font-size:11px; margin-bottom: 10px;">
                             <tr><td style="padding:3px 0;">Player Level:</td><td style="color:#7c5cff; text-align:right;">${promote.requiredPlayerLevel || 'N/A'}</td></tr>
                             <tr><td style="padding:3px 0;">Mora:</td><td style="color:#ffd700; text-align:right;">${promote.coinCost ? promote.coinCost.toLocaleString() : 'N/A'}</td></tr>
@@ -1011,7 +1251,7 @@ function displayAscension(charData) {
                         } else {
                             html += `
                                 <div data-item-id="${matIdNum}" style="display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 4px; background: linear-gradient(135deg, rgba(100,100,100,0.08) 0%, rgba(150,150,150,0.08) 100%); border: 1px solid #666; border-radius: 5px; text-align: center; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='#ffc107';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#666';">
-                                    <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px;">❓</div>
+                                    <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px;">?</div>
                                     <div style="font-size: 9px; color: #7c5cff; font-weight: 700;">${qty}x</div>
                                     <div style="font-size: 8px; color: #999; line-height: 1.1;">ID: ${itemId}</div>
                                 </div>
@@ -1037,7 +1277,7 @@ function displayAscension(charData) {
                 
                 html += `
                     <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
-                        <h3 style="color:#7c5cff; margin-top:0;">Ascension ${idx} → Lv. ${promote.unlockMaxLevel}</h3>
+                        <h3 style="color:#7c5cff; margin-top:0;">Ascension ${idx} -> Lv. ${promote.unlockMaxLevel}</h3>
                         <table style="width:100%; font-size:14px;">
                             <tr><td>Player Level Required:</td><td style="color:#7c5cff;">${promote.requiredPlayerLevel || 'N/A'}</td></tr>
                             <tr><td>Mora Required:</td><td style="color:#ffd700;">${promote.coinCost ? promote.coinCost.toLocaleString() : 'N/A'}</td></tr>
@@ -1114,7 +1354,7 @@ function displayDiffs(charData) {
             if (!characterChange || characterChange.changed_in_versions.length === 0) {
                 container.innerHTML = `
                     <div class="no-changes">
-                        <div class="no-changes-icon">✨</div>
+                        <div class="no-changes-icon">*</div>
                         <h3 style="color: #7c5cff; margin: 12px 0;">No Beta Changes</h3>
                         <p style="margin: 0; opacity: 0.7;">This character had no changes in beta versions.</p>
                     </div>
@@ -1152,7 +1392,7 @@ function displayDiffs(charData) {
             html += '</select>';
             html += '</div>';
             
-            html += '<div style="text-align: center; font-size: 14px; color: #7c5cff; font-weight: 700;">→</div>';
+            html += '<div style="text-align: center; font-size: 14px; color: #7c5cff; font-weight: 700;">-></div>';
             
             html += '<div>';
             html += '<label for="versionTo" style="display: block; font-size: 10px; color: #aaa; text-transform: uppercase; margin-bottom: 4px;">To Version</label>';
@@ -1205,7 +1445,7 @@ function displayDiffs(charData) {
             console.warn('Error loading character changes:', error);
             container.innerHTML = `
                 <div class="no-changes">
-                    <div class="no-changes-icon">⚠️</div>
+                    <div class="no-changes-icon">!</div>
                     <h3 style="color: #7c5cff; margin: 12px 0;">Change Data Unavailable</h3>
                     <p style="margin: 0; opacity: 0.7;">Unable to load beta change information at this time.</p>
                 </div>
@@ -1293,7 +1533,7 @@ function cleanDescription(desc) {
 
 function displayComparisonResults(charData, versionFrom, versionTo, diffData) {
     console.log('displayComparisonResults called for:', charData.name, 'charId:', charData.id);
-    console.log('Comparing:', versionFrom, '→', versionTo);
+    console.log('Comparing:', versionFrom, '->', versionTo);
     const resultDiv = document.getElementById('comparisonResult');
     
     if (!resultDiv) {
@@ -1315,7 +1555,7 @@ function displayComparisonResults(charData, versionFrom, versionTo, diffData) {
     
     let html = '<div style="margin-top: 16px;">';
     html += `<div style="background: rgba(124, 92, 255, 0.1); border-left: 4px solid #7c5cff; padding: 12px; border-radius: 6px; margin-bottom: 16px;">`;
-    html += `<h3 style="color: #7c5cff; margin-top: 0; font-size: 13px;">Changes: v${versionFrom} → v${versionTo}</h3>`;
+    html += `<h3 style="color: #7c5cff; margin-top: 0; font-size: 13px;">Changes: v${versionFrom} -> v${versionTo}</h3>`;
     html += `<p style="margin: 6px 0 0 0; color: #aaa; font-size: 11px;"><span style="color: #FF6B6B; text-decoration: line-through;">Red strikethrough</span> = old text | <span style="color: #51CF66; font-weight: 600;">Green bold</span> = new text</p>`;
     html += `</div>`;
     
@@ -1371,7 +1611,7 @@ function displayComparisonResults(charData, versionFrom, versionTo, diffData) {
                 
                 html += `
                     <div class="skill-diff-card">
-                        <h4 style="margin: 0 0 4px 0; color: #FFD780; font-size: 12px;">​${talentName}</h4>
+                        <h4 style="margin: 0 0 4px 0; color: #FFD780; font-size: 12px;">${talentName}</h4>
                         <p style="margin: 0 0 10px 0; font-size: 10px; color: #999; text-transform: uppercase;">${typeLabel}</p>
                         <div style="font-size: 11px; line-height: 1.5; color: #fff;">
                             ${diffDesc}
@@ -1815,7 +2055,7 @@ function initTalentCalculator(charData) {
 function updateTalentCostsDisplay(totalMaterials, totalMora) {
     const displayCosts = (inventory) => {
         let costsHtml = `<div style="border-top: 1px solid rgba(255,200,50,0.2); padding-top: 12px; margin-top: 12px;">
-            <div style="font-size: 12px; color: #ffc107; margin-bottom: 12px; font-weight: 600;">📊 Total Cost for All Selected Talents:</div>
+            <div style="font-size: 12px; color: #ffc107; margin-bottom: 12px; font-weight: 600;"> Total Cost for All Selected Talents:</div>
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px;">`;
         
         // Display materials
@@ -1837,7 +2077,7 @@ function updateTalentCostsDisplay(totalMaterials, totalMora) {
             } else {
                 costsHtml += `
                     <div class="material-card" data-item-id="${matId}" style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(100,100,100,0.08) 0%, rgba(150,150,150,0.08) 100%); border: 2px solid #666; border-radius: 6px; text-align: center; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='#ffc107';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#666';">
-                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 24px;">❓</div>
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 24px;">?</div>
                         <div style="font-size: 11px; color: #7c5cff; font-weight: 700;">${qty}x</div>
                         <div style="font-size: 9px; color: #999;">ID: ${matId}</div>
                     </div>
@@ -1849,7 +2089,7 @@ function updateTalentCostsDisplay(totalMaterials, totalMora) {
         const moraColor = '#ffd700';
         costsHtml += `
             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,200,0,0.08) 100%); border: 2px solid ${moraColor}; border-radius: 6px; text-align: center;">
-                <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 28px;">💰</div>
+                <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 28px;">$</div>
                 <div style="font-size: 9px; color: ${moraColor}; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Mora</div>
                 <div style="font-size: 11px; color: ${moraColor}; font-weight: 700; line-height: 1.2;">${totalMora.toLocaleString()}</div>
             </div>
@@ -1916,7 +2156,7 @@ function updateMaterialCalculator(charData, targetLevel) {
                     // Fallback - show material ID
                     cardsHtml += `
                         <div class="material-card" data-item-id="${matIdNum}" style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(100,100,100,0.08) 0%, rgba(150,150,150,0.08) 100%); border: 2px solid #666; border-radius: 6px; text-align: center; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='#ffc107';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#666';">
-                            <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 28px;">❓</div>
+                            <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 28px;">?</div>
                             <div style="font-size: 12px; color: #7c5cff; font-weight: 700;">${qty}x</div>
                             <div style="font-size: 10px; color: #999; line-height: 1.3;">ID: ${matId}</div>
                         </div>
@@ -1928,7 +2168,7 @@ function updateMaterialCalculator(charData, targetLevel) {
             const moraColor = '#ffd700';
             cardsHtml += `
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,200,0,0.08) 100%); border: 2px solid ${moraColor}; border-radius: 6px; text-align: center; transition: all 0.2s;">
-                    <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 32px;">💰</div>
+                    <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 32px;">$</div>
                     <div style="font-size: 10px; color: ${moraColor}; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Mora</div>
                     <div style="font-size: 12px; color: ${moraColor}; font-weight: 700; line-height: 1.3;">${mora.toLocaleString()}</div>
                 </div>
@@ -1996,7 +2236,7 @@ document.addEventListener('DOMContentLoaded', initPage);
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.id = 'scrollToTopBtn';
 scrollToTopBtn.title = 'Scroll to top';
-scrollToTopBtn.innerHTML = '▲';
+scrollToTopBtn.innerHTML = '&uarr;';
 document.body.appendChild(scrollToTopBtn);
 
 window.addEventListener('scroll', () => {
@@ -2015,3 +2255,5 @@ scrollToTopBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
+
