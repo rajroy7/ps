@@ -197,12 +197,12 @@ const translations = {
         'Characters': 'Personnages',
         'Weapons': 'Armes',
         'Artifacts': 'Artefacts',
-        'Achievements': 'RÃ©alisations',
+        'Achievements': 'Réalisations',
         'Inventory': 'Inventaire',
-        'Enemy Creatures': 'CrÃ©atures Ennemies',
+        'Enemy Creatures': 'Créatures Ennemies',
         'Genius Invokation TCG': 'Genius Invokation TCG',
-        'Spiral Abyss': 'Abysses SpiralÃ©s',
-        'Imaginarium Theater': 'ThÃ©Ã¢tre Imaginarium',
+        'Spiral Abyss': 'Abysses Spiralés',
+        'Imaginarium Theater': 'Théâtre Imaginarium',
         'Stygian Onslaught': 'Assaut Stygien',
         'Furnishings': 'Mobilier',
         'Furnishing Set': 'Ensemble Mobilier',
@@ -213,7 +213,7 @@ const translations = {
         'Search': 'Rechercher',
         'Diff': 'Diff',
         'Character Wishes': 'VÅ“ux de Personnage',
-        'Settings': 'ParamÃ¨tres',
+        'Settings': 'Paramètres',
         'PROJECT SKIRK': 'PROJECT SKIRK'
     },
     German: {
@@ -236,7 +236,7 @@ const translations = {
         'Miliastra Wonderland Inventory': 'Miliastra Wunderland Inventar',
         'Search': 'Suchen',
         'Diff': 'Diff',
-        'Character Wishes': 'CharakterwÃ¼nsche',
+        'Character Wishes': 'Charakterwünsche',
         'Settings': 'Einstellungen',
         'PROJECT SKIRK': 'PROJECT SKIRK'
     },
@@ -255,13 +255,13 @@ const translations = {
         'Furnishings': 'Amueblado',
         'Furnishing Set': 'Conjunto de Amueblado',
         'Miliastra': 'Miliastra',
-        'Wonderland': 'PaÃ­s de las Maravillas',
-        'Miliastra Wonderland Set': 'Conjunto Miliastra PaÃ­s de las Maravillas',
-        'Miliastra Wonderland Inventory': 'Inventario Miliastra PaÃ­s de las Maravillas',
+        'Wonderland': 'País de las Maravillas',
+        'Miliastra Wonderland Set': 'Conjunto Miliastra País de las Maravillas',
+        'Miliastra Wonderland Inventory': 'Inventario Miliastra País de las Maravillas',
         'Search': 'Buscar',
         'Diff': 'Diff',
         'Character Wishes': 'Deseos de Personajes',
-        'Settings': 'ConfiguraciÃ³n',
+        'Settings': 'Configuración',
         'PROJECT SKIRK': 'PROJECT SKIRK'
     },
     Chinese: {
@@ -289,7 +289,7 @@ const translations = {
         'PROJECT SKIRK': 'å¤©å‘½è®¡åˆ’'
     },
     Japanese: {
-        'Home': 'ãƒ›ãƒ¼ãƒ ',
+        'Home': 'ãƒ›ãƒ¼ãƒ ',
         'Characters': 'ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼',
         'Weapons': 'æ­¦å™¨',
         'Artifacts': 'è–éºç‰©',
@@ -614,7 +614,7 @@ function applyUnreleasedContent() {
 }
 
 // -------------------- generic search support --------------------
-const WEAPON_DASH_VALUES = new Set(['â€”', '-', 'Ã¢â‚¬â€', 'none', 'null', '']);
+const WEAPON_DASH_VALUES = new Set(['—', '-', 'none', 'null', '']);
 
 function normalizeWeaponType(rawType) {
     const t = String(rawType || '').trim();
@@ -630,12 +630,12 @@ function normalizeWeaponType(rawType) {
 
 function normalizeStatValue(value) {
     const str = String(value ?? '').trim();
-    return WEAPON_DASH_VALUES.has(str.toLowerCase()) ? 'â€”' : str;
+    return WEAPON_DASH_VALUES.has(str.toLowerCase()) ? '—' : str;
 }
 
 function normalizeWeaponStatLabel(rawLabel) {
     const label = normalizeStatValue(rawLabel);
-    if (label === 'â€”') return 'â€”';
+    if (label === '—') return '—';
     const lower = label.toLowerCase();
     if (lower.includes('critical_hurt') || lower.includes('crit dmg')) return 'CRIT DMG';
     if (lower.includes('critical') || lower.includes('crit rate')) return 'CRIT Rate';
@@ -1035,7 +1035,7 @@ function initializePageSearch() {
                     <div style="font-size: 13px; font-weight: 600; color: #fff; line-height: 1.2;">${item.name || 'Unknown Item'}</div>
                 </div>
                 <div style="display: flex; gap: 3px; font-size: 11px;">
-                    ${Array(item.rank || 1).fill('â˜…').map((s, i) => `<span style="color: ${rankColor};">${s}</span>`).join('')}
+                    ${Array(item.rank || 1).fill('★').map((s, i) => `<span style="color: ${rankColor};">${s}</span>`).join('')}
                 </div>
             `;
             
