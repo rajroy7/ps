@@ -3,6 +3,7 @@ let activeFilters = {
   rarity: [],
   element: [],
   weapon: [],
+  specialStat: [],
   region: [],
   body: []
 };
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.region-filter[data-region="all"], .body-filter[data-body="all"]').forEach(b => b.classList.add('active'));
   searchTerm = '';
-  activeFilters = { rarity: [], element: [], weapon: [], region: [], body: [] };
+  activeFilters = { rarity: [], element: [], weapon: [], specialStat: [], region: [], body: [] };
 
   fetch('characters.json')
     .then(r => r.json())
@@ -31,15 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(r => r.json())
         .then(full => {
           const map = {};
+          const specialMap = {};
           Object.keys(full || {}).forEach((id) => {
-            const bt = full[id]?.bodyType || '';
+            const entry = full[id] || {};
+            const bt = entry.bodyType || '';
             if (bt) map[Number(id)] = bt;
+            specialMap[Number(id)] = normalizeSpecialProp(entry.specialProp);
           });
           bodyTypeById = map;
-          allCharacters = allCharacters.map(c => ({ ...c, bodyType: normalizeBodyType(map[c.id]) }));
+          allCharacters = allCharacters.map(c => ({
+            ...c,
+            bodyType: normalizeBodyType(map[c.id]),
+            specialStat: specialMap[c.id] || ''
+          }));
         })
         .catch(() => {
-          allCharacters = allCharacters.map(c => ({ ...c, bodyType: '' }));
+          allCharacters = allCharacters.map(c => ({ ...c, bodyType: '', specialStat: '' }));
         });
     })
     .then(() => {
@@ -56,6 +64,33 @@ function normalizeBodyType(value) {
   if (!value) return '';
   if (value === 'FEMALE') return 'LADY';
   return value;
+}
+
+function normalizeSpecialProp(prop) {
+  const map = {
+    FIGHT_PROP_ATTACK_PERCENT: 'ATK%',
+    FIGHT_PROP_CHARGE_EFFICIENCY: 'Energy Recharge',
+    FIGHT_PROP_CRITICAL: 'CRIT Rate',
+    FIGHT_PROP_CRITICAL_HURT: 'CRIT DMG',
+    FIGHT_PROP_DEFENSE_PERCENT: 'DEF%',
+    FIGHT_PROP_ELEC_ADD_HURT: 'Electro DMG Bonus',
+    FIGHT_PROP_ELECTRO_ADD_HURT: 'Electro DMG Bonus',
+    FIGHT_PROP_ELEMENT_MASTERY: 'Elemental Mastery',
+    FIGHT_PROP_FIRE_ADD_HURT: 'Pyro DMG Bonus',
+    FIGHT_PROP_PYRO_ADD_HURT: 'Pyro DMG Bonus',
+    FIGHT_PROP_GRASS_ADD_HURT: 'Dendro DMG Bonus',
+    FIGHT_PROP_HEAL_ADD: 'Healing Bonus',
+    FIGHT_PROP_HP_PERCENT: 'HP%',
+    FIGHT_PROP_ICE_ADD_HURT: 'Cryo DMG Bonus',
+    FIGHT_PROP_CRYO_ADD_HURT: 'Cryo DMG Bonus',
+    FIGHT_PROP_PHYSICAL_ADD_HURT: 'Physical DMG Bonus',
+    FIGHT_PROP_ROCK_ADD_HURT: 'Geo DMG Bonus',
+    FIGHT_PROP_WATER_ADD_HURT: 'Hydro DMG Bonus',
+    FIGHT_PROP_HYDRO_ADD_HURT: 'Hydro DMG Bonus',
+    FIGHT_PROP_WIND_ADD_HURT: 'Anemo DMG Bonus',
+    FIGHT_PROP_ANEMO_ADD_HURT: 'Anemo DMG Bonus'
+  };
+  return map[prop] || '';
 }
 
 function setExclusiveFilter(button, selector, keepDataAttrName) {
@@ -116,6 +151,14 @@ function setupFilters() {
     });
   });
 
+  // Special stat filter buttons
+  document.querySelectorAll('.special-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      updateFilters();
+    });
+  });
+
   // Region filter buttons (single-select with All option)
   document.querySelectorAll('.region-filter').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -138,7 +181,7 @@ function setupFilters() {
     clearBtn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.region-filter[data-region="all"], .body-filter[data-body="all"]').forEach(b => b.classList.add('active'));
-      activeFilters = { rarity: [], element: [], weapon: [], region: [], body: [] };
+      activeFilters = { rarity: [], element: [], weapon: [], specialStat: [], region: [], body: [] };
       searchTerm = '';
       const searchInput = document.getElementById('characterSearch');
       if (searchInput) searchInput.value = '';
@@ -160,6 +203,7 @@ function updateFilters() {
   activeFilters.rarity = Array.from(document.querySelectorAll('.rarity-filter.active')).map(b => parseInt(b.dataset.rarity));
   activeFilters.element = Array.from(document.querySelectorAll('.element-filter.active')).map(b => b.dataset.element);
   activeFilters.weapon = Array.from(document.querySelectorAll('.weapon-filter.active')).map(b => b.dataset.weapon);
+  activeFilters.specialStat = Array.from(document.querySelectorAll('.special-filter.active')).map(b => b.dataset.special);
   activeFilters.region = Array.from(document.querySelectorAll('.region-filter.active'))
     .map(b => b.dataset.region)
     .filter(v => v && v !== 'all');
@@ -171,10 +215,11 @@ function updateFilters() {
     const matchRarity = activeFilters.rarity.length === 0 || activeFilters.rarity.includes(char.rarity);
     const matchElement = activeFilters.element.length === 0 || activeFilters.element.includes(char.vision);
     const matchWeapon = activeFilters.weapon.length === 0 || activeFilters.weapon.includes(char.weapon);
+    const matchSpecialStat = activeFilters.specialStat.length === 0 || activeFilters.specialStat.includes(char.specialStat);
     const matchRegion = activeFilters.region.length === 0 || activeFilters.region.includes(char.region);
     const matchBody = activeFilters.body.length === 0 || activeFilters.body.includes(normalizeBodyType(char.bodyType));
     const matchSearch = !searchTerm || char.name.toLowerCase().includes(searchTerm);
-    return matchRarity && matchElement && matchWeapon && matchRegion && matchBody && matchSearch;
+    return matchRarity && matchElement && matchWeapon && matchSpecialStat && matchRegion && matchBody && matchSearch;
   });
 
   renderCharacters(filtered, document.getElementById('characters'));

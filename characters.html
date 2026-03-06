@@ -73,6 +73,41 @@
     .filter-btn{padding:5px 9px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#ccc;border-radius:6px;cursor:pointer;transition:0.2s;font-size:11px}
     .filter-btn:hover{border-color:rgba(124,92,255,0.5);background:rgba(124,92,255,0.1)}
     .filter-btn.active{background:#7c5cff;color:white;border-color:#7c5cff}
+    .stat-icon-btn{
+      width:30px;
+      height:30px;
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .stat-icon-btn img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      pointer-events:none;
+    }
+    .stat-icon-btn::after{
+      content:attr(data-stat-name);
+      position:absolute;
+      left:50%;
+      bottom:calc(100% + 6px);
+      transform:translateX(-50%);
+      background:rgba(15,12,24,0.98);
+      color:#efeaff;
+      border:1px solid rgba(124,92,255,0.55);
+      border-radius:6px;
+      padding:4px 7px;
+      font-size:10px;
+      white-space:nowrap;
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:opacity .16s ease;
+      z-index:60;
+    }
+    .stat-icon-btn:hover::after{opacity:1;visibility:visible}
     .clear-filters-btn{padding:5px 10px;background:rgba(220,100,100,0.2);border:1px solid rgba(220,100,100,0.4);color:#ff9999;border-radius:6px;cursor:pointer;transition:0.2s;font-size:11px}
     .clear-filters-btn:hover{background:rgba(220,100,100,0.3);border-color:rgba(220,100,100,0.6)}
     .char-card.hidden{display:none}
@@ -305,6 +340,28 @@
           <button class="filter-btn weapon-filter" data-weapon="Bow" title="Bow"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png" alt="Bow" style="width:20px;height:20px;"></button>
           <button class="filter-btn weapon-filter" data-weapon="Claymore" title="Claymore"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png" alt="Claymore" style="width:20px;height:20px;"></button>
           <button class="filter-btn weapon-filter" data-weapon="Catalyst" title="Catalyst"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png" alt="Catalyst" style="width:20px;height:20px;"></button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Special Stat</h4>
+        <div class="filter-buttons">
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Pyro DMG Bonus" data-stat-name="Pyro DMG Bonus" title="Pyro DMG Bonus" aria-label="Pyro DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/pyrodmgbonus.webp" alt="Pyro DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Hydro DMG Bonus" data-stat-name="Hydro DMG Bonus" title="Hydro DMG Bonus" aria-label="Hydro DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/hydrodmgbonus.webp" alt="Hydro DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Electro DMG Bonus" data-stat-name="Electro DMG Bonus" title="Electro DMG Bonus" aria-label="Electro DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/electrodmgbonus.webp" alt="Electro DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Cryo DMG Bonus" data-stat-name="Cryo DMG Bonus" title="Cryo DMG Bonus" aria-label="Cryo DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/cryodmgbonus.webp" alt="Cryo DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Anemo DMG Bonus" data-stat-name="Anemo DMG Bonus" title="Anemo DMG Bonus" aria-label="Anemo DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/anemodmgbonus.webp" alt="Anemo DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Geo DMG Bonus" data-stat-name="Geo DMG Bonus" title="Geo DMG Bonus" aria-label="Geo DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/geodmgbonus.webp" alt="Geo DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Dendro DMG Bonus" data-stat-name="Dendro DMG Bonus" title="Dendro DMG Bonus" aria-label="Dendro DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/dendrodmgbonus.webp" alt="Dendro DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="CRIT DMG" data-stat-name="CRIT DMG" title="CRIT DMG" aria-label="CRIT DMG"><img src="https://ik.imagekit.io/gukc1okbd/crit_damage.webp" alt="CRIT DMG"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="CRIT Rate" data-stat-name="CRIT Rate" title="CRIT Rate" aria-label="CRIT Rate"><img src="https://ik.imagekit.io/gukc1okbd/crit_rate.webp" alt="CRIT Rate"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Healing Bonus" data-stat-name="Healing Bonus" title="Healing Bonus" aria-label="Healing Bonus"><img src="https://ik.imagekit.io/gukc1okbd/healing_bonus.webp" alt="Healing Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="ATK%" data-stat-name="ATK%" title="ATK%" aria-label="ATK%"><img src="https://ik.imagekit.io/gukc1okbd/atkpercent.webp" alt="ATK%"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Elemental Mastery" data-stat-name="Elemental Mastery" title="Elemental Mastery" aria-label="Elemental Mastery"><img src="https://ik.imagekit.io/gukc1okbd/em.webp" alt="Elemental Mastery"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="HP%" data-stat-name="HP%" title="HP%" aria-label="HP%"><img src="https://ik.imagekit.io/gukc1okbd/hppercent.webp" alt="HP%"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Energy Recharge" data-stat-name="Energy Recharge" title="Energy Recharge" aria-label="Energy Recharge"><img src="https://ik.imagekit.io/gukc1okbd/er.webp" alt="Energy Recharge"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="Physical DMG Bonus" data-stat-name="Physical DMG Bonus" title="Physical DMG Bonus" aria-label="Physical DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/phydmgbonus.webp" alt="Physical DMG Bonus"></button>
+          <button class="filter-btn special-filter stat-icon-btn" data-special="DEF%" data-stat-name="DEF%" title="DEF%" aria-label="DEF%"><img src="https://ik.imagekit.io/gukc1okbd/defpercent.webp" alt="DEF%"></button>
         </div>
       </div>
 

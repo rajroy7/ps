@@ -845,6 +845,60 @@ async function loadCharacterData(characterId) {
 }
 
 function generateCharacterContent(charData) {
+    const statIconMap = {
+        'ATK': 'https://ik.imagekit.io/gukc1okbd/atk.webp',
+        'ATK%': 'https://ik.imagekit.io/gukc1okbd/atkpercent.webp',
+        'HP': 'https://ik.imagekit.io/gukc1okbd/hp.webp',
+        'HP%': 'https://ik.imagekit.io/gukc1okbd/hppercent.webp',
+        'DEF': 'https://ik.imagekit.io/gukc1okbd/DEF.WEBP',
+        'DEF%': 'https://ik.imagekit.io/gukc1okbd/defpercent.webp',
+        'CRIT Rate': 'https://ik.imagekit.io/gukc1okbd/crit_rate.webp',
+        'CRIT DMG': 'https://ik.imagekit.io/gukc1okbd/crit_damage.webp',
+        'Energy Recharge': 'https://ik.imagekit.io/gukc1okbd/er.webp',
+        'Elemental Mastery': 'https://ik.imagekit.io/gukc1okbd/em.webp',
+        'Physical DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/phydmgbonus.webp',
+        'Anemo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/anemodmgbonus.webp',
+        'Dendro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/dendrodmgbonus.webp',
+        'Geo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/geodmgbonus.webp',
+        'Cryo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/cryodmgbonus.webp',
+        'Pyro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/pyrodmgbonus.webp',
+        'Hydro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/hydrodmgbonus.webp',
+        'Electro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/electrodmgbonus.webp',
+        'Healing Bonus': 'https://ik.imagekit.io/gukc1okbd/healing_bonus.webp'
+    };
+
+    function getCharacterStatIcon(statLabel, statValue = '') {
+        const raw = String(statLabel || '').trim();
+        if (!raw || raw.toLowerCase() === 'n/a') return '';
+        const lower = raw.toLowerCase().replace(/_/g, ' ');
+        const valueText = String(statValue || '').trim();
+        const hasPercent = raw.includes('%') || valueText.includes('%');
+
+        if (lower.includes('critical hurt') || lower.includes('crit dmg')) return statIconMap['CRIT DMG'];
+        if (lower.includes('critical') || lower.includes('crit rate')) return statIconMap['CRIT Rate'];
+        if (lower.includes('charge') || lower.includes('energy') || lower === 'er') return statIconMap['Energy Recharge'];
+        if (lower.includes('element') && lower.includes('master')) return statIconMap['Elemental Mastery'];
+        if (lower.includes('physical')) return statIconMap['Physical DMG Bonus'];
+        if (lower.includes('anemo')) return statIconMap['Anemo DMG Bonus'];
+        if (lower.includes('dendro')) return statIconMap['Dendro DMG Bonus'];
+        if (lower.includes('geo')) return statIconMap['Geo DMG Bonus'];
+        if (lower.includes('cryo')) return statIconMap['Cryo DMG Bonus'];
+        if (lower.includes('pyro')) return statIconMap['Pyro DMG Bonus'];
+        if (lower.includes('hydro')) return statIconMap['Hydro DMG Bonus'];
+        if (lower.includes('electro')) return statIconMap['Electro DMG Bonus'];
+        if (lower.includes('heal')) return statIconMap['Healing Bonus'];
+        if (lower.includes('def')) return hasPercent ? statIconMap['DEF%'] : statIconMap['DEF'];
+        if (lower === 'hp' || lower.includes('hp ')) return hasPercent ? statIconMap['HP%'] : statIconMap['HP'];
+        if (lower.includes('attack') || lower.includes('atk')) return hasPercent ? statIconMap['ATK%'] : statIconMap['ATK'];
+        return '';
+    }
+
+    function renderCharacterStatLabel(displayLabel, iconLabel = displayLabel, statValue = '') {
+        const iconUrl = getCharacterStatIcon(iconLabel, statValue);
+        if (!iconUrl) return displayLabel;
+        return `<span style="display:inline-flex;align-items:center;gap:6px;"><img src="${iconUrl}" alt="${iconLabel}" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;">${displayLabel}</span>`;
+    }
+
     // Check if icon is a full URL or just a name
     const iconUrl = charData.icon?.startsWith('http') 
         ? charData.icon 
@@ -853,6 +907,7 @@ function generateCharacterContent(charData) {
     const releaseDate = charData.release
         ? new Date(charData.release * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
         : 'N/A';
+    const specialStatLabel = charData.specialProp ? formatSpecialProp(charData.specialProp) : 'N/A';
     
     return `
         <div id="tab-info">
@@ -886,10 +941,10 @@ function generateCharacterContent(charData) {
                 <h4 style="margin-top:0; margin-bottom:12px; color:#7c5cff; font-size:12px;">Stats at Selected Level</h4>
                 <div id="selectedLevelStats" style="background:rgba(255,255,255,0.05); border-radius:12px; padding:12px; margin-bottom:16px;">
                     <table style="width:100%; font-size:12px;">
-                        <tr><td style="padding:6px 0;">Special Bonus (${charData.specialProp ? formatSpecialProp(charData.specialProp) : 'N/A'})</td><td style="color:#7c5cff; text-align:right;" id="statBonus">-</td></tr>
-                        <tr><td style="padding:6px 0;">Base HP</td><td style="color:#7c5cff; text-align:right;" id="statHP">-</td></tr>
-                        <tr><td style="padding:6px 0;">Base ATK</td><td style="color:#7c5cff; text-align:right;" id="statATK">-</td></tr>
-                        <tr><td style="padding:6px 0;">Base DEF</td><td style="color:#7c5cff; text-align:right;" id="statDEF">-</td></tr>
+                        <tr><td style="padding:6px 0;">${renderCharacterStatLabel(`Special Bonus (${specialStatLabel})`, specialStatLabel)}</td><td style="color:#7c5cff; text-align:right;" id="statBonus">-</td></tr>
+                        <tr><td style="padding:6px 0;">${renderCharacterStatLabel('Base HP', 'HP')}</td><td style="color:#7c5cff; text-align:right;" id="statHP">-</td></tr>
+                        <tr><td style="padding:6px 0;">${renderCharacterStatLabel('Base ATK', 'ATK')}</td><td style="color:#7c5cff; text-align:right;" id="statATK">-</td></tr>
+                        <tr><td style="padding:6px 0;">${renderCharacterStatLabel('Base DEF', 'DEF')}</td><td style="color:#7c5cff; text-align:right;" id="statDEF">-</td></tr>
                     </table>
                 </div>
                 
@@ -2455,5 +2510,6 @@ scrollToTopBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 

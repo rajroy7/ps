@@ -30,6 +30,41 @@
     .filter-btn{padding:5px 9px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#ccc;border-radius:6px;cursor:pointer;transition:0.2s;font-size:11px}
     .filter-btn:hover{border-color:rgba(124,92,255,0.5);background:rgba(124,92,255,0.1)}
     .filter-btn.active{background:#7c5cff;color:white;border-color:#7c5cff}
+    .stat-icon-btn{
+      width:30px;
+      height:30px;
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .stat-icon-btn img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      pointer-events:none;
+    }
+    .stat-icon-btn::after{
+      content:attr(data-stat-name);
+      position:absolute;
+      left:50%;
+      bottom:calc(100% + 6px);
+      transform:translateX(-50%);
+      background:rgba(15,12,24,0.98);
+      color:#efeaff;
+      border:1px solid rgba(124,92,255,0.55);
+      border-radius:6px;
+      padding:4px 7px;
+      font-size:10px;
+      white-space:nowrap;
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:opacity .16s ease;
+      z-index:60;
+    }
+    .stat-icon-btn:hover::after{opacity:1;visibility:visible}
     .cards-grid{gap:12px!important}
     #pageSearchResults.cards-grid{
       display:grid!important;
@@ -176,14 +211,14 @@
           <div class="filter-buttons">
             <button class="filter-btn active" data-filter="stat" data-value="all">All</button>
             <button class="filter-btn" data-filter="stat" data-value="—">None</button>
-            <button class="filter-btn" data-filter="stat" data-value="ATK">ATK</button>
-            <button class="filter-btn" data-filter="stat" data-value="CRIT Rate">CRIT Rate</button>
-            <button class="filter-btn" data-filter="stat" data-value="CRIT DMG">CRIT DMG</button>
-            <button class="filter-btn" data-filter="stat" data-value="Physical DMG Bonus">Phys DMG</button>
-            <button class="filter-btn" data-filter="stat" data-value="Energy Recharge">Energy Rech</button>
-            <button class="filter-btn" data-filter="stat" data-value="Elemental Mastery">EM</button>
-            <button class="filter-btn" data-filter="stat" data-value="DEF">DEF</button>
-            <button class="filter-btn" data-filter="stat" data-value="HP">HP</button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="ATK" data-stat-name="ATK%" title="ATK%" aria-label="ATK%"><img src="https://ik.imagekit.io/gukc1okbd/atkpercent.webp" alt="ATK%"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="CRIT Rate" data-stat-name="CRIT Rate" title="CRIT Rate" aria-label="CRIT Rate"><img src="https://ik.imagekit.io/gukc1okbd/crit_rate.webp" alt="CRIT Rate"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="CRIT DMG" data-stat-name="CRIT DMG" title="CRIT DMG" aria-label="CRIT DMG"><img src="https://ik.imagekit.io/gukc1okbd/crit_damage.webp" alt="CRIT DMG"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="Physical DMG Bonus" data-stat-name="Physical DMG Bonus" title="Physical DMG Bonus" aria-label="Physical DMG Bonus"><img src="https://ik.imagekit.io/gukc1okbd/phydmgbonus.webp" alt="Physical DMG Bonus"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="Energy Recharge" data-stat-name="Energy Recharge" title="Energy Recharge" aria-label="Energy Recharge"><img src="https://ik.imagekit.io/gukc1okbd/er.webp" alt="Energy Recharge"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="Elemental Mastery" data-stat-name="Elemental Mastery" title="Elemental Mastery" aria-label="Elemental Mastery"><img src="https://ik.imagekit.io/gukc1okbd/em.webp" alt="Elemental Mastery"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="DEF" data-stat-name="DEF%" title="DEF%" aria-label="DEF%"><img src="https://ik.imagekit.io/gukc1okbd/defpercent.webp" alt="DEF%"></button>
+            <button class="filter-btn stat-icon-btn" data-filter="stat" data-value="HP" data-stat-name="HP%" title="HP%" aria-label="HP%"><img src="https://ik.imagekit.io/gukc1okbd/hppercent.webp" alt="HP%"></button>
           </div>
         </div>
       </div>

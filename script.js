@@ -862,14 +862,23 @@ function normalizeStatValue(value) {
 function normalizeWeaponStatLabel(rawLabel) {
     const label = normalizeStatValue(rawLabel);
     if (label === '—') return '—';
-    const lower = label.toLowerCase();
-    if (lower.includes('critical_hurt') || lower.includes('crit dmg')) return 'CRIT DMG';
+    const lower = label.toLowerCase().replace(/_/g, ' ').trim();
+
+    if (lower.includes('critical hurt') || lower.includes('crit dmg')) return 'CRIT DMG';
     if (lower.includes('critical') || lower.includes('crit rate')) return 'CRIT Rate';
-    if (lower.includes('charge') || lower.includes('energy')) return 'Energy Recharge';
+    if (lower.includes('charge') || lower.includes('energy') || lower === 'er') return 'Energy Recharge';
     if (lower.includes('element') && lower.includes('master')) return 'Elemental Mastery';
     if (lower.includes('physical')) return 'Physical DMG Bonus';
+    if (lower.includes('anemo')) return 'Anemo DMG Bonus';
+    if (lower.includes('dendro')) return 'Dendro DMG Bonus';
+    if (lower.includes('geo')) return 'Geo DMG Bonus';
+    if (lower.includes('cryo')) return 'Cryo DMG Bonus';
+    if (lower.includes('pyro')) return 'Pyro DMG Bonus';
+    if (lower.includes('hydro')) return 'Hydro DMG Bonus';
+    if (lower.includes('electro')) return 'Electro DMG Bonus';
+    if (lower.includes('heal')) return 'Healing Bonus';
     if (lower.includes('def')) return 'DEF';
-    if (lower === 'hp' || lower.includes('hp_')) return 'HP';
+    if (lower === 'hp' || lower.includes('hp ')) return 'HP';
     if (lower.includes('attack') || lower.includes('atk')) return 'ATK';
     return label;
 }
@@ -1129,22 +1138,37 @@ function initializePageSearch() {
         stat: 'all'
     };
 
-    const makeSvgIcon = (svgBody) =>
-        `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>${svgBody}</svg>`)}`;
-
-    const statIconMap = {
-        ATK: makeSvgIcon("<path d='M14 3l7 7'/><path d='M13 4l-9 9'/><path d='M3 21l6-6'/><path d='M13 4l7 7'/>"),
-        "CRIT Rate": makeSvgIcon("<circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/>"),
-        "CRIT DMG": makeSvgIcon("<path d='M12 2l2.8 5.7L21 9l-4.5 4.4L17.6 20 12 17l-5.6 3 1.1-6.6L3 9l6.2-1.3L12 2z'/>"),
-        "Energy Recharge": makeSvgIcon("<path d='M13 2L4 14h6l-1 8 9-12h-6l1-8z'/>"),
-        "Elemental Mastery": makeSvgIcon("<path d='M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9 5.5-.8L12 3z'/>"),
-        DEF: makeSvgIcon("<path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z'/>"),
-        HP: makeSvgIcon("<path d='M12 21s-7-4.4-9-9a5.5 5.5 0 019.4-4A5.5 5.5 0 0121 12c-2 4.6-9 9-9 9z'/>"),
-        "Physical DMG Bonus": makeSvgIcon("<path d='M4 20l16-16'/><path d='M9 4h11v11'/>")
+        const statIconMap = {
+        ATK: 'https://ik.imagekit.io/gukc1okbd/atk.webp',
+        'ATK%': 'https://ik.imagekit.io/gukc1okbd/atkpercent.webp',
+        HP: 'https://ik.imagekit.io/gukc1okbd/hp.webp',
+        'HP%': 'https://ik.imagekit.io/gukc1okbd/hppercent.webp',
+        DEF: 'https://ik.imagekit.io/gukc1okbd/DEF.WEBP',
+        'DEF%': 'https://ik.imagekit.io/gukc1okbd/defpercent.webp',
+        'CRIT Rate': 'https://ik.imagekit.io/gukc1okbd/crit_rate.webp',
+        'CRIT DMG': 'https://ik.imagekit.io/gukc1okbd/crit_damage.webp',
+        'Energy Recharge': 'https://ik.imagekit.io/gukc1okbd/er.webp',
+        'Elemental Mastery': 'https://ik.imagekit.io/gukc1okbd/em.webp',
+        'Physical DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/phydmgbonus.webp',
+        'Anemo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/anemodmgbonus.webp',
+        'Dendro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/dendrodmgbonus.webp',
+        'Geo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/geodmgbonus.webp',
+        'Cryo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/cryodmgbonus.webp',
+        'Pyro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/pyrodmgbonus.webp',
+        'Hydro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/hydrodmgbonus.webp',
+        'Electro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/electrodmgbonus.webp',
+        'Healing Bonus': 'https://ik.imagekit.io/gukc1okbd/healing_bonus.webp'
     };
 
-    const getStatIcon = (label) => {
+    const getStatIcon = (label, statValue = '') => {
         const normalized = normalizeWeaponStatLabel(label);
+        const valueText = String(statValue ?? '').trim();
+        const hasPercent = valueText.includes('%');
+
+        if (normalized === 'ATK' && hasPercent) return statIconMap['ATK%'];
+        if (normalized === 'HP' && hasPercent) return statIconMap['HP%'];
+        if (normalized === 'DEF' && hasPercent) return statIconMap['DEF%'];
+
         return statIconMap[normalized] || statIconMap.ATK;
     };
 
@@ -1176,14 +1200,14 @@ function initializePageSearch() {
                     <div class="weapon-stats">
                         <div class="weapon-stat-row">
                             <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;">
-                                <img src="${getStatIcon('ATK')}" alt="ATK" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
+                                <img src="${getStatIcon('ATK', item.atk)}" alt="ATK" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
                                 <strong>ATK</strong>
                             </span>
                             <span class="weapon-stat-value">${item.atk || 0}</span>
                         </div>
                         ${item.secondaryStat && normalizeStatValue(item.secondaryStat) !== '—' ? `<div class="weapon-stat-row">
                             <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;color:#ddd;font-size:9px;min-width:fit-content;">
-                              <img src="${getStatIcon(item.secondaryLabel || 'ATK')}" alt="${item.secondaryLabel || 'Substat'}" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
+                              <img src="${getStatIcon(item.secondaryLabel || 'ATK', item.secondaryStat)}" alt="${item.secondaryLabel || 'Substat'}" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
                               ${item.secondaryLabel || 'Substat'}
                             </span>
                             <span class="weapon-stat-value" style="flex: 1; text-align: right;">${item.secondaryStat}</span>
@@ -1554,6 +1578,7 @@ function initializeAdaptiveTopNav() {
 document.addEventListener('DOMContentLoaded', initializePageSearch);
 document.addEventListener('DOMContentLoaded', initializeTopNavEndgame);
 document.addEventListener('DOMContentLoaded', initializeAdaptiveTopNav);
+
 
 
 

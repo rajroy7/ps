@@ -632,6 +632,59 @@
         return '';
     }
 
+    const statIconMap = {
+        ATK: 'https://ik.imagekit.io/gukc1okbd/atk.webp',
+        'ATK%': 'https://ik.imagekit.io/gukc1okbd/atkpercent.webp',
+        HP: 'https://ik.imagekit.io/gukc1okbd/hp.webp',
+        'HP%': 'https://ik.imagekit.io/gukc1okbd/hppercent.webp',
+        DEF: 'https://ik.imagekit.io/gukc1okbd/DEF.WEBP',
+        'DEF%': 'https://ik.imagekit.io/gukc1okbd/defpercent.webp',
+        'CRIT Rate': 'https://ik.imagekit.io/gukc1okbd/crit_rate.webp',
+        'CRIT DMG': 'https://ik.imagekit.io/gukc1okbd/crit_damage.webp',
+        'Energy Recharge': 'https://ik.imagekit.io/gukc1okbd/er.webp',
+        'Elemental Mastery': 'https://ik.imagekit.io/gukc1okbd/em.webp',
+        'Physical DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/phydmgbonus.webp',
+        'Anemo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/anemodmgbonus.webp',
+        'Dendro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/dendrodmgbonus.webp',
+        'Geo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/geodmgbonus.webp',
+        'Cryo DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/cryodmgbonus.webp',
+        'Pyro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/pyrodmgbonus.webp',
+        'Hydro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/hydrodmgbonus.webp',
+        'Electro DMG Bonus': 'https://ik.imagekit.io/gukc1okbd/electrodmgbonus.webp',
+        'Healing Bonus': 'https://ik.imagekit.io/gukc1okbd/healing_bonus.webp'
+    };
+
+    function getWeaponStatIcon(label, statValue = '') {
+        const raw = String(label || '').trim();
+        if (!raw) return statIconMap.ATK;
+        const lower = raw.toLowerCase().replace(/_/g, ' ').trim();
+        const valueText = String(statValue ?? '').trim();
+        const hasPercent = raw.includes('%') || valueText.includes('%');
+
+        if (lower.includes('critical hurt') || lower.includes('crit dmg')) return statIconMap['CRIT DMG'];
+        if (lower.includes('critical') || lower.includes('crit rate')) return statIconMap['CRIT Rate'];
+        if (lower.includes('charge') || lower.includes('energy') || lower === 'er') return statIconMap['Energy Recharge'];
+        if (lower.includes('element') && lower.includes('master')) return statIconMap['Elemental Mastery'];
+        if (lower.includes('physical')) return statIconMap['Physical DMG Bonus'];
+        if (lower.includes('anemo')) return statIconMap['Anemo DMG Bonus'];
+        if (lower.includes('dendro')) return statIconMap['Dendro DMG Bonus'];
+        if (lower.includes('geo')) return statIconMap['Geo DMG Bonus'];
+        if (lower.includes('cryo')) return statIconMap['Cryo DMG Bonus'];
+        if (lower.includes('pyro')) return statIconMap['Pyro DMG Bonus'];
+        if (lower.includes('hydro')) return statIconMap['Hydro DMG Bonus'];
+        if (lower.includes('electro')) return statIconMap['Electro DMG Bonus'];
+        if (lower.includes('heal')) return statIconMap['Healing Bonus'];
+        if (lower.includes('def')) return hasPercent ? statIconMap['DEF%'] : statIconMap.DEF;
+        if (lower === 'hp' || lower.includes('hp ')) return hasPercent ? statIconMap['HP%'] : statIconMap.HP;
+        if (lower.includes('attack') || lower.includes('atk')) return hasPercent ? statIconMap['ATK%'] : statIconMap.ATK;
+        return statIconMap.ATK;
+    }
+
+    function renderWeaponStatLabel(displayLabel, iconLabel = displayLabel, statValue = '') {
+        const iconUrl = getWeaponStatIcon(iconLabel, statValue);
+        return `<span style="display:inline-flex;align-items:center;gap:6px;"><img src="${iconUrl}" alt="${iconLabel}" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;">${displayLabel}</span>`;
+    }
+
     function mapQualityToRarity(qualityType, fallback = 3) {
         const q = String(qualityType || '').toUpperCase();
         if (q.includes('ORANGE') || q.includes('GOLD')) return 5;
@@ -1004,12 +1057,12 @@
                         </div>
                         <div class="weapon-info-grid">
                             <div class="info-card">
-                                <div class="info-label">Base ATK</div>
+                                <div class="info-label">${renderWeaponStatLabel('Base ATK', 'ATK', weapon.atk)}</div>
                                 <div class="info-value" id="heroAtkValue">${weapon.atk}</div>
                             </div>
                             ${weapon.secondaryStat && weapon.secondaryStat !== '—' ? `
                             <div class="info-card" id="heroSubCard">
-                                <div class="info-label" id="heroSubLabel">${weapon.secondaryLabel}</div>
+                                <div class="info-label" id="heroSubLabel">${renderWeaponStatLabel(weapon.secondaryLabel, weapon.secondaryLabel, weapon.secondaryStat)}</div>
                                 <div class="info-value" id="heroSubValue">${weapon.secondaryStat}</div>
                             </div>
                             ` : ''}
@@ -1041,12 +1094,12 @@
                         <div class="info-group">
                             <h4>Basic Information</h4>
                             <div class="stat-row">
-                                <div class="stat-name">Base ATK</div>
+                                <div class="stat-name">${renderWeaponStatLabel('Base ATK', 'ATK', weapon.atk)}</div>
                                 <div class="stat-val" id="basicAtkValue">${weapon.atk}</div>
                             </div>
                             ${weapon.secondaryStat && weapon.secondaryStat !== '—' ? `
                             <div class="stat-row" id="basicSubRow">
-                                <div class="stat-name" id="basicSubLabel">${weapon.secondaryLabel}</div>
+                                <div class="stat-name" id="basicSubLabel">${renderWeaponStatLabel(weapon.secondaryLabel, weapon.secondaryLabel, weapon.secondaryStat)}</div>
                                 <div class="stat-val" id="basicSubValue">${weapon.secondaryStat}</div>
                             </div>
                             ` : ''}
@@ -1122,9 +1175,9 @@
             const hasSecondary = secLabel !== '—';
             if (heroSubCard) heroSubCard.style.display = hasSecondary ? '' : 'none';
             if (basicSubRow) basicSubRow.style.display = hasSecondary ? '' : 'none';
-            if (heroSubLabel) heroSubLabel.textContent = hasSecondary ? secLabel : '';
+            if (heroSubLabel) heroSubLabel.innerHTML = hasSecondary ? renderWeaponStatLabel(secLabel, secLabel, secVal) : '';
             if (heroSubValue) heroSubValue.textContent = hasSecondary ? secVal : '';
-            if (basicSubLabel) basicSubLabel.textContent = hasSecondary ? secLabel : '';
+            if (basicSubLabel) basicSubLabel.innerHTML = hasSecondary ? renderWeaponStatLabel(secLabel, secLabel, secVal) : '';
             if (basicSubValue) basicSubValue.textContent = hasSecondary ? secVal : '';
         }
 
