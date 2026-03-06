@@ -2,9 +2,12 @@ let allCharacters = [];
 let activeFilters = {
   rarity: [],
   element: [],
-  weapon: []
+  weapon: [],
+  region: [],
+  body: []
 };
 let searchTerm = ''; // for name search
+let bodyTypeById = {};
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,15 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('characterSearch');
   if (searchInput) searchInput.value = '';
   document.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.region-filter[data-region="all"], .body-filter[data-body="all"]').forEach(b => b.classList.add('active'));
   searchTerm = '';
-  activeFilters = { rarity: [], element: [], weapon: [] };
+  activeFilters = { rarity: [], element: [], weapon: [], region: [], body: [] };
 
   fetch('characters.json')
     .then(r => r.json())
     .then(data => {
       allCharacters = data;
+      return fetch('characters-data.json')
+        .then(r => r.json())
+        .then(full => {
+          const map = {};
+          Object.keys(full || {}).forEach((id) => {
+            const bt = full[id]?.bodyType || '';
+            if (bt) map[Number(id)] = bt;
+          });
+          bodyTypeById = map;
+          allCharacters = allCharacters.map(c => ({ ...c, bodyType: normalizeBodyType(map[c.id]) }));
+        })
+        .catch(() => {
+          allCharacters = allCharacters.map(c => ({ ...c, bodyType: '' }));
+        });
+    })
+    .then(() => {
       setupFilters();
-      renderCharacters(data, container);
+      renderCharacters(allCharacters, container);
     })
     .catch(err => {
       container.innerText = 'Failed to load characters.';
@@ -32,27 +52,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function normalizeBodyType(value) {
+  if (!value) return '';
+  if (value === 'FEMALE') return 'LADY';
+  return value;
+}
+
+function setExclusiveFilter(button, selector, keepDataAttrName) {
+  document.querySelectorAll(selector).forEach(b => b.classList.remove('active'));
+  button.classList.add('active');
+  if (button.dataset[keepDataAttrName] === 'all') {
+    activeFilters[keepDataAttrName] = [];
+  }
+}
+
 function setupFilters() {
+  const filterToggleBtn = document.getElementById('filterToggleBtn');
+  const filtersPanel = document.getElementById('filtersPanel');
+  const filterCloseBtn = document.getElementById('filterCloseBtn');
+  if (filterToggleBtn && filtersPanel) {
+    filterToggleBtn.addEventListener('click', () => {
+      const isCollapsed = filtersPanel.classList.toggle('collapsed');
+      filterToggleBtn.classList.toggle('expanded', !isCollapsed);
+      filterToggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+    });
+    document.addEventListener('click', (e) => {
+      if (filtersPanel.classList.contains('collapsed')) return;
+      if (filtersPanel.contains(e.target) || filterToggleBtn.contains(e.target)) return;
+      filtersPanel.classList.add('collapsed');
+      filterToggleBtn.classList.remove('expanded');
+      filterToggleBtn.setAttribute('aria-expanded', 'false');
+    });
+    if (filterCloseBtn) {
+      filterCloseBtn.addEventListener('click', () => {
+        filtersPanel.classList.add('collapsed');
+        filterToggleBtn.classList.remove('expanded');
+        filterToggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  }
+
   // Rarity filter buttons
   document.querySelectorAll('.rarity-filter').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.target.classList.toggle('active');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
       updateFilters();
     });
   });
 
   // Element filter buttons
   document.querySelectorAll('.element-filter').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.target.classList.toggle('active');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
       updateFilters();
     });
   });
 
   // Weapon filter buttons
   document.querySelectorAll('.weapon-filter').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.target.classList.toggle('active');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      updateFilters();
+    });
+  });
+
+  // Region filter buttons (single-select with All option)
+  document.querySelectorAll('.region-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setExclusiveFilter(btn, '.region-filter', 'region');
+      updateFilters();
+    });
+  });
+
+  // Body type filter buttons (single-select with All option)
+  document.querySelectorAll('.body-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setExclusiveFilter(btn, '.body-filter', 'body');
       updateFilters();
     });
   });
@@ -62,7 +137,8 @@ function setupFilters() {
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-      activeFilters = { rarity: [], element: [], weapon: [] };
+      document.querySelectorAll('.region-filter[data-region="all"], .body-filter[data-body="all"]').forEach(b => b.classList.add('active'));
+      activeFilters = { rarity: [], element: [], weapon: [], region: [], body: [] };
       searchTerm = '';
       const searchInput = document.getElementById('characterSearch');
       if (searchInput) searchInput.value = '';
@@ -84,13 +160,21 @@ function updateFilters() {
   activeFilters.rarity = Array.from(document.querySelectorAll('.rarity-filter.active')).map(b => parseInt(b.dataset.rarity));
   activeFilters.element = Array.from(document.querySelectorAll('.element-filter.active')).map(b => b.dataset.element);
   activeFilters.weapon = Array.from(document.querySelectorAll('.weapon-filter.active')).map(b => b.dataset.weapon);
+  activeFilters.region = Array.from(document.querySelectorAll('.region-filter.active'))
+    .map(b => b.dataset.region)
+    .filter(v => v && v !== 'all');
+  activeFilters.body = Array.from(document.querySelectorAll('.body-filter.active'))
+    .map(b => b.dataset.body)
+    .filter(v => v && v !== 'all');
 
   const filtered = allCharacters.filter(char => {
     const matchRarity = activeFilters.rarity.length === 0 || activeFilters.rarity.includes(char.rarity);
     const matchElement = activeFilters.element.length === 0 || activeFilters.element.includes(char.vision);
     const matchWeapon = activeFilters.weapon.length === 0 || activeFilters.weapon.includes(char.weapon);
+    const matchRegion = activeFilters.region.length === 0 || activeFilters.region.includes(char.region);
+    const matchBody = activeFilters.body.length === 0 || activeFilters.body.includes(normalizeBodyType(char.bodyType));
     const matchSearch = !searchTerm || char.name.toLowerCase().includes(searchTerm);
-    return matchRarity && matchElement && matchWeapon && matchSearch;
+    return matchRarity && matchElement && matchWeapon && matchRegion && matchBody && matchSearch;
   });
 
   renderCharacters(filtered, document.getElementById('characters'));
@@ -133,37 +217,37 @@ function renderCharacters(chars, container) {
 
     // Character name
     const title = document.createElement('h3');
-    title.style.margin = '10px 0 4px 0';
-    title.style.fontSize = '16px';
+    title.style.margin = '8px 0 3px 0';
+    title.style.fontSize = '12px';
     title.innerText = c.name;
 
     // Character title/constellation
     const constellation = document.createElement('p');
-    constellation.style.margin = '0 0 8px 0';
-    constellation.style.fontSize = '12px';
+    constellation.style.margin = '0 0 6px 0';
+    constellation.style.fontSize = '9px';
     constellation.style.opacity = '0.7';
     constellation.innerText = c.title || '';
 
     // Element and weapon icons
     const meta = document.createElement('div');
     meta.style.display = 'flex';
-    meta.style.gap = '8px';
-    meta.style.marginTop = '8px';
+    meta.style.gap = '6px';
+    meta.style.marginTop = '6px';
     meta.style.justifyContent = 'center';
 
     // Element icon
     const elementIcon = document.createElement('img');
     elementIcon.src = c.icon || '';
     elementIcon.alt = c.vision;
-    elementIcon.style.width = '24px';
-    elementIcon.style.height = '24px';
+    elementIcon.style.width = '18px';
+    elementIcon.style.height = '18px';
     elementIcon.title = c.vision;
 
     // Weapon icon
     const weaponIcon = document.createElement('img');
     weaponIcon.title = c.weapon;
-    weaponIcon.style.width = '24px';
-    weaponIcon.style.height = '24px';
+    weaponIcon.style.width = '18px';
+    weaponIcon.style.height = '18px';
     const weaponIcons = {
       'Sword': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png',
       'Claymore': 'https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png',

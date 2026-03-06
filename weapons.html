@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -7,11 +7,29 @@
   <link rel="icon" href="https://ik.imagekit.io/gukc1okbd/Crystallina_Shape.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .page-title{margin:18px 0;color:#7c5cff;letter-spacing:2px}
-    #pageSearchInput{background:rgba(124,92,255,0.1)!important;border:1px solid rgba(124,92,255,0.4)!important;border-radius:8px!important;padding:10px 12px!important;color:#fff!important;font-size:14px;width:100%!important;margin:16px 0!important}
+    .page-title{margin:18px 0;color:#7c5cff;letter-spacing:2px;font-size:1.96rem}
+    #pageSearchInput{background:linear-gradient(135deg,rgba(124,92,255,0.2),rgba(124,92,255,0.08))!important;border:1px solid rgba(124,92,255,0.5)!important;border-radius:10px!important;padding:10px 14px!important;color:#fff!important;font-size:14px;width:100%!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05),0 0 12px rgba(124,92,255,0.12)}
     #pageSearchInput::placeholder{color:rgba(255,255,255,0.5)}
-    #pageSearchInput:focus{outline:none;background:rgba(124,92,255,0.15)!important;border-color:rgba(124,92,255,0.6)!important}
-    .filter-btn{padding:6px 10px!important;font-size:12px!important}
+    #pageSearchInput:focus{outline:none;background:linear-gradient(135deg,rgba(124,92,255,0.25),rgba(124,92,255,0.12))!important;border-color:rgba(124,92,255,0.85)!important;box-shadow:0 0 0 2px rgba(124,92,255,0.2),0 0 16px rgba(124,92,255,0.2)}
+    .controls-wrap{position:relative;margin:16px 0 10px 0}
+    .controls-row{display:flex;align-items:center;gap:10px}
+    .filter-toggle-btn{display:inline-flex;align-items:center;gap:8px;min-width:130px;padding:10px 14px;border-radius:10px;border:1px solid rgba(124,92,255,0.55);background:linear-gradient(135deg,rgba(124,92,255,0.28),rgba(124,92,255,0.12));color:#efeaff;font-size:20px;font-weight:700;cursor:pointer;transition:0.2s;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05),0 0 12px rgba(124,92,255,0.14)}
+    .filter-toggle-btn:hover{border-color:rgba(124,92,255,0.85);background:linear-gradient(135deg,rgba(124,92,255,0.34),rgba(124,92,255,0.18));box-shadow:0 0 0 2px rgba(124,92,255,0.18),0 0 18px rgba(124,92,255,0.22)}
+    .filter-toggle-btn .filter-icon{width:16px;height:16px;object-fit:contain;display:block}
+    .filter-toggle-btn .label{font-size:14px;font-weight:700}
+    .filters-container{position:absolute;top:calc(100% + 8px);left:0;width:min(620px,calc(100vw - 120px));max-height:62vh;overflow:auto;margin:0;padding:8px;background:rgba(27,22,45,0.98);border-radius:10px;border:1px solid rgba(124,92,255,0.45);box-shadow:0 14px 34px rgba(0,0,0,0.4);z-index:40}
+    .filters-container.collapsed{display:none}
+    .filters-popup-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(124,92,255,0.25)}
+    .filters-popup-title{font-size:11px;color:#d9ccff;font-weight:700;letter-spacing:0.6px;text-transform:uppercase}
+    .filters-close-btn{width:26px;height:26px;border-radius:8px;border:1px solid rgba(124,92,255,0.65);background:linear-gradient(135deg,rgba(124,92,255,0.34),rgba(124,92,255,0.16));color:#efeaff;cursor:pointer;font-size:16px;line-height:1;font-weight:700;display:inline-flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06),0 0 12px rgba(124,92,255,0.22);transition:0.2s}
+    .filters-close-btn:hover{border-color:rgba(124,92,255,0.9);background:linear-gradient(135deg,rgba(124,92,255,0.46),rgba(124,92,255,0.24));box-shadow:0 0 0 2px rgba(124,92,255,0.2),0 0 18px rgba(124,92,255,0.3);transform:translateY(-1px)}
+    .filters-close-btn:active{transform:translateY(0);box-shadow:inset 0 0 10px rgba(0,0,0,0.2),0 0 10px rgba(124,92,255,0.24)}
+    .filter-group{margin-bottom:12px}
+    .filter-group h4{margin:0 0 8px 0;color:#999;font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+    .filter-buttons{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .filter-btn{padding:5px 9px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#ccc;border-radius:6px;cursor:pointer;transition:0.2s;font-size:11px}
+    .filter-btn:hover{border-color:rgba(124,92,255,0.5);background:rgba(124,92,255,0.1)}
+    .filter-btn.active{background:#7c5cff;color:white;border-color:#7c5cff}
     .cards-grid{gap:12px!important}
     #pageSearchResults.cards-grid{
       display:grid!important;
@@ -32,6 +50,16 @@
     .weapon-stats{font-size:12px!important}
     .weapon-stat-row{gap:4px!important}
     @media (max-width: 768px) {
+      .controls-wrap{margin:12px 0 8px 0}
+      .controls-row{gap:8px}
+      .filter-toggle-btn{min-width:112px;padding:9px 10px}
+      .filters-container{position:fixed;top:78px;left:8px;right:8px;width:auto;max-width:none;max-height:68vh;padding:7px}
+      .filters-popup-title{font-size:10px}
+      .filters-close-btn{width:24px;height:24px;font-size:14px;border-radius:7px}
+      .filter-group{margin-bottom:10px}
+      .filter-group h4{font-size:9px;margin-bottom:6px}
+      .filter-buttons{gap:5px}
+      .filter-btn{padding:4px 7px;font-size:10px}
       #pageSearchResults.cards-grid{gap:8px!important;grid-template-columns:repeat(3, minmax(0, 1fr))!important}
       #pageSearchResults.cards-grid > *{min-width:0!important}
       .weapon-card{width:100%!important;min-width:0!important;min-height:205px!important;border-width:1px!important}
@@ -108,60 +136,59 @@
   </nav>
   <section style="padding:24px">
     <h1 class="page-title">Weapons</h1>
-    
-    <!-- Filters Section -->
-    <div style="margin: 16px 0; display: flex; flex-direction: column; gap: 12px;">
-      <!-- Rarity Filter -->
-      <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-          <label style="font-weight: 600; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Rarity</label>
-          <button class="filter-btn active" data-filter="rarity" data-value="all" style="padding: 4px 8px; font-size: 11px;">All</button>
-        </div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-          <button class="filter-btn" data-filter="rarity" data-value="1">1★</button>
-          <button class="filter-btn" data-filter="rarity" data-value="2">2★</button>
-          <button class="filter-btn" data-filter="rarity" data-value="3">3★</button>
-          <button class="filter-btn" data-filter="rarity" data-value="4">4★</button>
-          <button class="filter-btn" data-filter="rarity" data-value="5">5★</button>
-        </div>
+    <div class="controls-wrap">
+      <div class="controls-row">
+        <button id="filterToggleBtn" class="filter-toggle-btn" type="button" aria-expanded="false" aria-controls="filtersPanel">
+          <img class="filter-icon" src="https://ik.imagekit.io/gukc1okbd/empty-filter-512.webp" alt="Filter">
+          <span class="label">Filter</span>
+        </button>
+        <input type="text" id="pageSearchInput" placeholder="Search weapons..." />
       </div>
-
-      <!-- Type Filter -->
-      <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-          <label style="font-weight: 600; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Type</label>
-          <button class="filter-btn active" data-filter="type" data-value="all" style="padding: 4px 8px; font-size: 11px;">All</button>
+      <div class="filters-container collapsed" id="filtersPanel">
+        <div class="filters-popup-head">
+          <span class="filters-popup-title">Filters</span>
+          <button id="filterCloseBtn" class="filters-close-btn" type="button" aria-label="Close filters">&times;</button>
         </div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-          <button class="filter-btn" data-filter="type" data-value="Sword" style="display: flex; align-items: center; gap: 4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png" alt="Sword" style="width: 16px; height: 16px; object-fit: contain;"> Sword</button>
-          <button class="filter-btn" data-filter="type" data-value="Claymore" style="display: flex; align-items: center; gap: 4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png" alt="Claymore" style="width: 16px; height: 16px; object-fit: contain;"> Claymore</button>
-          <button class="filter-btn" data-filter="type" data-value="Polearm" style="display: flex; align-items: center; gap: 4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Pole.png" alt="Polearm" style="width: 16px; height: 16px; object-fit: contain;"> Polearm</button>
-          <button class="filter-btn" data-filter="type" data-value="Catalyst" style="display: flex; align-items: center; gap: 4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png" alt="Catalyst" style="width: 16px; height: 16px; object-fit: contain;"> Catalyst</button>
-          <button class="filter-btn" data-filter="type" data-value="Bow" style="display: flex; align-items: center; gap: 4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png" alt="Bow" style="width: 16px; height: 16px; object-fit: contain;"> Bow</button>
+        <div class="filter-group">
+          <h4>Rarity</h4>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="rarity" data-value="all">All</button>
+            <button class="filter-btn" data-filter="rarity" data-value="1">1&#9733;</button>
+            <button class="filter-btn" data-filter="rarity" data-value="2">2&#9733;</button>
+            <button class="filter-btn" data-filter="rarity" data-value="3">3&#9733;</button>
+            <button class="filter-btn" data-filter="rarity" data-value="4">4&#9733;</button>
+            <button class="filter-btn" data-filter="rarity" data-value="5">5&#9733;</button>
+          </div>
         </div>
-      </div>
-
-      <!-- Special Stat Filter -->
-      <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-          <label style="font-weight: 600; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Special Stat</label>
-          <button class="filter-btn active" data-filter="stat" data-value="all" style="padding: 4px 8px; font-size: 11px;">All</button>
+        <div class="filter-group">
+          <h4>Type</h4>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="type" data-value="all">All</button>
+            <button class="filter-btn" data-filter="type" data-value="Sword" style="display:flex;align-items:center;gap:4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Sword.png" alt="Sword" style="width:16px;height:16px;object-fit:contain;"> Sword</button>
+            <button class="filter-btn" data-filter="type" data-value="Claymore" style="display:flex;align-items:center;gap:4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Claymore.png" alt="Claymore" style="width:16px;height:16px;object-fit:contain;"> Claymore</button>
+            <button class="filter-btn" data-filter="type" data-value="Polearm" style="display:flex;align-items:center;gap:4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Pole.png" alt="Polearm" style="width:16px;height:16px;object-fit:contain;"> Polearm</button>
+            <button class="filter-btn" data-filter="type" data-value="Catalyst" style="display:flex;align-items:center;gap:4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Catalyst.png" alt="Catalyst" style="width:16px;height:16px;object-fit:contain;"> Catalyst</button>
+            <button class="filter-btn" data-filter="type" data-value="Bow" style="display:flex;align-items:center;gap:4px;"><img src="https://ik.imagekit.io/gukc1okbd/UI_GachaTypeIcon_Bow.png" alt="Bow" style="width:16px;height:16px;object-fit:contain;"> Bow</button>
+          </div>
         </div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-          <button class="filter-btn" data-filter="stat" data-value="—">None</button>
-          <button class="filter-btn" data-filter="stat" data-value="ATK">ATK</button>
-          <button class="filter-btn" data-filter="stat" data-value="CRIT Rate">CRIT Rate</button>
-          <button class="filter-btn" data-filter="stat" data-value="CRIT DMG">CRIT DMG</button>
-          <button class="filter-btn" data-filter="stat" data-value="Physical DMG Bonus">Phys DMG</button>
-          <button class="filter-btn" data-filter="stat" data-value="Energy Recharge">Energy Rech</button>
-          <button class="filter-btn" data-filter="stat" data-value="Elemental Mastery">EM</button>
-          <button class="filter-btn" data-filter="stat" data-value="DEF">DEF</button>
-          <button class="filter-btn" data-filter="stat" data-value="HP">HP</button>
+        <div class="filter-group">
+          <h4>Special Stat</h4>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="stat" data-value="all">All</button>
+            <button class="filter-btn" data-filter="stat" data-value="—">None</button>
+            <button class="filter-btn" data-filter="stat" data-value="ATK">ATK</button>
+            <button class="filter-btn" data-filter="stat" data-value="CRIT Rate">CRIT Rate</button>
+            <button class="filter-btn" data-filter="stat" data-value="CRIT DMG">CRIT DMG</button>
+            <button class="filter-btn" data-filter="stat" data-value="Physical DMG Bonus">Phys DMG</button>
+            <button class="filter-btn" data-filter="stat" data-value="Energy Recharge">Energy Rech</button>
+            <button class="filter-btn" data-filter="stat" data-value="Elemental Mastery">EM</button>
+            <button class="filter-btn" data-filter="stat" data-value="DEF">DEF</button>
+            <button class="filter-btn" data-filter="stat" data-value="HP">HP</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <input type="text" id="pageSearchInput" placeholder="Search weapons..." />
     <div id="pageSearchResults" data-source="weapon_data.json" class="cards-grid" style="min-height:120px"></div>
   </section>
   <div class="footer">
@@ -180,7 +207,7 @@
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.id = 'scrollToTopBtn';
 scrollToTopBtn.title = 'Scroll to top';
-scrollToTopBtn.innerHTML = '▲';
+scrollToTopBtn.innerHTML = '&#9650;';
 document.body.appendChild(scrollToTopBtn);
 
 window.addEventListener('scroll', () => {
@@ -196,7 +223,42 @@ window.addEventListener('scroll', () => {
 scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterToggleBtn = document.getElementById('filterToggleBtn');
+  const filtersPanel = document.getElementById('filtersPanel');
+  const filterCloseBtn = document.getElementById('filterCloseBtn');
+  if (!filterToggleBtn || !filtersPanel) return;
+
+  filterToggleBtn.addEventListener('click', () => {
+    const isCollapsed = filtersPanel.classList.toggle('collapsed');
+    filterToggleBtn.classList.toggle('expanded', !isCollapsed);
+    filterToggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+  });
+
+  if (filterCloseBtn) {
+    filterCloseBtn.addEventListener('click', () => {
+      filtersPanel.classList.add('collapsed');
+      filterToggleBtn.classList.remove('expanded');
+      filterToggleBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (filtersPanel.classList.contains('collapsed')) return;
+    if (filtersPanel.contains(e.target) || filterToggleBtn.contains(e.target)) return;
+    filtersPanel.classList.add('collapsed');
+    filterToggleBtn.classList.remove('expanded');
+    filterToggleBtn.setAttribute('aria-expanded', 'false');
+  });
+});
 </script>
 <script type="module" src="https://tovik.app/tovik.js"></script>
 </body>
 </html>
+
+
+
+
+

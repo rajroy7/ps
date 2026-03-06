@@ -1071,7 +1071,8 @@ function initializePageSearch() {
     const applyFilters = (list) => {
         return list.filter(item => {
             // Rarity filter
-            if (activeFilters.rarity !== 'all' && String(item.rarity) !== String(activeFilters.rarity)) {
+            const itemRarity = item.rarity ?? item.rank;
+            if (activeFilters.rarity !== 'all' && String(itemRarity) !== String(activeFilters.rarity)) {
                 return false;
             }
             

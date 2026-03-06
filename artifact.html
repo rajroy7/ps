@@ -21,18 +21,20 @@
         }
 
         .artifact-hero-left {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: 88px minmax(0, 1fr);
+            gap: 14px;
+            align-items: start;
         }
 
         .artifact-hero-image {
+            box-sizing: border-box;
             background: linear-gradient(135deg, rgba(124, 92, 255, 0.2) 0%, rgba(124, 92, 255, 0.1) 100%);
             border: 2px solid rgba(124, 92, 255, 0.4);
             border-radius: 12px;
-            padding: 20px;
-            width: 200px;
-            height: 200px;
+            padding: 12px;
+            width: 88px;
+            height: 88px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -57,7 +59,8 @@
         }
 
         .artifact-hero-text {
-            padding-top: 8px;
+            padding-top: 0;
+            min-width: 0;
         }
 
         .artifact-title {
@@ -80,16 +83,17 @@
         }
 
         .artifact-title-name {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: 700;
             color: #fff;
             line-height: 1.2;
+            word-break: break-word;
         }
 
         .artifact-rarity {
             display: flex;
             gap: 6px;
-            font-size: 24px;
+            font-size: 20px;
             margin-top: 8px;
         }
 
@@ -225,7 +229,7 @@
             }
 
             .artifact-hero-image {
-                min-height: 300px;
+                min-height: 88px;
             }
         }
 
@@ -234,8 +238,30 @@
                 padding: 16px;
             }
 
+            .artifact-hero-left {
+                grid-template-columns: 72px minmax(0, 1fr);
+                gap: 10px;
+            }
+
+            .artifact-hero-image {
+                width: 72px;
+                height: 72px;
+                padding: 10px;
+            }
+
             .artifact-title-name {
-                font-size: 24px;
+                font-size: 18px;
+            }
+
+            .artifact-rarity {
+                font-size: 16px;
+                margin-top: 4px;
+            }
+
+            .artifact-title-badge {
+                font-size: 11px;
+                padding: 5px 10px;
+                gap: 5px;
             }
 
             .content-tabs {
