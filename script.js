@@ -345,6 +345,11 @@ if (document.readyState === 'loading') {
     initializeSearch();
 }
 
+// Allow pages (like Home) to force-initialize the global search on first use.
+window.ensureGlobalSearch = function ensureGlobalSearch() {
+    initializeSearch();
+};
+
 // Close sidebar when a link/button is clicked (delegated for dynamic sidebar content)
 if (sidebar && hamburger) {
     sidebar.addEventListener("click", function(event) {
