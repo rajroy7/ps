@@ -1,4 +1,4 @@
-﻿const sidebar = document.getElementById("sidebar");
+const sidebar = document.getElementById("sidebar");
 const hamburger = document.getElementById("hamburger");
 
 function synchronizeGlobalNavigation() {
@@ -107,6 +107,8 @@ if (hamburger && sidebar) {
 function initializeSearch() {
     const searchBtn = document.getElementById('searchBtn');
     if (!searchBtn) return;
+    if (searchBtn.dataset.searchInitialized === '1') return;
+    searchBtn.dataset.searchInitialized = '1';
 
     const topSearchIcon = searchBtn.querySelector('.search-icon');
     if (topSearchIcon) {
@@ -117,8 +119,9 @@ function initializeSearch() {
         const style = document.createElement('style');
         style.id = 'globalSearchStyles';
         style.textContent = `
-            .search-modal { position: fixed; inset: 0; z-index: 1200; display: none; }
-            .search-modal.open { display: block; }
+            /* Keep selectors compatible with styles.css (some pages ship their own search modal markup). */
+            .search-modal { position: fixed; inset: 0; z-index: 2000; display: none; }
+            .search-modal.open { display: flex; align-items: flex-start; justify-content: center; padding-top: 80px; }
             .search-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
             .search-panel {
                 position: relative;
@@ -184,10 +187,13 @@ function initializeSearch() {
         document.body.appendChild(searchModal);
     }
 
-    const searchInput = document.getElementById('searchInput');
-    const searchClose = document.getElementById('searchClose');
-    const searchOverlay = document.getElementById('searchOverlay');
-    const searchResults = document.getElementById('searchResults');
+    // Important: scope queries to the modal to avoid collisions with page-level
+    // elements (e.g. index.html also had a `#searchResults` container).
+    const searchInput = searchModal.querySelector('#searchInput');
+    const searchClose = searchModal.querySelector('#searchClose');
+    const searchOverlay = searchModal.querySelector('#searchOverlay');
+    const searchResults = searchModal.querySelector('#searchResults');
+    if (!searchInput || !searchResults) return;
 
     let charactersData = [];
     let weaponsData = [];
@@ -218,6 +224,16 @@ function initializeSearch() {
         }
     };
 
+    // Public helpers so pages (like Home) can reuse the same global search UI/logic.
+    window.openGlobalSearch = openSearch;
+    window.closeGlobalSearch = closeSearch;
+    window.openGlobalSearchWithQuery = (query) => {
+        openSearch();
+        const q = String(query || '');
+        searchInput.value = q;
+        searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+    };
+
     searchBtn.addEventListener('click', openSearch);
     if (searchClose) searchClose.addEventListener('click', closeSearch);
     if (searchOverlay) searchOverlay.addEventListener('click', closeSearch);
@@ -228,14 +244,18 @@ function initializeSearch() {
 
     Promise.all([
         fetch('characters.json').then(r => r.json()).catch(() => []),
-        fetch('weapon_data.json').then(r => r.json()).catch(() => []),
+        // Fast path: normalize local dataset only (no external API calls).
+        fetch('weapon_data.json')
+            .then(r => r.json())
+            .then(data => normalizeWeaponDataset(data))
+            .catch(() => fetch('weapons.json').then(r => r.json()).then(data => normalizeWeaponDataset(data)).catch(() => [])),
         fetch('artifacts.json').then(r => r.json()).catch(() => []),
         fetch('inventory.json').then(r => r.json()).catch(() => [])
     ]).then(([chars, weaps, arts, inv]) => {
-        charactersData = Array.isArray(chars) ? chars : [];
-        weaponsData = Array.isArray(weaps) ? weaps : [];
-        artifactsData = Array.isArray(arts) ? arts : [];
-        inventoryData = Array.isArray(inv) ? inv : [];
+        charactersData = Array.isArray(chars) ? chars : Object.values(chars || {});
+        weaponsData = Array.isArray(weaps) ? weaps.map(w => ({ ...w, iconUrl: w.iconUrl || buildYattaIconUrl(w.icon) })) : [];
+        artifactsData = Array.isArray(arts) ? arts : Object.values(arts || {});
+        inventoryData = Array.isArray(inv) ? inv : Object.values(inv || {});
     });
 
     if (searchInput) {
@@ -267,7 +287,7 @@ function initializeSearch() {
                     name: weap.name || 'Weapon',
                     description: weap.type || 'Weapon',
                     link: `weapon.html?id=${weap.id}`,
-                    image: weap.weaponIcon ? `https://gi.yatta.moe/assets/UI/${weap.weaponIcon}.png` : 'https://ik.imagekit.io/gukc1okbd/weapons.webp'
+                    image: weap.iconUrl || buildYattaIconUrl(weap.icon) || 'https://ik.imagekit.io/gukc1okbd/weapons.webp'
                 }));
 
             artifactsData
@@ -620,35 +640,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsBtn = document.getElementById('settingsBtn');
     const topSettingsBtn = document.getElementById('topSettingsBtn');
     const settingsModal = document.getElementById('settingsModal');
-    const closeModalBtn = document.querySelector('.modal-close');
+    if (!settingsModal) return;
+    const closeModalBtn = settingsModal.querySelector('.modal-close');
+    const openSettings = () => settingsModal.classList.add('open');
+    const closeSettings = () => settingsModal.classList.remove('open');
 
     // Sidebar settings button
     if (settingsBtn) {
         settingsBtn.addEventListener('click', () => {
-            settingsModal.classList.add('open');
+            openSettings();
         });
     }
 
     // Top navbar settings button
     if (topSettingsBtn) {
         topSettingsBtn.addEventListener('click', () => {
-            settingsModal.classList.add('open');
+            openSettings();
         });
     }
 
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', () => {
-            settingsModal.classList.remove('open');
+            closeSettings();
         });
     }
 
     if (settingsModal) {
         settingsModal.addEventListener('click', (e) => {
             if (e.target === settingsModal) {
-                settingsModal.classList.remove('open');
+                closeSettings();
             }
         });
     }
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && settingsModal.classList.contains('open')) closeSettings();
+    });
 
     // Load settings from localStorage
     loadSettings();
@@ -662,6 +689,13 @@ document.addEventListener('DOMContentLoaded', () => {
         saveBtn.addEventListener('click', () => {
             saveSettings();
             applyAllSettings();
+            const original = saveBtn.textContent;
+            saveBtn.textContent = 'Saved';
+            saveBtn.disabled = true;
+            setTimeout(() => {
+                saveBtn.disabled = false;
+                saveBtn.textContent = original || 'Save';
+            }, 900);
         });
     }
 
@@ -714,7 +748,15 @@ function loadSettings() {
     const stored = localStorage.getItem('projectSirkSettings');
     if (!stored) return;
 
-    const settings = JSON.parse(stored);
+    let settings = null;
+    try {
+        settings = JSON.parse(stored);
+    } catch (e) {
+        console.warn('Invalid stored settings, clearing.', e);
+        localStorage.removeItem('projectSirkSettings');
+        return;
+    }
+    if (!settings || typeof settings !== 'object') return;
     if (document.getElementById('language')) document.getElementById('language').value = settings.language;
     if (document.getElementById('region')) document.getElementById('region').value = settings.region;
     if (document.getElementById('twin')) document.getElementById('twin').value = settings.twin;

@@ -72,7 +72,8 @@
   </nav>
   <section style="padding:24px">
     <h1 class="page-title">Search</h1>
-    <p style="opacity:0.85">Placeholder page for site-wide search.</p>
+    <p style="opacity:0.85">Use the top search button to search characters, weapons, artifacts and inventory.</p>
+    <button id="openGlobalSearchBtn" class="save-btn" type="button" style="margin-top:12px">Open Search</button>
   </section>
   <div class="footer">
     <div class="footer-content">
@@ -85,6 +86,16 @@
   </div>
 </div>
 <script src="script.js"></script>
+<script>
+  // Make the Search page actually open the global search UI.
+  document.getElementById('openGlobalSearchBtn')?.addEventListener('click', () => {
+    document.getElementById('searchBtn')?.click();
+  });
+  window.addEventListener('load', () => {
+    // Auto-open for convenience, but let users cancel immediately.
+    setTimeout(() => document.getElementById('searchBtn')?.click(), 100);
+  });
+</script>
 <script>
 // Scroll to Top Button
 const scrollToTopBtn = document.createElement('button');
