@@ -992,6 +992,10 @@ function normalizeWeaponRecord(raw) {
         name: name || `Weapon ${id || ''}`.trim(),
         type,
         rarity: Math.max(1, Math.min(5, rarity || 3)),
+        releaseDate: toNumber(
+            pickFirst(raw.releaseDate, raw.release, raw.release_date, raw.release_timestamp),
+            0
+        ),
         icon: String(
             pickFirst(raw.weaponIcon, raw.icon, raw.iconName, raw.iconname, raw.image, raw.avatar) ?? ''
         ).trim(),
@@ -1199,11 +1203,11 @@ function initializePageSearch() {
                     <div class="weapon-name">${item.name || 'Unknown Weapon'}</div>
                     <div class="weapon-stats">
                         <div class="weapon-stat-row">
-                            <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;">
+                            <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;min-width:fit-content;">
                                 <img src="${getStatIcon('ATK', item.atk)}" alt="ATK" style="width:12px;height:12px;object-fit:contain;opacity:.9;">
                                 <strong>ATK</strong>
                             </span>
-                            <span class="weapon-stat-value">${item.atk || 0}</span>
+                            <span class="weapon-stat-value" style="flex: 1; text-align: right;">${item.atk || 0}</span>
                         </div>
                         ${item.secondaryStat && normalizeStatValue(item.secondaryStat) !== '—' ? `<div class="weapon-stat-row">
                             <span class="weapon-stat-label" style="display:flex;align-items:center;gap:4px;color:#ddd;font-size:9px;min-width:fit-content;">
@@ -1362,6 +1366,12 @@ function initializePageSearch() {
         try {
             if (url === 'weapons.json' || url === 'weapon_data.json') {
                 items = await loadWeaponsForPage(url);
+                items = [...items].sort((a, b) => {
+                    const releaseA = Number(a?.releaseDate || 0);
+                    const releaseB = Number(b?.releaseDate || 0);
+                    if (releaseB !== releaseA) return releaseB - releaseA;
+                    return Number(b?.id || 0) - Number(a?.id || 0);
+                });
             } else {
                 const response = await fetch(url);
                 const data = await response.json();

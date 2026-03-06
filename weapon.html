@@ -141,6 +141,7 @@
             border: 1px solid rgba(124, 92, 255, 0.28);
             border-radius: 12px;
             background: rgba(124, 92, 255, 0.05);
+            align-self: start;
         }
 
         .weapon-controls-inline .control-label {
@@ -164,7 +165,7 @@
 
         .weapon-controls-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 12px;
             margin-top: 12px;
         }
@@ -186,6 +187,30 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        @media (min-width: 769px) {
+            .weapon-controls-inline {
+                margin: 6px 0 10px 0;
+                padding: 8px 10px;
+            }
+
+            .weapon-controls-section {
+                gap: 6px;
+            }
+
+            .control-item {
+                gap: 2px;
+            }
+
+            .control-label {
+                font-size: 10px;
+                line-height: 1;
+            }
+
+            .level-slider-container {
+                gap: 6px;
+            }
         }
 
         input[type="range"] {
@@ -278,6 +303,14 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
+            align-items: start;
+        }
+
+        .weapon-left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
         }
 
         .basic-info {
@@ -543,6 +576,10 @@
             .info-value {
                 font-size: 18px;
             }
+        }
+
+        @media (min-width: 901px) {
+            .weapon-controls-inline { margin-bottom: 0; }
         }
     </style>
 </head>
@@ -959,9 +996,9 @@
                 passiveHtml = `
                     <div class="passive-ability">
                         <div class="passive-name">${affix.name || affix.title || 'Passive'}</div>
-                        <div id="refinementLabel" style="font-size:12px;color:#aaa;margin-bottom:8px;">R1</div>
+                        <div class="refinement-label" style="font-size:12px;color:#aaa;margin-bottom:8px;">R1</div>
                         <div class="refinement-ranks">${rankButtons}</div>
-                        <div class="passive-description" id="passiveDesc">${desc0}</div>
+                        <div class="passive-description passive-desc">${desc0}</div>
                     </div>
                 `;
 
@@ -1079,6 +1116,7 @@
 
             <div class="content-section active" id="weapon-info">
                 <div class="weapon-info-section">
+                    <div class="weapon-left-column">
                     <div class="weapon-controls-inline">
                         <div class="weapon-controls-section" style="margin-top:0">
                             <div class="control-item">
@@ -1103,16 +1141,9 @@
                                 <div class="stat-val" id="basicSubValue">${weapon.secondaryStat}</div>
                             </div>
                             ` : ''}
-                            <div class="stat-row">
-                                <div class="stat-name">Weapon Type</div>
-                                <div class="stat-val">${weapon.type}</div>
-                            </div>
-                            <div class="stat-row">
-                                <div class="stat-name">Rarity</div>
-                                <div class="stat-val">${weapon.rarity}★</div>
-                            </div>
                         </div>
                         ${passiveHtml}
+                    </div>
                     </div>
                     <div class="ascension-materials">
                         ${ascensionHtml}
@@ -1199,8 +1230,9 @@ function switchTab(tabName) {
     function changeRank(rank, btn) {
         document.querySelectorAll('.rank-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const refinementLabel = document.getElementById('refinementLabel');
-        if (refinementLabel) refinementLabel.textContent = `R${rank + 1}`;
+        document.querySelectorAll('.refinement-label').forEach((label) => {
+            label.textContent = `R${rank + 1}`;
+        });
         
         if (window.currentAffix && window.currentAffix.upgrade) {
             const description =
@@ -1209,7 +1241,9 @@ function switchTab(tabName) {
                 window.currentAffix.upgrade[String(rank)] ||
                 window.currentAffix.upgrade[rank] ||
                 '';
-            document.getElementById('passiveDesc').textContent = wikiToHtml(description);
+            document.querySelectorAll('.passive-desc').forEach((desc) => {
+                desc.innerHTML = wikiToHtml(description);
+            });
         }
     }
 
@@ -1241,6 +1275,8 @@ scrollToTopBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
+
 
 
 
