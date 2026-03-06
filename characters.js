@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCharacters(allCharacters, container);
     })
     .catch(err => {
-      container.innerText = 'Failed to load characters.';
+      container.innerText = '';
       console.error(err);
     });
 });
