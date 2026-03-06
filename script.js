@@ -1,133 +1,311 @@
 ﻿const sidebar = document.getElementById("sidebar");
 const hamburger = document.getElementById("hamburger");
 
+function synchronizeGlobalNavigation() {
+    const sidebarEl = document.getElementById('sidebar');
+    const navLinks = document.querySelector('nav .nav-links');
+
+    if (sidebarEl) {
+        const sidebarList = sidebarEl.querySelector('ul');
+        if (sidebarList) {
+            sidebarList.innerHTML = `
+                <li><a href="index.html"><img src="https://ik.imagekit.io/gukc1okbd/home.webp" class="icon"><span class="text">Home</span></a></li>
+                <li><a href="characters.html"><img src="https://ik.imagekit.io/gukc1okbd/characters.webp" class="icon"><span class="text">Characters</span></a></li>
+                <li><a href="weapons.html"><img src="https://ik.imagekit.io/gukc1okbd/weapons.webp" class="icon"><span class="text">Weapons</span></a></li>
+                <li><a href="artifacts.html"><img src="https://ik.imagekit.io/gukc1okbd/artifacts.webp" class="icon"><span class="text">Artifacts</span></a></li>
+                <li><a href="achievements.html"><img src="https://ik.imagekit.io/gukc1okbd/achievements.webp" class="icon"><span class="text">Achievements</span></a></li>
+                <li><a href="inventory.html"><img src="https://ik.imagekit.io/gukc1okbd/inventory.webp" class="icon"><span class="text">Inventory</span></a></li>
+                <li><a href="enemy.html"><img src="https://ik.imagekit.io/gukc1okbd/enemy.webp" class="icon"><span class="text">Enemy Creatures</span></a></li>
+                <li><a href="wishes.html"><img src="https://ik.imagekit.io/gukc1okbd/wishes.webp" class="icon"><span class="text">Character Wishes</span></a></li>
+                <li><a href="abyss.html"><img src="icons/abyss.webp" class="icon"><span class="text">Spiral Abyss</span></a></li>
+                <li><a href="theater.html"><img src="https://ik.imagekit.io/gukc1okbd/theater.webp" class="icon"><span class="text">Imaginarium Theater</span></a></li>
+                <li><a href="stygian.html"><img src="https://ik.imagekit.io/gukc1okbd/wishes.webp" class="icon"><span class="text">Stygian Onslaught</span></a></li>
+                <li><a href="furnishings.html"><img src="https://ik.imagekit.io/gukc1okbd/furnishings.webp" class="icon"><span class="text">Furnishings</span></a></li>
+                <li><a href="furnishing-set.html"><img src="https://ik.imagekit.io/gukc1okbd/furnishing-set.webp" class="icon"><span class="text">Furnishing Set</span></a></li>
+                <li><a href="books.html"><img src="icons/miliastra.webp" class="icon"><span class="text">Books</span></a></li>
+                <li class="settings-menu-item"><button id="settingsBtn" class="settings-menu-btn"><img src="https://ik.imagekit.io/gukc1okbd/settings.webp" class="icon"><span class="text">Settings</span></button></li>
+                <li><a href="mw-set.html"><img src="https://ik.imagekit.io/gukc1okbd/mw-set.webp" class="icon"><span class="text">Miliastra Wonderland Set</span></a></li>
+                <li><a href="mw-inventory.html"><img src="https://ik.imagekit.io/gukc1okbd/mw-inventory.webp" class="icon"><span class="text">Miliastra Wonderland Inventory</span></a></li>
+                <li><a href="search.html"><img src="https://ik.imagekit.io/gukc1okbd/search.webp" class="icon"><span class="text">Search</span></a></li>
+                <li><a href="diff.html"><img src="icons/diff.webp" class="icon"><span class="text">Diff</span></a></li>
+                <li><a href="tcg.html"><img src="https://ik.imagekit.io/gukc1okbd/tcg.webp" class="icon"><span class="text">Genius Invokation TCG</span></a></li>
+            `;
+        }
+    }
+
+    if (navLinks) {
+        const existingSearchBtn = navLinks.querySelector('#searchBtn');
+        const existingSettingsBtn = navLinks.querySelector('#topSettingsBtn');
+        const existingEndgameBtn = navLinks.querySelector('#endgameNavBtn');
+
+        const mkLink = (href, text) => {
+            const a = document.createElement('a');
+            a.href = href;
+            a.textContent = text;
+            return a;
+        };
+
+        const searchBtn = existingSearchBtn || (() => {
+            const btn = document.createElement('button');
+            btn.className = 'nav-search-btn';
+            btn.id = 'searchBtn';
+            btn.title = 'Search';
+            btn.innerHTML = '<img src="https://ik.imagekit.io/gukc1okbd/search-13-512.webp" alt="Search" class="search-icon">';
+            return btn;
+        })();
+
+        const settingsBtn = existingSettingsBtn || (() => {
+            const btn = document.createElement('button');
+            btn.className = 'nav-settings-btn';
+            btn.id = 'topSettingsBtn';
+            btn.title = 'Settings';
+            btn.innerHTML = '<img src="https://ik.imagekit.io/gukc1okbd/settings.webp" alt="Settings" class="settings-icon">';
+            return btn;
+        })();
+
+        const endgameBtn = existingEndgameBtn || (() => {
+            const btn = document.createElement('button');
+            btn.id = 'endgameNavBtn';
+            btn.type = 'button';
+            btn.className = 'nav-endgame-btn';
+            btn.textContent = 'Endgame';
+            return btn;
+        })();
+
+        navLinks.innerHTML = '';
+        [
+            mkLink('index.html', 'Home'),
+            mkLink('characters.html', 'Characters'),
+            mkLink('weapons.html', 'Weapons'),
+            mkLink('artifacts.html', 'Artifacts'),
+            mkLink('achievements.html', 'Achievements'),
+            mkLink('wishes.html', 'Banners'),
+            mkLink('inventory.html', 'Inventory')
+        ].forEach((el) => navLinks.appendChild(el));
+        navLinks.appendChild(endgameBtn);
+        navLinks.appendChild(searchBtn);
+        navLinks.appendChild(settingsBtn);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', synchronizeGlobalNavigation);
+} else {
+    synchronizeGlobalNavigation();
+}
+
 // Hamburger menu toggle
-hamburger.addEventListener("click", function() {
-    sidebar.classList.toggle("open");
-    hamburger.classList.toggle("open");
-    document.body.classList.toggle("sidebar-open");
-});
+if (hamburger && sidebar) {
+    hamburger.addEventListener("click", function() {
+        sidebar.classList.toggle("open");
+        hamburger.classList.toggle("open");
+        document.body.classList.toggle("sidebar-open");
+    });
+}
 
 // SEARCH FUNCTIONALITY
 function initializeSearch() {
     const searchBtn = document.getElementById('searchBtn');
-    const searchModal = document.getElementById('searchModal');
+    if (!searchBtn) return;
+
+    const topSearchIcon = searchBtn.querySelector('.search-icon');
+    if (topSearchIcon) {
+        topSearchIcon.src = 'https://ik.imagekit.io/gukc1okbd/search-13-512.webp';
+    }
+
+    if (!document.getElementById('globalSearchStyles')) {
+        const style = document.createElement('style');
+        style.id = 'globalSearchStyles';
+        style.textContent = `
+            .search-modal { position: fixed; inset: 0; z-index: 1200; display: none; }
+            .search-modal.open { display: block; }
+            .search-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+            .search-panel {
+                position: relative;
+                width: min(760px, calc(100vw - 24px));
+                margin: 8vh auto 0 auto;
+                background: rgba(20,16,34,0.98);
+                border: 1px solid rgba(124,92,255,0.45);
+                border-radius: 12px;
+                box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+                overflow: hidden;
+            }
+            .search-head { display: flex; align-items: center; gap: 8px; padding: 10px; border-bottom: 1px solid rgba(124,92,255,0.25); }
+            .search-input {
+                flex: 1;
+                border: 1px solid rgba(124,92,255,0.5);
+                border-radius: 8px;
+                background: rgba(124,92,255,0.12);
+                color: #fff;
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+            .search-input:focus { outline: none; border-color: rgba(124,92,255,0.85); }
+            .search-close {
+                width: 30px; height: 30px; border-radius: 8px;
+                border: 1px solid rgba(124,92,255,0.65);
+                background: linear-gradient(135deg,rgba(124,92,255,0.34),rgba(124,92,255,0.16));
+                color: #efeaff; font-size: 16px; cursor: pointer;
+            }
+            .search-results { max-height: 62vh; overflow: auto; padding: 8px; }
+            .search-placeholder { text-align: center; color: #999; margin: 12px 0; }
+            .search-result-item {
+                display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;
+                padding: 9px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);
+                background: rgba(255,255,255,0.03); margin-bottom: 8px;
+            }
+            .search-result-item:hover { background: rgba(124,92,255,0.14); border-color: rgba(124,92,255,0.5); }
+            .search-result-image { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: rgba(124,92,255,0.1); overflow: hidden; flex: 0 0 42px; }
+            .search-result-image img { width: 100%; height: 100%; object-fit: cover; }
+            .search-result-info h4 { margin: 0; font-size: 13px; color: #efeaff; }
+            .search-result-info p { margin: 2px 0 0 0; font-size: 11px; color: #b8a8ff; }
+            .search-result-type { display: inline-block; margin-top: 4px; font-size: 10px; color: #9f8bff; text-transform: uppercase; letter-spacing: 0.5px; }
+        `;
+        document.head.appendChild(style);
+    }
+
+    let searchModal = document.getElementById('searchModal');
+    if (!searchModal) {
+        searchModal = document.createElement('div');
+        searchModal.id = 'searchModal';
+        searchModal.className = 'search-modal';
+        searchModal.innerHTML = `
+            <div class="search-overlay" id="searchOverlay"></div>
+            <div class="search-panel">
+                <div class="search-head">
+                    <input id="searchInput" class="search-input" type="text" placeholder="Search across Project Skirk..." />
+                    <button id="searchClose" class="search-close" type="button" aria-label="Close search">&times;</button>
+                </div>
+                <div id="searchResults" class="search-results">
+                    <p class="search-placeholder">Start typing to search across the website.</p>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(searchModal);
+    }
+
     const searchInput = document.getElementById('searchInput');
     const searchClose = document.getElementById('searchClose');
     const searchOverlay = document.getElementById('searchOverlay');
     const searchResults = document.getElementById('searchResults');
+
     let charactersData = [];
     let weaponsData = [];
     let artifactsData = [];
+    let inventoryData = [];
+    const pageIndex = [
+        { name: 'Home', description: 'Main page', link: 'index.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/home.webp' },
+        { name: 'Characters', description: 'Character list', link: 'characters.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/characters.webp' },
+        { name: 'Weapons', description: 'Weapon list', link: 'weapons.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/weapons.webp' },
+        { name: 'Artifacts', description: 'Artifact sets', link: 'artifacts.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/artifacts.webp' },
+        { name: 'Achievements', description: 'Achievements page', link: 'achievements.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/achievements.webp' },
+        { name: 'Inventory', description: 'Items and materials', link: 'inventory.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/inventory.webp' },
+        { name: 'Spiral Abyss', description: 'Endgame mode', link: 'abyss.html', type: 'page', image: 'icons/abyss.webp' },
+        { name: 'Imaginarium Theater', description: 'Endgame mode', link: 'theater.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/theater.webp' },
+        { name: 'Stygian Onslaught', description: 'Endgame mode', link: 'stygian.html', type: 'page', image: 'https://ik.imagekit.io/gukc1okbd/wishes.webp' }
+    ];
 
-    // Open search modal
-    if (searchBtn) {
-        searchBtn.addEventListener('click', () => {
-            searchModal.classList.add('open');
-            searchInput.focus();
-        });
-    }
-
-    // Close search modal
-    const closeSearch = () => {
-        searchModal.classList.remove('open');
-        searchInput.value = '';
-        searchResults.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">Start typing to search...</p>';
+    const openSearch = () => {
+        searchModal.classList.add('open');
+        if (searchInput) searchInput.focus();
     };
 
-    if (searchClose) {
-        searchClose.addEventListener('click', closeSearch);
-    }
-
-    if (searchOverlay) {
-        searchOverlay.addEventListener('click', closeSearch);
-    }
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && searchModal.classList.contains('open')) {
-            closeSearch();
+    const closeSearch = () => {
+        searchModal.classList.remove('open');
+        if (searchInput) searchInput.value = '';
+        if (searchResults) {
+            searchResults.innerHTML = '<p class="search-placeholder">Start typing to search across the website.</p>';
         }
+    };
+
+    searchBtn.addEventListener('click', openSearch);
+    if (searchClose) searchClose.addEventListener('click', closeSearch);
+    if (searchOverlay) searchOverlay.addEventListener('click', closeSearch);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchModal.classList.contains('open')) closeSearch();
     });
 
-    // Fetch data
     Promise.all([
         fetch('characters.json').then(r => r.json()).catch(() => []),
-        fetch('weapons.json').then(r => r.json()).catch(() => []),
-        fetch('artifacts.json').then(r => r.json()).catch(() => [])
-    ]).then(([chars, weaps, arts]) => {
-        charactersData = chars || [];
-        weaponsData = weaps || [];
-        artifactsData = arts || [];
+        fetch('weapon_data.json').then(r => r.json()).catch(() => []),
+        fetch('artifacts.json').then(r => r.json()).catch(() => []),
+        fetch('inventory.json').then(r => r.json()).catch(() => [])
+    ]).then(([chars, weaps, arts, inv]) => {
+        charactersData = Array.isArray(chars) ? chars : [];
+        weaponsData = Array.isArray(weaps) ? weaps : [];
+        artifactsData = Array.isArray(arts) ? arts : [];
+        inventoryData = Array.isArray(inv) ? inv : [];
     });
 
-    // Search input functionality
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            if (query.length === 0) {
-                searchResults.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">Start typing to search...</p>';
+            const query = e.target.value.trim().toLowerCase();
+            if (!query) {
+                searchResults.innerHTML = '<p class="search-placeholder">Start typing to search across the website.</p>';
                 return;
             }
 
-            let results = [];
+            const results = [];
 
-            // Search characters
-            const matchingChars = charactersData.filter(c => 
-                c.name.toLowerCase().includes(query) || 
-                c.title?.toLowerCase().includes(query)
-            ).slice(0, 5);
-
-            matchingChars.forEach(char => {
-                results.push({
+            charactersData
+                .filter(c => (c.name || '').toLowerCase().includes(query) || (c.title || '').toLowerCase().includes(query))
+                .slice(0, 8)
+                .forEach(char => results.push({
                     type: 'character',
-                    name: char.name,
+                    name: char.name || 'Character',
                     description: char.title || 'Character',
-                    link: `characters.html?search=${char.name}`,
-                    image: char.image
-                });
-            });
+                    link: `character.html?id=${char.id}`,
+                    image: char.image || 'https://ik.imagekit.io/gukc1okbd/characters.webp'
+                }));
 
-            // Search weapons
-            const matchingWeaps = weaponsData.filter(w => 
-                w.name.toLowerCase().includes(query) || 
-                w.type?.toLowerCase().includes(query)
-            ).slice(0, 3);
-
-            matchingWeaps.forEach(weap => {
-                results.push({
+            weaponsData
+                .filter(w => (w.name || '').toLowerCase().includes(query) || (w.type || '').toLowerCase().includes(query))
+                .slice(0, 8)
+                .forEach(weap => results.push({
                     type: 'weapon',
-                    name: weap.name,
+                    name: weap.name || 'Weapon',
                     description: weap.type || 'Weapon',
-                    link: 'weapons.html',
-                    image: weap.image
-                });
-            });
+                    link: `weapon.html?id=${weap.id}`,
+                    image: weap.weaponIcon ? `https://gi.yatta.moe/assets/UI/${weap.weaponIcon}.png` : 'https://ik.imagekit.io/gukc1okbd/weapons.webp'
+                }));
 
-            // Search artifacts
-            const matchingArts = artifactsData.filter(a => 
-                a.name.toLowerCase().includes(query)
-            ).slice(0, 3);
-
-            matchingArts.forEach(art => {
-                results.push({
+            artifactsData
+                .filter(a => (a.name || '').toLowerCase().includes(query))
+                .slice(0, 8)
+                .forEach(art => results.push({
                     type: 'artifact',
-                    name: art.name,
+                    name: art.name || 'Artifact',
                     description: 'Artifact Set',
-                    link: 'artifacts.html',
-                    image: art.image
-                });
-            });
+                    link: `artifact.html?id=${art.id}`,
+                    image: art.icon ? `https://gi.yatta.moe/assets/UI/reliquary/${art.icon}.png?vh=2024123000` : 'https://ik.imagekit.io/gukc1okbd/artifacts.webp'
+                }));
+
+            inventoryData
+                .filter(i => (i.name || '').toLowerCase().includes(query) || (i.category || '').toLowerCase().includes(query))
+                .slice(0, 8)
+                .forEach(item => results.push({
+                    type: 'inventory',
+                    name: item.name || 'Item',
+                    description: item.category || 'Inventory Item',
+                    link: `inventory-item.html?id=${item.id}`,
+                    image: item.icon ? `https://gi.yatta.moe/assets/UI/${item.icon}.png` : 'https://ik.imagekit.io/gukc1okbd/inventory.webp'
+                }));
+
+            pageIndex
+                .filter(p => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query))
+                .slice(0, 8)
+                .forEach(p => results.push(p));
 
             if (results.length === 0) {
-                searchResults.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">No results found</p>';
+                searchResults.innerHTML = '<p class="search-placeholder">No results found.</p>';
                 return;
             }
 
-            searchResults.innerHTML = results.map(r => `
-                <a href="${r.link}" class="search-result-item" onclick="document.getElementById('searchModal').classList.remove('open');">
+            searchResults.innerHTML = results.slice(0, 20).map(r => `
+                <a href="${r.link}" class="search-result-item">
                     <div class="search-result-image">
-                        <img src="${r.image}" alt="${r.name}" onerror="this.src='https://via.placeholder.com/60';">
+                        <img src="${r.image}" alt="${r.name}" onerror="this.src='https://via.placeholder.com/42';">
                     </div>
                     <div class="search-result-info">
                         <h4>${r.name}</h4>
@@ -147,18 +325,19 @@ if (document.readyState === 'loading') {
     initializeSearch();
 }
 
-// Close sidebar when a link is clicked
-const sidebarLinks = sidebar.querySelectorAll("a, button");
-sidebarLinks.forEach(link => {
-    link.addEventListener("click", function() {
+// Close sidebar when a link/button is clicked (delegated for dynamic sidebar content)
+if (sidebar && hamburger) {
+    sidebar.addEventListener("click", function(event) {
+        if (!event.target.closest("a, button")) return;
         sidebar.classList.remove("open");
         hamburger.classList.remove("open");
         document.body.classList.remove("sidebar-open");
     });
-});
+}
 
 // Close sidebar when clicking outside
 document.addEventListener("click", function(event) {
+    if (!sidebar || !hamburger) return;
     if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
         sidebar.classList.remove("open");
         hamburger.classList.remove("open");
@@ -1128,7 +1307,7 @@ function initializePageSearch() {
             render(items);
         } catch (err) {
             console.error('Search data load failed', err);
-            results.innerHTML = '<p style="grid-column:1/-1;text-align:center;opacity:0.6">Failed to load data.</p>';
+            results.innerHTML = '';
         }
     };
 
@@ -1159,7 +1338,175 @@ function initializePageSearch() {
     }
 }
 
+function initializeTopNavEndgame() {
+    const navLinks = document.querySelector('.nav-links');
+    if (!navLinks) return;
+
+    if (!document.getElementById('endgamePopupStyles')) {
+        const style = document.createElement('style');
+        style.id = 'endgamePopupStyles';
+        style.textContent = `
+            .nav-endgame-btn {
+                background: none;
+                border: none;
+                color: #b8a8ff;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: inherit;
+                line-height: 1;
+                cursor: pointer;
+                padding: 0;
+                margin: 0;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                border-bottom: 2px solid transparent;
+                transition: 0.3s;
+            }
+            .nav-endgame-btn:hover { color: #7c5cff; border-bottom-color: #7c5cff; }
+            .endgame-popup {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.55);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                padding: 16px;
+            }
+            .endgame-popup.open { display: flex; }
+            .endgame-popup-card {
+                width: min(420px, 100%);
+                background: rgba(20,16,34,0.97);
+                border: 1px solid rgba(124,92,255,0.45);
+                border-radius: 12px;
+                box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+                padding: 12px;
+            }
+            .endgame-popup-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid rgba(124,92,255,0.25);
+            }
+            .endgame-popup-title {
+                font-size: 12px;
+                color: #d9ccff;
+                font-weight: 700;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+            }
+            .endgame-popup-close {
+                width: 26px;
+                height: 26px;
+                border-radius: 8px;
+                border: 1px solid rgba(124,92,255,0.65);
+                background: linear-gradient(135deg,rgba(124,92,255,0.34),rgba(124,92,255,0.16));
+                color: #efeaff;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .endgame-link {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                padding: 10px 12px;
+                margin-bottom: 8px;
+                text-decoration: none;
+                color: #fff;
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 8px;
+                transition: 0.2s ease;
+            }
+            .endgame-link:last-child { margin-bottom: 0; }
+            .endgame-link:hover {
+                background: rgba(124,92,255,0.18);
+                border-color: rgba(124,92,255,0.5);
+            }
+            .endgame-link img {
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+                flex: 0 0 20px;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    let endgameBtn = navLinks.querySelector('#endgameNavBtn');
+    if (!endgameBtn) {
+        return;
+    }
+
+    let popup = document.getElementById('endgamePopup');
+    if (!popup) {
+        popup = document.createElement('div');
+        popup.id = 'endgamePopup';
+        popup.className = 'endgame-popup';
+        popup.innerHTML = `
+            <div class="endgame-popup-card" role="dialog" aria-modal="true" aria-label="Endgame">
+                <div class="endgame-popup-head">
+                    <div class="endgame-popup-title">Endgame</div>
+                    <button type="button" class="endgame-popup-close" id="endgamePopupClose">&times;</button>
+                </div>
+                <a class="endgame-link" href="abyss.html">
+                    <img src="icons/abyss.webp" alt="Spiral Abyss">
+                    <span>Spiral Abyss</span>
+                </a>
+                <a class="endgame-link" href="theater.html">
+                    <img src="https://ik.imagekit.io/gukc1okbd/theater.webp" alt="Imaginarium Theater">
+                    <span>Imaginarium Theater</span>
+                </a>
+                <a class="endgame-link" href="stygian.html">
+                    <img src="https://ik.imagekit.io/gukc1okbd/wishes.webp" alt="Stygian Onslaught">
+                    <span>Stygian Onslaught</span>
+                </a>
+            </div>
+        `;
+        document.body.appendChild(popup);
+    }
+
+    const closePopup = () => popup.classList.remove('open');
+    const openPopup = () => popup.classList.add('open');
+    const closeBtn = popup.querySelector('#endgamePopupClose');
+
+    endgameBtn.addEventListener('click', openPopup);
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) closePopup();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('open')) closePopup();
+    });
+}
+
+function initializeAdaptiveTopNav() {
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+    if (!nav || !navLinks) return;
+
+    const updateNavMode = () => {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            nav.classList.remove('compact-nav');
+            return;
+        }
+
+        const overflows = navLinks.scrollWidth > navLinks.clientWidth + 1;
+        nav.classList.toggle('compact-nav', overflows);
+    };
+
+    updateNavMode();
+    window.addEventListener('resize', updateNavMode);
+}
+
 document.addEventListener('DOMContentLoaded', initializePageSearch);
+document.addEventListener('DOMContentLoaded', initializeTopNavEndgame);
+document.addEventListener('DOMContentLoaded', initializeAdaptiveTopNav);
 
 
 

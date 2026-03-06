@@ -64,6 +64,7 @@ nav{
   gap:28px; 
   flex:1; 
   align-items:center;
+  flex-wrap: nowrap;
 }
 
 .nav-links a{ 
@@ -1041,7 +1042,7 @@ nav{
 @media (max-width: 1024px) and (min-width: 769px) {
     .nav-links {
         gap: 16px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
     
     .nav-links a {
@@ -1591,6 +1592,15 @@ html[data-default-decimal="3"] {
     min-height: 260px;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Compact top nav when links overflow */
+nav.compact-nav .hamburger {
+    display: flex;
+}
+
+nav.compact-nav .nav-links {
+    display: none;
 }
 
 .weapon-card.rarity-1 {
