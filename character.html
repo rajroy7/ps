@@ -275,8 +275,9 @@
         <a data-tab="info" class="active">Character Information</a>
         <a data-tab="skills">Skills</a>
         <a data-tab="constellations">Constellations</a>
-        <a data-tab="ascension">Ascension</a>
         <a data-tab="diffs">Beta Changes</a>
+        <a data-tab="story">Story</a>
+        <a data-tab="quotes">Quotes</a>
         <a data-tab="voice">Voice Actors</a>
     </div>
 
@@ -707,6 +708,32 @@ function normalizeCharacterData(rawData, characterId) {
     return rawData;
 }
 
+function normalizeFetterSection(section) {
+    if (!section) return [];
+    if (Array.isArray(section)) {
+        return section.filter(Boolean);
+    }
+    const entries = Object.entries(section)
+        .sort((a, b) => Number(a[0]) - Number(b[0]))
+        .map(([, value]) => value)
+        .filter(Boolean);
+    return entries;
+}
+
+async function fetchAvatarFetterData(characterId) {
+    const url = `https://gi.yatta.moe/api/v2/en/avatarFetter/${characterId}?vh=64F0`;
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`avatarFetter fetch failed: ${response.status}`);
+    }
+    const payload = await response.json();
+    const data = payload?.data || {};
+    return {
+        story: normalizeFetterSection(data.story),
+        quotes: normalizeFetterSection(data.quotes)
+    };
+}
+
 async function loadCharacterData(characterId) {
     try {
         console.log('Loading character data for ID:', characterId);
@@ -723,6 +750,11 @@ async function loadCharacterData(characterId) {
                     if (charData) {
                         charData.icon = 'https://ik.imagekit.io/gukc1okbd/UI_AvatarIcon_Linnea.webp';
                     }
+                    try {
+                        charData.avatarFetter = await fetchAvatarFetterData(characterId);
+                    } catch (avatarFetterErr) {
+                        console.warn('Yatta avatarFetter unavailable for this character:', avatarFetterErr);
+                    }
                     if (charData && charData.name) {
                         document.title = `${charData.name} - Project Skirk`;
                         document.getElementById('charName').textContent = charData.name;
@@ -731,9 +763,10 @@ async function loadCharacterData(characterId) {
                         initLevelButtons(charData);
                         displaySkills(charData);
                         displayConstellations(charData);
-                        displayAscension(charData);
                         initTalentCalculator(charData);
                         displayVoiceActors(charData);
+                        displayStory(charData);
+                        displayQuotes(charData);
                         displayDiffs(charData);
                         return;
                     }
@@ -786,6 +819,12 @@ async function loadCharacterData(characterId) {
 
         charData = normalizeCharacterData(charData, characterId);
 
+        try {
+            charData.avatarFetter = await fetchAvatarFetterData(characterId);
+        } catch (avatarFetterErr) {
+            console.warn('Yatta avatarFetter unavailable for this character:', avatarFetterErr);
+        }
+
         // Attach Lunaris per-level attributes when available for exact level stat display.
         try {
             const lunarisUrl = `https://api.lunaris.moe/data/6.4.51/en/char/${characterId}.json`;
@@ -822,10 +861,6 @@ async function loadCharacterData(characterId) {
         displayConstellations(charData);
         console.log('Displayed constellations');
         
-        // Load and display ascension
-        displayAscension(charData);
-        console.log('Displayed ascension');
-        
         // Load and initialize talent calculator
         initTalentCalculator(charData);
         console.log('Initialized talent calculator');
@@ -833,6 +868,11 @@ async function loadCharacterData(characterId) {
         // Load and display voice actors
         displayVoiceActors(charData);
         console.log('Displayed voice actors');
+
+        // Load and display story + quotes
+        displayStory(charData);
+        displayQuotes(charData);
+        console.log('Displayed story and quotes');
         
         // Load and display diffs
         displayDiffs(charData);
@@ -980,9 +1020,15 @@ function generateCharacterContent(charData) {
             </div>
         </div>
 
-        <div id="tab-ascension" style="display:none;">
-            <div id="ascensionContainer" style="padding: 20px;">
-                <p>Loading ascension data...</p>
+        <div id="tab-story" style="display:none;">
+            <div id="storyContainer" style="padding: 20px;">
+                <p>Loading story data...</p>
+            </div>
+        </div>
+
+        <div id="tab-quotes" style="display:none;">
+            <div id="quotesContainer" style="padding: 20px;">
+                <p>Loading quote data...</p>
             </div>
         </div>
 
@@ -1457,11 +1503,11 @@ function displayVoiceActors(charData) {
     const cv = charData.fetter?.cv;
     
     if (!cv) {
-        container.innerHTML = '<p>No voice actor data available.</p>';
+        container.innerHTML = '<p style="font-size:10px;">No voice actor data available.</p>';
         return;
     }
     
-    let html = '<h2>Voice Actors</h2>';
+    let html = '<h2 style="font-size:19px;">Voice Actors</h2>';
     html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">';
     
     const languages = {
@@ -1476,13 +1522,173 @@ function displayVoiceActors(charData) {
         if (voiceActor) {
             html += `
                 <div style="background: rgba(124,92,255,0.1); border: 1px solid rgba(124,92,255,0.3); border-radius: 8px; padding: 15px;">
-                    <h4 style="margin: 0 0 8px 0; color:#7c5cff;">${langName}</h4>
-                    <p style="margin: 0; font-size: 14px; opacity: 0.9;">${voiceActor}</p>
+                    <h4 style="margin: 0 0 8px 0; color:#7c5cff; font-size:12px;">${langName}</h4>
+                    <p style="margin: 0; font-size: 11px; opacity: 0.9;">${voiceActor}</p>
                 </div>
             `;
         }
     });
     
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function getStoryEntries(charData) {
+    if (Array.isArray(charData?.avatarFetter?.story) && charData.avatarFetter.story.length) {
+        return charData.avatarFetter.story;
+    }
+    return normalizeFetterSection(charData?.fetter?.story);
+}
+
+function getQuoteEntries(charData) {
+    if (Array.isArray(charData?.avatarFetter?.quotes) && charData.avatarFetter.quotes.length) {
+        return charData.avatarFetter.quotes;
+    }
+    return normalizeFetterSection(charData?.fetter?.quotes);
+}
+
+function displayStory(charData) {
+    const container = document.getElementById('storyContainer');
+    if (!container) return;
+
+    const stories = getStoryEntries(charData);
+    if (!stories.length) {
+        container.innerHTML = '<p style="font-size:10px;">No story data available.</p>';
+        return;
+    }
+
+    let html = '<h2 style="font-size:19px;">Story</h2>';
+    html += '<div style="display:flex; flex-direction:column; gap:14px;">';
+    stories.forEach((entry) => {
+        const title = entry?.title || 'Story';
+        const text = cleanDescription(entry?.text || entry?.description || '');
+        const tips = cleanDescription(entry?.tips || '');
+        const tasks = Array.isArray(entry?.tasks) ? entry.tasks : [];
+        const taskLines = [];
+        tasks.forEach((task) => {
+            const quests = Array.isArray(task?.questList) ? task.questList : [];
+            quests.forEach((quest) => {
+                const label = quest?.chapterTitle || quest?.questTitle;
+                if (label) taskLines.push(label);
+            });
+        });
+        const requirement = [tips, ...taskLines].filter(Boolean).join(' | ');
+        html += `
+            <div style="background: rgba(124,92,255,0.1); border: 1px solid rgba(124,92,255,0.3); border-radius: 10px; padding: 14px;">
+                <h4 style="margin:0 0 10px 0; color:#7c5cff; font-size:11px;">${title}</h4>
+                ${requirement ? `<p style="margin:0 0 8px 0; font-size:9px; color:#ffdca8;"><strong>Required:</strong> ${requirement}</p>` : ''}
+                <p style="margin:0; font-size:10px; line-height:1.6; color:#ddd;">${text || 'No text available.'}</p>
+            </div>
+        `;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function getQuoteAudioUrl(charData, langCode, audioId) {
+    if (!audioId) return '';
+    const charIdRaw = String(charData?.id || '').split('-')[0];
+    const charId = charIdRaw.replace(/[^0-9]/g, '');
+    if (!charId) return '';
+    const lang = String(langCode || '').toUpperCase();
+    return `https://gi.yatta.moe/assets/Audio/${lang}/${charId}/${audioId}.ogg`;
+}
+
+let activeQuoteAudio = null;
+let activeQuoteAudioKey = '';
+
+function stopAllQuoteAudio() {
+    if (activeQuoteAudio) {
+        activeQuoteAudio.pause();
+        activeQuoteAudio.currentTime = 0;
+    }
+    activeQuoteAudio = null;
+    activeQuoteAudioKey = '';
+    document.querySelectorAll('.quote-audio-btn.playing').forEach((btn) => {
+        btn.classList.remove('playing');
+        btn.style.background = 'rgba(124,92,255,0.2)';
+    });
+}
+
+function playQuoteAudio(url, key) {
+    if (!url) return;
+    const btn = document.querySelector(`.quote-audio-btn[data-audio-key="${key}"]`);
+    if (!btn) return;
+
+    if (activeQuoteAudioKey === key && activeQuoteAudio) {
+        stopAllQuoteAudio();
+        return;
+    }
+
+    stopAllQuoteAudio();
+
+    const audio = new Audio(url);
+    activeQuoteAudio = audio;
+    activeQuoteAudioKey = key;
+    btn.classList.add('playing');
+    btn.style.background = '#7c5cff';
+
+    audio.addEventListener('ended', () => {
+        stopAllQuoteAudio();
+    });
+    audio.addEventListener('error', () => {
+        stopAllQuoteAudio();
+    });
+    audio.play().catch(() => {
+        stopAllQuoteAudio();
+    });
+}
+
+function displayQuotes(charData) {
+    const container = document.getElementById('quotesContainer');
+    if (!container) return;
+    stopAllQuoteAudio();
+
+    const quotes = getQuoteEntries(charData);
+    if (!quotes.length) {
+        container.innerHTML = '<p style="font-size:10px;">No quote data available.</p>';
+        return;
+    }
+
+    let html = '<h2 style="font-size:19px;">Quotes</h2>';
+    html += '<div style="display:flex; flex-direction:column; gap:12px;">';
+    quotes.forEach((entry, index) => {
+        const title = entry?.title || 'Quote';
+        const text = cleanDescription(entry?.text || entry?.description || '');
+        const tips = cleanDescription(entry?.tips || '');
+        const tasks = Array.isArray(entry?.tasks) ? entry.tasks : [];
+        const taskLines = [];
+        tasks.forEach((task) => {
+            const quests = Array.isArray(task?.questList) ? task.questList : [];
+            quests.forEach((quest) => {
+                const label = quest?.chapterTitle || quest?.questTitle;
+                if (label) taskLines.push(label);
+            });
+        });
+        const requirement = [tips, ...taskLines].filter(Boolean).join(' | ');
+        const audioId = entry?.audio || '';
+        const audioEn = getQuoteAudioUrl(charData, 'en', audioId);
+        const audioChs = getQuoteAudioUrl(charData, 'chs', audioId);
+        const audioJp = getQuoteAudioUrl(charData, 'jp', audioId);
+        const audioKr = getQuoteAudioUrl(charData, 'kr', audioId);
+        const quoteKeyBase = `${String(charData?.id || '')}-${String(audioId || '')}-${index}`;
+        html += `
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px;">
+                <h4 style="margin:0 0 8px 0; color:#7c5cff; font-size:10px;">${title}</h4>
+                ${requirement ? `<p style="margin:0 0 8px 0; font-size:9px; color:#ffdca8;"><strong>Required:</strong> ${requirement}</p>` : ''}
+                <p style="margin:0; font-size:10px; line-height:1.5; color:#ddd;">${text || 'No text available.'}</p>
+                ${audioId ? `
+                    <div style="margin-top:10px; display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                        <button type="button" class="quote-audio-btn" data-audio-key="${quoteKeyBase}-EN" onclick="playQuoteAudio('${audioEn}', '${quoteKeyBase}-EN')" style="border:1px solid rgba(124,92,255,0.5); background:rgba(124,92,255,0.2); color:#fff; border-radius:999px; padding:3px 10px; font-size:8px; line-height:1.2; cursor:pointer;">EN</button>
+                        <button type="button" class="quote-audio-btn" data-audio-key="${quoteKeyBase}-CHS" onclick="playQuoteAudio('${audioChs}', '${quoteKeyBase}-CHS')" style="border:1px solid rgba(124,92,255,0.5); background:rgba(124,92,255,0.2); color:#fff; border-radius:999px; padding:3px 10px; font-size:8px; line-height:1.2; cursor:pointer;">CHS</button>
+                        <button type="button" class="quote-audio-btn" data-audio-key="${quoteKeyBase}-JP" onclick="playQuoteAudio('${audioJp}', '${quoteKeyBase}-JP')" style="border:1px solid rgba(124,92,255,0.5); background:rgba(124,92,255,0.2); color:#fff; border-radius:999px; padding:3px 10px; font-size:8px; line-height:1.2; cursor:pointer;">JP</button>
+                        <button type="button" class="quote-audio-btn" data-audio-key="${quoteKeyBase}-KR" onclick="playQuoteAudio('${audioKr}', '${quoteKeyBase}-KR')" style="border:1px solid rgba(124,92,255,0.5); background:rgba(124,92,255,0.2); color:#fff; border-radius:999px; padding:3px 10px; font-size:8px; line-height:1.2; cursor:pointer;">KR</button>
+                        <button type="button" onclick="stopAllQuoteAudio()" style="border:1px solid rgba(255,107,107,0.7); background:rgba(255,107,107,0.2); color:#ffd8d8; border-radius:999px; padding:3px 10px; font-size:8px; line-height:1.2; cursor:pointer;">Stop</button>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    });
     html += '</div>';
     container.innerHTML = html;
 }
