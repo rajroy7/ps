@@ -291,9 +291,15 @@
         <h2>PROJECT SK<span class="logo-accent">I</span>R<span class="logo-accent">K</span></h2>
         <p class="footer-credit">Created by <strong>Raj Roy</strong></p>
         <p class="footer-memorial">In memory of <strong>homdgcat</strong> and <strong>hakush.in</strong></p>
+  <div class="footer-tech-stack" aria-label="Built with Svelte, Vite, and Tailwind CSS">
+    <img class="footer-tech-logo svelte-logo" src="https://cdn.simpleicons.org/svelte/FF3E00" alt="Svelte logo">
+    <img class="footer-tech-logo vite-logo" src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite logo">
+    <img class="footer-tech-logo tailwind-logo" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS logo">
+  </div>
+
+  <p class="footer-copyright">&copy; 2026 Project Skirk</p>
         <div class="footer-divider"></div>
-        <p class="footer-copyright">&copy; 2024 Project Skirk. All rights reserved.</p>
-    </div>
+        </div>
 </footer>
 
 <script src="script.js"></script>
@@ -776,22 +782,36 @@ async function loadCharacterData(characterId) {
             }
         }
 
-        // Try to load from consolidated characters-data.json first (for GitHub compatibility)
+        async function loadCombinedCharactersData() {
+            try {
+                const [part1Res, part2Res] = await Promise.all([
+                    fetch('characters-data-part1.json'),
+                    fetch('characters-data-part2.json')
+                ]);
+                if (!part1Res.ok || !part2Res.ok) {
+                    throw new Error('Split character data not available');
+                }
+                const [part1, part2] = await Promise.all([part1Res.json(), part2Res.json()]);
+                return { ...(part1 || {}), ...(part2 || {}) };
+            } catch (splitErr) {
+                console.warn('Falling back to characters-data.json:', splitErr);
+                const legacyResponse = await fetch('characters-data.json');
+                if (!legacyResponse.ok) {
+                    throw new Error('Consolidated data file not available');
+                }
+                return legacyResponse.json();
+            }
+        }
+
+        // Try to load from consolidated character data first (for GitHub compatibility)
         let charData;
         try {
-            const response = await fetch('characters-data.json');
-            if (response.ok) {
-                const allCharsData = await response.json();
-                charData = allCharsData[characterId];
-                if (charData) {
-                    console.log('Character data loaded from characters-data.json');
-                    // Wrap in the expected format
-                    charData = charData;
-                } else {
-                    throw new Error('Character not found in consolidated data');
-                }
+            const allCharsData = await loadCombinedCharactersData();
+            charData = allCharsData[characterId];
+            if (charData) {
+                console.log('Character data loaded from consolidated source');
             } else {
-                throw new Error('Consolidated data file not available');
+                throw new Error('Character not found in consolidated data');
             }
         } catch (consolidatedError) {
             console.log('Trying fallback method from Data/data/ folder:', consolidatedError.message);
@@ -808,7 +828,7 @@ async function loadCharacterData(characterId) {
             const response = await fetch(dataPath);
             if (!response.ok) {
                 if (response.status === 404) {
-                    throw new Error(`Character data file not found. Make sure:\n1. GitHub repository has Data/data/ folder pushed\n2. Or upload characters-data.json to the root directory\n3. Or run locally with HTTP server`);
+                    throw new Error(`Character data file not found. Make sure:\n1. GitHub repository has Data/data/ folder pushed\n2. Or upload characters-data-part1.json and characters-data-part2.json to the root directory\n3. Or upload characters-data.json to the root directory\n4. Or run locally with HTTP server`);
                 }
                 throw new Error(`Failed to load ${dataPath}: ${response.status} ${response.statusText}`);
             }
